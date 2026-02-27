@@ -1,0 +1,3009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WV Design System</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+</head>
+<body>
+<div class="site-wrapper">
+
+  <!-- ====================================================================
+       SIDEBAR — fixed, alphabetically sorted
+       ==================================================================== -->
+  <aside class="sidebar" role="navigation" aria-label="Documentation navigation">
+    <div class="sidebar-header">
+      <h1>WV Design System</h1>
+      <div class="subtitle">Documentation</div>
+    </div>
+
+    <nav class="sidebar-nav">
+
+      <!-- Pinned: Introduction -->
+      <div class="sidebar-category">
+        <ul class="sidebar-links">
+          <li><a class="sidebar-link" href="#introduction" data-page="introduction" tabindex="0">Introduction</a></li>
+        </ul>
+      </div>
+
+      <!-- Category: Components (A-Z) -->
+      <div class="sidebar-category">
+        <button class="sidebar-category-label" aria-expanded="true" tabindex="0">
+          Components <span class="chevron">&#9660;</span>
+        </button>
+        <ul class="sidebar-links">
+          <li><a class="sidebar-link" href="#comp-button" data-page="comp-button" tabindex="0">Button</a></li>
+          <li><a class="sidebar-link" href="#comp-button-group" data-page="comp-button-group" tabindex="0">Button Group</a></li>
+          <li><a class="sidebar-link" href="#comp-checkbox" data-page="comp-checkbox" tabindex="0">Checkbox</a></li>
+          <li><a class="sidebar-link" href="#comp-icon-button" data-page="comp-icon-button" tabindex="0">Icon Button</a></li>
+          <li><a class="sidebar-link" href="#comp-radio-button" data-page="comp-radio-button" tabindex="0">Radio Button</a></li>
+          <li><a class="sidebar-link" href="#comp-text-link" data-page="comp-text-link" tabindex="0">Text Link</a></li>
+          <li><a class="sidebar-link" href="#comp-toggle" data-page="comp-toggle" tabindex="0">Toggle</a></li>
+        </ul>
+      </div>
+
+      <!-- Category: Design Tokens (A-Z) -->
+      <div class="sidebar-category">
+        <button class="sidebar-category-label" aria-expanded="true" tabindex="0">
+          Design Tokens <span class="chevron">&#9660;</span>
+        </button>
+        <ul class="sidebar-links">
+          <li><a class="sidebar-link" href="#tokens-color" data-page="tokens-color" tabindex="0">Color</a></li>
+          <li><a class="sidebar-link" href="#tokens-spacing" data-page="tokens-spacing" tabindex="0">Spacing</a></li>
+          <li><a class="sidebar-link" href="#tokens-typography" data-page="tokens-typography" tabindex="0">Typography</a></li>
+        </ul>
+      </div>
+
+      <!-- Category: Patterns (A-Z) -->
+      <div class="sidebar-category">
+        <button class="sidebar-category-label" aria-expanded="true" tabindex="0">
+          Patterns <span class="chevron">&#9660;</span>
+        </button>
+        <ul class="sidebar-links">
+          <li><a class="sidebar-link" href="#pattern-forms" data-page="pattern-forms" tabindex="0">Forms</a></li>
+          <li><a class="sidebar-link" href="#pattern-navigation" data-page="pattern-navigation" tabindex="0">Navigation</a></li>
+        </ul>
+      </div>
+
+      <!-- Category: System Principles (A-Z) -->
+      <div class="sidebar-category">
+        <button class="sidebar-category-label" aria-expanded="true" tabindex="0">
+          System Principles <span class="chevron">&#9660;</span>
+        </button>
+        <ul class="sidebar-links">
+          <li><a class="sidebar-link" href="#principle-accessibility" data-page="principle-accessibility" tabindex="0">Accessibility</a></li>
+          <li><a class="sidebar-link" href="#principle-responsive" data-page="principle-responsive" tabindex="0">Responsive Design</a></li>
+        </ul>
+      </div>
+
+    </nav>
+  </aside>
+
+
+  <!-- ====================================================================
+       MAIN CONTENT — scrolls independently
+       ==================================================================== -->
+  <main class="main-content">
+
+
+    <!-- ================================================================
+         INTRODUCTION
+         ================================================================ -->
+    <section class="page" id="introduction">
+      <div class="page-breadcrumb">WV Design System</div>
+      <h1>Introduction</h1>
+      <p class="lead">A single source of truth for design decisions, reusable patterns, and token-driven components.</p>
+      <p>This documentation site covers the foundational layers of the WV Design System: brand primitives, semantic aliases, mapped component tokens, and responsive typography and spacing. Every visual decision flows from a structured token architecture that supports light and dark modes across desktop, tablet, and mobile breakpoints.</p>
+
+      <h2>Token Architecture</h2>
+      <p>The system is built on four collections, each with a strict dependency chain:</p>
+      <ol>
+        <li><strong>Brand/Value</strong> &mdash; Raw primitives (hex colors, spacing scale, font sizes). No semantic meaning.</li>
+        <li><strong>Alias</strong> &mdash; Semantic intent layer. Maps brand values to roles like Primary, Secondary, Neutral, Information, Success, Error.</li>
+        <li><strong>Mapped (light/dark)</strong> &mdash; The only layer components consume. Provides Surface, Text, Border, and Icon tokens for each theme mode.</li>
+        <li><strong>Responsive (Desktop/Mobile/Tablet)</strong> &mdash; Typography scales, jumper spacing, grid settings, and fixed padding per breakpoint.</li>
+      </ol>
+
+      <h2>Getting Started</h2>
+      <p>Browse the sidebar to explore token definitions, component documentation, reusable patterns, and system-level principles. Every component page follows a consistent structure: overview, accessibility, construction specs, variants, usage guidelines, and code examples.</p>
+
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>/* Reference a mapped token in CSS */
+.card {
+  background: var(--surface-default-container);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-m);
+  padding: var(--padding-l);
+  color: var(--text-body);
+}</code></pre>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         DESIGN TOKENS — COLOR
+         ================================================================ -->
+    <section class="page" id="tokens-color">
+      <div class="page-breadcrumb">Design Tokens <span>/</span> Color</div>
+      <h1>Color Tokens</h1>
+      <p class="lead">Color is organized into brand primitives, semantic aliases, and mapped tokens for light and dark modes.</p>
+
+      <h2>Primary (Orange)</h2>
+      <div class="swatch-grid">
+        <div class="swatch"><div class="swatch-color" style="background:#fff1eb"></div><div class="swatch-info"><span class="name">50</span><span class="value">#fff1eb</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#ffe2d4"></div><div class="swatch-info"><span class="name">100</span><span class="value">#ffe2d4</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#ffc7ae"></div><div class="swatch-info"><span class="name">200</span><span class="value">#ffc7ae</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#ffa984"></div><div class="swatch-info"><span class="name">300</span><span class="value">#ffa984</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#f78958"></div><div class="swatch-info"><span class="name">400</span><span class="value">#f78958</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#e96620"></div><div class="swatch-info"><span class="name">500</span><span class="value">#e96620</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#d14000"></div><div class="swatch-info"><span class="name">600</span><span class="value">#d14000</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#b11500"></div><div class="swatch-info"><span class="name">700</span><span class="value">#b11500</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#8b0000"></div><div class="swatch-info"><span class="name">800</span><span class="value">#8b0000</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#620000"></div><div class="swatch-info"><span class="name">900</span><span class="value">#620000</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#3f0000"></div><div class="swatch-info"><span class="name">1000</span><span class="value">#3f0000</span></div></div>
+      </div>
+
+      <h2>Secondary (Blue)</h2>
+      <div class="swatch-grid">
+        <div class="swatch"><div class="swatch-color" style="background:#eef6ff"></div><div class="swatch-info"><span class="name">50</span><span class="value">#eef6ff</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#daebff"></div><div class="swatch-info"><span class="name">100</span><span class="value">#daebff</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#b1d4ff"></div><div class="swatch-info"><span class="name">200</span><span class="value">#b1d4ff</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#84b8fd"></div><div class="swatch-info"><span class="name">300</span><span class="value">#84b8fd</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#599bf2"></div><div class="swatch-info"><span class="name">400</span><span class="value">#599bf2</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#307edf"></div><div class="swatch-info"><span class="name">500</span><span class="value">#307edf</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#0063c7"></div><div class="swatch-info"><span class="name">600</span><span class="value">#0063c7</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#004cac"></div><div class="swatch-info"><span class="name">700</span><span class="value">#004cac</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#00378e"></div><div class="swatch-info"><span class="name">800</span><span class="value">#00378e</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#00256d"></div><div class="swatch-info"><span class="name">900</span><span class="value">#00256d</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#001347"></div><div class="swatch-info"><span class="name">1000</span><span class="value">#001347</span></div></div>
+      </div>
+
+      <h2>Neutral (Gray)</h2>
+      <div class="swatch-grid">
+        <div class="swatch"><div class="swatch-color" style="background:#ffffff"></div><div class="swatch-info"><span class="name">0</span><span class="value">#ffffff</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#fdfdfd"></div><div class="swatch-info"><span class="name">10</span><span class="value">#fdfdfd</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#fafafa"></div><div class="swatch-info"><span class="name">25</span><span class="value">#fafafa</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#f5f5f5"></div><div class="swatch-info"><span class="name">50</span><span class="value">#f5f5f5</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#e9e9e9"></div><div class="swatch-info"><span class="name">100</span><span class="value">#e9e9e9</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#d0d0d0"></div><div class="swatch-info"><span class="name">200</span><span class="value">#d0d0d0</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#b3b3b3"></div><div class="swatch-info"><span class="name">300</span><span class="value">#b3b3b3</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#979797"></div><div class="swatch-info"><span class="name">400</span><span class="value">#979797</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#7d7d7d"></div><div class="swatch-info"><span class="name">500</span><span class="value">#7d7d7d</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#666666"></div><div class="swatch-info"><span class="name">600</span><span class="value">#666666</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#555555"></div><div class="swatch-info"><span class="name">700</span><span class="value">#555555</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#464646"></div><div class="swatch-info"><span class="name">800</span><span class="value">#464646</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#393939"></div><div class="swatch-info"><span class="name">900</span><span class="value">#393939</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#2b2b2b"></div><div class="swatch-info"><span class="name">1000</span><span class="value">#2b2b2b</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#181818"></div><div class="swatch-info"><span class="name">1100</span><span class="value">#181818</span></div></div>
+      </div>
+
+      <h2>Status Colors</h2>
+      <h3>Information (Status Blue)</h3>
+      <div class="swatch-grid">
+        <div class="swatch"><div class="swatch-color" style="background:#eff7f9"></div><div class="swatch-info"><span class="name">50</span><span class="value">#eff7f9</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#dcedf3"></div><div class="swatch-info"><span class="name">100</span><span class="value">#dcedf3</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#b6d9e4"></div><div class="swatch-info"><span class="name">200</span><span class="value">#b6d9e4</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#8cc1d3"></div><div class="swatch-info"><span class="name">300</span><span class="value">#8cc1d3</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#63a9bf"></div><div class="swatch-info"><span class="name">400</span><span class="value">#63a9bf</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#3a90a9"></div><div class="swatch-info"><span class="name">500</span><span class="value">#3a90a9</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#097892"></div><div class="swatch-info"><span class="name">600</span><span class="value">#097892</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#006177"></div><div class="swatch-info"><span class="name">700</span><span class="value">#006177</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#004f62"></div><div class="swatch-info"><span class="name">800</span><span class="value">#004f62</span></div></div>
+      </div>
+
+      <h3>Success (Status Green)</h3>
+      <div class="swatch-grid">
+        <div class="swatch"><div class="swatch-color" style="background:#f1f7f2"></div><div class="swatch-info"><span class="name">50</span><span class="value">#f1f7f2</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#e0eee3"></div><div class="swatch-info"><span class="name">100</span><span class="value">#e0eee3</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#c1dcc8"></div><div class="swatch-info"><span class="name">200</span><span class="value">#c1dcc8</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#a0c7a9"></div><div class="swatch-info"><span class="name">300</span><span class="value">#a0c7a9</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#7fb28c"></div><div class="swatch-info"><span class="name">400</span><span class="value">#7fb28c</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#609c71"></div><div class="swatch-info"><span class="name">500</span><span class="value">#609c71</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#438558"></div><div class="swatch-info"><span class="name">600</span><span class="value">#438558</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#2a6e42"></div><div class="swatch-info"><span class="name">700</span><span class="value">#2a6e42</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#155930"></div><div class="swatch-info"><span class="name">800</span><span class="value">#155930</span></div></div>
+      </div>
+
+      <h3>Error (Status Red)</h3>
+      <div class="swatch-grid">
+        <div class="swatch"><div class="swatch-color" style="background:#fff1f1"></div><div class="swatch-info"><span class="name">50</span><span class="value">#fff1f1</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#ffe1e1"></div><div class="swatch-info"><span class="name">100</span><span class="value">#ffe1e1</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#ffc7c7"></div><div class="swatch-info"><span class="name">200</span><span class="value">#ffc7c7</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#ffa9ab"></div><div class="swatch-info"><span class="name">300</span><span class="value">#ffa9ab</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#f88c90"></div><div class="swatch-info"><span class="name">400</span><span class="value">#f88c90</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#ed6f76"></div><div class="swatch-info"><span class="name">500</span><span class="value">#ed6f76</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#de515e"></div><div class="swatch-info"><span class="name">600</span><span class="value">#de515e</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#ca3247"></div><div class="swatch-info"><span class="name">700</span><span class="value">#ca3247</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#b10831"></div><div class="swatch-info"><span class="name">800</span><span class="value">#b10831</span></div></div>
+      </div>
+
+      <h2>Mapped Surface Tokens (Light)</h2>
+      <h3>Page Elements</h3>
+      <p>These tokens are used to style the page surfaces and layout.</p>
+      <div class="swatch-grid">
+        <div class="swatch"><div class="swatch-color" style="background:#fafafa"></div><div class="swatch-info"><span class="name">page</span><span class="value">Neutral.25</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#f5f5f5"></div><div class="swatch-info"><span class="name">bottom container</span><span class="value">Neutral.50</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#e9e9e9"></div><div class="swatch-info"><span class="name">middle container</span><span class="value">Neutral.100</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#d0d0d0"></div><div class="swatch-info"><span class="name">top container</span><span class="value">Neutral.200</span></div></div>
+        </div>
+
+      <h3>Action-oriented Elements</h3>
+      <p>These tokens are used to style all actionable elements.</p>
+        <div class="swatch-grid">
+        <div class="swatch"><div class="swatch-color" style="background:#e96620"></div><div class="swatch-info"><span class="name">action</span><span class="value">Primary.500</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#fff1eb"></div><div class="swatch-info"><span class="name">action-hover</span><span class="value">Primary.50</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#d14000"></div><div class="swatch-info"><span class="name">action-pressed</span><span class="value">Primary.600</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#7d7d7d"></div><div class="swatch-info"><span class="name">action-disabled</span><span class="value">Neutral.500</span></div></div>
+      </div>
+
+    </section>
+
+
+    <!-- ================================================================
+         DESIGN TOKENS — SPACING
+         ================================================================ -->
+    <section class="page" id="tokens-spacing">
+      <div class="page-breadcrumb">Design Tokens <span>/</span> Spacing</div>
+      <h1>Spacing Tokens</h1>
+      <p class="lead">A consistent spacing scale derived from the brand scale. Values follow a roughly doubling progression for the first 100, then increments of 8px.</p>
+
+      <h2>Base Scale</h2>
+      <div class="spacing-row"><span class="spacing-label">scale-0</span><div class="spacing-bar" style="width:0px"></div><span class="spacing-value">0px</span></div>
+      <div class="spacing-row"><span class="spacing-label">scale-10</span><div class="spacing-bar" style="width:1px"></div><span class="spacing-value">1px</span></div>
+      <div class="spacing-row"><span class="spacing-label">scale-25</span><div class="spacing-bar" style="width:2px"></div><span class="spacing-value">2px</span></div>
+      <div class="spacing-row"><span class="spacing-label">scale-50</span><div class="spacing-bar" style="width:4px"></div><span class="spacing-value">4px</span></div>
+      <div class="spacing-row"><span class="spacing-label">scale-100</span><div class="spacing-bar" style="width:8px"></div><span class="spacing-value">8px</span></div>
+      <div class="spacing-row"><span class="spacing-label">scale-150</span><div class="spacing-bar" style="width:12px"></div><span class="spacing-value">12px</span></div>
+      <div class="spacing-row"><span class="spacing-label">scale-200</span><div class="spacing-bar" style="width:16px"></div><span class="spacing-value">16px</span></div>
+      <div class="spacing-row"><span class="spacing-label">scale-225</span><div class="spacing-bar" style="width:18px"></div><span class="spacing-value">18px</span></div>
+      <div class="spacing-row"><span class="spacing-label">scale-250</span><div class="spacing-bar" style="width:20px"></div><span class="spacing-value">20px</span></div>
+      <div class="spacing-row"><span class="spacing-label">scale-300</span><div class="spacing-bar" style="width:24px"></div><span class="spacing-value">24px</span></div>
+      <div class="spacing-row"><span class="spacing-label">scale-400</span><div class="spacing-bar" style="width:32px"></div><span class="spacing-value">32px</span></div>
+      <div class="spacing-row"><span class="spacing-label">scale-500</span><div class="spacing-bar" style="width:40px"></div><span class="spacing-value">40px</span></div>
+      <div class="spacing-row"><span class="spacing-label">scale-600</span><div class="spacing-bar" style="width:48px"></div><span class="spacing-value">48px</span></div>
+      <div class="spacing-row"><span class="spacing-label">scale-700</span><div class="spacing-bar" style="width:56px"></div><span class="spacing-value">56px</span></div>
+      <div class="spacing-row"><span class="spacing-label">scale-800</span><div class="spacing-bar" style="width:64px"></div><span class="spacing-value">64px</span></div>
+      <div class="spacing-row"><span class="spacing-label">scale-900</span><div class="spacing-bar" style="width:72px"></div><span class="spacing-value">72px</span></div>
+      <div class="spacing-row"><span class="spacing-label">scale-1000</span><div class="spacing-bar" style="width:80px"></div><span class="spacing-value">80px</span></div>
+
+      <h2>Jumper Tokens (Desktop vs Mobile)</h2>
+      <p>Jumper tokens are responsive spacing values that shrink across breakpoints.</p>
+      <table class="doc-table">
+        <thead>
+          <tr><th>Token</th><th>Desktop</th><th>Mobile</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>xl-lg</code></td><td>96px</td><td>48px</td></tr>
+          <tr><td><code>lg-md</code></td><td>64px</td><td>32px</td></tr>
+          <tr><td><code>md-sm</code></td><td>48px</td><td>24px</td></tr>
+          <tr><td><code>sm-xs</code></td><td>32px</td><td>16px</td></tr>
+          <tr><td><code>xs-xxs</code></td><td>24px</td><td>16px</td></tr>
+          <tr><td><code>xxs-xxxs</code></td><td>16px</td><td>8px</td></tr>
+          <tr><td><code>xxxs-tiny</code></td><td>8px</td><td>4px</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Margin Tokens (Desktop vs Mobile)</h2>
+      <table class="doc-table">
+        <thead>
+          <tr><th>Token</th><th>Desktop</th><th>Mobile</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>margin.xl</code></td><td>244px</td><td>24px</td></tr>
+          <tr><td><code>margin.l</code></td><td>128px</td><td>24px</td></tr>
+          <tr><td><code>margin.m</code></td><td>64px</td><td>24px</td></tr>
+          <tr><td><code>margin.s</code></td><td>32px</td><td>16px</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Usage</h2>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>.section {
+  padding-top: var(--jumper-lg-md);
+  padding-bottom: var(--jumper-md-sm);
+  margin-left: var(--margin-m);
+  margin-right: var(--margin-m);
+  gap: var(--space-300);
+}</code></pre>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         DESIGN TOKENS — TYPOGRAPHY
+         ================================================================ -->
+    <section class="page" id="tokens-typography">
+      <div class="page-breadcrumb">Design Tokens <span>/</span> Typography</div>
+      <h1>Typography Tokens</h1>
+      <p class="lead">All type is set in Lato. Icons use Font Awesome 6 Free. Body M (16px) is the baseline reading size. Recommended max-width for body text is 60-75 characters per line for readability.</p>
+
+      <!-- Overview -->
+      <h2>Overview</h2>
+      <p>To maintain consistency with the grid and spacing increments, the same scaling increments are used for the type scale, with few exceptions, for ease of readability. Medium is the default or baseline size for any context.</p>
+
+      <!-- Typographic Scale Table -->
+      <h2>Typographic Scale</h2>
+      <table class="doc-table">
+        <thead>
+          <tr><th>Group</th><th>Name</th><th>Multiplier</th><th>Size (px)</th><th>Line Height (px)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Headings</td><td>Hero</td><td>8</td><td>64</td><td>76</td></tr>
+          <tr><td>Headings</td><td>H1 XXL</td><td>7</td><td>56</td><td>64</td></tr>
+          <tr><td>Headings</td><td>H2 XL</td><td>6</td><td>48</td><td>56</td></tr>
+          <tr><td>Headings</td><td>H3 L</td><td>5</td><td>40</td><td>48</td></tr>
+          <tr><td>Headings</td><td>H4 M</td><td>4</td><td>32</td><td>40</td></tr>
+          <tr><td>Headings</td><td>H5 S</td><td>3</td><td>24</td><td>28</td></tr>
+          <tr><td>Headings</td><td>H6 XS</td><td>2.5</td><td>20</td><td>24</td></tr>
+          <tr><td>Body</td><td>Body XXL</td><td>4</td><td>32</td><td>40</td></tr>
+          <tr><td>Body</td><td>Body XL</td><td>3</td><td>24</td><td>32</td></tr>
+          <tr><td>Body</td><td>Body L</td><td>2.5</td><td>20</td><td>28</td></tr>
+          <tr><td>Body</td><td>Body M</td><td>2</td><td>16</td><td>24</td></tr>
+          <tr><td>Body</td><td>Body S</td><td>1.75</td><td>14</td><td>20</td></tr>
+          <tr><td>Body</td><td>Body XS</td><td>1.5</td><td>12</td><td>14</td></tr>
+        </tbody>
+      </table>
+
+      <!-- Heading Scale -->
+      <h2>Heading Scale (Desktop)</h2>
+
+      <div class="type-sample">
+        <div style="font-family:var(--font-primary);font-size:var(--hero-size);line-height:var(--hero-line);font-weight:var(--hero-weight);color:var(--text-headings)">Hero Heading</div>
+        <div class="type-meta"><span>64px / 76px</span><span>Black (900)</span><span>letter-spacing: -2%</span></div>
+      </div>
+
+      <div class="type-sample">
+        <div style="font-family:var(--font-primary);font-size:var(--h1-size);line-height:var(--h1-line);font-weight:var(--h1-weight);color:var(--text-headings)">H1 XXL Heading</div>
+        <div class="type-meta"><span>56px / 64px</span><span>Black (900)</span><span>letter-spacing: -1%</span></div>
+      </div>
+
+      <div class="type-sample">
+        <div style="font-family:var(--font-primary);font-size:var(--h2-size);line-height:var(--h2-line);font-weight:var(--h2-weight);color:var(--text-headings)">H2 XL Heading</div>
+        <div class="type-meta"><span>48px / 56px</span><span>Black (900)</span><span>letter-spacing: -0.5%</span></div>
+      </div>
+
+      <div class="type-sample">
+        <div style="font-family:var(--font-primary);font-size:var(--h3-size);line-height:var(--h3-line);font-weight:var(--h3-weight);color:var(--text-headings)">H3 L Heading</div>
+        <div class="type-meta"><span>40px / 48px</span><span>Black (900)</span><span>letter-spacing: 0%</span></div>
+      </div>
+
+      <div class="type-sample">
+        <div style="font-family:var(--font-primary);font-size:var(--h4-size);line-height:var(--h4-line);font-weight:var(--h4-weight);color:var(--text-headings)">H4 M Heading</div>
+        <div class="type-meta"><span>32px / 40px</span><span>Black (900)</span><span>letter-spacing: 0%</span></div>
+      </div>
+
+      <div class="type-sample">
+        <div style="font-family:var(--font-primary);font-size:var(--h5-size);line-height:var(--h5-line);font-weight:var(--h5-weight);color:var(--text-headings)">H5 S Heading</div>
+        <div class="type-meta"><span>24px / 28px</span><span>Black (900)</span><span>letter-spacing: 0%</span></div>
+      </div>
+
+      <div class="type-sample">
+        <div style="font-family:var(--font-primary);font-size:var(--h6-size);line-height:var(--h6-line);font-weight:var(--h6-weight);color:var(--text-headings)">H6 XS Heading</div>
+        <div class="type-meta"><span>20px / 24px</span><span>Bold (700)</span><span>letter-spacing: -0.5%</span></div>
+      </div>
+
+      <!-- Body Scale -->
+      <h2>Body Scale (Desktop)</h2>
+
+      <div class="type-sample">
+        <div style="font-family:var(--font-primary);font-size:var(--body-xxl-size);line-height:var(--body-xxl-line);font-weight:900;color:var(--text-body)">Body XXL text sample</div>
+        <div class="type-meta"><span>32px / 40px</span><span>Black (900)</span><span>letter-spacing: -1.25%</span></div>
+      </div>
+
+      <div class="type-sample">
+        <div style="font-family:var(--font-primary);font-size:var(--body-xl-size);line-height:var(--body-xl-line);font-weight:900;color:var(--text-body)">Body XL text sample</div>
+        <div class="type-meta"><span>24px / 32px</span><span>Black (900)</span><span>letter-spacing: 0%</span></div>
+      </div>
+
+      <div class="type-sample">
+        <div style="font-family:var(--font-primary);font-size:var(--body-l-size);line-height:var(--body-l-line);font-weight:700;color:var(--text-body)">Body L text sample</div>
+        <div class="type-meta"><span>20px / 28px</span><span>Bold (700)</span><span>letter-spacing: 0%</span></div>
+      </div>
+
+      <div class="type-sample">
+        <div style="font-family:var(--font-primary);font-size:var(--body-m-size);line-height:var(--body-m-line);font-weight:400;color:var(--text-body)">Body M text sample. The brown fox jumped over the tall fence. The cat came running after.</div>
+        <div class="type-meta"><span>16px / 24px</span><span>Regular (400)</span><span>letter-spacing: 1%</span></div>
+      </div>
+
+      <div class="type-sample">
+        <div style="font-family:var(--font-primary);font-size:var(--body-s-size);line-height:var(--body-s-line);font-weight:400;color:var(--text-body)">Body S text sample. Small paragraph text size for fine print (think legal, form hints/assistive text, captions).</div>
+        <div class="type-meta"><span>14px / 20px</span><span>Regular (400)</span><span>letter-spacing: 0%</span></div>
+      </div>
+
+      <div class="type-sample">
+        <div style="font-family:var(--font-primary);font-size:var(--body-xs-size);line-height:var(--body-xs-line);font-weight:400;color:var(--text-body)">Body XS / Caption text sample</div>
+        <div class="type-meta"><span>12px / 14px</span><span>Regular (400)</span><span>letter-spacing: 1%</span></div>
+      </div>
+
+      <!-- Heading + Body Pairings: Mobile -->
+      <h2>Heading + Body Pairings (Mobile)</h2>
+      <p>Each heading size pairs with a corresponding body size for visual hierarchy. Mobile heading sizes are smaller than their desktop counterparts.</p>
+
+      <div class="type-sample">
+        <div style="font-family:var(--font-primary);font-size:16px;line-height:20px;font-weight:700;color:var(--text-headings)">H6 XS Heading</div>
+        <div style="font-family:var(--font-primary);font-size:12px;line-height:14px;font-weight:400;color:var(--text-body)">Body XS pairs with H6 XS. The brown fox jumped over the tall fence. The cat came running after.</div>
+        <div class="type-meta"><span>H6 XS (16/20) + Body XS (12/14)</span></div>
+      </div>
+
+      <div class="type-sample">
+        <div style="font-family:var(--font-primary);font-size:18px;line-height:24px;font-weight:900;color:var(--text-headings)">H5 S Heading</div>
+        <div style="font-family:var(--font-primary);font-size:14px;line-height:18px;font-weight:400;color:var(--text-body)">Body S pairs with H5 S. The brown fox jumped over the tall fence. The cat came running after.</div>
+        <div class="type-meta"><span>H5 S (18/24) + Body S (14/18)</span></div>
+      </div>
+
+      <div class="type-sample">
+        <div style="font-family:var(--font-primary);font-size:20px;line-height:28px;font-weight:900;color:var(--text-headings)">H4 M Heading</div>
+        <div style="font-family:var(--font-primary);font-size:16px;line-height:24px;font-weight:400;color:var(--text-body)">Body M pairs with H4 M. The brown fox jumped over the tall fence. The cat came running after.</div>
+        <div class="type-meta"><span>H4 M (20/28) + Body M (16/24)</span></div>
+      </div>
+
+      <div class="type-sample">
+        <div style="font-family:var(--font-primary);font-size:24px;line-height:32px;font-weight:900;color:var(--text-headings)">H3 L Heading</div>
+        <div style="font-family:var(--font-primary);font-size:20px;line-height:28px;font-weight:700;color:var(--text-body)">Body L pairs with H3 L. The brown fox jumped over the tall fence. The cat came running after. And then the whole farm began to join in the fun.</div>
+        <div class="type-meta"><span>H3 L (24/32) + Body L (20/28)</span></div>
+      </div>
+
+      <div class="type-sample">
+        <div style="font-family:var(--font-primary);font-size:28px;line-height:36px;font-weight:900;color:var(--text-headings)">H2 XL Heading</div>
+        <div style="font-family:var(--font-primary);font-size:20px;line-height:28px;font-weight:900;color:var(--text-body)">Body XL pairs with H2 XL. The brown fox jumped over the tall fence. The cat came running after. And then the whole farm began to join in the fun.</div>
+        <div class="type-meta"><span>H2 XL (28/36) + Body XL (20/28)</span></div>
+      </div>
+
+      <div class="type-sample">
+        <div style="font-family:var(--font-primary);font-size:32px;line-height:40px;font-weight:900;color:var(--text-headings)">H1 XXL Heading</div>
+        <div style="font-family:var(--font-primary);font-size:24px;line-height:32px;font-weight:900;color:var(--text-body)">Body XXL pairs with H1 XXL. The brown fox jumped over the tall fence. The cat came running after.</div>
+        <div class="type-meta"><span>H1 XXL (32/40) + Body XXL (24/32)</span></div>
+      </div>
+
+      <div class="type-sample">
+        <div style="font-family:var(--font-primary);font-size:40px;line-height:44px;font-weight:900;color:var(--text-headings)">Hero Heading</div>
+        <div style="font-family:var(--font-primary);font-size:24px;line-height:32px;font-weight:900;color:var(--text-body)">Body XXL pairs with Hero. The brown fox jumped over the tall fence. The cat came running after.</div>
+        <div class="type-meta"><span>Hero (40/44) + Body XXL (24/32)</span></div>
+      </div>
+
+      <!-- Heading + Body Pairings: Desktop -->
+      <h2>Heading + Body Pairings (Desktop)</h2>
+      <p>Desktop heading sizes scale up from mobile. The paired body sizes also shift accordingly.</p>
+
+      <div class="type-sample">
+        <div style="font-family:var(--font-primary);font-size:var(--h6-size);line-height:var(--h6-line);font-weight:var(--h6-weight);color:var(--text-headings)">H6 XS Heading</div>
+        <div style="font-family:var(--font-primary);font-size:var(--body-s-size);line-height:var(--body-s-line);font-weight:400;color:var(--text-body)">Body S pairs with H6 XS on desktop. The brown fox jumped over the tall fence. The cat came running after.</div>
+        <div class="type-meta"><span>H6 XS (20/24) + Body S (14/18)</span></div>
+      </div>
+
+      <div class="type-sample">
+        <div style="font-family:var(--font-primary);font-size:var(--h5-size);line-height:var(--h5-line);font-weight:var(--h5-weight);color:var(--text-headings)">H5 S Heading</div>
+        <div style="font-family:var(--font-primary);font-size:var(--body-m-size);line-height:var(--body-m-line);font-weight:400;color:var(--text-body)">Body M pairs with H5 S on desktop. The brown fox jumped over the tall fence. The cat came running after.</div>
+        <div class="type-meta"><span>H5 S (24/28) + Body M (16/24)</span></div>
+      </div>
+
+      <div class="type-sample">
+        <div style="font-family:var(--font-primary);font-size:var(--h4-size);line-height:var(--h4-line);font-weight:var(--h4-weight);color:var(--text-headings)">H4 M Heading</div>
+        <div style="font-family:var(--font-primary);font-size:var(--body-m-size);line-height:var(--body-m-line);font-weight:400;color:var(--text-body)">Body M pairs with H4 M on desktop. The brown fox jumped over the tall fence. The cat came running after.</div>
+        <div class="type-meta"><span>H4 M (32/40) + Body M (16/24)</span></div>
+      </div>
+
+      <div class="type-sample">
+        <div style="font-family:var(--font-primary);font-size:var(--h3-size);line-height:var(--h3-line);font-weight:var(--h3-weight);color:var(--text-headings)">H3 L Heading</div>
+        <div style="font-family:var(--font-primary);font-size:var(--body-l-size);line-height:var(--body-l-line);font-weight:700;color:var(--text-body)">Body L pairs with H3 L on desktop. The brown fox jumped over the tall fence. The cat came running after. And then the whole farm began to join in the fun.</div>
+        <div class="type-meta"><span>H3 L (40/48) + Body L (20/28)</span></div>
+      </div>
+
+      <div class="type-sample">
+        <div style="font-family:var(--font-primary);font-size:var(--h2-size);line-height:var(--h2-line);font-weight:var(--h2-weight);color:var(--text-headings)">H2 XL Heading</div>
+        <div style="font-family:var(--font-primary);font-size:var(--body-xl-size);line-height:var(--body-xl-line);font-weight:900;color:var(--text-body)">Body XL pairs with H2 XL on desktop. The brown fox jumped over the tall fence. The cat came running after. And then the whole farm began to join in the fun.</div>
+        <div class="type-meta"><span>H2 XL (48/56) + Body XL (24/32)</span></div>
+      </div>
+
+      <div class="type-sample">
+        <div style="font-family:var(--font-primary);font-size:var(--h1-size);line-height:var(--h1-line);font-weight:var(--h1-weight);color:var(--text-headings)">H1 XXL Heading</div>
+        <div style="font-family:var(--font-primary);font-size:var(--body-xxl-size);line-height:var(--body-xxl-line);font-weight:900;color:var(--text-body)">Body XXL pairs with H1 XXL on desktop. The brown fox jumped over the tall fence. The cat came running after.</div>
+        <div class="type-meta"><span>H1 XXL (56/64) + Body XXL (32/40)</span></div>
+      </div>
+
+      <div class="type-sample">
+        <div style="font-family:var(--font-primary);font-size:var(--hero-size);line-height:var(--hero-line);font-weight:var(--hero-weight);color:var(--text-headings)">Hero Heading</div>
+        <div style="font-family:var(--font-primary);font-size:var(--body-xxl-size);line-height:var(--body-xxl-line);font-weight:900;color:var(--text-body)">Body XXL pairs with Hero on desktop. The brown fox jumped over the tall fence. The cat came running after.</div>
+        <div class="type-meta"><span>Hero (64/76) + Body XXL (32/40)</span></div>
+      </div>
+
+      <!-- Text Links -->
+      <h2>Text Link Scale</h2>
+      <p>Text links inherit the body size at their corresponding scale but use a heavier weight. XS link uses Regular (400) to match Body XS weight.</p>
+
+      <div class="type-sample">
+        <div style="font-family:var(--font-primary);font-size:var(--body-xs-size);line-height:var(--body-xs-line);font-weight:400;color:var(--text-body);text-decoration:underline">XS Link text sample</div>
+        <div class="type-meta"><span>12px / 14px</span><span>Regular (400)</span><span>letter-spacing: 1%</span></div>
+      </div>
+
+      <div class="type-sample">
+        <div style="font-family:var(--font-primary);font-size:var(--body-s-size);line-height:var(--body-s-line);font-weight:700;color:var(--text-body);text-decoration:underline">S Link text sample</div>
+        <div class="type-meta"><span>14px / 20px</span><span>Bold (700)</span><span>letter-spacing: 0%</span></div>
+      </div>
+
+      <div class="type-sample">
+        <div style="font-family:var(--font-primary);font-size:var(--body-m-size);line-height:var(--body-m-line);font-weight:700;color:var(--text-body);text-decoration:underline">M Link text sample</div>
+        <div class="type-meta"><span>16px / 24px</span><span>Bold (700)</span><span>letter-spacing: 1%</span></div>
+      </div>
+
+      <!-- Responsive Comparison -->
+      <h2>Responsive Comparison</h2>
+      <table class="doc-table">
+        <thead>
+          <tr><th>Style</th><th>Desktop (size / line)</th><th>Mobile (size / line)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Hero</td><td>64 / 76</td><td>40 / 44</td></tr>
+          <tr><td>H1 XXL</td><td>56 / 64</td><td>32 / 40</td></tr>
+          <tr><td>H2 XL</td><td>48 / 56</td><td>28 / 36</td></tr>
+          <tr><td>H3 L</td><td>40 / 48</td><td>24 / 32</td></tr>
+          <tr><td>H4 M</td><td>32 / 40</td><td>20 / 28</td></tr>
+          <tr><td>H5 S</td><td>24 / 28</td><td>18 / 24</td></tr>
+          <tr><td>H6 XS</td><td>20 / 24</td><td>16 / 20</td></tr>
+          <tr><td>Body XXL</td><td>32 / 40</td><td>24 / 32</td></tr>
+          <tr><td>Body XL</td><td>24 / 32</td><td>20 / 28</td></tr>
+          <tr><td>Body L</td><td>20 / 28</td><td>20 / 28</td></tr>
+          <tr><td>Body M</td><td>16 / 24</td><td>16 / 24</td></tr>
+          <tr><td>Body S</td><td>14 / 20</td><td>14 / 20</td></tr>
+          <tr><td>Body XS</td><td>12 / 14</td><td>12 / 14</td></tr>
+        </tbody>
+      </table>
+
+      <!-- Font Weight Reference -->
+      <h2>Font Weight Reference</h2>
+      <table class="doc-table">
+        <thead>
+          <tr><th>Weight Name</th><th>Value</th><th>Used In</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Regular</td><td>400</td><td>Body M, Body S, Body XS, XS Link</td></tr>
+          <tr><td>Bold</td><td>700</td><td>H6 XS, Body L, S Link, M Link</td></tr>
+          <tr><td>Black</td><td>900</td><td>Hero, H1-H5, Body XXL, Body XL</td></tr>
+        </tbody>
+      </table>
+
+      <!-- Letter Spacing Reference -->
+      <h2>Letter Spacing Reference</h2>
+      <table class="doc-table">
+        <thead>
+          <tr><th>Value</th><th>Applied To</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>-2%</td><td>Hero</td></tr>
+          <tr><td>-1.25%</td><td>Body XXL</td></tr>
+          <tr><td>-1%</td><td>H1 XXL</td></tr>
+          <tr><td>-0.5%</td><td>H2 XL, H6 XS</td></tr>
+          <tr><td>0%</td><td>H3 L, H4 M, H5 S, Body XL, Body L, Body S</td></tr>
+          <tr><td>1%</td><td>Body M, Body XS, XS Link, M Link</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+
+    <!-- ================================================================
+         COMPONENT — BUTTON
+         ================================================================ -->
+    <section class="page" id="comp-button">
+      <div class="page-breadcrumb">Components <span>/</span> Button</div>
+      <h1>Button</h1>
+      <p class="lead">Triggers an action or event. The primary mechanism for user-initiated operations across dialogs, forms, cards, and toolbars.</p>
+
+      <!-- ---- OVERVIEW ---- -->
+      <h2>Overview</h2>
+      <p>Buttons communicate actions users can take. They use the primary (orange) action color to establish visual hierarchy. Two variants exist: <strong>Primary</strong> (filled) for the most important action, and <strong>Outline</strong> (bordered) for secondary actions. Four sizes (S, M, L, XL) allow density control across layouts. Each button supports optional leading and trailing icons via Font Awesome 6.</p>
+
+      <!-- ---- VARIANTS: Primary ---- -->
+      <h2>Variants</h2>
+      <h3>Primary (Filled)</h3>
+      <p>Solid background with a lighter border. White text and icons on the default state. Used for the highest-priority action in a view.</p>
+
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <button class="btn btn-primary btn-m" type="button"><i class="btn-icon fa-solid fa-circle-info"></i> Button <i class="btn-icon fa-solid fa-circle-info"></i></button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Hover</span>
+        <button class="btn btn-primary btn-m show-hover" type="button"><i class="btn-icon fa-solid fa-circle-info"></i> Button <i class="btn-icon fa-solid fa-circle-info"></i></button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Focus</span>
+        <button class="btn btn-primary btn-m show-focus" type="button"><i class="btn-icon fa-solid fa-circle-info"></i> Button <i class="btn-icon fa-solid fa-circle-info"></i></button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Pressed</span>
+        <button class="btn btn-primary btn-m show-pressed" type="button"><i class="btn-icon fa-solid fa-circle-info"></i> Button <i class="btn-icon fa-solid fa-circle-info"></i></button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Disabled</span>
+        <button class="btn btn-primary btn-m is-disabled" type="button" aria-disabled="true"><i class="btn-icon fa-solid fa-circle-info"></i> Button <i class="btn-icon fa-solid fa-circle-info"></i></button>
+      </div>
+
+      <h3>Outline (Bordered)</h3>
+      <p>Transparent background with a colored border. Text and icons use the action color. Used for secondary actions or when paired alongside a Primary button.</p>
+
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <button class="btn btn-outline btn-m" type="button"><i class="btn-icon fa-solid fa-circle-info"></i> Button <i class="btn-icon fa-solid fa-circle-info"></i></button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Hover</span>
+        <button class="btn btn-outline btn-m show-hover" type="button"><i class="btn-icon fa-solid fa-circle-info"></i> Button <i class="btn-icon fa-solid fa-circle-info"></i></button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Focus</span>
+        <button class="btn btn-outline btn-m show-focus" type="button"><i class="btn-icon fa-solid fa-circle-info"></i> Button <i class="btn-icon fa-solid fa-circle-info"></i></button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Pressed</span>
+        <button class="btn btn-outline btn-m show-pressed" type="button"><i class="btn-icon fa-solid fa-circle-info"></i> Button <i class="btn-icon fa-solid fa-circle-info"></i></button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Disabled</span>
+        <button class="btn btn-outline btn-m is-disabled" type="button" aria-disabled="true"><i class="btn-icon fa-solid fa-circle-info"></i> Button <i class="btn-icon fa-solid fa-circle-info"></i></button>
+      </div>
+
+      <h3>Sizes</h3>
+      <p>Four density levels control vertical padding and font size.</p>
+
+      <div class="state-row">
+        <span class="state-label">Small</span>
+        <button class="btn btn-primary btn-s" type="button"><i class="btn-icon fa-solid fa-circle-info"></i> Button <i class="btn-icon fa-solid fa-circle-info"></i></button>
+        <button class="btn btn-outline btn-s" type="button"><i class="btn-icon fa-solid fa-circle-info"></i> Button <i class="btn-icon fa-solid fa-circle-info"></i></button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Medium</span>
+        <button class="btn btn-primary btn-m" type="button"><i class="btn-icon fa-solid fa-circle-info"></i> Button <i class="btn-icon fa-solid fa-circle-info"></i></button>
+        <button class="btn btn-outline btn-m" type="button"><i class="btn-icon fa-solid fa-circle-info"></i> Button <i class="btn-icon fa-solid fa-circle-info"></i></button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Large</span>
+        <button class="btn btn-primary btn-l" type="button"><i class="btn-icon fa-solid fa-circle-info"></i> Button <i class="btn-icon fa-solid fa-circle-info"></i></button>
+        <button class="btn btn-outline btn-l" type="button"><i class="btn-icon fa-solid fa-circle-info"></i> Button <i class="btn-icon fa-solid fa-circle-info"></i></button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">XLarge</span>
+        <button class="btn btn-primary btn-xl" type="button"><i class="btn-icon fa-solid fa-circle-info"></i> Button <i class="btn-icon fa-solid fa-circle-info"></i></button>
+        <button class="btn btn-outline btn-xl" type="button"><i class="btn-icon fa-solid fa-circle-info"></i> Button <i class="btn-icon fa-solid fa-circle-info"></i></button>
+      </div>
+
+      <!-- ---- ACCESSIBILITY ---- -->
+      <h2>Accessibility Considerations</h2>
+      <p>WCAG 2.1 AA target. Uses the native <code>&lt;button&gt;</code> element with implicit <code>role="button"</code>.</p>
+
+      <h3>Keyboard Interactions</h3>
+      <table class="doc-table">
+        <thead><tr><th>Key</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td><code>Enter</code></td><td>Activates the button</td></tr>
+          <tr><td><code>Space</code></td><td>Activates the button</td></tr>
+          <tr><td><code>Tab</code></td><td>Moves focus to next focusable element</td></tr>
+          <tr><td><code>Shift+Tab</code></td><td>Moves focus to previous focusable element</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Focus Management</h3>
+      <ul>
+        <li>Focus ring: 2px solid border, offset 6px outward from the button edge, matching the button's pill radius (48px).</li>
+        <li>Primary focus ring uses <code>Border/Button/Primary/border</code> (#f78958).</li>
+        <li>Outline focus ring uses <code>Border/Button/Primary/outline</code> (#e96620).</li>
+        <li>Focus state does not change background or text color from default.</li>
+      </ul>
+
+      <h3>Disabled State</h3>
+      <ul>
+        <li>Uses <code>aria-disabled="true"</code> to remain in tab order for discoverability.</li>
+        <li>Text and icon color: <code>Text/Action/action-disabled</code> (#7d7d7d). Reduced contrast but still legible against both filled (#e9e9e9) and page (#fafafa) backgrounds.</li>
+      </ul>
+
+      <!-- ---- CONSTRUCTION ---- -->
+      <h2>Construction</h2>
+
+      <h3>Scale and Spacing</h3>
+      <table class="doc-table">
+        <thead><tr><th>Property</th><th>S</th><th>M</th><th>L</th><th>XL</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Padding top/bottom</td><td>8px</td><td>8px</td><td>12px</td><td>16px</td><td><code>Fixed/padding/s</code>, <code>s</code>, <code>s-m</code>, <code>m</code></td></tr>
+          <tr><td>Padding left/right</td><td>16px</td><td>24px</td><td>32px</td><td>32px</td><td><code>Fixed/padding/m</code>, <code>l</code>, <code>xl</code>, <code>xl</code></td></tr>
+          <tr><td>Internal gap</td><td>8px</td><td>8px</td><td>8px</td><td>8px</td><td><code>Fixed/padding/s</code></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Styles</h3>
+      <table class="doc-table">
+        <thead><tr><th>Property</th><th>Value</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Border radius</td><td>48px (pill)</td><td><code>Corner Radius/M button</code></td></tr>
+          <tr><td>Border width</td><td>2px</td><td><code>Border/Width/M action</code></td></tr>
+          <tr><td>Font (S)</td><td>Lato Regular 14px/18px</td><td><code>Body/Body S</code></td></tr>
+          <tr><td>Font (M, L)</td><td>Lato Regular 16px/24px</td><td><code>Body/Body M</code></td></tr>
+          <tr><td>Font (XL)</td><td>Lato Bold 20px/28px</td><td><code>Body/Body L</code></td></tr>
+          <tr><td>Icon font (S)</td><td>FA6 Solid 14px/18px</td><td><code>Body/Icons/S icon</code></td></tr>
+          <tr><td>Icon font (M, L)</td><td>FA6 Solid 16px/24px</td><td><code>Body/Icons/M icon</code></td></tr>
+          <tr><td>Icon font (XL)</td><td>FA6 Solid 20px/28px</td><td><code>Body/Icons/L icon</code></td></tr>
+          <tr><td>Icon width</td><td>18px</td><td>Fixed</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Color Tokens: Primary Variant</h3>
+      <table class="doc-table">
+        <thead><tr><th>State</th><th>Background</th><th>Border</th><th>Text</th><th>Icons</th></tr></thead>
+        <tbody>
+          <tr><td>Default</td><td><code>Surface/Button/Primary/bg</code><br>#e96620</td><td><code>Border/Button/Primary/border</code><br>#f78958</td><td><code>Text/Button/Primary/text</code><br>#ffffff</td><td><code>Icons/Action/action-on</code><br>#ffffff</td></tr>
+          <tr><td>Hover</td><td><code>Surface/Button/Primary/bg-hover</code><br>#fff1eb</td><td><code>Border/Button/Primary/border-hover</code><br>#ffa984</td><td><code>Text/Button/Primary/text-hover</code><br>#f78958</td><td><code>Icons/Action/action-hover</code><br>#f78958</td></tr>
+          <tr><td>Focus</td><td>(same as default)</td><td>(same as default)</td><td>(same as default)</td><td>(same as default)</td></tr>
+          <tr><td>Pressed</td><td><code>Surface/Button/Primary/bg-pressed</code><br>#d14000</td><td><code>Border/Button/Primary/border-pressed</code><br>#b11500</td><td><code>Text/Action/action-on</code><br>#ffffff</td><td>(inherits text)</td></tr>
+          <tr><td>Disabled</td><td><code>Surface/Button/Primary/bg-disabled</code><br>#e9e9e9</td><td><code>Border/Action/disabled</code><br>#b3b3b3</td><td><code>Text/Action/action-disabled</code><br>#7d7d7d</td><td><code>Icons/Action/action-disabled</code><br>#7d7d7d</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Color Tokens: Outline Variant</h3>
+      <table class="doc-table">
+        <thead><tr><th>State</th><th>Background</th><th>Border</th><th>Text</th><th>Icons</th></tr></thead>
+        <tbody>
+          <tr><td>Default</td><td><code>Surface/Global/page</code><br>#fafafa</td><td><code>Border/Button/Primary/outline</code><br>#e96620</td><td><code>Text/Action/action</code><br>#e96620</td><td><code>Icons/Action/action</code><br>#e96620</td></tr>
+          <tr><td>Hover</td><td>(same as default)</td><td><code>Border/Button/Primary/border-hover</code><br>#ffa984</td><td><code>Text/Action/action-hover</code><br>#f78958</td><td><code>Icons/Action/action-hover</code><br>#f78958</td></tr>
+          <tr><td>Focus</td><td>(same as default)</td><td>(same as default)</td><td>(same as default)</td><td>(same as default)</td></tr>
+          <tr><td>Pressed</td><td>(same as default)</td><td><code>Border/Button/Primary/border-pressed</code><br>#b11500</td><td><code>Text/Button/Primary/text-pressed</code><br>#d14000</td><td><code>Icons/Action/action-pressed</code><br>#d14000</td></tr>
+          <tr><td>Disabled</td><td>(same as default)</td><td><code>Border/Action/disabled</code><br>#b3b3b3</td><td><code>Text/Action/action-disabled</code><br>#7d7d7d</td><td><code>Icons/Action/action-disabled</code><br>#7d7d7d</td></tr>
+        </tbody>
+      </table>
+
+      <!-- ---- APPLICATION & CONTEXT ---- -->
+      <h2>Application and Context</h2>
+
+      <h3>For Developers</h3>
+      <table class="doc-table">
+        <thead><tr><th>Attribute / Class</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><code>.btn-primary</code> / <code>.btn-outline</code></td><td>Variant class</td><td><code>.btn-primary</code></td><td>Visual variant: filled or bordered.</td></tr>
+          <tr><td><code>.btn-s</code> / <code>.btn-m</code> / <code>.btn-l</code> / <code>.btn-xl</code></td><td>Size class</td><td><code>.btn-m</code></td><td>Density: S (8px/16px pad, Body S), M (8px/24px, Body M), L (12px/24px, Body M), XL (16px/24px, Body L).</td></tr>
+          <tr><td><code>.btn-icon</code></td><td>Child element</td><td>&mdash;</td><td>Wrap icon characters (Font Awesome unicode) in a span with this class. Optional leading and/or trailing position.</td></tr>
+          <tr><td><code>disabled</code> / <code>.is-disabled</code></td><td>State</td><td>&mdash;</td><td>Native <code>disabled</code> attribute or <code>.is-disabled</code> class for non-button elements. Use <code>aria-disabled="true"</code> when keeping in tab order.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>For Designers</h3>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Use Primary for the single most important action in a view. Pair with Outline for secondary actions.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't place multiple Primary buttons in the same context. Hierarchy is lost when everything is emphasized.</p>
+        </div>
+      </div>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Use XL for hero sections only. Use L sparingly for prominent CTAs below a hero. Use M as the standard across the board. Use S for tight spaces or secondary buttons when absolutely necessary.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't mix button sizes within the same action group. Consistent density reinforces visual rhythm.</p>
+        </div>
+      </div>
+
+      <!-- ---- SPACING GUIDANCE ---- -->
+      <h2>Spacing Guidance</h2>
+      <table class="doc-table">
+        <thead><tr><th>Context</th><th>Token</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>Gap between button and adjacent button</td><td><code>Fixed/padding/s</code></td><td>8px</td></tr>
+          <tr><td>Gap between icon and label (internal)</td><td><code>Fixed/padding/s</code></td><td>8px</td></tr>
+          <tr><td>Button group to form field above</td><td><code>Jumper/sm-xs</code></td><td>32px (desktop) / 16px (mobile)</td></tr>
+        </tbody>
+      </table>
+
+      <!-- ---- USAGE EXAMPLES ---- -->
+      <h2>Usage Examples</h2>
+
+      <h3>Basic</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;button class="btn btn-primary btn-m" type="button"&gt;Submit&lt;/button&gt;
+&lt;button class="btn btn-outline btn-m" type="button"&gt;Cancel&lt;/button&gt;</code></pre>
+      </div>
+
+      <h3>With Icons</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;button class="btn btn-primary btn-m" type="button"&gt;
+  &lt;span class="btn-icon"&gt;&amp;#xf05a;&lt;/span&gt;
+  Button
+  &lt;span class="btn-icon"&gt;&amp;#xf05a;&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+      </div>
+
+      <h3>All Sizes</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;button class="btn btn-primary btn-s" type="button"&gt;Small&lt;/button&gt;
+&lt;button class="btn btn-primary btn-m" type="button"&gt;Medium&lt;/button&gt;
+&lt;button class="btn btn-primary btn-l" type="button"&gt;Large&lt;/button&gt;
+&lt;button class="btn btn-primary btn-xl" type="button"&gt;XLarge&lt;/button&gt;</code></pre>
+      </div>
+
+      <h3>Disabled</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;button class="btn btn-primary btn-m" disabled aria-disabled="true"&gt;
+  &lt;span class="btn-icon"&gt;&amp;#xf05a;&lt;/span&gt;
+  Unavailable
+&lt;/button&gt;
+
+&lt;button class="btn btn-outline btn-m" disabled aria-disabled="true"&gt;
+  &lt;span class="btn-icon"&gt;&amp;#xf05a;&lt;/span&gt;
+  Unavailable
+&lt;/button&gt;</code></pre>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         COMPONENT — BUTTON GROUP
+         ================================================================ -->
+    <section class="page" id="comp-button-group">
+      <div class="page-breadcrumb">Components <span>/</span> Button Group</div>
+      <h1>Button Group</h1>
+      <p class="lead">A segmented control that groups related actions into a single horizontal strip, allowing users to choose between options or toggle views.</p>
+
+      <!-- ---- OVERVIEW ---- -->
+      <h2>Overview</h2>
+      <p>Button groups combine two or more related actions into a connected row of segments. Each segment behaves like an individual button but shares a container border and divider treatment that communicates they belong together. Two types exist: <strong>Labeled</strong> (icon + text) and <strong>Icon-only</strong> (compact, icon without text). Items support four states: Default, Hover, Selected, and Disabled. The component uses <code>role="group"</code> with an <code>aria-label</code> describing the group purpose.</p>
+
+      <!-- ---- VARIANTS ---- -->
+      <h2>Variants</h2>
+
+      <h3>Labeled (Icon + Text)</h3>
+      <p>Each segment contains a leading icon and a text label. The full-width variant used when labels are needed to clarify the action.</p>
+
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <div class="btn-group" role="group" aria-label="Options">
+          <button class="btn-group-item" type="button"><i class="btn-group-icon fa-solid fa-circle-info"></i> Option A</button>
+          <button class="btn-group-item" type="button"><i class="btn-group-icon fa-solid fa-circle-info"></i> Option B</button>
+          <button class="btn-group-item" type="button"><i class="btn-group-icon fa-solid fa-circle-info"></i> Option C</button>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Hover</span>
+        <div class="btn-group" role="group" aria-label="Options">
+          <button class="btn-group-item show-hover" type="button"><i class="btn-group-icon fa-solid fa-circle-info"></i> Option A</button>
+          <button class="btn-group-item" type="button"><i class="btn-group-icon fa-solid fa-circle-info"></i> Option B</button>
+          <button class="btn-group-item" type="button"><i class="btn-group-icon fa-solid fa-circle-info"></i> Option C</button>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Selected</span>
+        <div class="btn-group" role="group" aria-label="Options">
+          <button class="btn-group-item show-selected" type="button"><i class="btn-group-icon fa-solid fa-circle-info"></i> Option A</button>
+          <button class="btn-group-item" type="button"><i class="btn-group-icon fa-solid fa-circle-info"></i> Option B</button>
+          <button class="btn-group-item" type="button"><i class="btn-group-icon fa-solid fa-circle-info"></i> Option C</button>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Disabled</span>
+        <div class="btn-group" role="group" aria-label="Options">
+          <button class="btn-group-item is-disabled" type="button" aria-disabled="true"><i class="btn-group-icon fa-solid fa-circle-info"></i> Option A</button>
+          <button class="btn-group-item is-disabled" type="button" aria-disabled="true"><i class="btn-group-icon fa-solid fa-circle-info"></i> Option B</button>
+          <button class="btn-group-item is-disabled" type="button" aria-disabled="true"><i class="btn-group-icon fa-solid fa-circle-info"></i> Option C</button>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Mixed</span>
+        <div class="btn-group" role="group" aria-label="Options">
+          <button class="btn-group-item show-selected" type="button"><i class="btn-group-icon fa-solid fa-circle-info"></i> Option A</button>
+          <button class="btn-group-item" type="button"><i class="btn-group-icon fa-solid fa-circle-info"></i> Option B</button>
+          <button class="btn-group-item is-disabled" type="button" aria-disabled="true"><i class="btn-group-icon fa-solid fa-circle-info"></i> Option C</button>
+        </div>
+      </div>
+
+      <h3>Icon-only</h3>
+      <p>Compact variant where each segment contains only an icon. Use when space is tight and the icons are universally understood. Every icon-only item <strong>must</strong> have an <code>aria-label</code>.</p>
+
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <div class="btn-group" role="group" aria-label="Actions">
+          <button class="btn-group-item btn-group-icon-only" type="button" aria-label="Mail"><i class="btn-group-icon fa-solid fa-envelope"></i></button>
+          <button class="btn-group-item btn-group-icon-only" type="button" aria-label="Info"><i class="btn-group-icon fa-solid fa-circle-info"></i></button>
+          <button class="btn-group-item btn-group-icon-only" type="button" aria-label="Favorite"><i class="btn-group-icon fa-solid fa-heart"></i></button>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Hover</span>
+        <div class="btn-group" role="group" aria-label="Actions">
+          <button class="btn-group-item btn-group-icon-only show-hover" type="button" aria-label="Mail"><i class="btn-group-icon fa-solid fa-envelope"></i></button>
+          <button class="btn-group-item btn-group-icon-only" type="button" aria-label="Info"><i class="btn-group-icon fa-solid fa-circle-info"></i></button>
+          <button class="btn-group-item btn-group-icon-only" type="button" aria-label="Favorite"><i class="btn-group-icon fa-solid fa-heart"></i></button>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Selected</span>
+        <div class="btn-group" role="group" aria-label="Actions">
+          <button class="btn-group-item btn-group-icon-only show-selected" type="button" aria-label="Mail"><i class="btn-group-icon fa-solid fa-envelope"></i></button>
+          <button class="btn-group-item btn-group-icon-only" type="button" aria-label="Info"><i class="btn-group-icon fa-solid fa-circle-info"></i></button>
+          <button class="btn-group-item btn-group-icon-only" type="button" aria-label="Favorite"><i class="btn-group-icon fa-solid fa-heart"></i></button>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Disabled</span>
+        <div class="btn-group" role="group" aria-label="Actions">
+          <button class="btn-group-item btn-group-icon-only is-disabled" type="button" aria-label="Mail" aria-disabled="true"><i class="btn-group-icon fa-solid fa-envelope"></i></button>
+          <button class="btn-group-item btn-group-icon-only is-disabled" type="button" aria-label="Info" aria-disabled="true"><i class="btn-group-icon fa-solid fa-circle-info"></i></button>
+          <button class="btn-group-item btn-group-icon-only is-disabled" type="button" aria-label="Favorite" aria-disabled="true"><i class="btn-group-icon fa-solid fa-heart"></i></button>
+        </div>
+      </div>
+
+      <!-- ---- ACCESSIBILITY ---- -->
+      <h2>Accessibility Considerations</h2>
+      <p>WCAG 2.1 AA target. The group container communicates that the buttons are related.</p>
+
+      <h3>Keyboard Interactions</h3>
+      <table class="doc-table">
+        <thead><tr><th>Key</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td><code>Tab</code></td><td>Moves focus into/out of the group. Each item is a separate tab stop.</td></tr>
+          <tr><td><code>Enter</code> / <code>Space</code></td><td>Activates the focused item (selects it).</td></tr>
+        </tbody>
+      </table>
+
+      <h3>ARIA Requirements</h3>
+      <ul>
+        <li>The container <strong>must</strong> have <code>role="group"</code> and an <code>aria-label</code> describing the group purpose.</li>
+        <li>The selected item should have <code>aria-pressed="true"</code> (toggle behavior) or be managed via <code>aria-current</code> for navigation.</li>
+        <li>Icon-only items <strong>must</strong> include <code>aria-label</code> on each button.</li>
+        <li>Disabled items use <code>aria-disabled="true"</code> to remain discoverable.</li>
+      </ul>
+
+      <h3>Focus Management</h3>
+      <ul>
+        <li>Focus indicator: 2px solid outline in <code>--surface-action</code>, inset 2px. Contained within the group border.</li>
+        <li>Focus does not change background or text color from the current state.</li>
+      </ul>
+
+      <!-- ---- CONSTRUCTION ---- -->
+      <h2>Construction</h2>
+
+      <h3>Scale and Spacing</h3>
+      <table class="doc-table">
+        <thead><tr><th>Property</th><th>Labeled</th><th>Icon-only</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Padding (vertical)</td><td>12px</td><td>12px</td><td><code>Fixed/padding/s-m</code></td></tr>
+          <tr><td>Padding (horizontal)</td><td>16px</td><td>12px</td><td><code>Fixed/padding/m</code> / <code>s-m</code></td></tr>
+          <tr><td>Gap (icon to label)</td><td>8px</td><td>n/a</td><td><code>Fixed/padding/s</code></td></tr>
+          <tr><td>Divider width</td><td colspan="2">2px</td><td><code>Border/Width/M action</code></td></tr>
+          <tr><td>Container border</td><td colspan="2">1px</td><td><code>Border/Width/M default</code></td></tr>
+          <tr><td>Container radius</td><td colspan="2">4px</td><td><code>Corner Radius/S</code></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Styles</h3>
+      <table class="doc-table">
+        <thead><tr><th>Property</th><th>Value</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Font family</td><td>Lato Regular</td><td><code>font</code></td></tr>
+          <tr><td>Font size</td><td>16px</td><td><code>Body M/font size</code></td></tr>
+          <tr><td>Line height</td><td>24px</td><td><code>Body M/line height</code></td></tr>
+          <tr><td>Letter spacing</td><td>0.16px (0.01em)</td><td>Body M</td></tr>
+          <tr><td>Icon font</td><td>FA6 Free Solid, 16px</td><td><code>Body M/M icons/font</code></td></tr>
+          <tr><td>Icon width</td><td>16px</td><td>Fixed</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Color Tokens</h3>
+      <table class="doc-table">
+        <thead><tr><th>State</th><th>Background</th><th>Border / Divider</th><th>Text / Icon</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Default</td>
+            <td><code>Surface/Global/page</code><br>#fafafa</td>
+            <td><code>Border/Global/default</code><br>#e9e9e9</td>
+            <td><code>Text/Default/body</code><br>#464646</td>
+          </tr>
+          <tr>
+            <td>Hover</td>
+            <td><code>Surface/Action/action-hover</code><br>#fff1eb</td>
+            <td><code>Border/Action/action-hover</code><br>#ffa984</td>
+            <td><code>Text/Button/Primary/text-hover</code><br>#f78958</td>
+          </tr>
+          <tr>
+            <td>Selected</td>
+            <td><code>Surface/Action/action</code><br>#e96620</td>
+            <td><code>Border/Action/action</code><br>#f78958</td>
+            <td><code>Text/Action/action-on</code><br>#ffffff</td>
+          </tr>
+          <tr>
+            <td>Disabled</td>
+            <td><code>Surface/Action/disabled</code><br>#e9e9e9</td>
+            <td><code>Border/Action/disabled</code><br>#b3b3b3</td>
+            <td><code>Text/Action/action-disabled</code><br>#7d7d7d</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- ---- APPLICATION & CONTEXT ---- -->
+      <h2>Application and Context</h2>
+
+      <h3>For Developers</h3>
+      <table class="doc-table">
+        <thead><tr><th>Attribute / Class</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><code>.btn-group</code></td><td>Container</td><td>&mdash;</td><td>Wraps all items. Provides outer border, radius, and overflow clipping.</td></tr>
+          <tr><td><code>.btn-group-item</code></td><td>Child element</td><td>&mdash;</td><td>Each segment inside the group. Use <code>&lt;button&gt;</code> elements.</td></tr>
+          <tr><td><code>.btn-group-icon-only</code></td><td>Modifier</td><td>&mdash;</td><td>Applied to <code>.btn-group-item</code> for icon-only segments. Sets uniform padding.</td></tr>
+          <tr><td><code>.selected</code></td><td>State class</td><td>&mdash;</td><td>Marks the currently active/selected item.</td></tr>
+          <tr><td><code>role="group"</code></td><td>ARIA role</td><td>&mdash;</td><td><strong>Required</strong> on the container to communicate the grouping relationship.</td></tr>
+          <tr><td><code>aria-label</code></td><td>Attribute</td><td>&mdash;</td><td><strong>Required</strong> on the container. Also required on each icon-only item.</td></tr>
+          <tr><td><code>aria-pressed</code></td><td>Attribute</td><td><code>"false"</code></td><td>Set to <code>"true"</code> on the selected item when used as a toggle group.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>For Designers</h3>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Use button groups for related actions that benefit from visual proximity, such as view toggles (list/grid), alignment options, or filter sets.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't use a button group for unrelated actions. If the actions serve different purposes, use individual buttons instead.</p>
+        </div>
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Use the labeled variant when the action needs explanation. Use icon-only when space is tight and icons are universally recognized.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't mix labeled and icon-only items within the same group. Keep all segments consistent.</p>
+        </div>
+      </div>
+
+      <!-- ---- SPACING GUIDANCE ---- -->
+      <h2>Spacing Guidance</h2>
+      <table class="doc-table">
+        <thead><tr><th>Context</th><th>Spacing</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Between button group and adjacent content</td><td>24px</td><td><code>--space-300</code></td></tr>
+          <tr><td>Between stacked button groups</td><td>16px</td><td><code>--space-200</code></td></tr>
+          <tr><td>Button group within a toolbar</td><td>16px gap</td><td><code>--space-200</code></td></tr>
+        </tbody>
+      </table>
+
+      <!-- ---- USAGE EXAMPLES ---- -->
+      <h2>Usage Examples</h2>
+
+      <h3>Labeled Group</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;div class="btn-group" role="group" aria-label="View options"&gt;
+  &lt;button class="btn-group-item" type="button"&gt;
+    &lt;i class="btn-group-icon fa-solid fa-list"&gt;&lt;/i&gt; List
+  &lt;/button&gt;
+  &lt;button class="btn-group-item selected" type="button"
+          aria-pressed="true"&gt;
+    &lt;i class="btn-group-icon fa-solid fa-grip"&gt;&lt;/i&gt; Grid
+  &lt;/button&gt;
+  &lt;button class="btn-group-item" type="button"&gt;
+    &lt;i class="btn-group-icon fa-solid fa-table"&gt;&lt;/i&gt; Table
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Icon-only Group</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;div class="btn-group" role="group" aria-label="Actions"&gt;
+  &lt;button class="btn-group-item btn-group-icon-only"
+          type="button" aria-label="Mail"&gt;
+    &lt;i class="btn-group-icon fa-solid fa-envelope"&gt;&lt;/i&gt;
+  &lt;/button&gt;
+  &lt;button class="btn-group-item btn-group-icon-only"
+          type="button" aria-label="Info"&gt;
+    &lt;i class="btn-group-icon fa-solid fa-circle-info"&gt;&lt;/i&gt;
+  &lt;/button&gt;
+  &lt;button class="btn-group-item btn-group-icon-only"
+          type="button" aria-label="Favorite"&gt;
+    &lt;i class="btn-group-icon fa-solid fa-heart"&gt;&lt;/i&gt;
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>With Selected and Disabled Items</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;div class="btn-group" role="group" aria-label="Alignment"&gt;
+  &lt;button class="btn-group-item selected" type="button"
+          aria-pressed="true"&gt;
+    &lt;i class="btn-group-icon fa-solid fa-align-left"&gt;&lt;/i&gt; Left
+  &lt;/button&gt;
+  &lt;button class="btn-group-item" type="button"&gt;
+    &lt;i class="btn-group-icon fa-solid fa-align-center"&gt;&lt;/i&gt; Center
+  &lt;/button&gt;
+  &lt;button class="btn-group-item" type="button"
+          disabled aria-disabled="true"&gt;
+    &lt;i class="btn-group-icon fa-solid fa-align-right"&gt;&lt;/i&gt; Right
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         COMPONENT — CHECKBOX
+         ================================================================ -->
+    <section class="page" id="comp-checkbox">
+      <div class="page-breadcrumb">Components <span>/</span> Checkbox</div>
+      <h1>Checkbox</h1>
+      <p class="lead">A form control that allows users to select one or more options from a set. Pairs a 24x24 indicator box with an optional text label.</p>
+
+      <!-- ---- OVERVIEW ---- -->
+      <h2>Overview</h2>
+      <p>The checkbox is a binary selection control. When checked, it displays a Font Awesome check icon inside an action-colored fill. When unchecked, it renders as a bordered empty square. The component supports five states (default, hover, focus, disabled, error) across both selected and unselected types. An optional label sits to the right with an 8px gap.</p>
+
+      <!-- ---- VARIANTS ---- -->
+      <h2>Variants</h2>
+
+      <h3>Unselected</h3>
+      <p>Empty checkbox with action-colored border and page-colored background. Shows the available selection target.</p>
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <label class="form-checkbox"><input type="checkbox"></label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Hover</span>
+        <label class="form-checkbox"><input type="checkbox" class="show-hover"></label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Focus</span>
+        <label class="form-checkbox"><input type="checkbox" class="show-focus"></label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Disabled</span>
+        <label class="form-checkbox"><input type="checkbox" class="is-disabled" disabled></label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Error</span>
+        <label class="form-checkbox"><input type="checkbox" class="has-error"></label>
+      </div>
+
+      <h3>Selected</h3>
+      <p>Filled checkbox with a white check icon. The action-colored background confirms the selection.</p>
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <label class="form-checkbox"><input type="checkbox" checked></label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Hover</span>
+        <label class="form-checkbox"><input type="checkbox" checked class="show-hover"></label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Focus</span>
+        <label class="form-checkbox"><input type="checkbox" checked class="show-focus"></label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Disabled</span>
+        <label class="form-checkbox"><input type="checkbox" checked class="is-disabled" disabled></label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Error</span>
+        <label class="form-checkbox"><input type="checkbox" checked class="has-error"></label>
+      </div>
+
+      <h3>With Label</h3>
+      <p>Checkbox paired with a Body M label (Lato Regular, 16px/24px) at an 8px gap.</p>
+      <div class="state-row">
+        <span class="state-label">Unchecked</span>
+        <label class="form-checkbox"><input type="checkbox"> Checkbox Label</label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Checked</span>
+        <label class="form-checkbox"><input type="checkbox" checked> Checkbox Label</label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Disabled</span>
+        <label class="form-checkbox"><input type="checkbox" disabled class="is-disabled"> Checkbox Label</label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Error</span>
+        <label class="form-checkbox"><input type="checkbox" class="has-error"> Checkbox Label</label>
+      </div>
+
+      <!-- ---- ACCESSIBILITY ---- -->
+      <h2>Accessibility Considerations</h2>
+      <p>WCAG 2.1 AA target. Checkboxes must be operable by keyboard and clearly communicate their checked/unchecked state to assistive technology.</p>
+
+      <h3>Keyboard Interactions</h3>
+      <table class="doc-table">
+        <thead><tr><th>Key</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td><code>Space</code></td><td>Toggles the checkbox between checked and unchecked</td></tr>
+          <tr><td><code>Tab</code></td><td>Moves focus to the next focusable element</td></tr>
+          <tr><td><code>Shift+Tab</code></td><td>Moves focus to the previous focusable element</td></tr>
+        </tbody>
+      </table>
+
+      <h3>ARIA and Semantics</h3>
+      <ul>
+        <li>Use native <code>&lt;input type="checkbox"&gt;</code> inside a <code>&lt;label&gt;</code> for automatic association. This provides the checked/unchecked state to screen readers without extra ARIA.</li>
+        <li>When the label wraps the input, no <code>for</code>/<code>id</code> pairing is needed.</li>
+        <li>For checkbox groups, wrap in a <code>&lt;fieldset&gt;</code> with a <code>&lt;legend&gt;</code> describing the group.</li>
+        <li>Error state should be paired with <code>aria-describedby</code> pointing to an error message element and <code>aria-invalid="true"</code> on the input.</li>
+        <li>Disabled checkboxes use the native <code>disabled</code> attribute, which removes them from tab order.</li>
+        <li>Focus ring: 2px solid <code>--border-action</code>, 3px offset, 4px border-radius.</li>
+      </ul>
+
+      <!-- ---- CONSTRUCTION ---- -->
+      <h2>Construction</h2>
+
+      <h3>Scale and Spacing</h3>
+      <table class="doc-table">
+        <thead><tr><th>Property</th><th>Value</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Checkbox size</td><td>24 x 24px</td><td><code>--space-300</code></td></tr>
+          <tr><td>Border width</td><td>1px</td><td><code>--space-10</code></td></tr>
+          <tr><td>Border radius</td><td>4px</td><td><code>--radius-s</code></td></tr>
+          <tr><td>Icon size</td><td>16px</td><td><code>--body-m-size</code></td></tr>
+          <tr><td>Checkbox-to-label gap</td><td>8px</td><td><code>--space-100</code></td></tr>
+          <tr><td>Focus ring offset</td><td>3px</td><td>n/a</td></tr>
+          <tr><td>Focus ring width</td><td>2px</td><td>n/a</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Styles</h3>
+      <table class="doc-table">
+        <thead><tr><th>Property</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>Icon font</td><td>Font Awesome 6 Free (Solid, weight 900)</td></tr>
+          <tr><td>Icon glyph</td><td><code>\f00c</code> (check)</td></tr>
+          <tr><td>Icon letter-spacing</td><td>0.45px</td></tr>
+          <tr><td>Label font</td><td>Lato Regular (400), 16px/24px</td></tr>
+          <tr><td>Label color</td><td><code>--text-body</code> (#464646)</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Color Tokens</h3>
+      <table class="doc-table">
+        <thead><tr><th>State</th><th>Background</th><th>Border</th><th>Icon</th></tr></thead>
+        <tbody>
+          <tr><td>Default (unchecked)</td><td><code>--surface-default-container</code></td><td><code>--border-action</code></td><td>n/a</td></tr>
+          <tr><td>Default (checked)</td><td><code>--surface-action</code></td><td><code>--border-action</code></td><td><code>--text-action-on</code> (white)</td></tr>
+          <tr><td>Hover</td><td><code>--surface-action-hover</code></td><td><code>--border-action-hover</code></td><td><code>--text-action-hover</code></td></tr>
+          <tr><td>Focus</td><td>(same as default)</td><td>(same as default)</td><td>(same as default)</td></tr>
+          <tr><td>Disabled</td><td><code>--surface-disabled</code></td><td><code>--border-disabled</code></td><td><code>--text-action-disabled</code></td></tr>
+          <tr><td>Error</td><td><code>--surface-error</code></td><td><code>--border-error</code></td><td><code>--text-status-error</code></td></tr>
+        </tbody>
+      </table>
+
+      <!-- ---- APPLICATION & CONTEXT ---- -->
+      <h2>Application and Context</h2>
+
+      <h3>For Developers</h3>
+      <table class="doc-table">
+        <thead><tr><th>Attribute / Class</th><th>Type</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><code>.form-checkbox</code></td><td>Container</td><td>Wrapping <code>&lt;label&gt;</code>. Flex row with 8px gap.</td></tr>
+          <tr><td><code>input[type="checkbox"]</code></td><td>Element</td><td>Native checkbox with <code>appearance: none</code> for custom styling.</td></tr>
+          <tr><td><code>checked</code></td><td>Attribute</td><td>Native checked state. Fills background and shows icon via <code>::after</code>.</td></tr>
+          <tr><td><code>disabled</code></td><td>Attribute</td><td>Native disabled. Grays out and removes from tab order.</td></tr>
+          <tr><td><code>.has-error</code></td><td>Modifier</td><td>Added to the <code>&lt;input&gt;</code>. Applies error surface/border colors.</td></tr>
+          <tr><td><code>.is-disabled</code></td><td>Modifier</td><td>Visual-only disabled state for documentation previews.</td></tr>
+          <tr><td><code>.show-hover</code></td><td>Modifier</td><td>Forces hover appearance for documentation previews.</td></tr>
+          <tr><td><code>.show-focus</code></td><td>Modifier</td><td>Forces focus ring for documentation previews.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>For Designers</h3>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Use checkboxes when users can select zero, one, or multiple options from a list.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't use a checkbox for a binary on/off setting where a toggle switch communicates instant effect.</p>
+        </div>
+      </div>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Always provide a visible label. If space prevents it, use <code>aria-label</code> on the input.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't use a checkbox as a single required acknowledgment without clear context (e.g., "I agree to..." needs the full statement).</p>
+        </div>
+      </div>
+
+      <!-- ---- SPACING GUIDANCE ---- -->
+      <h2>Spacing Guidance</h2>
+      <table class="doc-table">
+        <thead><tr><th>Context</th><th>Property</th><th>Value</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Checkbox to label</td><td>gap</td><td>8px</td><td><code>--space-100</code></td></tr>
+          <tr><td>Between stacked checkboxes</td><td>gap / margin-bottom</td><td>8-16px</td><td><code>--space-100</code> to <code>--space-200</code></td></tr>
+          <tr><td>Checkbox group to next field</td><td>margin-bottom</td><td>24px</td><td><code>--space-300</code></td></tr>
+        </tbody>
+      </table>
+
+      <!-- ---- USAGE EXAMPLES ---- -->
+      <h2>Usage Examples</h2>
+
+      <h3>Single Checkbox with Label</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;label class="form-checkbox"&gt;
+  &lt;input type="checkbox"&gt;
+  I agree to the Terms of Service
+&lt;/label&gt;</code></pre>
+      </div>
+
+      <h3>Checkbox Group</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;fieldset&gt;
+  &lt;legend&gt;Select your interests&lt;/legend&gt;
+  &lt;label class="form-checkbox"&gt;
+    &lt;input type="checkbox" name="interests" value="design"&gt;
+    Design
+  &lt;/label&gt;
+  &lt;label class="form-checkbox"&gt;
+    &lt;input type="checkbox" name="interests" value="dev"&gt;
+    Development
+  &lt;/label&gt;
+  &lt;label class="form-checkbox"&gt;
+    &lt;input type="checkbox" name="interests" value="research"&gt;
+    Research
+  &lt;/label&gt;
+&lt;/fieldset&gt;</code></pre>
+      </div>
+
+      <h3>Error State with Message</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;label class="form-checkbox"&gt;
+  &lt;input type="checkbox" class="has-error"
+         aria-invalid="true"
+         aria-describedby="cb-err"&gt;
+  Accept privacy policy
+&lt;/label&gt;
+&lt;span id="cb-err" class="input-hint hint-error"&gt;
+  You must accept to continue.
+&lt;/span&gt;</code></pre>
+      </div>
+
+      <h3>Disabled Checkbox</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;label class="form-checkbox"&gt;
+  &lt;input type="checkbox" disabled&gt;
+  This option is unavailable
+&lt;/label&gt;</code></pre>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         COMPONENT — ICON BUTTON
+         ================================================================ -->
+    <section class="page" id="comp-icon-button">
+      <div class="page-breadcrumb">Components <span>/</span> Icon Button</div>
+      <h1>Icon Button</h1>
+      <p class="lead">A compact button containing only an icon, used for actions where the icon alone communicates intent.</p>
+
+      <!-- ---- OVERVIEW ---- -->
+      <h2>Overview</h2>
+      <p>Icon buttons are a density-optimized variant of the standard button. They remove the text label and use uniform padding on all sides so the button renders as a circle. Two variants exist: <strong>Primary</strong> (filled) and <strong>Outline</strong> (bordered). Three sizes (S, M, L) match the standard button size scale. Icons are rendered via Font Awesome 6 Free (Solid weight). Because there is no visible label, every Icon Button <strong>must</strong> have an <code>aria-label</code>.</p>
+
+      <!-- ---- VARIANTS ---- -->
+      <h2>Variants</h2>
+      <h3>Primary (Filled)</h3>
+      <p>Solid orange background with a lighter border. White icon. Same color token set as the standard Primary button.</p>
+
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <button class="btn btn-primary btn-icon-only btn-s" type="button"><i class="btn-icon fa-solid fa-circle-info"></i></button>
+        <button class="btn btn-primary btn-icon-only btn-m" type="button"><i class="btn-icon fa-solid fa-circle-info"></i></button>
+        <button class="btn btn-primary btn-icon-only btn-l" type="button"><i class="btn-icon fa-solid fa-circle-info"></i></button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Hover</span>
+        <button class="btn btn-primary btn-icon-only btn-s show-hover" type="button"><i class="btn-icon fa-solid fa-circle-info"></i></button>
+        <button class="btn btn-primary btn-icon-only btn-m show-hover" type="button"><i class="btn-icon fa-solid fa-circle-info"></i></button>
+        <button class="btn btn-primary btn-icon-only btn-l show-hover" type="button"><i class="btn-icon fa-solid fa-circle-info"></i></button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Focus</span>
+        <button class="btn btn-primary btn-icon-only btn-s show-focus" type="button"><i class="btn-icon fa-solid fa-circle-info"></i></button>
+        <button class="btn btn-primary btn-icon-only btn-m show-focus" type="button"><i class="btn-icon fa-solid fa-circle-info"></i></button>
+        <button class="btn btn-primary btn-icon-only btn-l show-focus" type="button"><i class="btn-icon fa-solid fa-circle-info"></i></button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Pressed</span>
+        <button class="btn btn-primary btn-icon-only btn-s show-pressed" type="button"><i class="btn-icon fa-solid fa-circle-info"></i></button>
+        <button class="btn btn-primary btn-icon-only btn-m show-pressed" type="button"><i class="btn-icon fa-solid fa-circle-info"></i></button>
+        <button class="btn btn-primary btn-icon-only btn-l show-pressed" type="button"><i class="btn-icon fa-solid fa-circle-info"></i></button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Disabled</span>
+        <button class="btn btn-primary btn-icon-only btn-s is-disabled" type="button" aria-disabled="true"><i class="btn-icon fa-solid fa-circle-info"></i></button>
+        <button class="btn btn-primary btn-icon-only btn-m is-disabled" type="button" aria-disabled="true"><i class="btn-icon fa-solid fa-circle-info"></i></button>
+        <button class="btn btn-primary btn-icon-only btn-l is-disabled" type="button" aria-disabled="true"><i class="btn-icon fa-solid fa-circle-info"></i></button>
+      </div>
+
+      <h3>Outline (Bordered)</h3>
+      <p>Page-color background with an orange border. Icon uses the action color. Same color token set as the standard Outline button.</p>
+
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <button class="btn btn-outline btn-icon-only btn-s" type="button"><i class="btn-icon fa-solid fa-circle-info"></i></button>
+        <button class="btn btn-outline btn-icon-only btn-m" type="button"><i class="btn-icon fa-solid fa-circle-info"></i></button>
+        <button class="btn btn-outline btn-icon-only btn-l" type="button"><i class="btn-icon fa-solid fa-circle-info"></i></button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Hover</span>
+        <button class="btn btn-outline btn-icon-only btn-s show-hover" type="button"><i class="btn-icon fa-solid fa-circle-info"></i></button>
+        <button class="btn btn-outline btn-icon-only btn-m show-hover" type="button"><i class="btn-icon fa-solid fa-circle-info"></i></button>
+        <button class="btn btn-outline btn-icon-only btn-l show-hover" type="button"><i class="btn-icon fa-solid fa-circle-info"></i></button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Focus</span>
+        <button class="btn btn-outline btn-icon-only btn-s show-focus" type="button"><i class="btn-icon fa-solid fa-circle-info"></i></button>
+        <button class="btn btn-outline btn-icon-only btn-m show-focus" type="button"><i class="btn-icon fa-solid fa-circle-info"></i></button>
+        <button class="btn btn-outline btn-icon-only btn-l show-focus" type="button"><i class="btn-icon fa-solid fa-circle-info"></i></button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Pressed</span>
+        <button class="btn btn-outline btn-icon-only btn-s show-pressed" type="button"><i class="btn-icon fa-solid fa-circle-info"></i></button>
+        <button class="btn btn-outline btn-icon-only btn-m show-pressed" type="button"><i class="btn-icon fa-solid fa-circle-info"></i></button>
+        <button class="btn btn-outline btn-icon-only btn-l show-pressed" type="button"><i class="btn-icon fa-solid fa-circle-info"></i></button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Disabled</span>
+        <button class="btn btn-outline btn-icon-only btn-s is-disabled" type="button" aria-disabled="true"><i class="btn-icon fa-solid fa-circle-info"></i></button>
+        <button class="btn btn-outline btn-icon-only btn-m is-disabled" type="button" aria-disabled="true"><i class="btn-icon fa-solid fa-circle-info"></i></button>
+        <button class="btn btn-outline btn-icon-only btn-l is-disabled" type="button" aria-disabled="true"><i class="btn-icon fa-solid fa-circle-info"></i></button>
+      </div>
+
+      <!-- ---- ACCESSIBILITY ---- -->
+      <h2>Accessibility Considerations</h2>
+      <p>WCAG 2.1 AA target. Because there is no visible text label, an accessible name is required.</p>
+
+      <h3>Keyboard Interactions</h3>
+      <table class="doc-table">
+        <thead><tr><th>Key</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td><code>Enter</code></td><td>Activates the button</td></tr>
+          <tr><td><code>Space</code></td><td>Activates the button</td></tr>
+          <tr><td><code>Tab</code></td><td>Moves focus to next focusable element</td></tr>
+        </tbody>
+      </table>
+
+      <h3>ARIA Requirements</h3>
+      <ul>
+        <li>Every icon button <strong>must</strong> include <code>aria-label</code> describing the action (e.g., <code>aria-label="More information"</code>).</li>
+        <li>If the icon button toggles state, use <code>aria-pressed</code> to communicate the current value.</li>
+        <li>Focus ring: same 2px solid, 6px outward offset, pill radius as the standard button.</li>
+      </ul>
+
+      <!-- ---- CONSTRUCTION ---- -->
+      <h2>Construction</h2>
+
+      <h3>Scale and Spacing</h3>
+      <table class="doc-table">
+        <thead><tr><th>Property</th><th>S</th><th>M</th><th>L</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Padding (all sides)</td><td>8px</td><td>12px</td><td>16px</td><td><code>Fixed/padding/s</code>, <code>s-m</code>, <code>m</code></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Styles</h3>
+      <table class="doc-table">
+        <thead><tr><th>State</th><th>Color</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Border radius</td><td>48px (pill, renders as circle)</td><td><code>Corner Radius/M button</code></td></tr>
+          <tr><td>Border width</td><td>2px</td><td><code>Border/Width/M action</code></td></tr>
+          <tr><td>Icon font (S, M)</td><td>FA6 Solid 16px/24px</td><td><code>Body/Icons/M icon</code></td></tr>
+          <tr><td>Icon font (L)</td><td>FA6 Solid 20px/28px</td><td><code>Body/Icons/L icon</code></td></tr>
+          <tr><td>Icon width</td><td>16px</td><td>Fixed</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Color Tokens</h3>
+      <p>Identical to the standard Button component. See the <a class="text-link text-link-m" href="#comp-button" data-page="comp-button"><span class="link-label">Button color token tables</span></a> for the full Primary and Outline state mappings.</p>
+
+      <!-- ---- APPLICATION & CONTEXT ---- -->
+      <h2>Application and Context</h2>
+
+      <h3>For Developers</h3>
+      <table class="doc-table">
+        <thead><tr><th>Attribute / Class</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><code>.btn-icon-only</code></td><td>Modifier class</td><td>&mdash;</td><td>Added alongside <code>.btn</code> and a variant/size class. Overrides padding to be uniform on all sides and sets icon line-height to 1, producing a circle.</td></tr>
+          <tr><td><code>aria-label</code></td><td>Attribute</td><td>&mdash;</td><td><strong>Required.</strong> Provides accessible name since there is no visible text.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>For Designers</h3>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Use icon buttons for well-understood actions (close, search, menu toggle) where the icon alone is unambiguous.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't use icon buttons for actions that require explanation. If users might not recognize the icon, use a standard button with a text label.</p>
+        </div>
+      </div>
+
+      <!-- ---- USAGE EXAMPLES ---- -->
+      <h2>Usage Examples</h2>
+
+      <h3>Basic</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;button class="btn btn-primary btn-icon-only btn-m"
+        type="button"
+        aria-label="More information"&gt;
+  &lt;i class="btn-icon fa-solid fa-circle-info"&gt;&lt;/i&gt;
+&lt;/button&gt;
+
+&lt;button class="btn btn-outline btn-icon-only btn-m"
+        type="button"
+        aria-label="More information"&gt;
+  &lt;i class="btn-icon fa-solid fa-circle-info"&gt;&lt;/i&gt;
+&lt;/button&gt;</code></pre>
+      </div>
+
+      <h3>All Sizes</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;button class="btn btn-primary btn-icon-only btn-s" aria-label="Info"&gt;
+  &lt;i class="btn-icon fa-solid fa-circle-info"&gt;&lt;/i&gt;
+&lt;/button&gt;
+&lt;button class="btn btn-primary btn-icon-only btn-m" aria-label="Info"&gt;
+  &lt;i class="btn-icon fa-solid fa-circle-info"&gt;&lt;/i&gt;
+&lt;/button&gt;
+&lt;button class="btn btn-primary btn-icon-only btn-l" aria-label="Info"&gt;
+  &lt;i class="btn-icon fa-solid fa-circle-info"&gt;&lt;/i&gt;
+&lt;/button&gt;</code></pre>
+      </div>
+
+      <h3>Disabled</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;button class="btn btn-primary btn-icon-only btn-m"
+        disabled aria-disabled="true" aria-label="Info"&gt;
+  &lt;i class="btn-icon fa-solid fa-circle-info"&gt;&lt;/i&gt;
+&lt;/button&gt;</code></pre>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         COMPONENT — RADIO BUTTON
+         ================================================================ -->
+    <section class="page" id="comp-radio-button">
+      <div class="page-breadcrumb">Components <span>/</span> Radio Button</div>
+      <h1>Radio Button</h1>
+      <p class="lead">A form control that allows users to select exactly one option from a mutually exclusive set. Pairs a 24px circular indicator with an optional text label.</p>
+
+      <!-- ---- OVERVIEW ---- -->
+      <h2>Overview</h2>
+      <p>The radio button is a single-select control used inside groups of two or more options. When selected, it displays a small white dot centered inside an action-colored fill. When unselected, it renders as a bordered empty circle. The component supports five states (default, hover, focus, disabled, error) across both selected and unselected types. An optional label sits to the right with an 8px gap. The container has 4px vertical padding to provide comfortable touch/click targets.</p>
+
+      <!-- ---- VARIANTS ---- -->
+      <h2>Variants</h2>
+
+      <h3>Unselected</h3>
+      <p>Empty circle with action-colored border. Shows the available selection target.</p>
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <label class="form-radio"><input type="radio" name="rb-unsel"></label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Hover</span>
+        <label class="form-radio"><input type="radio" name="rb-unsel-h" class="show-hover"></label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Focus</span>
+        <label class="form-radio"><input type="radio" name="rb-unsel-f" class="show-focus"></label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Disabled</span>
+        <label class="form-radio"><input type="radio" name="rb-unsel-d" class="is-disabled" disabled></label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Error</span>
+        <label class="form-radio"><input type="radio" name="rb-unsel-e" class="has-error"></label>
+      </div>
+
+      <h3>Selected</h3>
+      <p>Filled circle with a centered white dot. The action-colored background confirms the selection.</p>
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <label class="form-radio"><input type="radio" name="rb-sel" checked></label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Hover</span>
+        <label class="form-radio"><input type="radio" name="rb-sel-h" checked class="show-hover"></label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Focus</span>
+        <label class="form-radio"><input type="radio" name="rb-sel-f" checked class="show-focus"></label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Disabled</span>
+        <label class="form-radio"><input type="radio" name="rb-sel-d" checked class="is-disabled" disabled></label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Error</span>
+        <label class="form-radio"><input type="radio" name="rb-sel-e" checked class="has-error"></label>
+      </div>
+
+      <h3>With Label</h3>
+      <p>Radio button paired with a Body M label (Lato Regular, 16px/24px) at an 8px gap.</p>
+      <div class="state-row">
+        <span class="state-label">Unselected</span>
+        <label class="form-radio"><input type="radio" name="rb-label"> Radio Button Label</label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Selected</span>
+        <label class="form-radio"><input type="radio" name="rb-label" checked> Radio Button Label</label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Disabled</span>
+        <label class="form-radio"><input type="radio" name="rb-label-d" disabled class="is-disabled"> Radio Button Label</label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Error</span>
+        <label class="form-radio"><input type="radio" name="rb-label-e" class="has-error"> Radio Button Label</label>
+      </div>
+
+      <!-- ---- ACCESSIBILITY ---- -->
+      <h2>Accessibility Considerations</h2>
+      <p>WCAG 2.1 AA target. Radio buttons must be operable by keyboard and clearly communicate their selected/unselected state to assistive technology.</p>
+
+      <h3>Keyboard Interactions</h3>
+      <table class="doc-table">
+        <thead><tr><th>Key</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td><code>Tab</code></td><td>Moves focus into the radio group (to the selected item, or the first item if none selected)</td></tr>
+          <tr><td><code>Arrow Down / Right</code></td><td>Selects the next radio button in the group</td></tr>
+          <tr><td><code>Arrow Up / Left</code></td><td>Selects the previous radio button in the group</td></tr>
+          <tr><td><code>Space</code></td><td>Selects the focused radio button (if not already selected)</td></tr>
+        </tbody>
+      </table>
+
+      <h3>ARIA and Semantics</h3>
+      <ul>
+        <li>Use native <code>&lt;input type="radio"&gt;</code> inside a <code>&lt;label&gt;</code> for automatic association. All radios in a group must share the same <code>name</code> attribute.</li>
+        <li>Wrap the group in a <code>&lt;fieldset&gt;</code> with a <code>&lt;legend&gt;</code> describing the question or category.</li>
+        <li>For custom implementations, use <code>role="radiogroup"</code> on the container and <code>role="radio"</code> with <code>aria-checked</code> on each option.</li>
+        <li>Error state should be paired with <code>aria-describedby</code> pointing to an error message element and <code>aria-invalid="true"</code> on the input.</li>
+        <li>Disabled radio buttons use the native <code>disabled</code> attribute, which removes them from tab order.</li>
+        <li>Focus ring: 2px solid <code>--border-action</code>, 2px offset, fully rounded.</li>
+      </ul>
+
+      <!-- ---- CONSTRUCTION ---- -->
+      <h2>Construction</h2>
+
+      <h3>Scale and Spacing</h3>
+      <table class="doc-table">
+        <thead><tr><th>Property</th><th>Value</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Radio button size</td><td>24 x 24px</td><td><code>--space-300</code></td></tr>
+          <tr><td>Inner dot size</td><td>8 x 8px</td><td><code>--space-100</code></td></tr>
+          <tr><td>Border width</td><td>1px</td><td><code>--space-10</code></td></tr>
+          <tr><td>Border radius</td><td>104px (fully round)</td><td><code>--radius-xxl</code> / 104px</td></tr>
+          <tr><td>Radio-to-label gap</td><td>8px</td><td><code>--space-100</code></td></tr>
+          <tr><td>Container vertical padding</td><td>4px</td><td><code>--space-50</code></td></tr>
+          <tr><td>Focus ring offset</td><td>2px</td><td>n/a</td></tr>
+          <tr><td>Focus ring width</td><td>2px</td><td>n/a</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Styles</h3>
+      <table class="doc-table">
+        <thead><tr><th>Property</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>Inner dot</td><td>8px circle, centered via absolute positioning</td></tr>
+          <tr><td>Label font</td><td>Lato Regular (400), 16px/24px</td></tr>
+          <tr><td>Label color</td><td><code>--text-body</code> (#464646)</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Color Tokens</h3>
+      <table class="doc-table">
+        <thead><tr><th>State</th><th>Background</th><th>Border</th><th>Dot</th></tr></thead>
+        <tbody>
+          <tr><td>Default (unselected)</td><td><code>--surface-default-container</code></td><td><code>--border-action</code></td><td>n/a</td></tr>
+          <tr><td>Default (selected)</td><td><code>--surface-action</code></td><td><code>--border-action</code></td><td>white</td></tr>
+          <tr><td>Hover</td><td><code>--surface-action-hover</code></td><td><code>--border-action-hover</code></td><td><code>--text-action-hover</code></td></tr>
+          <tr><td>Focus</td><td>(same as default)</td><td>(same as default)</td><td>(same as default)</td></tr>
+          <tr><td>Disabled</td><td><code>--surface-disabled</code></td><td><code>--border-disabled</code></td><td>white</td></tr>
+          <tr><td>Error</td><td><code>--surface-error</code></td><td><code>--border-error</code></td><td><code>--text-status-error</code></td></tr>
+        </tbody>
+      </table>
+
+      <!-- ---- APPLICATION & CONTEXT ---- -->
+      <h2>Application and Context</h2>
+
+      <h3>For Developers</h3>
+      <table class="doc-table">
+        <thead><tr><th>Attribute / Class</th><th>Type</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><code>.form-radio</code></td><td>Container</td><td>Wrapping <code>&lt;label&gt;</code>. Flex row with 8px gap and 4px vertical padding.</td></tr>
+          <tr><td><code>input[type="radio"]</code></td><td>Element</td><td>Native radio with <code>appearance: none</code> for custom styling. All radios in a group share the same <code>name</code>.</td></tr>
+          <tr><td><code>checked</code></td><td>Attribute</td><td>Native checked state. Fills background and shows inner dot via <code>::after</code>.</td></tr>
+          <tr><td><code>disabled</code></td><td>Attribute</td><td>Native disabled. Grays out and removes from tab order.</td></tr>
+          <tr><td><code>.has-error</code></td><td>Modifier</td><td>Added to the <code>&lt;input&gt;</code>. Applies error surface/border/dot colors.</td></tr>
+          <tr><td><code>.is-disabled</code></td><td>Modifier</td><td>Visual-only disabled state for documentation previews.</td></tr>
+          <tr><td><code>.show-hover</code></td><td>Modifier</td><td>Forces hover appearance for documentation previews.</td></tr>
+          <tr><td><code>.show-focus</code></td><td>Modifier</td><td>Forces focus ring for documentation previews.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>For Designers</h3>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Use radio buttons when users must select exactly one option from a mutually exclusive set of two or more choices.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't use radio buttons for multi-select scenarios. Use checkboxes instead.</p>
+        </div>
+      </div>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Always group radios inside a <code>&lt;fieldset&gt;</code> with a descriptive <code>&lt;legend&gt;</code> so the question context is clear.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't pre-select a radio option unless there is a sensible default. An empty initial state forces a deliberate choice.</p>
+        </div>
+      </div>
+
+      <!-- ---- SPACING GUIDANCE ---- -->
+      <h2>Spacing Guidance</h2>
+      <table class="doc-table">
+        <thead><tr><th>Context</th><th>Property</th><th>Value</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Radio to label</td><td>gap</td><td>8px</td><td><code>--space-100</code></td></tr>
+          <tr><td>Between stacked radios</td><td>gap / margin-bottom</td><td>8-16px</td><td><code>--space-100</code> to <code>--space-200</code></td></tr>
+          <tr><td>Radio group to next field</td><td>margin-bottom</td><td>24px</td><td><code>--space-300</code></td></tr>
+          <tr><td>Container vertical padding</td><td>padding-top / padding-bottom</td><td>4px</td><td><code>--space-50</code></td></tr>
+        </tbody>
+      </table>
+
+      <!-- ---- USAGE EXAMPLES ---- -->
+      <h2>Usage Examples</h2>
+
+      <h3>Radio Group with Fieldset</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;fieldset&gt;
+  &lt;legend&gt;Preferred contact method&lt;/legend&gt;
+  &lt;label class="form-radio"&gt;
+    &lt;input type="radio" name="contact" value="email"&gt;
+    Email
+  &lt;/label&gt;
+  &lt;label class="form-radio"&gt;
+    &lt;input type="radio" name="contact" value="phone"&gt;
+    Phone
+  &lt;/label&gt;
+  &lt;label class="form-radio"&gt;
+    &lt;input type="radio" name="contact" value="text"&gt;
+    Text message
+  &lt;/label&gt;
+&lt;/fieldset&gt;</code></pre>
+      </div>
+
+      <h3>Pre-selected Option</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;fieldset&gt;
+  &lt;legend&gt;Frequency&lt;/legend&gt;
+  &lt;label class="form-radio"&gt;
+    &lt;input type="radio" name="freq" value="daily" checked&gt;
+    Daily
+  &lt;/label&gt;
+  &lt;label class="form-radio"&gt;
+    &lt;input type="radio" name="freq" value="weekly"&gt;
+    Weekly
+  &lt;/label&gt;
+&lt;/fieldset&gt;</code></pre>
+      </div>
+
+      <h3>Error State with Message</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;fieldset aria-describedby="rb-err"&gt;
+  &lt;legend&gt;Select a plan&lt;/legend&gt;
+  &lt;label class="form-radio"&gt;
+    &lt;input type="radio" name="plan" value="basic"
+           class="has-error" aria-invalid="true"&gt;
+    Basic
+  &lt;/label&gt;
+  &lt;label class="form-radio"&gt;
+    &lt;input type="radio" name="plan" value="pro"
+           class="has-error" aria-invalid="true"&gt;
+    Pro
+  &lt;/label&gt;
+&lt;/fieldset&gt;
+&lt;span id="rb-err" class="input-hint hint-error"&gt;
+  Please select a plan to continue.
+&lt;/span&gt;</code></pre>
+      </div>
+
+      <h3>Disabled Radio</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;label class="form-radio"&gt;
+  &lt;input type="radio" name="tier" value="enterprise" disabled&gt;
+  Enterprise (coming soon)
+&lt;/label&gt;</code></pre>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         COMPONENT — TEXT LINK
+         ================================================================ -->
+    <section class="page" id="comp-text-link">
+      <div class="page-breadcrumb">Components <span>/</span> Text Link</div>
+      <h1>Text Link</h1>
+      <p class="lead">An inline interactive element that navigates users to another page or section. Two distinct components: <strong>Body Link (M)</strong> uses the action color for in-content links, and <strong>Small Link (S)</strong> uses body or status colors for navigation and contextual links.</p>
+
+      <!-- ---- OVERVIEW ---- -->
+      <h2>Overview</h2>
+      <p>Text links sit within running text or stand alone as navigation aids. Both sizes support optional left and right Font Awesome icons. On hover, only the text label underlines (icons never receive an underline). The S size includes status type variants (information, success, error) that use semantic color tokens, plus an <strong>active</strong> variant with a persistent underline for current-page indicators. A <strong>Breadcrumb</strong> pattern composes Small Links with a home icon, chevron separators, and an underlined current-page crumb.</p>
+
+      <!-- ---- VARIANTS ---- -->
+      <h2>Variants</h2>
+
+      <h3>Body Link (M)</h3>
+      <p>Lato Bold, 16px/24px, action-colored. Used alongside Body M text. Optional left/right icons.</p>
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <a class="text-link text-link-m" href="javascript:void(0)"><i class="link-icon fa-solid fa-arrow-left"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Hover</span>
+        <a class="text-link text-link-m show-hover" href="javascript:void(0)"><i class="link-icon fa-solid fa-arrow-left"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Pressed</span>
+        <a class="text-link text-link-m show-pressed" href="javascript:void(0)"><i class="link-icon fa-solid fa-arrow-left"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Disabled</span>
+        <span class="text-link text-link-m is-disabled"><i class="link-icon fa-solid fa-arrow-left"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-right"></i></span>
+      </div>
+
+      <h3>Small Link (S) - Default</h3>
+      <p>Lato Bold, 14px/20px, body-colored. Used alongside Body S text for navigation and secondary links.</p>
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <a class="text-link text-link-s" href="javascript:void(0)"><i class="link-icon fa-solid fa-arrow-left"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Hover</span>
+        <a class="text-link text-link-s show-hover" href="javascript:void(0)"><i class="link-icon fa-solid fa-arrow-left"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Pressed</span>
+        <a class="text-link text-link-s show-pressed" href="javascript:void(0)"><i class="link-icon fa-solid fa-arrow-left"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Disabled</span>
+        <span class="text-link text-link-s is-disabled"><i class="link-icon fa-solid fa-arrow-left"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-right"></i></span>
+      </div>
+
+      <h3>Small Link (S) - Active</h3>
+      <p>Persistent underline on the label text. Used for current-page indicators in navigation.</p>
+      <div class="state-row">
+        <span class="state-label">Active</span>
+        <a class="text-link text-link-s active" href="javascript:void(0)"><i class="link-icon fa-solid fa-arrow-left"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <h3>Small Link (S) - Information</h3>
+      <p>Uses the <code>--text-status-information</code> color for contextual informational links.</p>
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <a class="text-link text-link-s type-information" href="javascript:void(0)"><i class="link-icon fa-solid fa-arrow-left"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Hover</span>
+        <a class="text-link text-link-s type-information show-hover" href="javascript:void(0)"><i class="link-icon fa-solid fa-arrow-left"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <h3>Small Link (S) - Success</h3>
+      <p>Uses the <code>--text-status-success</code> color for positive-outcome links.</p>
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <a class="text-link text-link-s type-success" href="javascript:void(0)"><i class="link-icon fa-solid fa-arrow-left"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Hover</span>
+        <a class="text-link text-link-s type-success show-hover" href="javascript:void(0)"><i class="link-icon fa-solid fa-arrow-left"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <h3>Small Link (S) - Error</h3>
+      <p>Uses the <code>--text-status-error</code> color for destructive or error-context links.</p>
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <a class="text-link text-link-s type-error" href="javascript:void(0)"><i class="link-icon fa-solid fa-arrow-left"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Hover</span>
+        <a class="text-link text-link-s type-error show-hover" href="javascript:void(0)"><i class="link-icon fa-solid fa-arrow-left"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <h3>Breadcrumb</h3>
+      <p>A composed pattern of Small Link S elements with a home icon, chevron-right separators, and an underlined current-page crumb.</p>
+      <div class="state-row">
+        <span class="state-label">Example</span>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a class="breadcrumb-item" href="javascript:void(0)"><i class="breadcrumb-icon fa-solid fa-house"></i><span>Home</span></a>
+          <i class="breadcrumb-separator fa-solid fa-chevron-right"></i>
+          <a class="breadcrumb-item" href="javascript:void(0)"><span>Components</span></a>
+          <i class="breadcrumb-separator fa-solid fa-chevron-right"></i>
+          <a class="breadcrumb-item" href="javascript:void(0)"><span>Links</span></a>
+          <i class="breadcrumb-separator fa-solid fa-chevron-right"></i>
+          <a class="breadcrumb-item current" href="javascript:void(0)"><span class="link-label">Text Link</span></a>
+        </nav>
+      </div>
+
+      <!-- ---- ACCESSIBILITY ---- -->
+      <h2>Accessibility Considerations</h2>
+      <p>WCAG 2.1 AA target. Links must be distinguishable from surrounding body text by more than color alone.</p>
+
+      <h3>Keyboard Interactions</h3>
+      <table class="doc-table">
+        <thead><tr><th>Key</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td><code>Enter</code></td><td>Follows the link</td></tr>
+          <tr><td><code>Tab</code></td><td>Moves focus to next focusable element</td></tr>
+          <tr><td><code>Shift+Tab</code></td><td>Moves focus to previous focusable element</td></tr>
+        </tbody>
+      </table>
+
+      <h3>ARIA and Semantics</h3>
+      <ul>
+        <li>Use native <code>&lt;a href&gt;</code> elements for navigation links. Use <code>&lt;button&gt;</code> styled as a text link for in-page actions.</li>
+        <li>The bold weight (700) on M and S sizes provides a secondary visual cue beyond color, aiding color-blind users.</li>
+        <li>Focus indicator: 2px solid outline in <code>--surface-action</code>, 2px offset.</li>
+        <li>Disabled links should use a <code>&lt;span&gt;</code> instead of <code>&lt;a&gt;</code> to remove from the tab order, or use <code>aria-disabled="true"</code> with <code>tabindex="-1"</code>.</li>
+        <li>Breadcrumb navigation should use <code>&lt;nav aria-label="Breadcrumb"&gt;</code>. The current page crumb uses <code>aria-current="page"</code>.</li>
+      </ul>
+
+      <!-- ---- CONSTRUCTION ---- -->
+      <h2>Construction</h2>
+
+      <h3>Typography</h3>
+      <table class="doc-table">
+        <thead><tr><th>Size</th><th>Font</th><th>Weight</th><th>Size / Line Height</th><th>Letter Spacing</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>M (Body Link)</td><td>Lato</td><td>Bold (700)</td><td>16px / 24px</td><td>1%</td><td><code>Body/Text Links/M link</code></td></tr>
+          <tr><td>S (Small Link)</td><td>Lato</td><td>Bold (700)</td><td>14px / 20px</td><td>0%</td><td><code>Body/Text Links/S link</code></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Color Tokens</h3>
+      <table class="doc-table">
+        <thead><tr><th>Variant</th><th>Default</th><th>Hover</th><th>Token Prefix</th></tr></thead>
+        <tbody>
+          <tr><td>Body Link (M)</td><td>#e96620</td><td>#f78958</td><td><code>Text/Action</code></td></tr>
+          <tr><td>Small Link - Default</td><td>#464646</td><td>#f78958</td><td><code>Text/Body</code> / <code>Text/Action</code></td></tr>
+          <tr><td>Small Link - Information</td><td>#097892</td><td>#3a90a9</td><td><code>Text/Status/information</code></td></tr>
+          <tr><td>Small Link - Success</td><td>#438558</td><td>#609c71</td><td><code>Text/Status/success</code></td></tr>
+          <tr><td>Small Link - Error</td><td>#de515e</td><td>#ed6f76</td><td><code>Text/Status/error</code></td></tr>
+          <tr><td>Disabled</td><td>#464646 on #e9e9e9</td><td>n/a</td><td><code>Text/Body</code> + <code>Border/default</code></td></tr>
+        </tbody>
+      </table>
+
+      <!-- ---- APPLICATION & CONTEXT ---- -->
+      <h2>Application and Context</h2>
+
+      <h3>For Developers</h3>
+      <table class="doc-table">
+        <thead><tr><th>Attribute / Class</th><th>Type</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><code>.text-link</code></td><td>Base class</td><td>Applied to <code>&lt;a&gt;</code> or <code>&lt;button&gt;</code>. Uses <code>display: inline-flex</code> with gap.</td></tr>
+          <tr><td><code>.text-link-m</code></td><td>Size class</td><td>Body Link. Action color, 16px/24px, bold.</td></tr>
+          <tr><td><code>.text-link-s</code></td><td>Size class</td><td>Small Link. Body color, 14px/20px, bold.</td></tr>
+          <tr><td><code>.link-label</code></td><td>Element</td><td><strong>Required.</strong> Wrap the text in <code>&lt;span class="link-label"&gt;</code> so hover underline only applies to the text, not icons.</td></tr>
+          <tr><td><code>.link-icon</code></td><td>Element</td><td>Font Awesome icon inside the link. Never receives underline.</td></tr>
+          <tr><td><code>.active</code></td><td>Modifier</td><td>S size only. Persistent underline on <code>.link-label</code> for current-page state.</td></tr>
+          <tr><td><code>.type-information</code> / <code>.type-success</code> / <code>.type-error</code></td><td>Modifier</td><td>S size only. Applies semantic status color.</td></tr>
+          <tr><td><code>.is-disabled</code></td><td>State</td><td>Use on a <code>&lt;span&gt;</code> (not <code>&lt;a&gt;</code>) to remove from tab order.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>For Designers</h3>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Match the text link size to the surrounding body text: Body Link M with Body M text, Small Link S with Body S text.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't rely on color alone to indicate a link. The bold weight and hover underline provide secondary cues.</p>
+        </div>
+      </div>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Use status type variants (information, success, error) when the link meaning aligns with a system status.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't underline all text links by default. Reserve underline for the active/current-page state or hover feedback.</p>
+        </div>
+      </div>
+
+      <!-- ---- USAGE EXAMPLES ---- -->
+      <h2>Usage Examples</h2>
+
+      <h3>Body Link with Icons</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;a class="text-link text-link-m" href="/guidelines"&gt;
+  &lt;i class="link-icon fa-solid fa-arrow-left"&gt;&lt;/i&gt;
+  &lt;span class="link-label"&gt;Design guidelines&lt;/span&gt;
+  &lt;i class="link-icon fa-solid fa-arrow-right"&gt;&lt;/i&gt;
+&lt;/a&gt;</code></pre>
+      </div>
+
+      <h3>Text-Only Link (No Icons)</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;a class="text-link text-link-m" href="/guidelines"&gt;
+  &lt;span class="link-label"&gt;Design guidelines&lt;/span&gt;
+&lt;/a&gt;</code></pre>
+      </div>
+
+      <h3>Small Link with Status Type</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;a class="text-link text-link-s type-information" href="/status"&gt;
+  &lt;i class="link-icon fa-solid fa-circle-info"&gt;&lt;/i&gt;
+  &lt;span class="link-label"&gt;View details&lt;/span&gt;
+&lt;/a&gt;</code></pre>
+      </div>
+
+      <h3>Breadcrumb Navigation</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;nav class="breadcrumb" aria-label="Breadcrumb"&gt;
+  &lt;a class="breadcrumb-item" href="/"&gt;
+    &lt;i class="breadcrumb-icon fa-solid fa-house"&gt;&lt;/i&gt;
+    &lt;span&gt;Home&lt;/span&gt;
+  &lt;/a&gt;
+  &lt;i class="breadcrumb-separator fa-solid fa-chevron-right"&gt;&lt;/i&gt;
+  &lt;a class="breadcrumb-item" href="/components"&gt;
+    &lt;span&gt;Components&lt;/span&gt;
+  &lt;/a&gt;
+  &lt;i class="breadcrumb-separator fa-solid fa-chevron-right"&gt;&lt;/i&gt;
+  &lt;a class="breadcrumb-item current" href="/text-link" aria-current="page"&gt;
+    &lt;span class="link-label"&gt;Text Link&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+      </div>
+
+      <h3>Disabled Link</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;span class="text-link text-link-m is-disabled" aria-disabled="true"&gt;
+  &lt;i class="link-icon fa-solid fa-arrow-left"&gt;&lt;/i&gt;
+  &lt;span class="link-label"&gt;Unavailable link&lt;/span&gt;
+  &lt;i class="link-icon fa-solid fa-arrow-right"&gt;&lt;/i&gt;
+&lt;/span&gt;</code></pre>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         COMPONENT — TOGGLE
+         ================================================================ -->
+    <section class="page" id="comp-toggle">
+      <div class="page-breadcrumb">Components <span>/</span> Toggle</div>
+      <h1>Toggle</h1>
+      <p class="lead">A binary switch that lets users turn a setting on or off with immediate effect. Pairs a 64x32 track with a sliding 24px knob and an optional text label.</p>
+
+      <!-- ---- OVERVIEW ---- -->
+      <h2>Overview</h2>
+      <p>The toggle (also called a switch) is a binary control for settings that take effect immediately. Unlike a checkbox, which typically requires a form submission, a toggle communicates instant state change. When "on," the knob slides to the right and the track fills with the action color. When "off," the knob rests on the left with a neutral track. The component supports four states (default, hover, focus, disabled) across both on and off positions. An optional label sits to the right with an 8px gap.</p>
+
+      <!-- ---- VARIANTS ---- -->
+      <h2>Variants</h2>
+
+      <h3>Off (Unselected)</h3>
+      <p>Neutral track with action-colored border. Knob rests at the left edge.</p>
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <label class="form-toggle"><input type="checkbox"><span class="toggle-track"><span class="toggle-knob"></span></span></label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Hover</span>
+        <label class="form-toggle"><input type="checkbox"><span class="toggle-track show-hover"><span class="toggle-knob"></span></span></label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Focus</span>
+        <label class="form-toggle"><input type="checkbox"><span class="toggle-track show-focus"><span class="toggle-knob"></span></span></label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Disabled</span>
+        <label class="form-toggle"><input type="checkbox" disabled><span class="toggle-track is-disabled"><span class="toggle-knob"></span></span></label>
+      </div>
+
+      <h3>On (Selected)</h3>
+      <p>Action-colored track with the knob slid to the right. Confirms the setting is active.</p>
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <label class="form-toggle"><input type="checkbox" checked><span class="toggle-track"><span class="toggle-knob"></span></span></label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Hover</span>
+        <label class="form-toggle"><input type="checkbox"><span class="toggle-track show-hover show-checked"><span class="toggle-knob"></span></span></label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Focus</span>
+        <label class="form-toggle"><input type="checkbox"><span class="toggle-track show-focus show-checked"><span class="toggle-knob"></span></span></label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Disabled</span>
+        <label class="form-toggle"><input type="checkbox" disabled><span class="toggle-track is-disabled show-checked"><span class="toggle-knob"></span></span></label>
+      </div>
+
+      <h3>With Label</h3>
+      <p>Toggle paired with a Body M label (Lato Regular, 16px/24px) at an 8px gap.</p>
+      <div class="state-row">
+        <span class="state-label">Off</span>
+        <label class="form-toggle"><input type="checkbox"><span class="toggle-track"><span class="toggle-knob"></span></span> Toggle switch</label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">On</span>
+        <label class="form-toggle"><input type="checkbox" checked><span class="toggle-track"><span class="toggle-knob"></span></span> Toggle switch</label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Disabled</span>
+        <label class="form-toggle"><input type="checkbox" disabled><span class="toggle-track is-disabled"><span class="toggle-knob"></span></span> Toggle switch</label>
+      </div>
+
+      <!-- ---- ACCESSIBILITY ---- -->
+      <h2>Accessibility Considerations</h2>
+      <p>WCAG 2.1 AA target. The toggle must communicate its on/off state to assistive technology and be fully operable by keyboard.</p>
+
+      <h3>Keyboard Interactions</h3>
+      <table class="doc-table">
+        <thead><tr><th>Key</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td><code>Space</code></td><td>Toggles the switch between on and off</td></tr>
+          <tr><td><code>Tab</code></td><td>Moves focus to the next focusable element</td></tr>
+          <tr><td><code>Shift+Tab</code></td><td>Moves focus to the previous focusable element</td></tr>
+        </tbody>
+      </table>
+
+      <h3>ARIA and Semantics</h3>
+      <ul>
+        <li>Uses a visually hidden <code>&lt;input type="checkbox"&gt;</code> under the hood, which provides native checked/unchecked semantics to screen readers.</li>
+        <li>Add <code>role="switch"</code> to the input for AT that distinguishes switches from checkboxes. The checked state maps to <code>aria-checked</code>.</li>
+        <li>The wrapping <code>&lt;label&gt;</code> automatically associates the text with the control.</li>
+        <li>Disabled toggles use the native <code>disabled</code> attribute, which removes them from tab order.</li>
+        <li>Focus ring: 2px solid <code>--border-action</code>, 3px offset, fully rounded to match the track shape.</li>
+      </ul>
+
+      <!-- ---- CONSTRUCTION ---- -->
+      <h2>Construction</h2>
+
+      <h3>Scale and Spacing</h3>
+      <table class="doc-table">
+        <thead><tr><th>Property</th><th>Value</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Track width</td><td>64px</td><td>n/a</td></tr>
+          <tr><td>Track height</td><td>32px</td><td><code>--space-400</code></td></tr>
+          <tr><td>Knob size</td><td>24 x 24px</td><td><code>--space-300</code></td></tr>
+          <tr><td>Track padding</td><td>4px</td><td><code>--space-50</code></td></tr>
+          <tr><td>Border width</td><td>1px</td><td><code>--space-10</code></td></tr>
+          <tr><td>Border radius</td><td>104px (fully round)</td><td>n/a</td></tr>
+          <tr><td>Knob travel distance</td><td>32px (translateX)</td><td>n/a</td></tr>
+          <tr><td>Toggle-to-label gap</td><td>8px</td><td><code>--space-100</code></td></tr>
+          <tr><td>Focus ring offset</td><td>3px</td><td>n/a</td></tr>
+          <tr><td>Focus ring width</td><td>2px</td><td>n/a</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Styles</h3>
+      <table class="doc-table">
+        <thead><tr><th>Property</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>Knob shape</td><td>Circle (border-radius: 50%)</td></tr>
+          <tr><td>Knob shadow (default)</td><td>0 1px 3px rgba(0,0,0,0.15)</td></tr>
+          <tr><td>Transition</td><td>0.2s ease on background, border-color, transform</td></tr>
+          <tr><td>Label font</td><td>Lato Regular (400), 16px/24px</td></tr>
+          <tr><td>Label color</td><td><code>--text-body</code> (#464646)</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Color Tokens</h3>
+      <table class="doc-table">
+        <thead><tr><th>State</th><th>Track Background</th><th>Track Border</th><th>Knob</th></tr></thead>
+        <tbody>
+          <tr><td>Off (default)</td><td><code>--surface-default-container</code></td><td><code>--border-action</code></td><td>white</td></tr>
+          <tr><td>On (default)</td><td><code>--surface-action</code></td><td><code>--border-action</code></td><td>white</td></tr>
+          <tr><td>Hover</td><td><code>--surface-action-hover</code></td><td><code>--border-action-hover</code></td><td><code>--border-action-hover</code></td></tr>
+          <tr><td>Focus</td><td>(same as default)</td><td>(same as default)</td><td>(same as default)</td></tr>
+          <tr><td>Disabled</td><td><code>--surface-disabled</code></td><td><code>--border-disabled</code></td><td><code>--border-disabled</code></td></tr>
+        </tbody>
+      </table>
+
+      <!-- ---- APPLICATION & CONTEXT ---- -->
+      <h2>Application and Context</h2>
+
+      <h3>For Developers</h3>
+      <table class="doc-table">
+        <thead><tr><th>Attribute / Class</th><th>Type</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><code>.form-toggle</code></td><td>Container</td><td>Wrapping <code>&lt;label&gt;</code>. Flex row with 8px gap.</td></tr>
+          <tr><td><code>input[type="checkbox"]</code></td><td>Element</td><td>Visually hidden native checkbox. Drives checked state via CSS sibling selectors.</td></tr>
+          <tr><td><code>.toggle-track</code></td><td>Element</td><td>The 64x32 pill-shaped track. Styled via adjacent sibling of the hidden input.</td></tr>
+          <tr><td><code>.toggle-knob</code></td><td>Element</td><td>The 24px circular knob inside the track. Slides right on checked.</td></tr>
+          <tr><td><code>checked</code></td><td>Attribute</td><td>Native checked. Fills track with action color and slides knob to the right.</td></tr>
+          <tr><td><code>disabled</code></td><td>Attribute</td><td>Native disabled. Grays out track and knob.</td></tr>
+          <tr><td><code>role="switch"</code></td><td>Attribute</td><td>Recommended. Tells screen readers this is a switch, not a checkbox.</td></tr>
+          <tr><td><code>.show-hover</code></td><td>Modifier (track)</td><td>Forces hover appearance on the track for documentation previews.</td></tr>
+          <tr><td><code>.show-focus</code></td><td>Modifier (track)</td><td>Forces focus ring on the track for documentation previews.</td></tr>
+          <tr><td><code>.is-disabled</code></td><td>Modifier (track)</td><td>Visual-only disabled state for documentation previews.</td></tr>
+          <tr><td><code>.show-checked</code></td><td>Modifier (track)</td><td>Forces checked appearance on the track for documentation previews.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>For Designers</h3>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Use a toggle for binary settings that take effect immediately (e.g., "Enable notifications," "Dark mode").</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't use a toggle when the change requires a form submission to take effect. Use a checkbox instead.</p>
+        </div>
+      </div>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Always provide a visible label. Position it to the right of the toggle for left-to-right reading flow.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't place toggles in a long vertical list for multi-select scenarios. Use checkboxes for that pattern.</p>
+        </div>
+      </div>
+
+      <!-- ---- SPACING GUIDANCE ---- -->
+      <h2>Spacing Guidance</h2>
+      <table class="doc-table">
+        <thead><tr><th>Context</th><th>Property</th><th>Value</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Toggle to label</td><td>gap</td><td>8px</td><td><code>--space-100</code></td></tr>
+          <tr><td>Between stacked toggles</td><td>gap / margin-bottom</td><td>16-24px</td><td><code>--space-200</code> to <code>--space-300</code></td></tr>
+          <tr><td>Toggle group to next section</td><td>margin-bottom</td><td>24px</td><td><code>--space-300</code></td></tr>
+        </tbody>
+      </table>
+
+      <!-- ---- USAGE EXAMPLES ---- -->
+      <h2>Usage Examples</h2>
+
+      <h3>Basic Toggle with Label</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;label class="form-toggle"&gt;
+  &lt;input type="checkbox" role="switch"&gt;
+  &lt;span class="toggle-track"&gt;
+    &lt;span class="toggle-knob"&gt;&lt;/span&gt;
+  &lt;/span&gt;
+  Enable notifications
+&lt;/label&gt;</code></pre>
+      </div>
+
+      <h3>Pre-checked Toggle</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;label class="form-toggle"&gt;
+  &lt;input type="checkbox" role="switch" checked&gt;
+  &lt;span class="toggle-track"&gt;
+    &lt;span class="toggle-knob"&gt;&lt;/span&gt;
+  &lt;/span&gt;
+  Dark mode
+&lt;/label&gt;</code></pre>
+      </div>
+
+      <h3>Disabled Toggle</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;label class="form-toggle"&gt;
+  &lt;input type="checkbox" role="switch" disabled&gt;
+  &lt;span class="toggle-track"&gt;
+    &lt;span class="toggle-knob"&gt;&lt;/span&gt;
+  &lt;/span&gt;
+  Feature unavailable
+&lt;/label&gt;</code></pre>
+      </div>
+
+      <h3>Settings Group</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;fieldset&gt;
+  &lt;legend&gt;Notification preferences&lt;/legend&gt;
+  &lt;label class="form-toggle"&gt;
+    &lt;input type="checkbox" role="switch" checked&gt;
+    &lt;span class="toggle-track"&gt;
+      &lt;span class="toggle-knob"&gt;&lt;/span&gt;
+    &lt;/span&gt;
+    Email notifications
+  &lt;/label&gt;
+  &lt;label class="form-toggle"&gt;
+    &lt;input type="checkbox" role="switch"&gt;
+    &lt;span class="toggle-track"&gt;
+      &lt;span class="toggle-knob"&gt;&lt;/span&gt;
+    &lt;/span&gt;
+    Push notifications
+  &lt;/label&gt;
+  &lt;label class="form-toggle"&gt;
+    &lt;input type="checkbox" role="switch" checked&gt;
+    &lt;span class="toggle-track"&gt;
+      &lt;span class="toggle-knob"&gt;&lt;/span&gt;
+    &lt;/span&gt;
+    SMS alerts
+  &lt;/label&gt;
+&lt;/fieldset&gt;</code></pre>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         PATTERN — FORMS
+         ================================================================ -->
+    <section class="page" id="pattern-forms">
+      <div class="page-breadcrumb">Patterns <span>/</span> Forms</div>
+      <h1>Forms</h1>
+      <p class="lead">Reusable layout patterns for collecting user input consistently across the system.</p>
+
+      <!-- ---- OVERVIEW ---- -->
+      <h2>Overview</h2>
+      <p>Form patterns standardize how input groups, labels, validation messages, and submit actions are composed. The system provides five form primitives: <strong>Input</strong> (single-line text field), <strong>Text Area</strong> (multi-line), <strong>Checkbox</strong>, <strong>Radio Button</strong>, and <strong>Toggle Switch</strong>. Each primitive uses shared tokens for spacing, typography, and color to maintain visual consistency across any form layout.</p>
+
+      <!-- ---- VARIANTS ---- -->
+      <h2>Variants</h2>
+
+      <h3>Label</h3>
+      <p>The label component pairs a text label with an optional trailing info icon. A <strong>required</strong> variant places a red asterisk to the left of the label for accessibility (not to the right, per WCAG best practice).</p>
+
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <label class="input-label">Label <i class="label-icon fa-solid fa-circle-question"></i></label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Required</span>
+        <label class="input-label label-required">Label <i class="label-icon fa-solid fa-circle-question"></i></label>
+      </div>
+
+      <h3>Input Field</h3>
+      <p>A single-line text field with optional leading icon, trailing status icon, label, and hint text. Supports four validation states.</p>
+
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <div class="input-group" style="width:336px">
+          <label class="input-label">Label <i class="label-icon fa-solid fa-circle-question"></i></label>
+          <div class="form-field">
+            <i class="field-icon fa-solid fa-user"></i>
+            <input type="text" placeholder="First name">
+            <i class="field-icon fa-solid fa-circle-xmark"></i>
+          </div>
+          <span class="input-hint">Hint text</span>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Hover</span>
+        <div class="input-group" style="width:336px">
+          <label class="input-label">Label <i class="label-icon fa-solid fa-circle-question"></i></label>
+          <div class="form-field show-hover">
+            <i class="field-icon fa-solid fa-user"></i>
+            <input type="text" placeholder="First name">
+            <i class="field-icon fa-solid fa-circle-xmark"></i>
+          </div>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Focus</span>
+        <div class="input-group" style="width:336px">
+          <label class="input-label">Label <i class="label-icon fa-solid fa-circle-question"></i></label>
+          <div class="form-field show-focus">
+            <i class="field-icon fa-solid fa-user"></i>
+            <input type="text" placeholder="First name">
+            <i class="field-icon fa-solid fa-circle-xmark"></i>
+          </div>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Disabled</span>
+        <div class="input-group" style="width:336px">
+          <label class="input-label">Label <i class="label-icon fa-solid fa-circle-question"></i></label>
+          <div class="form-field is-disabled">
+            <i class="field-icon fa-solid fa-user"></i>
+            <input type="text" placeholder="First name" disabled>
+            <i class="field-icon fa-solid fa-circle-xmark"></i>
+          </div>
+        </div>
+      </div>
+
+      <h3>Input Validation States</h3>
+      <p>Validation feedback colors the field border and hint text. The trailing icon changes to indicate status.</p>
+
+      <div class="state-row">
+        <span class="state-label">Error</span>
+        <div class="input-group" style="width:336px">
+          <label class="input-label">Label <i class="label-icon fa-solid fa-circle-question"></i></label>
+          <div class="form-field field-error">
+            <i class="field-icon fa-solid fa-user"></i>
+            <input type="text" placeholder="First name">
+            <i class="field-icon field-status-icon fa-solid fa-circle-xmark"></i>
+          </div>
+          <span class="input-hint hint-error">Hint text</span>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Success</span>
+        <div class="input-group" style="width:336px">
+          <label class="input-label">Label <i class="label-icon fa-solid fa-circle-question"></i></label>
+          <div class="form-field field-success">
+            <i class="field-icon fa-solid fa-user"></i>
+            <input type="text" placeholder="First name">
+            <i class="field-icon field-status-icon fa-solid fa-circle-check"></i>
+          </div>
+          <span class="input-hint hint-success">Hint text</span>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Information</span>
+        <div class="input-group" style="width:336px">
+          <label class="input-label">Label <i class="label-icon fa-solid fa-circle-question"></i></label>
+          <div class="form-field field-information">
+            <i class="field-icon fa-solid fa-user"></i>
+            <input type="text" placeholder="First name">
+            <i class="field-icon field-status-icon fa-solid fa-circle-xmark"></i>
+          </div>
+          <span class="input-hint hint-information">Hint text</span>
+        </div>
+      </div>
+
+      <!-- ---- TEXT AREA ---- -->
+      <h3>Text Area</h3>
+      <p>A multi-line field for longer content. Includes a label block with optional hint copy above the field. Minimum height is 224px.</p>
+
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <div class="input-group" style="width:336px">
+          <label class="input-label">Label <i class="label-icon fa-solid fa-circle-question"></i></label>
+          <span class="input-hint" style="color:var(--text-placeholder)">Hint copy</span>
+          <textarea class="form-textarea" placeholder="First name"></textarea>
+        </div>
+      </div>
+
+      <!-- ---- CHECKBOX ---- -->
+      <h3>Checkbox</h3>
+      <p>A binary selection control. The checked state uses the action color with a white check icon. Label text sits to the right with 24px gap.</p>
+
+      <div class="state-row">
+        <span class="state-label">Checked</span>
+        <label class="form-checkbox">
+          <input type="checkbox" checked>
+          <span>Checkbox Label</span>
+        </label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Unchecked</span>
+        <label class="form-checkbox">
+          <input type="checkbox">
+          <span>Checkbox Label</span>
+        </label>
+      </div>
+
+      <!-- ---- RADIO BUTTON ---- -->
+      <h3>Radio Button</h3>
+      <p>A single-choice control within a group. The selected state fills with the action color and shows a white dot. Label text sits to the right with 24px gap.</p>
+
+      <div class="state-row">
+        <span class="state-label">Selected</span>
+        <label class="form-radio">
+          <input type="radio" name="demo-radio" checked>
+          <span>Radio Button Label</span>
+        </label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Unselected</span>
+        <label class="form-radio">
+          <input type="radio" name="demo-radio">
+          <span>Radio Button Label</span>
+        </label>
+      </div>
+
+      <!-- ---- TOGGLE SWITCH ---- -->
+      <h3>Toggle Switch</h3>
+      <p>A binary on/off control. The track fills with the action color when on. The knob slides left (off) to right (on). 64px wide, 32px tall, 24px knob.</p>
+
+      <div class="state-row">
+        <span class="state-label">On</span>
+        <label class="form-toggle">
+          <input type="checkbox" checked>
+          <span class="toggle-track"><span class="toggle-knob"></span></span>
+          <span>Toggle switch</span>
+        </label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Off</span>
+        <label class="form-toggle">
+          <input type="checkbox">
+          <span class="toggle-track"><span class="toggle-knob"></span></span>
+          <span>Toggle switch</span>
+        </label>
+      </div>
+
+      <!-- ---- ACCESSIBILITY ---- -->
+      <h2>Accessibility Considerations</h2>
+      <p>WCAG 2.1 AA target. All form controls must be programmatically associated with their labels.</p>
+
+      <h3>Keyboard Interactions</h3>
+      <table class="doc-table">
+        <thead><tr><th>Key</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td><code>Tab</code></td><td>Moves focus between form controls in DOM order.</td></tr>
+          <tr><td><code>Space</code></td><td>Toggles checkbox and toggle switch. Selects focused radio button.</td></tr>
+          <tr><td><code>Enter</code></td><td>Submits the form when a button has focus.</td></tr>
+          <tr><td><code>Arrow Up/Down</code></td><td>Cycles through radio buttons within a group.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>ARIA and Semantics</h3>
+      <ul>
+        <li>Use native <code>&lt;label&gt;</code> with <code>for</code> attribute or wrap the control inside the label.</li>
+        <li>Error messages must use <code>aria-describedby</code> pointing to the hint element, plus <code>aria-invalid="true"</code> on the field.</li>
+        <li>Radio groups should be wrapped in a <code>&lt;fieldset&gt;</code> with a <code>&lt;legend&gt;</code>.</li>
+        <li>Toggle switches use <code>role="switch"</code> with <code>aria-checked</code>.</li>
+        <li>Disabled fields use the native <code>disabled</code> attribute (removes from tab order).</li>
+      </ul>
+
+      <h3>Focus Management</h3>
+      <ul>
+        <li>Input focus ring: 2px solid <code>--border-action</code> (#f78958), inset -5px, radius 10px (slightly larger than the field radius).</li>
+        <li>Checkbox and radio focus: 2px solid outline at 2px offset.</li>
+        <li>Toggle focus: 2px solid outline around the track at 2px offset.</li>
+      </ul>
+
+      <!-- ---- CONSTRUCTION ---- -->
+      <h2>Construction</h2>
+
+      <h3>Scale and Spacing</h3>
+      <table class="doc-table">
+        <thead><tr><th>Property</th><th>Value</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Field padding</td><td>16px</td><td><code>Fixed/padding/m</code></td></tr>
+          <tr><td>Field min-width</td><td>336px</td><td>Fixed</td></tr>
+          <tr><td>Field border radius</td><td>8px</td><td><code>Corner Radius/M field</code></td></tr>
+          <tr><td>Field border width</td><td>1px</td><td><code>Border/Width/M default</code></td></tr>
+          <tr><td>Icon-to-text gap</td><td>8px</td><td><code>Fixed/padding/s</code></td></tr>
+          <tr><td>Label-to-field gap</td><td>8px</td><td><code>Fixed/padding/s</code></td></tr>
+          <tr><td>Checkbox/Radio-to-label gap</td><td>24px</td><td><code>Fixed/padding/l</code></td></tr>
+          <tr><td>Toggle track</td><td>64 x 32px</td><td>Fixed</td></tr>
+          <tr><td>Toggle knob</td><td>24px circle</td><td>Fixed</td></tr>
+          <tr><td>Radio dot</td><td>8px circle</td><td>Fixed</td></tr>
+          <tr><td>Text area min-height</td><td>224px</td><td>Fixed</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Styles</h3>
+      <table class="doc-table">
+        <thead><tr><th>Property</th><th>Value</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Label font</td><td>Lato Regular 16px/24px</td><td><code>Body/Body M</code></td></tr>
+          <tr><td>Field text</td><td>Lato Regular 16px/24px</td><td><code>Body/Body M</code></td></tr>
+          <tr><td>Hint text</td><td>Lato Regular 14px/18px</td><td><code>Body/Body S</code></td></tr>
+          <tr><td>Icon font</td><td>FA6 Free Solid 16px</td><td><code>Body/Icons/M icon</code></td></tr>
+          <tr><td>Checkbox radius</td><td>4px</td><td><code>Corner Radius/S checkbox</code></td></tr>
+          <tr><td>Radio / Toggle radius</td><td>104px (full round)</td><td><code>Corner Radius/XL round</code></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Color Tokens</h3>
+      <table class="doc-table">
+        <thead><tr><th>State</th><th>Background</th><th>Border</th><th>Text / Icon</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Default</td>
+            <td><code>Surface/Global/default container</code><br>#fdfdfd</td>
+            <td><code>Border/Global/accent</code><br>#d0d0d0</td>
+            <td><code>Text/Default/body</code><br>#464646</td>
+          </tr>
+          <tr>
+            <td>Hover</td>
+            <td><code>Surface/Action/action-hover</code><br>#fff1eb</td>
+            <td><code>Border/Action/action-hover</code><br>#ffa984</td>
+            <td><code>Text/Action/action-hover</code><br>#f78958</td>
+          </tr>
+          <tr>
+            <td>Focus</td>
+            <td><code>Surface/Global/default container</code><br>#fdfdfd</td>
+            <td><code>Border/Action/action</code><br>#f78958</td>
+            <td><code>Text/Default/body</code><br>#464646</td>
+          </tr>
+          <tr>
+            <td>Disabled</td>
+            <td><code>Surface/Button/Primary/bg-disabled</code><br>#e9e9e9</td>
+            <td><code>Border/Action/disabled</code><br>#b3b3b3</td>
+            <td><code>Text/Action/action-disabled</code><br>#7d7d7d</td>
+          </tr>
+          <tr>
+            <td>Error</td>
+            <td><code>Surface/Global/default container</code><br>#fdfdfd</td>
+            <td><code>Border/Status/error</code><br>#f88c90</td>
+            <td><code>Text/Status/error</code><br>#de515e</td>
+          </tr>
+          <tr>
+            <td>Success</td>
+            <td><code>Surface/Global/default container</code><br>#fdfdfd</td>
+            <td><code>Border/Status/success</code><br>#609c71</td>
+            <td><code>Text/Status/success</code><br>#438558</td>
+          </tr>
+          <tr>
+            <td>Information</td>
+            <td><code>Surface/Global/default container</code><br>#fdfdfd</td>
+            <td><code>Border/Status/information</code><br>#3a90a9</td>
+            <td><code>Text/Status/information</code><br>#097892</td>
+          </tr>
+          <tr>
+            <td>Checked / On</td>
+            <td><code>Surface/Action/action</code><br>#e96620</td>
+            <td><code>Border/Action/action</code><br>#f78958</td>
+            <td>White (#ffffff)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- ---- APPLICATION & CONTEXT ---- -->
+      <h2>Application and Context</h2>
+
+      <h3>For Developers</h3>
+      <table class="doc-table">
+        <thead><tr><th>Class / Attribute</th><th>Type</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><code>.input-group</code></td><td>Container</td><td>Wraps label, field, and hint into a vertical stack with 8px gap.</td></tr>
+          <tr><td><code>.input-label</code></td><td>Label</td><td>Horizontal flex row for label text and optional info icon.</td></tr>
+          <tr><td><code>.label-required</code></td><td>Modifier</td><td>Added to <code>.input-label</code>. Renders a red asterisk to the left of the label via <code>::before</code>.</td></tr>
+          <tr><td><code>.label-icon</code></td><td>Icon</td><td>Trailing info icon inside <code>.input-label</code>. Uses Font Awesome 6 Solid.</td></tr>
+          <tr><td><code>.form-field</code></td><td>Field wrapper</td><td>The input container with icons, border, and background. Wrap a native <code>&lt;input&gt;</code> inside.</td></tr>
+          <tr><td><code>.field-error</code> / <code>.field-success</code> / <code>.field-information</code></td><td>Modifier</td><td>Applied to <code>.form-field</code> to set status border color.</td></tr>
+          <tr><td><code>.input-hint</code></td><td>Hint text</td><td>Below the field. Add <code>.hint-error</code>, <code>.hint-success</code>, or <code>.hint-information</code> for status color.</td></tr>
+          <tr><td><code>.form-textarea</code></td><td>Textarea</td><td>Native <code>&lt;textarea&gt;</code> element styled to match the field design.</td></tr>
+          <tr><td><code>.form-checkbox</code></td><td>Label wrapper</td><td>Wraps a native <code>&lt;input type="checkbox"&gt;</code> and its label text.</td></tr>
+          <tr><td><code>.form-radio</code></td><td>Label wrapper</td><td>Wraps a native <code>&lt;input type="radio"&gt;</code> and its label text.</td></tr>
+          <tr><td><code>.form-toggle</code></td><td>Label wrapper</td><td>Wraps a hidden checkbox, <code>.toggle-track</code> (with <code>.toggle-knob</code>), and label text.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>For Designers</h3>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Stack fields vertically with <code>var(--space-300)</code> gap. Group related fields inside a <code>&lt;fieldset&gt;</code>.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't place fields in multiple columns on mobile. Horizontal layouts only work at desktop widths with sufficient space.</p>
+        </div>
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Place the primary action button aligned to the left, below the last field, with 24px spacing.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't rely solely on color to communicate validation state. Pair error/success border color with descriptive hint text.</p>
+        </div>
+      </div>
+
+      <!-- ---- SPACING GUIDANCE ---- -->
+      <h2>Spacing Guidance</h2>
+      <table class="doc-table">
+        <thead><tr><th>Context</th><th>Spacing</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Between stacked fields</td><td>24px</td><td><code>--space-300</code></td></tr>
+          <tr><td>Label to field</td><td>8px</td><td><code>--padding-s</code></td></tr>
+          <tr><td>Field to hint text</td><td>8px</td><td><code>--padding-s</code></td></tr>
+          <tr><td>Last field to submit button</td><td>24px</td><td><code>--space-300</code></td></tr>
+          <tr><td>Checkbox/Radio vertical stack</td><td>16px</td><td><code>--space-200</code></td></tr>
+        </tbody>
+      </table>
+
+      <!-- ---- USAGE EXAMPLES ---- -->
+      <h2>Usage Examples</h2>
+
+      <h3>Required Label</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;label class="input-label label-required" for="fname"&gt;
+  First name
+  &lt;i class="label-icon fa-solid fa-circle-question"&gt;&lt;/i&gt;
+&lt;/label&gt;</code></pre>
+      </div>
+
+      <h3>Input with Label and Hint</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;div class="input-group"&gt;
+  &lt;label class="input-label" for="fname"&gt;
+    First name
+    &lt;i class="label-icon fa-solid fa-circle-question"&gt;&lt;/i&gt;
+  &lt;/label&gt;
+  &lt;div class="form-field"&gt;
+    &lt;i class="field-icon fa-solid fa-user"&gt;&lt;/i&gt;
+    &lt;input type="text" id="fname" placeholder="First name"&gt;
+    &lt;i class="field-icon fa-solid fa-circle-xmark"&gt;&lt;/i&gt;
+  &lt;/div&gt;
+  &lt;span class="input-hint"&gt;Hint text&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Input with Error</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;div class="input-group"&gt;
+  &lt;label class="input-label" for="email"&gt;Email&lt;/label&gt;
+  &lt;div class="form-field field-error"&gt;
+    &lt;i class="field-icon fa-solid fa-envelope"&gt;&lt;/i&gt;
+    &lt;input type="email" id="email" placeholder="Email"
+           aria-invalid="true" aria-describedby="email-err"&gt;
+    &lt;i class="field-icon field-status-icon
+              fa-solid fa-circle-xmark"&gt;&lt;/i&gt;
+  &lt;/div&gt;
+  &lt;span class="input-hint hint-error"
+        id="email-err"&gt;Please enter a valid email.&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Text Area</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;div class="input-group"&gt;
+  &lt;label class="input-label" for="bio"&gt;Bio&lt;/label&gt;
+  &lt;span class="input-hint"
+        style="color:var(--text-placeholder)"&gt;Hint copy&lt;/span&gt;
+  &lt;textarea class="form-textarea" id="bio"
+            placeholder="Tell us about yourself"&gt;&lt;/textarea&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Checkbox Group</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;fieldset&gt;
+  &lt;legend&gt;Preferences&lt;/legend&gt;
+  &lt;label class="form-checkbox"&gt;
+    &lt;input type="checkbox" checked&gt;
+    &lt;span&gt;Email notifications&lt;/span&gt;
+  &lt;/label&gt;
+  &lt;label class="form-checkbox"&gt;
+    &lt;input type="checkbox"&gt;
+    &lt;span&gt;SMS notifications&lt;/span&gt;
+  &lt;/label&gt;
+&lt;/fieldset&gt;</code></pre>
+      </div>
+
+      <h3>Radio Group</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;fieldset&gt;
+  &lt;legend&gt;Size&lt;/legend&gt;
+  &lt;label class="form-radio"&gt;
+    &lt;input type="radio" name="size" value="s"&gt;
+    &lt;span&gt;Small&lt;/span&gt;
+  &lt;/label&gt;
+  &lt;label class="form-radio"&gt;
+    &lt;input type="radio" name="size" value="m" checked&gt;
+    &lt;span&gt;Medium&lt;/span&gt;
+  &lt;/label&gt;
+  &lt;label class="form-radio"&gt;
+    &lt;input type="radio" name="size" value="l"&gt;
+    &lt;span&gt;Large&lt;/span&gt;
+  &lt;/label&gt;
+&lt;/fieldset&gt;</code></pre>
+      </div>
+
+      <h3>Toggle Switch</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;label class="form-toggle"&gt;
+  &lt;input type="checkbox" role="switch"
+         aria-checked="true" checked&gt;
+  &lt;span class="toggle-track"&gt;
+    &lt;span class="toggle-knob"&gt;&lt;/span&gt;
+  &lt;/span&gt;
+  &lt;span&gt;Dark mode&lt;/span&gt;
+&lt;/label&gt;</code></pre>
+      </div>
+
+      <!-- ---- DESIGN EXAMPLE ---- -->
+      <h2>Design Example</h2>
+      <p>A prayer request card demonstrating form layout at Desktop and Mobile breakpoints. The card uses jumper spacing tokens so padding, gaps, and margins adapt responsively.</p>
+
+      <div class="form-example-row">
+        <div class="example-desktop">
+          <h4 style="margin-bottom:var(--padding-m);color:var(--text-body)">Desktop (672px)</h4>
+          <div class="form-example-card">
+            <div class="card-heading">
+              <h3>We're here to pray for you</h3>
+              <p>Let's walk this journey of hope, together.</p>
+            </div>
+            <div class="card-inputs">
+              <div class="form-field">
+                <input type="text" placeholder="First name">
+              </div>
+              <div class="form-field">
+                <input type="text" placeholder="Last name">
+              </div>
+              <textarea class="form-textarea" placeholder="Prayer request"></textarea>
+            </div>
+            <button class="btn btn-primary btn-m" type="submit">
+              <span class="btn-label">Submit</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="example-mobile">
+          <h4 style="margin-bottom:var(--padding-m);color:var(--text-body)">Mobile (384px)</h4>
+          <div class="form-example-card" style="--jumper-md-sm:24px;--margin-m:24px;--jumper-sm-xs:16px;--jumper-xxxs-tiny:4px;--h4-size:20px;--h4-line:28px">
+            <div class="card-heading">
+              <h3>We're here to pray for you</h3>
+              <p>Let's walk this journey of hope, together.</p>
+            </div>
+            <div class="card-inputs">
+              <div class="form-field">
+                <input type="text" placeholder="First name">
+              </div>
+              <div class="form-field">
+                <input type="text" placeholder="Last name">
+              </div>
+              <textarea class="form-textarea" placeholder="Prayer request"></textarea>
+            </div>
+            <button class="btn btn-primary btn-m" type="submit">
+              <span class="btn-label">Submit</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ================================================================
+         PATTERN — NAVIGATION (Dummy)
+         ================================================================ -->
+    <section class="page" id="pattern-navigation">
+      <div class="page-breadcrumb">Patterns <span>/</span> Navigation</div>
+      <h1>Navigation</h1>
+      <p class="lead">Reusable navigation patterns including sidebars, breadcrumbs, and tab structures.</p>
+      <h2>Overview</h2>
+      <p>Navigation patterns define how users move between sections of an application. They include persistent sidebar navigation, breadcrumb trails for wayfinding, and tabbed interfaces for content switching.</p>
+      <h2>Sidebar Pattern</h2>
+      <ul>
+        <li>Fixed position, full viewport height.</li>
+        <li>Categories sorted A-Z.</li>
+        <li>Links sorted A-Z within each category.</li>
+        <li>Active link highlighted with left border accent.</li>
+      </ul>
+      <h2>Breadcrumb Pattern</h2>
+      <ul>
+        <li>Shows hierarchy: Category / Page.</li>
+        <li>Separator uses <code>--text-placeholder</code> color.</li>
+        <li>Current page is not a link.</li>
+      </ul>
+      <h2>Usage Examples</h2>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;nav class="breadcrumb" aria-label="Breadcrumb"&gt;
+  &lt;a href="#"&gt;Components&lt;/a&gt;
+  &lt;span aria-hidden="true"&gt;/&lt;/span&gt;
+  &lt;span aria-current="page"&gt;Button&lt;/span&gt;
+&lt;/nav&gt;</code></pre>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         SYSTEM PRINCIPLES — ACCESSIBILITY
+         ================================================================ -->
+    <section class="page" id="principle-accessibility">
+      <div class="page-breadcrumb">System Principles <span>/</span> Accessibility</div>
+      <h1>Accessibility</h1>
+      <p class="lead">Every component and pattern in this system targets WCAG 2.1 AA compliance as a baseline.</p>
+      <h2>Color Contrast</h2>
+      <ul>
+        <li>Normal text: minimum 4.5:1 contrast ratio against its background.</li>
+        <li>Large text (24px+ regular, 18.66px+ bold): minimum 3:1.</li>
+        <li>Non-text elements (icons, borders): minimum 3:1.</li>
+      </ul>
+      <h2>Keyboard Navigation</h2>
+      <ul>
+        <li>All interactive elements must be reachable via <code>Tab</code>.</li>
+        <li>Focus indicators must be visible. This system uses a 2px solid outline in <code>--surface-action</code>.</li>
+        <li>Modal components must trap focus while open.</li>
+      </ul>
+      <h2>Screen Reader Support</h2>
+      <ul>
+        <li>Use semantic HTML elements first (<code>&lt;button&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>).</li>
+        <li>Apply ARIA roles only when native semantics are insufficient.</li>
+        <li>Dynamic content changes must use <code>aria-live</code> regions.</li>
+      </ul>
+      <h2>Disabled States</h2>
+      <p>Disabled elements use <code>--text-action-disabled</code> and <code>--surface-disabled</code>. While contrast is intentionally reduced, the element must remain legible.</p>
+    </section>
+
+
+    <!-- ================================================================
+         SYSTEM PRINCIPLES — RESPONSIVE DESIGN
+         ================================================================ -->
+    <section class="page" id="principle-responsive">
+      <div class="page-breadcrumb">System Principles <span>/</span> Responsive Design</div>
+      <h1>Responsive Design</h1>
+      <p class="lead">The system targets three breakpoints: Mobile (384px), Tablet (808px), and Desktop (1512px).</p>
+      <h2>Breakpoints</h2>
+      <table class="doc-table">
+        <thead><tr><th>Device</th><th>Width</th></tr></thead>
+        <tbody>
+          <tr><td>Mobile</td><td>384px</td></tr>
+          <tr><td>Tablet</td><td>808px</td></tr>
+          <tr><td>Desktop</td><td>1512px</td></tr>
+          <tr><td>Mega</td><td>1920px</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Approach</h2>
+      <ul>
+        <li>Primary design focus: Mobile and Desktop.</li>
+        <li>Tablet values are defined only where they deviate from Mobile.</li>
+        <li>Typography, jumper spacing, margins, and grid all adapt per breakpoint.</li>
+      </ul>
+
+      <h2>Grid System</h2>
+      <table class="doc-table">
+        <thead><tr><th>Property</th><th>Desktop</th><th>Mobile</th></tr></thead>
+        <tbody>
+          <tr><td>Columns</td><td>12</td><td>4</td></tr>
+          <tr><td>Col Width</td><td>56px</td><td>72px</td></tr>
+          <tr><td>Gutter</td><td>32px</td><td>16px</td></tr>
+          <tr><td>Margin</td><td>244px</td><td>24px</td></tr>
+          <tr><td>Row Gap</td><td>64px</td><td>32px</td></tr>
+          <tr><td>Body Max Width</td><td>672px</td><td>336px</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Readability</h2>
+      <p>Body text (Body M, 16px) should be constrained to 60-75 characters per line. The grid's <code>Body text.max width</code> token (672px on Desktop, 336px on Mobile) enforces this.</p>
+    </section>
+
+
+  </main>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
