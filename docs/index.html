@@ -41,7 +41,9 @@
           <li><a class="sidebar-link" href="#comp-button-group" data-page="comp-button-group" tabindex="0">Button Group</a></li>
           <li><a class="sidebar-link" href="#comp-checkbox" data-page="comp-checkbox" tabindex="0">Checkbox</a></li>
           <li><a class="sidebar-link" href="#comp-icon-button" data-page="comp-icon-button" tabindex="0">Icon Button</a></li>
+          <li><a class="sidebar-link" href="#comp-progress-bar" data-page="comp-progress-bar" tabindex="0">Progress Bar</a></li>
           <li><a class="sidebar-link" href="#comp-radio-button" data-page="comp-radio-button" tabindex="0">Radio Button</a></li>
+          <li><a class="sidebar-link" href="#comp-snackbar" data-page="comp-snackbar" tabindex="0">Snackbar</a></li>
           <li><a class="sidebar-link" href="#comp-text-link" data-page="comp-text-link" tabindex="0">Text Link</a></li>
           <li><a class="sidebar-link" href="#comp-toggle" data-page="comp-toggle" tabindex="0">Toggle</a></li>
         </ul>
@@ -96,7 +98,7 @@
          ================================================================ -->
     <section class="page" id="introduction">
       <div class="page-breadcrumb">WV Design System</div>
-      <h1>Beginning</h1>
+      <h1>Introduction</h1>
       <p class="lead">A single source of truth for design decisions, reusable patterns, and token-driven components.</p>
       <p>This documentation site covers the foundational layers of the WV Design System: brand primitives, semantic aliases, mapped component tokens, and responsive typography and spacing. Every visual decision flows from a structured token architecture that supports light and dark modes across desktop, tablet, and mobile breakpoints.</p>
 
@@ -1588,6 +1590,241 @@
 
 
     <!-- ================================================================
+         COMPONENT — PROGRESS BAR
+         ================================================================ -->
+    <section class="page" id="comp-progress-bar">
+      <div class="page-breadcrumb">Components <span>/</span> Progress Bar</div>
+      <h1>Progress Bar</h1>
+      <p class="lead">A horizontal indicator that communicates the completion status of a task or process.</p>
+
+      <!-- ---- OVERVIEW ---- -->
+      <h2>Overview</h2>
+      <p>The progress bar shows how far along a process is by filling a horizontal track from left to right. It comes in two sizes: Desktop (8px track) and Mobile (4px track). An optional label row above the bar displays a text descriptor and a percentage value. The bar uses the action color for the fill against a light tinted track. Width of the fill is controlled via inline style or JavaScript.</p>
+
+      <!-- ---- VARIANTS ---- -->
+      <h2>Variants</h2>
+
+      <h3>Desktop (Default)</h3>
+      <p>8px track height with a 20px/24px bold label. Use on desktop viewports.</p>
+      <div class="state-row">
+        <span class="state-label">With label</span>
+        <div class="progress-bar" style="max-width:400px">
+          <div class="progress-bar-label">
+            <span class="progress-bar-label-text">Completion:</span>
+            <span class="progress-bar-label-value">80%</span>
+          </div>
+          <div class="progress-bar-track"><div class="progress-bar-fill" style="width:80%"></div></div>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Without label</span>
+        <div class="progress-bar" style="max-width:400px">
+          <div class="progress-bar-track"><div class="progress-bar-fill" style="width:60%"></div></div>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">0%</span>
+        <div class="progress-bar" style="max-width:400px">
+          <div class="progress-bar-label">
+            <span class="progress-bar-label-text">Completion:</span>
+            <span class="progress-bar-label-value">0%</span>
+          </div>
+          <div class="progress-bar-track"><div class="progress-bar-fill" style="width:0%"></div></div>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">100%</span>
+        <div class="progress-bar" style="max-width:400px">
+          <div class="progress-bar-label">
+            <span class="progress-bar-label-text">Completion:</span>
+            <span class="progress-bar-label-value">100%</span>
+          </div>
+          <div class="progress-bar-track"><div class="progress-bar-fill" style="width:100%"></div></div>
+        </div>
+      </div>
+
+      <h3>Mobile (Small)</h3>
+      <p>4px track height with a 16px/20px bold label. Use on mobile viewports or in compact layouts.</p>
+      <div class="state-row">
+        <span class="state-label">With label</span>
+        <div class="progress-bar progress-bar-sm" style="max-width:300px">
+          <div class="progress-bar-label">
+            <span class="progress-bar-label-text">Completion:</span>
+            <span class="progress-bar-label-value">80%</span>
+          </div>
+          <div class="progress-bar-track"><div class="progress-bar-fill" style="width:80%"></div></div>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Without label</span>
+        <div class="progress-bar progress-bar-sm" style="max-width:300px">
+          <div class="progress-bar-track"><div class="progress-bar-fill" style="width:60%"></div></div>
+        </div>
+      </div>
+
+      <!-- ---- ACCESSIBILITY ---- -->
+      <h2>Accessibility Considerations</h2>
+      <p>WCAG 2.1 AA target. Progress bars must communicate their current value to assistive technology.</p>
+
+      <h3>Keyboard Interactions</h3>
+      <table class="doc-table">
+        <thead><tr><th>Key</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td>n/a</td><td>The progress bar is not interactive and does not receive focus.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>ARIA and Semantics</h3>
+      <ul>
+        <li>Use <code>role="progressbar"</code> on the track element.</li>
+        <li>Set <code>aria-valuenow</code> to the current percentage (e.g. <code>80</code>).</li>
+        <li>Set <code>aria-valuemin="0"</code> and <code>aria-valuemax="100"</code>.</li>
+        <li>Include <code>aria-label</code> describing the process (e.g. <code>"Upload progress"</code>) when no visible label is present.</li>
+        <li>When a visible label exists, use <code>aria-labelledby</code> pointing to the label element's <code>id</code>.</li>
+        <li>For indeterminate progress (unknown completion), omit <code>aria-valuenow</code> and add an animation to the fill.</li>
+      </ul>
+
+      <!-- ---- CONSTRUCTION ---- -->
+      <h2>Construction</h2>
+
+      <h3>Scale and Spacing</h3>
+      <table class="doc-table">
+        <thead><tr><th>Property</th><th>Desktop</th><th>Mobile</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Track height</td><td>8px</td><td>4px</td><td>Fixed</td></tr>
+          <tr><td>Track border radius</td><td colspan="2">48px</td><td><code>--radius-xxl</code></td></tr>
+          <tr><td>Label-to-track gap</td><td colspan="2">16px</td><td><code>--jumper-xxs-xxxs</code></td></tr>
+          <tr><td>Label text-to-value gap</td><td colspan="2">8px</td><td><code>--jumper-xxxs-tiny</code></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Styles</h3>
+      <table class="doc-table">
+        <thead><tr><th>Property</th><th>Desktop</th><th>Mobile</th></tr></thead>
+        <tbody>
+          <tr><td>Label font</td><td>Lato Bold (700), 20px/24px, -0.1px tracking</td><td>Lato Bold (700), 16px/20px, -0.08px tracking</td></tr>
+          <tr><td>Label color</td><td colspan="2"><code>--text-headings</code> (#393939)</td></tr>
+          <tr><td>Track background</td><td colspan="2"><code>--surface-action-hover</code> (#FFF1EB)</td></tr>
+          <tr><td>Fill color</td><td colspan="2"><code>--surface-action</code> (#E96620)</td></tr>
+          <tr><td>Fill border radius</td><td colspan="2">48px (<code>--radius-xxl</code>)</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Color Tokens</h3>
+      <table class="doc-table">
+        <thead><tr><th>Element</th><th>Token</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>Label text</td><td><code>--text-headings</code></td><td>#393939</td></tr>
+          <tr><td>Track background</td><td><code>--surface-action-hover</code></td><td>#FFF1EB</td></tr>
+          <tr><td>Fill</td><td><code>--surface-action</code></td><td>#E96620</td></tr>
+        </tbody>
+      </table>
+
+      <!-- ---- APPLICATION & CONTEXT ---- -->
+      <h2>Application and Context</h2>
+
+      <h3>For Developers</h3>
+      <table class="doc-table">
+        <thead><tr><th>Attribute / Class</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><code>.progress-bar</code></td><td>Container</td><td>Desktop size</td><td>Root flex-column wrapper. Full width of parent.</td></tr>
+          <tr><td><code>.progress-bar-sm</code></td><td>Modifier</td><td>&mdash;</td><td>Switches to mobile size (4px track, 16px/20px label).</td></tr>
+          <tr><td><code>.progress-bar-label</code></td><td>Element</td><td>&mdash;</td><td>Optional. Flex row containing text and value.</td></tr>
+          <tr><td><code>.progress-bar-label-text</code></td><td>Element</td><td>&mdash;</td><td>Descriptor text (e.g. "Completion:"). Non-wrapping.</td></tr>
+          <tr><td><code>.progress-bar-label-value</code></td><td>Element</td><td>&mdash;</td><td>Percentage or status value (e.g. "80%").</td></tr>
+          <tr><td><code>.progress-bar-track</code></td><td>Element</td><td>&mdash;</td><td>Background track. Carries <code>role="progressbar"</code>.</td></tr>
+          <tr><td><code>.progress-bar-fill</code></td><td>Element</td><td>&mdash;</td><td>Filled portion. Set width via inline <code>style</code> or JS.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>For Designers</h3>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Use progress bars for operations with a known completion percentage (uploads, multi-step forms, loading sequences).</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't use a progress bar for indeterminate waits where completion is unknown. Use a spinner or skeleton instead.</p>
+        </div>
+      </div>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Pair the bar with a visible label so users understand what process is being tracked.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't use multiple progress bars stacked without clear labels distinguishing each process.</p>
+        </div>
+      </div>
+
+      <!-- ---- SPACING GUIDANCE ---- -->
+      <h2>Spacing Guidance</h2>
+      <table class="doc-table">
+        <thead><tr><th>Context</th><th>Property</th><th>Value</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Label to track</td><td>gap</td><td>16px</td><td><code>--jumper-xxs-xxxs</code></td></tr>
+          <tr><td>Label text to value</td><td>gap</td><td>8px</td><td><code>--jumper-xxxs-tiny</code></td></tr>
+          <tr><td>Progress bar to adjacent content</td><td>margin</td><td>16-24px</td><td><code>--jumper-xxs-xxxs</code> / <code>--jumper-xs-xxs</code></td></tr>
+        </tbody>
+      </table>
+
+      <!-- ---- USAGE EXAMPLES ---- -->
+      <h2>Usage Examples</h2>
+
+      <h3>Desktop with Label</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;div class="progress-bar"&gt;
+  &lt;div class="progress-bar-label"&gt;
+    &lt;span class="progress-bar-label-text"&gt;Completion:&lt;/span&gt;
+    &lt;span class="progress-bar-label-value"&gt;80%&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="progress-bar-track"
+       role="progressbar"
+       aria-valuenow="80"
+       aria-valuemin="0"
+       aria-valuemax="100"
+       aria-label="Completion"&gt;
+    &lt;div class="progress-bar-fill" style="width:80%"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Mobile without Label</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;div class="progress-bar progress-bar-sm"&gt;
+  &lt;div class="progress-bar-track"
+       role="progressbar"
+       aria-valuenow="60"
+       aria-valuemin="0"
+       aria-valuemax="100"
+       aria-label="Upload progress"&gt;
+    &lt;div class="progress-bar-fill" style="width:60%"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Desktop without Label</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;div class="progress-bar"&gt;
+  &lt;div class="progress-bar-track"
+       role="progressbar"
+       aria-valuenow="45"
+       aria-valuemin="0"
+       aria-valuemax="100"
+       aria-label="Processing"&gt;
+    &lt;div class="progress-bar-fill" style="width:45%"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
          COMPONENT — RADIO BUTTON
          ================================================================ -->
     <section class="page" id="comp-radio-button">
@@ -1852,6 +2089,338 @@
   &lt;input type="radio" name="tier" value="enterprise" disabled&gt;
   Enterprise (coming soon)
 &lt;/label&gt;</code></pre>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         COMPONENT — SNACKBAR
+         ================================================================ -->
+    <section class="page" id="comp-snackbar">
+      <div class="page-breadcrumb">Components <span>/</span> Snackbar</div>
+      <h1>Snackbar</h1>
+      <p class="lead">A brief, non-modal notification that informs users of a process outcome or system event, such as a new campaign launch, an enrollment opening, or an incomplete account setup.</p>
+
+      <!-- ---- OVERVIEW ---- -->
+      <h2>Overview</h2>
+      <p>The snackbar is a lightweight feedback surface at a fixed 336px width. It contains an optional status icon, a bold heading, body copy, an optional "Learn More" text link, a close button, and an optional progress bar (using the Progress Bar SM component) along the bottom edge. Four status variants (Default, Success, Error, Information) control the icon and heading color while body text stays neutral. All optional elements (icon, link, close, progress bar) can be included or omitted independently.</p>
+
+      <!-- ---- VARIANTS ---- -->
+      <h2>Variants</h2>
+
+      <h3>Default</h3>
+      <p>Action/brand color for icon and heading. Use for general confirmations or neutral status updates.</p>
+      <div class="state-row">
+        <span class="state-label">All options</span>
+        <div class="snackbar">
+          <div class="snackbar-content">
+            <div class="snackbar-icon-text">
+              <div class="snackbar-icon"><i class="fa-solid fa-circle-info"></i></div>
+              <div class="snackbar-text">
+                <div class="snackbar-heading">Snackbar Title</div>
+                <div class="snackbar-body">Lorem Ipsum, the standard dummy text for a lot of digital placeholder text.</div>
+                <a class="snackbar-link" href="#"><span>Learn More</span> <i class="link-icon fa-solid fa-chevron-right"></i></a>
+              </div>
+            </div>
+            <button class="snackbar-close" aria-label="Dismiss"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+          <div class="progress-bar progress-bar-sm"><div class="progress-bar-track"><div class="progress-bar-fill" style="width:60%"></div></div></div>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">No link</span>
+        <div class="snackbar">
+          <div class="snackbar-content">
+            <div class="snackbar-icon-text">
+              <div class="snackbar-icon"><i class="fa-solid fa-circle-info"></i></div>
+              <div class="snackbar-text">
+                <div class="snackbar-heading">Snackbar Title</div>
+                <div class="snackbar-body">Lorem Ipsum, the standard dummy text for a lot of digital placeholder text.</div>
+              </div>
+            </div>
+            <button class="snackbar-close" aria-label="Dismiss"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">No icon</span>
+        <div class="snackbar">
+          <div class="snackbar-content">
+            <div class="snackbar-icon-text">
+              <div class="snackbar-text">
+                <div class="snackbar-heading">Snackbar Title</div>
+                <div class="snackbar-body">Lorem Ipsum, the standard dummy text for a lot of digital placeholder text.</div>
+                <a class="snackbar-link" href="#"><span>Learn More</span> <i class="link-icon fa-solid fa-chevron-right"></i></a>
+              </div>
+            </div>
+            <button class="snackbar-close" aria-label="Dismiss"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <h3>Success</h3>
+      <p>Green icon and heading for positive confirmations such as saves, completions, or sends.</p>
+      <div class="state-row">
+        <span class="state-label">All options</span>
+        <div class="snackbar snackbar-success">
+          <div class="snackbar-content">
+            <div class="snackbar-icon-text">
+              <div class="snackbar-icon"><i class="fa-solid fa-circle-check"></i></div>
+              <div class="snackbar-text">
+                <div class="snackbar-heading">Snackbar Title</div>
+                <div class="snackbar-body">Lorem Ipsum, the standard dummy text for a lot of digital placeholder text.</div>
+                <a class="snackbar-link" href="#"><span>Learn More</span> <i class="link-icon fa-solid fa-chevron-right"></i></a>
+              </div>
+            </div>
+            <button class="snackbar-close" aria-label="Dismiss"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+          <div class="progress-bar progress-bar-sm"><div class="progress-bar-track"><div class="progress-bar-fill" style="width:40%"></div></div></div>
+        </div>
+      </div>
+
+      <h3>Error</h3>
+      <p>Red icon and heading for failures or destructive outcomes that need user attention.</p>
+      <div class="state-row">
+        <span class="state-label">All options</span>
+        <div class="snackbar snackbar-error">
+          <div class="snackbar-content">
+            <div class="snackbar-icon-text">
+              <div class="snackbar-icon"><i class="fa-solid fa-circle-exclamation"></i></div>
+              <div class="snackbar-text">
+                <div class="snackbar-heading">Snackbar Title</div>
+                <div class="snackbar-body">Lorem Ipsum, the standard dummy text for a lot of digital placeholder text.</div>
+                <a class="snackbar-link" href="#"><span>Learn More</span> <i class="link-icon fa-solid fa-chevron-right"></i></a>
+              </div>
+            </div>
+            <button class="snackbar-close" aria-label="Dismiss"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+          <div class="progress-bar progress-bar-sm"><div class="progress-bar-track"><div class="progress-bar-fill" style="width:25%"></div></div></div>
+        </div>
+      </div>
+
+      <h3>Information</h3>
+      <p>Teal icon and heading for informational notices or system-level messages.</p>
+      <div class="state-row">
+        <span class="state-label">All options</span>
+        <div class="snackbar snackbar-information">
+          <div class="snackbar-content">
+            <div class="snackbar-icon-text">
+              <div class="snackbar-icon"><i class="fa-solid fa-circle-info"></i></div>
+              <div class="snackbar-text">
+                <div class="snackbar-heading">Snackbar Title</div>
+                <div class="snackbar-body">Lorem Ipsum, the standard dummy text for a lot of digital placeholder text.</div>
+                <a class="snackbar-link" href="#"><span>Learn More</span> <i class="link-icon fa-solid fa-chevron-right"></i></a>
+              </div>
+            </div>
+            <button class="snackbar-close" aria-label="Dismiss"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+          <div class="progress-bar progress-bar-sm"><div class="progress-bar-track"><div class="progress-bar-fill" style="width:80%"></div></div></div>
+        </div>
+      </div>
+
+      <!-- ---- ACCESSIBILITY ---- -->
+      <h2>Accessibility Considerations</h2>
+      <p>WCAG 2.1 AA target. Snackbars must not block interaction and should be perceivable by assistive technology without stealing focus.</p>
+
+      <h3>Keyboard Interactions</h3>
+      <table class="doc-table">
+        <thead><tr><th>Key</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td><code>Tab</code></td><td>Moves focus to the link or close button inside the snackbar</td></tr>
+          <tr><td><code>Enter</code> / <code>Space</code></td><td>Activates the focused close button or link</td></tr>
+          <tr><td><code>Escape</code></td><td>Dismisses the snackbar when it has focus</td></tr>
+        </tbody>
+      </table>
+
+      <h3>ARIA and Semantics</h3>
+      <ul>
+        <li>Use <code>role="status"</code> for non-critical updates (default, success, information) so screen readers announce content politely.</li>
+        <li>Use <code>role="alert"</code> for error snackbars to assert immediate attention.</li>
+        <li>Include <code>aria-live="polite"</code> (or <code>"assertive"</code> for errors) so content is announced when it appears.</li>
+        <li>The close button must have <code>aria-label="Dismiss"</code> since it contains no visible text.</li>
+        <li>If the snackbar auto-dismisses, the timeout should be at least 5 seconds. Provide a way to pause or extend.</li>
+        <li>The snackbar must not trap focus or prevent interaction with the rest of the page.</li>
+      </ul>
+
+      <!-- ---- CONSTRUCTION ---- -->
+      <h2>Construction</h2>
+      <p>The snackbar composes several sub-elements. The embedded progress bar reuses the <a class="text-link text-link-m" href="#comp-progress-bar" data-page="comp-progress-bar"><span class="link-label">Progress Bar SM</span></a> component. The text link reuses the Body Link M pattern from the <a class="text-link text-link-m" href="#comp-text-link" data-page="comp-text-link"><span class="link-label">Text Link</span></a> component.</p>
+
+      <h3>Scale and Spacing</h3>
+      <table class="doc-table">
+        <thead><tr><th>Property</th><th>Value</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Container width</td><td>336px</td><td>Fixed</td></tr>
+          <tr><td>Container border radius</td><td>8px</td><td><code>--radius-m</code></td></tr>
+          <tr><td>Container border width</td><td>1px</td><td>Fixed</td></tr>
+          <tr><td>Content padding</td><td>16px</td><td><code>--padding-m</code></td></tr>
+          <tr><td>Content-to-close gap</td><td>16px</td><td><code>--padding-m</code></td></tr>
+          <tr><td>Icon-to-text gap</td><td>8px</td><td><code>--padding-s</code></td></tr>
+          <tr><td>Heading / body / link gap</td><td>8px</td><td><code>--jumper-xxxs-tiny</code></td></tr>
+          <tr><td>Icon container width</td><td>20px</td><td>Fixed</td></tr>
+          <tr><td>Close button container width</td><td>28px</td><td>Fixed</td></tr>
+          <tr><td>Progress bar height</td><td>4px</td><td>Progress Bar SM</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Styles</h3>
+      <table class="doc-table">
+        <thead><tr><th>Element</th><th>Font / Size</th></tr></thead>
+        <tbody>
+          <tr><td>Heading</td><td>Lato Bold (700), 20px/24px, -0.1px tracking</td></tr>
+          <tr><td>Body</td><td>Lato Regular (400), 16px/24px, 0.16px tracking</td></tr>
+          <tr><td>Link text</td><td>Lato Bold (700), 16px/24px, 0.16px tracking</td></tr>
+          <tr><td>Link chevron</td><td>FA6 Solid (900), 16px/24px, 0.4px tracking</td></tr>
+          <tr><td>Status icon</td><td>FA6 Solid (900), 20px/24px, 0.5px tracking</td></tr>
+          <tr><td>Close icon</td><td>FA6 Solid (900), 20px/28px, 0.05px tracking</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Color Tokens</h3>
+      <table class="doc-table">
+        <thead><tr><th>Element</th><th>Default</th><th>Success</th><th>Error</th><th>Information</th></tr></thead>
+        <tbody>
+          <tr><td>Container bg</td><td colspan="4"><code>--surface-default-container</code></td></tr>
+          <tr><td>Container border</td><td colspan="4"><code>--border-default</code></td></tr>
+          <tr><td>Icon</td><td><code>--text-action</code></td><td><code>--text-status-success</code></td><td><code>--text-status-error</code></td><td><code>--text-status-information</code></td></tr>
+          <tr><td>Heading</td><td><code>--text-action</code></td><td><code>--text-status-success</code></td><td><code>--text-status-error</code></td><td><code>--text-status-information</code></td></tr>
+          <tr><td>Body text</td><td colspan="4"><code>--text-body</code></td></tr>
+          <tr><td>Link text + chevron</td><td><code>--text-action</code></td><td><code>--text-status-success</code></td><td><code>--text-status-error</code></td><td><code>--text-status-information</code></td></tr>
+          <tr><td>Close icon</td><td colspan="4"><code>--text-body</code></td></tr>
+          <tr><td>Progress track</td><td><code>--surface-action-hover</code></td><td><code>--surface-success</code></td><td><code>--surface-error</code></td><td><code>--surface-information</code></td></tr>
+          <tr><td>Progress fill</td><td><code>--surface-action</code></td><td><code>--text-status-success</code></td><td><code>--text-status-error</code></td><td><code>--text-status-information</code></td></tr>
+        </tbody>
+      </table>
+
+      <!-- ---- APPLICATION & CONTEXT ---- -->
+      <h2>Application and Context</h2>
+
+      <h3>For Developers</h3>
+      <table class="doc-table">
+        <thead><tr><th>Attribute / Class</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><code>.snackbar</code></td><td>Container</td><td>Default status</td><td>Root element. 336px wide, rounded, bordered.</td></tr>
+          <tr><td><code>.snackbar-success</code></td><td>Modifier</td><td>&mdash;</td><td>Applies success color to icon and heading.</td></tr>
+          <tr><td><code>.snackbar-error</code></td><td>Modifier</td><td>&mdash;</td><td>Applies error color to icon and heading.</td></tr>
+          <tr><td><code>.snackbar-information</code></td><td>Modifier</td><td>&mdash;</td><td>Applies information color to icon and heading.</td></tr>
+          <tr><td><code>.snackbar-content</code></td><td>Layout</td><td>&mdash;</td><td>Flex row wrapping icon/text and close button. 16px padding.</td></tr>
+          <tr><td><code>.snackbar-icon-text</code></td><td>Layout</td><td>&mdash;</td><td>Flex row for icon and text block.</td></tr>
+          <tr><td><code>.snackbar-icon</code></td><td>Element</td><td>&mdash;</td><td>Optional. 20px-wide icon container. Omit to hide.</td></tr>
+          <tr><td><code>.snackbar-text</code></td><td>Layout</td><td>&mdash;</td><td>Flex column for heading, body, and link.</td></tr>
+          <tr><td><code>.snackbar-heading</code></td><td>Element</td><td>&mdash;</td><td>Bold title. Color set by status modifier.</td></tr>
+          <tr><td><code>.snackbar-body</code></td><td>Element</td><td>&mdash;</td><td>Body copy in neutral color.</td></tr>
+          <tr><td><code>.snackbar-link</code></td><td>Element</td><td>&mdash;</td><td>Optional inline link with chevron icon.</td></tr>
+          <tr><td><code>.snackbar-close</code></td><td>Element</td><td>&mdash;</td><td>Dismiss button. Requires <code>aria-label="Dismiss"</code>.</td></tr>
+          <tr><td><code>.progress-bar.progress-bar-sm</code></td><td>Sub-component</td><td>&mdash;</td><td>Optional. Embeds the Progress Bar SM at the bottom.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>For Designers</h3>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Use snackbars for brief, non-blocking feedback that confirms an action or surfaces a transient status update (campaign launched, enrollment opened, etc.).</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't use snackbars for critical decisions that require user input. Use a dialog or modal instead.</p>
+        </div>
+      </div>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Match the status variant to the message type so color communicates meaning at a glance.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't stack multiple snackbars at once. Queue them so only one is visible at a time.</p>
+        </div>
+      </div>
+
+      <!-- ---- SPACING GUIDANCE ---- -->
+      <h2>Spacing Guidance</h2>
+      <table class="doc-table">
+        <thead><tr><th>Context</th><th>Property</th><th>Value</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Container internal</td><td>padding</td><td>16px</td><td><code>--padding-m</code></td></tr>
+          <tr><td>Icon to text</td><td>gap</td><td>8px</td><td><code>--padding-s</code></td></tr>
+          <tr><td>Content to close</td><td>gap</td><td>16px</td><td><code>--padding-m</code></td></tr>
+          <tr><td>Text block internal</td><td>gap</td><td>8px</td><td><code>--jumper-xxxs-tiny</code></td></tr>
+          <tr><td>Link text to chevron</td><td>gap</td><td>8px</td><td><code>--padding-s</code></td></tr>
+          <tr><td>Snackbar to viewport edge</td><td>offset</td><td>16-24px</td><td><code>--padding-m</code> / <code>--padding-l</code></td></tr>
+        </tbody>
+      </table>
+
+      <!-- ---- USAGE EXAMPLES ---- -->
+      <h2>Usage Examples</h2>
+
+      <h3>Default with All Options</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;div class="snackbar" role="status" aria-live="polite"&gt;
+  &lt;div class="snackbar-content"&gt;
+    &lt;div class="snackbar-icon-text"&gt;
+      &lt;div class="snackbar-icon"&gt;
+        &lt;i class="fa-solid fa-circle-info"&gt;&lt;/i&gt;
+      &lt;/div&gt;
+      &lt;div class="snackbar-text"&gt;
+        &lt;div class="snackbar-heading"&gt;Changes saved&lt;/div&gt;
+        &lt;div class="snackbar-body"&gt;Your profile has been updated.&lt;/div&gt;
+        &lt;a class="snackbar-link" href="#"&gt;
+          &lt;span&gt;Learn More&lt;/span&gt;
+          &lt;i class="link-icon fa-solid fa-chevron-right"&gt;&lt;/i&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button class="snackbar-close" aria-label="Dismiss"&gt;
+      &lt;i class="fa-solid fa-xmark"&gt;&lt;/i&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="progress-bar progress-bar-sm"&gt;
+    &lt;div class="progress-bar-track"&gt;
+      &lt;div class="progress-bar-fill" style="width:60%"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Error without Progress Bar</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;div class="snackbar snackbar-error" role="alert" aria-live="assertive"&gt;
+  &lt;div class="snackbar-content"&gt;
+    &lt;div class="snackbar-icon-text"&gt;
+      &lt;div class="snackbar-icon"&gt;
+        &lt;i class="fa-solid fa-circle-exclamation"&gt;&lt;/i&gt;
+      &lt;/div&gt;
+      &lt;div class="snackbar-text"&gt;
+        &lt;div class="snackbar-heading"&gt;Upload failed&lt;/div&gt;
+        &lt;div class="snackbar-body"&gt;File exceeds the 10 MB limit.&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button class="snackbar-close" aria-label="Dismiss"&gt;
+      &lt;i class="fa-solid fa-xmark"&gt;&lt;/i&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Minimal (No Icon, No Link, No Progress)</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;div class="snackbar" role="status" aria-live="polite"&gt;
+  &lt;div class="snackbar-content"&gt;
+    &lt;div class="snackbar-icon-text"&gt;
+      &lt;div class="snackbar-text"&gt;
+        &lt;div class="snackbar-heading"&gt;Item deleted&lt;/div&gt;
+        &lt;div class="snackbar-body"&gt;The record has been removed.&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button class="snackbar-close" aria-label="Dismiss"&gt;
+      &lt;i class="fa-solid fa-xmark"&gt;&lt;/i&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
       </div>
     </section>
 
