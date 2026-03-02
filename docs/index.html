@@ -37,13 +37,18 @@
           Components <span class="chevron">&#9660;</span>
         </button>
         <ul class="sidebar-links">
+          <li><a class="sidebar-link" href="#comp-alert" data-page="comp-alert" tabindex="0">Alert</a></li>
+          <li><a class="sidebar-link" href="#comp-breadcrumbs" data-page="comp-breadcrumbs" tabindex="0">Breadcrumbs</a></li>
           <li><a class="sidebar-link" href="#comp-button" data-page="comp-button" tabindex="0">Button</a></li>
           <li><a class="sidebar-link" href="#comp-button-group" data-page="comp-button-group" tabindex="0">Button Group</a></li>
+          <li><a class="sidebar-link" href="#comp-carousel" data-page="comp-carousel" tabindex="0">Carousel</a></li>
           <li><a class="sidebar-link" href="#comp-checkbox" data-page="comp-checkbox" tabindex="0">Checkbox</a></li>
           <li><a class="sidebar-link" href="#comp-icon-button" data-page="comp-icon-button" tabindex="0">Icon Button</a></li>
+          <li><a class="sidebar-link" href="#comp-input" data-page="comp-input" tabindex="0">Input</a></li>
           <li><a class="sidebar-link" href="#comp-progress-bar" data-page="comp-progress-bar" tabindex="0">Progress Bar</a></li>
           <li><a class="sidebar-link" href="#comp-radio-button" data-page="comp-radio-button" tabindex="0">Radio Button</a></li>
           <li><a class="sidebar-link" href="#comp-snackbar" data-page="comp-snackbar" tabindex="0">Snackbar</a></li>
+          <li><a class="sidebar-link" href="#comp-tab-bar" data-page="comp-tab-bar" tabindex="0">Tab Bar</a></li>
           <li><a class="sidebar-link" href="#comp-text-link" data-page="comp-text-link" tabindex="0">Text Link</a></li>
           <li><a class="sidebar-link" href="#comp-toggle" data-page="comp-toggle" tabindex="0">Toggle</a></li>
         </ul>
@@ -590,6 +595,586 @@
 
 
     <!-- ================================================================
+         COMPONENT — ALERT
+         ================================================================ -->
+    <section class="page" id="comp-alert">
+      <div class="page-breadcrumb">Components <span>/</span> Alert</div>
+      <h1>Alert</h1>
+      <p class="lead">Informs users of a process outcome or system event. Compact, inline feedback for form validation results, status changes, and contextual messages.</p>
+
+      <!-- ---- OVERVIEW ---- -->
+      <h2>Overview</h2>
+      <p>The Alert is a compact, inline notification surface used to communicate outcomes or events. For example, if a user submits a form, the alert provides feedback about an error that occurred or confirms the form was completed successfully. Four status variants (Default, Success, Error, Information) control the color of all elements within the alert. The component contains an optional status icon, an optional bold heading, body copy, an optional text link (reusing the Text Link S component), and an optional close button. All optional elements can be included or omitted independently.</p>
+
+      <!-- ---- VARIANTS ---- -->
+      <h2>Variants</h2>
+
+      <h3>Default</h3>
+      <p>Neutral container with default border. Icon and heading use the headings color, body and close use the body color. Suitable for general feedback or neutral messages.</p>
+      <div class="state-row">
+        <span class="state-label">All options</span>
+        <div class="alert">
+          <div class="alert-icon-text">
+            <div class="alert-icon"><i class="fa-solid fa-circle-info"></i></div>
+            <div class="alert-text">
+              <div class="alert-heading">Alert Title</div>
+              <div class="alert-body">Lorem Ipsum, the standard dummy text for a lot of digital placeholder text blocks.</div>
+              <a class="text-link text-link-s" href="#"><span class="link-label">Link</span> <i class="link-icon fa-solid fa-chevron-right"></i></a>
+            </div>
+          </div>
+          <button class="alert-close" aria-label="Dismiss"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">No link</span>
+        <div class="alert">
+          <div class="alert-icon-text">
+            <div class="alert-icon"><i class="fa-solid fa-circle-info"></i></div>
+            <div class="alert-text">
+              <div class="alert-heading">Alert Title</div>
+              <div class="alert-body">Lorem Ipsum, the standard dummy text for a lot of digital placeholder text blocks.</div>
+            </div>
+          </div>
+          <button class="alert-close" aria-label="Dismiss"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">No icon</span>
+        <div class="alert">
+          <div class="alert-icon-text">
+            <div class="alert-text">
+              <div class="alert-heading">Alert Title</div>
+              <div class="alert-body">Lorem Ipsum, the standard dummy text for a lot of digital placeholder text blocks.</div>
+              <a class="text-link text-link-s" href="#"><span class="link-label">Link</span> <i class="link-icon fa-solid fa-chevron-right"></i></a>
+            </div>
+          </div>
+          <button class="alert-close" aria-label="Dismiss"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">No heading</span>
+        <div class="alert">
+          <div class="alert-icon-text">
+            <div class="alert-icon"><i class="fa-solid fa-circle-info"></i></div>
+            <div class="alert-text">
+              <div class="alert-body">Lorem Ipsum, the standard dummy text for a lot of digital placeholder text blocks.</div>
+              <a class="text-link text-link-s" href="#"><span class="link-label">Link</span> <i class="link-icon fa-solid fa-chevron-right"></i></a>
+            </div>
+          </div>
+          <button class="alert-close" aria-label="Dismiss"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+      </div>
+
+      <h3>Success</h3>
+      <p>Green background and border. All text, icons, and the close button use the success color. Use for positive confirmations such as saves, completions, or sends.</p>
+      <div class="state-row">
+        <span class="state-label">All options</span>
+        <div class="alert alert-success">
+          <div class="alert-icon-text">
+            <div class="alert-icon"><i class="fa-solid fa-circle-check"></i></div>
+            <div class="alert-text">
+              <div class="alert-heading">Alert Title</div>
+              <div class="alert-body">Lorem Ipsum, the standard dummy text for a lot of digital placeholder text blocks.</div>
+              <a class="text-link text-link-s type-success" href="#"><span class="link-label">Link</span> <i class="link-icon fa-solid fa-chevron-right"></i></a>
+            </div>
+          </div>
+          <button class="alert-close" aria-label="Dismiss"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+      </div>
+
+      <h3>Error</h3>
+      <p>Red background and border. All text, icons, and the close button use the error color. Use for failures or issues that need user attention.</p>
+      <div class="state-row">
+        <span class="state-label">All options</span>
+        <div class="alert alert-error">
+          <div class="alert-icon-text">
+            <div class="alert-icon"><i class="fa-solid fa-circle-exclamation"></i></div>
+            <div class="alert-text">
+              <div class="alert-heading">Alert Title</div>
+              <div class="alert-body">Lorem Ipsum, the standard dummy text for a lot of digital placeholder text blocks.</div>
+              <a class="text-link text-link-s type-error" href="#"><span class="link-label">Link</span> <i class="link-icon fa-solid fa-chevron-right"></i></a>
+            </div>
+          </div>
+          <button class="alert-close" aria-label="Dismiss"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+      </div>
+
+      <h3>Information</h3>
+      <p>Teal background and border. All text, icons, and the close button use the information color. Use for informational notices or system-level messages.</p>
+      <div class="state-row">
+        <span class="state-label">All options</span>
+        <div class="alert alert-information">
+          <div class="alert-icon-text">
+            <div class="alert-icon"><i class="fa-solid fa-circle-info"></i></div>
+            <div class="alert-text">
+              <div class="alert-heading">Alert Title</div>
+              <div class="alert-body">Lorem Ipsum, the standard dummy text for a lot of digital placeholder text blocks.</div>
+              <a class="text-link text-link-s type-information" href="#"><span class="link-label">Link</span> <i class="link-icon fa-solid fa-chevron-right"></i></a>
+            </div>
+          </div>
+          <button class="alert-close" aria-label="Dismiss"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+      </div>
+
+      <!-- ---- ACCESSIBILITY ---- -->
+      <h2>Accessibility Considerations</h2>
+      <p>WCAG 2.1 AA target. Alerts are inline, persistent elements and should not auto-dismiss. They must be perceivable by assistive technology.</p>
+
+      <h3>Keyboard Interactions</h3>
+      <table class="doc-table">
+        <thead><tr><th>Key</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td><code>Tab</code></td><td>Moves focus to the link or close button inside the alert</td></tr>
+          <tr><td><code>Enter</code> / <code>Space</code></td><td>Activates the focused close button or link</td></tr>
+        </tbody>
+      </table>
+
+      <h3>ARIA and Semantics</h3>
+      <ul>
+        <li>Use <code>role="status"</code> for non-critical updates (default, success, information) so screen readers announce content politely.</li>
+        <li>Use <code>role="alert"</code> for error alerts to assert immediate attention.</li>
+        <li>Include <code>aria-live="polite"</code> (or <code>"assertive"</code> for errors) so content is announced when it appears dynamically.</li>
+        <li>The close button must have <code>aria-label="Dismiss"</code> since it contains only an icon.</li>
+        <li>If the alert appears after a user action (form submit, etc.), focus management should move the user near the alert.</li>
+      </ul>
+
+      <!-- ---- CONSTRUCTION ---- -->
+      <h2>Construction</h2>
+      <p>The alert is a compact single-row layout. The text link reuses the <a class="text-link text-link-m" href="#comp-text-link" data-page="comp-text-link"><span class="link-label">Text Link S</span></a> component with status type classes for color matching.</p>
+
+      <h3>Scale and Spacing</h3>
+      <table class="doc-table">
+        <thead><tr><th>Property</th><th>Value</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Container padding</td><td>12px</td><td><code>--padding-s-m</code></td></tr>
+          <tr><td>Container border radius</td><td>4px</td><td><code>--radius-s</code></td></tr>
+          <tr><td>Container border width</td><td>1px</td><td>Fixed</td></tr>
+          <tr><td>Main gap (icon-text to close)</td><td>8px</td><td><code>--padding-s</code></td></tr>
+          <tr><td>Icon-to-text gap</td><td>8px</td><td><code>--padding-s</code></td></tr>
+          <tr><td>Text internal gap (heading / body / link)</td><td>2px</td><td><code>--padding-xxxs</code></td></tr>
+          <tr><td>Icon container width</td><td>14px</td><td>Fixed</td></tr>
+          <tr><td>Close button width</td><td>16px</td><td>Fixed</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Styles</h3>
+      <table class="doc-table">
+        <thead><tr><th>Element</th><th>Font / Size</th></tr></thead>
+        <tbody>
+          <tr><td>Heading</td><td>Lato Bold (700), 16px/24px, -0.08px tracking</td></tr>
+          <tr><td>Body</td><td>Lato Regular (400), 14px/20px</td></tr>
+          <tr><td>Link text</td><td>Lato Bold (700), 14px/20px (Text Link S)</td></tr>
+          <tr><td>Link chevron</td><td>FA6 Solid (900), 14px/20px (Text Link S icon)</td></tr>
+          <tr><td>Status icon</td><td>FA6 Solid (900), 16px/24px, 0.4px tracking</td></tr>
+          <tr><td>Close icon</td><td>FA6 Solid (900), 16px/24px, 0.4px tracking</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Color Tokens</h3>
+      <table class="doc-table">
+        <thead><tr><th>Element</th><th>Default</th><th>Success</th><th>Error</th><th>Information</th></tr></thead>
+        <tbody>
+          <tr><td>Container bg</td><td><code>--surface-default-container</code></td><td><code>--surface-success</code></td><td><code>--surface-error</code></td><td><code>--surface-information</code></td></tr>
+          <tr><td>Container border</td><td><code>--border-default</code></td><td><code>--border-success</code></td><td><code>--border-error</code></td><td><code>--border-information</code></td></tr>
+          <tr><td>Icon</td><td><code>--text-headings</code></td><td><code>--text-status-success</code></td><td><code>--text-status-error</code></td><td><code>--text-status-information</code></td></tr>
+          <tr><td>Heading</td><td><code>--text-headings</code></td><td><code>--text-status-success</code></td><td><code>--text-status-error</code></td><td><code>--text-status-information</code></td></tr>
+          <tr><td>Body text</td><td><code>--text-body</code></td><td><code>--text-status-success</code></td><td><code>--text-status-error</code></td><td><code>--text-status-information</code></td></tr>
+          <tr><td>Link text + chevron</td><td><code>--text-body</code></td><td><code>--text-status-success</code></td><td><code>--text-status-error</code></td><td><code>--text-status-information</code></td></tr>
+          <tr><td>Close icon</td><td><code>--text-body</code></td><td><code>--text-status-success</code></td><td><code>--text-status-error</code></td><td><code>--text-status-information</code></td></tr>
+        </tbody>
+      </table>
+
+      <!-- ---- APPLICATION & CONTEXT ---- -->
+      <h2>Application and Context</h2>
+
+      <h3>For Developers</h3>
+      <table class="doc-table">
+        <thead><tr><th>Attribute / Class</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><code>.alert</code></td><td>Container</td><td>Default status</td><td>Root element. 12px padded, 4px rounded, bordered.</td></tr>
+          <tr><td><code>.alert-success</code></td><td>Modifier</td><td>&mdash;</td><td>Applies success colors to all elements (bg, border, text, icons).</td></tr>
+          <tr><td><code>.alert-error</code></td><td>Modifier</td><td>&mdash;</td><td>Applies error colors to all elements.</td></tr>
+          <tr><td><code>.alert-information</code></td><td>Modifier</td><td>&mdash;</td><td>Applies information colors to all elements.</td></tr>
+          <tr><td><code>.alert-icon-text</code></td><td>Layout</td><td>&mdash;</td><td>Flex row for icon and text block. Fills available space.</td></tr>
+          <tr><td><code>.alert-icon</code></td><td>Element</td><td>&mdash;</td><td>Optional. 14px-wide icon container. Omit to hide.</td></tr>
+          <tr><td><code>.alert-text</code></td><td>Layout</td><td>&mdash;</td><td>Flex column for heading, body, and link. 2px gap.</td></tr>
+          <tr><td><code>.alert-heading</code></td><td>Element</td><td>&mdash;</td><td>Optional. Bold title line.</td></tr>
+          <tr><td><code>.alert-body</code></td><td>Element</td><td>&mdash;</td><td>Body copy in Body S (14px).</td></tr>
+          <tr><td><code>.text-link.text-link-s</code></td><td>Sub-component</td><td>&mdash;</td><td>Optional. Reuses the Text Link S component. Add <code>.type-success</code>, <code>.type-error</code>, or <code>.type-information</code> to match the alert status.</td></tr>
+          <tr><td><code>.alert-close</code></td><td>Element</td><td>&mdash;</td><td>Optional. Dismiss button. Requires <code>aria-label="Dismiss"</code>.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>For Designers</h3>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Use alerts for inline, persistent feedback tied to a specific action or context, such as form validation or account status.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't use alerts for transient notifications. Use the Snackbar component for brief, non-blocking feedback instead.</p>
+        </div>
+      </div>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Match the status variant to the message type so color communicates meaning at a glance.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't use the Error variant for informational messages. Reserve red for actual failures or issues requiring action.</p>
+        </div>
+      </div>
+
+      <!-- ---- SPACING GUIDANCE ---- -->
+      <h2>Spacing Guidance</h2>
+      <table class="doc-table">
+        <thead><tr><th>Context</th><th>Property</th><th>Value</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Container internal</td><td>padding</td><td>12px</td><td><code>--padding-s-m</code></td></tr>
+          <tr><td>Icon-text to close</td><td>gap</td><td>8px</td><td><code>--padding-s</code></td></tr>
+          <tr><td>Icon to text</td><td>gap</td><td>8px</td><td><code>--padding-s</code></td></tr>
+          <tr><td>Text block internal</td><td>gap</td><td>2px</td><td><code>--padding-xxxs</code></td></tr>
+          <tr><td>Link text to chevron</td><td>gap</td><td>8px</td><td><code>--padding-s</code></td></tr>
+          <tr><td>Alert to surrounding content</td><td>margin</td><td>16-24px</td><td><code>--padding-m</code> / <code>--padding-l</code></td></tr>
+        </tbody>
+      </table>
+
+      <!-- ---- USAGE EXAMPLES ---- -->
+      <h2>Usage Examples</h2>
+
+      <h3>Default with All Options</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;div class="alert" role="status" aria-live="polite"&gt;
+  &lt;div class="alert-icon-text"&gt;
+    &lt;div class="alert-icon"&gt;
+      &lt;i class="fa-solid fa-circle-info"&gt;&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;div class="alert-text"&gt;
+      &lt;div class="alert-heading"&gt;Changes saved&lt;/div&gt;
+      &lt;div class="alert-body"&gt;Your profile has been updated.&lt;/div&gt;
+      &lt;a class="text-link text-link-s" href="#"&gt;
+        &lt;span class="link-label"&gt;Link&lt;/span&gt;
+        &lt;i class="link-icon fa-solid fa-chevron-right"&gt;&lt;/i&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button class="alert-close" aria-label="Dismiss"&gt;
+    &lt;i class="fa-solid fa-xmark"&gt;&lt;/i&gt;
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Error Alert</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;div class="alert alert-error" role="alert" aria-live="assertive"&gt;
+  &lt;div class="alert-icon-text"&gt;
+    &lt;div class="alert-icon"&gt;
+      &lt;i class="fa-solid fa-circle-exclamation"&gt;&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;div class="alert-text"&gt;
+      &lt;div class="alert-heading"&gt;Submission failed&lt;/div&gt;
+      &lt;div class="alert-body"&gt;Please correct the errors and try again.&lt;/div&gt;
+      &lt;a class="text-link text-link-s type-error" href="#"&gt;
+        &lt;span class="link-label"&gt;Link&lt;/span&gt;
+        &lt;i class="link-icon fa-solid fa-chevron-right"&gt;&lt;/i&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button class="alert-close" aria-label="Dismiss"&gt;
+    &lt;i class="fa-solid fa-xmark"&gt;&lt;/i&gt;
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Minimal (No Icon, No Link, No Close)</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;div class="alert alert-success" role="status" aria-live="polite"&gt;
+  &lt;div class="alert-icon-text"&gt;
+    &lt;div class="alert-text"&gt;
+      &lt;div class="alert-body"&gt;Registration complete.&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         COMPONENT — BREADCRUMBS
+         ================================================================ -->
+    <section class="page" id="comp-breadcrumbs">
+      <div class="page-breadcrumb">Components <span>/</span> Breadcrumbs</div>
+      <h1>Breadcrumbs</h1>
+      <p class="lead">A horizontal navigation pattern that shows the user's current location within a site hierarchy. Each crumb is a clickable link except the last item, which represents the current page.</p>
+
+      <!-- ---- OVERVIEW ---- -->
+      <h2>Overview</h2>
+      <p>Breadcrumbs help users understand where they are in a multi-level navigation structure and provide quick access to parent pages. The component uses Small Link (S) typography (Lato Bold, 14px/18px) with <code>--text-body</code> as the default color. On hover, all elements within a crumb (text, icons, separator) change to <code>--text-action-hover</code>. A chevron-right icon (<code>fa-chevron-right</code>) separates each crumb. The first crumb includes a home icon (<code>fa-house</code>). The last crumb (current page) displays a persistent underline and has no trailing separator.</p>
+
+      <!-- ---- VARIANTS ---- -->
+      <h2>Variants</h2>
+
+      <h3>Assembled Breadcrumb</h3>
+      <p>Full breadcrumb trail with home icon, intermediate links, and current page.</p>
+      <div class="preview-block">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a class="breadcrumb-item" href="javascript:void(0)">
+            <i class="breadcrumb-icon fa-solid fa-house" aria-hidden="true"></i>
+            <span>Home</span>
+            <i class="breadcrumb-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </a>
+          <a class="breadcrumb-item" href="javascript:void(0)">
+            <span>Components</span>
+            <i class="breadcrumb-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </a>
+          <a class="breadcrumb-item" href="javascript:void(0)">
+            <span>Forms</span>
+            <i class="breadcrumb-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </a>
+          <a class="breadcrumb-item current" href="javascript:void(0)" aria-current="page">
+            <span class="link-label">Text Input</span>
+          </a>
+        </nav>
+      </div>
+
+      <h3>First Item</h3>
+      <p>Includes a home icon (left), label text, and a chevron-right separator (right).</p>
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <a class="breadcrumb-item" href="javascript:void(0)" style="font-family:var(--font-primary);font-size:var(--body-s-size);line-height:var(--body-s-line);font-weight:700">
+          <i class="breadcrumb-icon fa-solid fa-house" aria-hidden="true"></i>
+          <span>Link</span>
+          <i class="breadcrumb-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Hover</span>
+        <a class="breadcrumb-item show-hover" href="javascript:void(0)" style="font-family:var(--font-primary);font-size:var(--body-s-size);line-height:var(--body-s-line);font-weight:700">
+          <i class="breadcrumb-icon fa-solid fa-house" aria-hidden="true"></i>
+          <span>Link</span>
+          <i class="breadcrumb-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Focus</span>
+        <a class="breadcrumb-item show-focus" href="javascript:void(0)" style="font-family:var(--font-primary);font-size:var(--body-s-size);line-height:var(--body-s-line);font-weight:700">
+          <i class="breadcrumb-icon fa-solid fa-house" aria-hidden="true"></i>
+          <span>Link</span>
+          <i class="breadcrumb-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Disabled</span>
+        <span class="breadcrumb-item is-disabled" style="font-family:var(--font-primary);font-size:var(--body-s-size);line-height:var(--body-s-line);font-weight:700">
+          <i class="breadcrumb-icon fa-solid fa-house" aria-hidden="true"></i>
+          <span>Link</span>
+          <i class="breadcrumb-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </span>
+      </div>
+
+      <h3>Middle Item</h3>
+      <p>Label text with a chevron-right separator. No home icon.</p>
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <a class="breadcrumb-item" href="javascript:void(0)" style="font-family:var(--font-primary);font-size:var(--body-s-size);line-height:var(--body-s-line);font-weight:700">
+          <span>Link</span>
+          <i class="breadcrumb-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Hover</span>
+        <a class="breadcrumb-item show-hover" href="javascript:void(0)" style="font-family:var(--font-primary);font-size:var(--body-s-size);line-height:var(--body-s-line);font-weight:700">
+          <span>Link</span>
+          <i class="breadcrumb-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Focus</span>
+        <a class="breadcrumb-item show-focus" href="javascript:void(0)" style="font-family:var(--font-primary);font-size:var(--body-s-size);line-height:var(--body-s-line);font-weight:700">
+          <span>Link</span>
+          <i class="breadcrumb-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Disabled</span>
+        <span class="breadcrumb-item is-disabled" style="font-family:var(--font-primary);font-size:var(--body-s-size);line-height:var(--body-s-line);font-weight:700">
+          <span>Link</span>
+          <i class="breadcrumb-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </span>
+      </div>
+
+      <h3>Last Item (Current Page)</h3>
+      <p>Label text only, with a persistent underline. No trailing chevron separator.</p>
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <a class="breadcrumb-item current" href="javascript:void(0)" style="font-family:var(--font-primary);font-size:var(--body-s-size);line-height:var(--body-s-line);font-weight:700">
+          <span class="link-label">Link</span>
+        </a>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Hover</span>
+        <a class="breadcrumb-item current show-hover" href="javascript:void(0)" style="font-family:var(--font-primary);font-size:var(--body-s-size);line-height:var(--body-s-line);font-weight:700">
+          <span class="link-label">Link</span>
+        </a>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Focus</span>
+        <a class="breadcrumb-item current show-focus" href="javascript:void(0)" style="font-family:var(--font-primary);font-size:var(--body-s-size);line-height:var(--body-s-line);font-weight:700">
+          <span class="link-label">Link</span>
+        </a>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Disabled</span>
+        <span class="breadcrumb-item current is-disabled" style="font-family:var(--font-primary);font-size:var(--body-s-size);line-height:var(--body-s-line);font-weight:700">
+          <span class="link-label">Link</span>
+        </span>
+      </div>
+
+      <!-- ---- COLOR TOKENS ---- -->
+      <h2>Color Tokens</h2>
+      <table>
+        <thead><tr><th>Element</th><th>State</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Text + Icons</td><td>Default</td><td><code>--text-body</code></td></tr>
+          <tr><td>Text + Icons</td><td>Hover</td><td><code>--text-action-hover</code></td></tr>
+          <tr><td>Current page text</td><td>Default</td><td><code>--text-body</code> + underline</td></tr>
+          <tr><td>Current page text</td><td>Hover</td><td><code>--text-action-hover</code> + underline</td></tr>
+          <tr><td>Focus ring</td><td>Focus</td><td><code>--border-action</code> (2px, offset 2px)</td></tr>
+          <tr><td>Disabled background</td><td>Disabled</td><td><code>--border-default</code></td></tr>
+          <tr><td>Disabled text</td><td>Disabled</td><td><code>--text-body</code></td></tr>
+        </tbody>
+      </table>
+
+      <!-- ---- SPACING / SIZING ---- -->
+      <h2>Spacing &amp; Sizing</h2>
+      <table>
+        <thead><tr><th>Property</th><th>Value</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Container gap (between items)</td><td>8px</td><td><code>--padding-s</code></td></tr>
+          <tr><td>Item internal gap</td><td>8px</td><td><code>--padding-s</code></td></tr>
+          <tr><td>Font size</td><td>14px</td><td><code>--body-s-size</code></td></tr>
+          <tr><td>Line height</td><td>18px</td><td><code>--body-s-line</code></td></tr>
+          <tr><td>Font weight</td><td>700 (Bold)</td><td>Lato Bold</td></tr>
+          <tr><td>Icon size</td><td>14px</td><td><code>--body-s-size</code></td></tr>
+          <tr><td>Focus ring radius</td><td>8px</td><td><code>--radius-m</code></td></tr>
+          <tr><td>Disabled padding</td><td>0 2px</td><td>Fixed</td></tr>
+          <tr><td>Disabled border-radius</td><td>4px</td><td><code>--radius-s</code></td></tr>
+        </tbody>
+      </table>
+
+      <!-- ---- ACCESSIBILITY ---- -->
+      <h2>Accessibility</h2>
+      <table>
+        <thead><tr><th>Requirement</th><th>Implementation</th></tr></thead>
+        <tbody>
+          <tr><td>Landmark</td><td>Wrap in <code>&lt;nav aria-label="Breadcrumb"&gt;</code>.</td></tr>
+          <tr><td>Current page</td><td>Add <code>aria-current="page"</code> to the last (current) item.</td></tr>
+          <tr><td>Decorative icons</td><td>Home icon and chevron separators use <code>aria-hidden="true"</code>.</td></tr>
+          <tr><td>Keyboard navigation</td><td>Each crumb is a focusable <code>&lt;a&gt;</code>. Tab moves between items.</td></tr>
+          <tr><td>Focus indicator</td><td>2px <code>--border-action</code> outline, offset 2px, 8px radius.</td></tr>
+          <tr><td>Disabled items</td><td>Use <code>&lt;span&gt;</code> instead of <code>&lt;a&gt;</code> to remove from tab order. <code>pointer-events: none</code> prevents interaction.</td></tr>
+          <tr><td>WCAG target</td><td>AA contrast for all text/icon states. Focus ring meets 3:1 contrast against background.</td></tr>
+        </tbody>
+      </table>
+
+      <!-- ---- DEVELOPER API ---- -->
+      <h2>Developer Reference</h2>
+      <table>
+        <thead><tr><th>Class / Attribute</th><th>Role</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td><code>.breadcrumb</code></td><td>Container</td><td>Applied to <code>&lt;nav&gt;</code>. Flex row, 8px gap, centered items.</td></tr>
+          <tr><td><code>.breadcrumb-item</code></td><td>Crumb link</td><td>Applied to <code>&lt;a&gt;</code>. Inline-flex, 8px internal gap, body color.</td></tr>
+          <tr><td><code>.breadcrumb-icon</code></td><td>Icon element</td><td>Font Awesome icon inside a crumb. Used for home icon and chevron separator.</td></tr>
+          <tr><td><code>.current</code></td><td>Modifier</td><td>Last item (current page). Adds persistent underline to <code>.link-label</code>.</td></tr>
+          <tr><td><code>.link-label</code></td><td>Element</td><td><strong>Required on current item.</strong> Wrap text in <code>&lt;span class="link-label"&gt;</code> for underline styling.</td></tr>
+          <tr><td><code>.is-disabled</code></td><td>State</td><td>Disabled crumb. Use <code>&lt;span&gt;</code> instead of <code>&lt;a&gt;</code>. Adds gray background, removes pointer events.</td></tr>
+          <tr><td><code>aria-current="page"</code></td><td>Attribute</td><td>Required on the current page crumb for screen readers.</td></tr>
+          <tr><td><code>aria-hidden="true"</code></td><td>Attribute</td><td>Required on all <code>&lt;i&gt;</code> icons (home and chevron) to hide from assistive technology.</td></tr>
+        </tbody>
+      </table>
+
+      <!-- ---- DESIGNER GUIDELINES ---- -->
+      <h2>Designer Guidelines</h2>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Always start the breadcrumb trail with the home icon on the first item to provide a consistent anchor point.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't omit the home icon from the first breadcrumb item. Users rely on it as a visual indicator of the navigation root.</p>
+        </div>
+      </div>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Mark the last item as the current page with a persistent underline to clearly indicate the user's location.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't make the current page item look identical to the other crumbs. The underline distinguishes it as non-navigable context.</p>
+        </div>
+      </div>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Keep breadcrumb labels short and descriptive. Use page titles or category names, not full sentences.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't use breadcrumbs for flat navigation structures. They are intended for hierarchical, multi-level page structures only.</p>
+        </div>
+      </div>
+
+      <!-- ---- USAGE EXAMPLES ---- -->
+      <h2>Usage Examples</h2>
+
+      <h3>Standard Breadcrumb</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;nav class="breadcrumb" aria-label="Breadcrumb"&gt;
+  &lt;a class="breadcrumb-item" href="/home"&gt;
+    &lt;i class="breadcrumb-icon fa-solid fa-house" aria-hidden="true"&gt;&lt;/i&gt;
+    &lt;span&gt;Home&lt;/span&gt;
+    &lt;i class="breadcrumb-icon fa-solid fa-chevron-right" aria-hidden="true"&gt;&lt;/i&gt;
+  &lt;/a&gt;
+  &lt;a class="breadcrumb-item" href="/components"&gt;
+    &lt;span&gt;Components&lt;/span&gt;
+    &lt;i class="breadcrumb-icon fa-solid fa-chevron-right" aria-hidden="true"&gt;&lt;/i&gt;
+  &lt;/a&gt;
+  &lt;a class="breadcrumb-item current" href="/components/button" aria-current="page"&gt;
+    &lt;span class="link-label"&gt;Button&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+      </div>
+
+      <h3>Breadcrumb with Disabled Item</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;nav class="breadcrumb" aria-label="Breadcrumb"&gt;
+  &lt;a class="breadcrumb-item" href="/home"&gt;
+    &lt;i class="breadcrumb-icon fa-solid fa-house" aria-hidden="true"&gt;&lt;/i&gt;
+    &lt;span&gt;Home&lt;/span&gt;
+    &lt;i class="breadcrumb-icon fa-solid fa-chevron-right" aria-hidden="true"&gt;&lt;/i&gt;
+  &lt;/a&gt;
+  &lt;span class="breadcrumb-item is-disabled"&gt;
+    &lt;span&gt;Archived&lt;/span&gt;
+    &lt;i class="breadcrumb-icon fa-solid fa-chevron-right" aria-hidden="true"&gt;&lt;/i&gt;
+  &lt;/span&gt;
+  &lt;a class="breadcrumb-item current" href="/archived/report" aria-current="page"&gt;
+    &lt;span class="link-label"&gt;Report&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
          COMPONENT — BUTTON
          ================================================================ -->
     <section class="page" id="comp-button">
@@ -978,7 +1563,7 @@
       <table class="doc-table">
         <thead><tr><th>Property</th><th>Labeled</th><th>Icon-only</th><th>Token</th></tr></thead>
         <tbody>
-          <tr><td>Padding (vertical)</td><td>12px</td><td>12px</td><td><code>Fixed/padding/s-m</code></td></tr>
+          <tr><td>Padding (vertical)</td><td>8px</td><td>12px</td><td><code>Fixed/padding/s</code> / <code>s-m</code></td></tr>
           <tr><td>Padding (horizontal)</td><td>16px</td><td>12px</td><td><code>Fixed/padding/m</code> / <code>s-m</code></td></tr>
           <tr><td>Gap (icon to label)</td><td>8px</td><td>n/a</td><td><code>Fixed/padding/s</code></td></tr>
           <tr><td>Divider width</td><td colspan="2">2px</td><td><code>Border/Width/M action</code></td></tr>
@@ -1132,6 +1717,323 @@
   &lt;button class="btn-group-item" type="button"
           disabled aria-disabled="true"&gt;
     &lt;i class="btn-group-icon fa-solid fa-align-right"&gt;&lt;/i&gt; Right
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         COMPONENT — CAROUSEL
+         ================================================================ -->
+    <section class="page" id="comp-carousel">
+      <div class="page-breadcrumb">Components <span>/</span> Carousel</div>
+      <h1>Carousel</h1>
+      <p class="lead">The Carousel is used to scroll through a series of images, cards, or other content blocks. Left and right navigation buttons advance the content, and a progress bar reflects the current scroll position.</p>
+
+      <!-- ---- OVERVIEW ---- -->
+      <h2>Overview</h2>
+      <p>The Carousel provides horizontal navigation through a set of content items that exceed the visible viewport. It consists of three atomic parts: a <strong>left button</strong> (chevron-left), a <strong>progress bar</strong>, and a <strong>right button</strong> (chevron-right). The buttons advance the content one item at a time, and the progress bar fills proportionally to indicate how far the user has scrolled. The carousel is designed to be scalable: any number of content items can be placed in the track, and the controls adapt automatically. When the first item is visible, the left button is disabled. When the last item is visible, the right button is disabled.</p>
+
+      <!-- ---- VARIANTS ---- -->
+      <h2>Variants</h2>
+
+      <h3>Navigation Button - Left</h3>
+      <p>Pill-shaped button with a chevron-left icon. Navigates the carousel content one step backward.</p>
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <button class="carousel-btn" type="button" aria-label="Previous">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Hover</span>
+        <button class="carousel-btn show-hover" type="button" aria-label="Previous">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Focus</span>
+        <button class="carousel-btn show-focus" type="button" aria-label="Previous">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Pressed</span>
+        <button class="carousel-btn show-pressed" type="button" aria-label="Previous">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Disabled</span>
+        <button class="carousel-btn is-disabled" type="button" aria-label="Previous" disabled>
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+      </div>
+
+      <h3>Navigation Button - Right</h3>
+      <p>Pill-shaped button with a chevron-right icon. Navigates the carousel content one step forward.</p>
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <button class="carousel-btn" type="button" aria-label="Next">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Hover</span>
+        <button class="carousel-btn show-hover" type="button" aria-label="Next">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Focus</span>
+        <button class="carousel-btn show-focus" type="button" aria-label="Next">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Pressed</span>
+        <button class="carousel-btn show-pressed" type="button" aria-label="Next">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Disabled</span>
+        <button class="carousel-btn is-disabled" type="button" aria-label="Next" disabled>
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <h3>Progress Bar</h3>
+      <p>An 8px-tall track with a proportional fill that reflects the current scroll position. The fill width and position update as the user navigates.</p>
+      <div class="state-row">
+        <span class="state-label">Start</span>
+        <div class="carousel-bar" style="width:120px;">
+          <div class="carousel-bar-fill" style="left:0%; width:30%;"></div>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Middle</span>
+        <div class="carousel-bar" style="width:120px;">
+          <div class="carousel-bar-fill" style="left:16.25%; width:30%;"></div>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">End</span>
+        <div class="carousel-bar" style="width:120px;">
+          <div class="carousel-bar-fill" style="left:70%; width:30%;"></div>
+        </div>
+      </div>
+
+      <h3>Assembled Controls</h3>
+      <p>The three atomic parts combined into a single control bar: left button, progress bar, and right button.</p>
+      <div class="state-row">
+        <span class="state-label">Controls</span>
+        <div class="carousel-controls" style="width:280px;">
+          <button class="carousel-btn" type="button" aria-label="Previous">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <div class="carousel-bar">
+            <div class="carousel-bar-fill" style="left:16.25%; width:30%;"></div>
+          </div>
+          <button class="carousel-btn" type="button" aria-label="Next">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <h3>Working Demo</h3>
+      <p>A functional carousel with content cards. Click the left/right buttons to scroll. The progress bar updates to reflect the current position. The left button is disabled at the start; the right button is disabled at the end.</p>
+      <div class="carousel" data-carousel>
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+            <div style="width:200px; height:120px; background:var(--surface-information); border:1px solid var(--border-information); border-radius:var(--radius-m); display:flex; align-items:center; justify-content:center; font-family:var(--font-primary); font-size:var(--body-m-size); color:var(--text-status-information);">Card 1</div>
+            <div style="width:200px; height:120px; background:var(--surface-success); border:1px solid var(--border-success); border-radius:var(--radius-m); display:flex; align-items:center; justify-content:center; font-family:var(--font-primary); font-size:var(--body-m-size); color:var(--text-status-success);">Card 2</div>
+            <div style="width:200px; height:120px; background:var(--surface-error); border:1px solid var(--border-error); border-radius:var(--radius-m); display:flex; align-items:center; justify-content:center; font-family:var(--font-primary); font-size:var(--body-m-size); color:var(--text-status-error);">Card 3</div>
+            <div style="width:200px; height:120px; background:var(--surface-information); border:1px solid var(--border-information); border-radius:var(--radius-m); display:flex; align-items:center; justify-content:center; font-family:var(--font-primary); font-size:var(--body-m-size); color:var(--text-status-information);">Card 4</div>
+            <div style="width:200px; height:120px; background:var(--surface-success); border:1px solid var(--border-success); border-radius:var(--radius-m); display:flex; align-items:center; justify-content:center; font-family:var(--font-primary); font-size:var(--body-m-size); color:var(--text-status-success);">Card 5</div>
+            <div style="width:200px; height:120px; background:var(--surface-error); border:1px solid var(--border-error); border-radius:var(--radius-m); display:flex; align-items:center; justify-content:center; font-family:var(--font-primary); font-size:var(--body-m-size); color:var(--text-status-error);">Card 6</div>
+          </div>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-btn" type="button" aria-label="Previous" data-carousel-prev>
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <div class="carousel-bar" aria-hidden="true">
+            <div class="carousel-bar-fill" data-carousel-fill></div>
+          </div>
+          <button class="carousel-btn" type="button" aria-label="Next" data-carousel-next>
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- ---- ACCESSIBILITY ---- -->
+      <h2>Accessibility Considerations</h2>
+      <p>WCAG 2.1 AA target. The carousel must be fully navigable by keyboard and clearly indicate its boundaries and current position to assistive technology.</p>
+
+      <h3>Keyboard Interactions</h3>
+      <table class="doc-table">
+        <thead><tr><th>Key</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td><code>Tab</code></td><td>Moves focus between the previous button, content items, and next button</td></tr>
+          <tr><td><code>Enter</code> / <code>Space</code></td><td>Activates the focused navigation button</td></tr>
+          <tr><td><code>Arrow Left</code></td><td>Scrolls to the previous item (when a nav button is focused)</td></tr>
+          <tr><td><code>Arrow Right</code></td><td>Scrolls to the next item (when a nav button is focused)</td></tr>
+        </tbody>
+      </table>
+
+      <h3>ARIA and Semantics</h3>
+      <ul>
+        <li>The carousel container should use <code>role="region"</code> with an <code>aria-label</code> describing the content (e.g., "Featured stories").</li>
+        <li>Navigation buttons require <code>aria-label="Previous"</code> and <code>aria-label="Next"</code>.</li>
+        <li>Disabled buttons must have the <code>disabled</code> attribute and <code>aria-disabled="true"</code>.</li>
+        <li>The progress bar is decorative and should use <code>aria-hidden="true"</code>.</li>
+        <li>Content items within the track should have <code>role="group"</code> with <code>aria-roledescription="slide"</code> and <code>aria-label="N of M"</code>.</li>
+      </ul>
+
+      <!-- ---- CONSTRUCTION ---- -->
+      <h2>Construction</h2>
+      <p>The Carousel is composed of three atomic parts (left button, progress bar, right button) assembled into a control bar, placed below or above a viewport that clips the scrollable content track.</p>
+
+      <h3>Scale and Spacing</h3>
+      <table class="doc-table">
+        <thead><tr><th>Property</th><th>Value</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Button width</td><td>34px</td><td>Fixed</td></tr>
+          <tr><td>Button height</td><td>32px</td><td>Fixed</td></tr>
+          <tr><td>Button padding (horizontal)</td><td>12px</td><td><code>--padding-s-m</code></td></tr>
+          <tr><td>Button padding (vertical)</td><td>4px</td><td><code>--padding-xxs</code></td></tr>
+          <tr><td>Button border radius</td><td>48px</td><td><code>--radius-xxl</code></td></tr>
+          <tr><td>Button border width</td><td>1px</td><td>Fixed</td></tr>
+          <tr><td>Bar height</td><td>8px</td><td>Fixed</td></tr>
+          <tr><td>Bar border radius</td><td>48px</td><td><code>--radius-xxl</code></td></tr>
+          <tr><td>Controls gap</td><td>16px</td><td><code>--padding-m</code></td></tr>
+          <tr><td>Track item gap</td><td>16px</td><td><code>--padding-m</code></td></tr>
+          <tr><td>Focus ring width</td><td>2px</td><td>Fixed</td></tr>
+          <tr><td>Focus ring offset</td><td>-5px (inset)</td><td>Fixed</td></tr>
+          <tr><td>Focus ring radius</td><td>48px</td><td><code>--radius-xxl</code></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Styles</h3>
+      <table class="doc-table">
+        <thead><tr><th>Element</th><th>Font / Size</th></tr></thead>
+        <tbody>
+          <tr><td>Chevron icon</td><td>FA6 Solid (900), 16px/24px, 0.4px tracking</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Color Tokens</h3>
+      <table class="doc-table">
+        <thead><tr><th>Element</th><th>Default</th><th>Hover</th><th>Focus</th><th>Pressed</th><th>Disabled</th></tr></thead>
+        <tbody>
+          <tr><td>Button bg</td><td><code>--surface-default-container</code></td><td><code>--surface-action-hover</code></td><td><code>--surface-default-container</code></td><td><code>--surface-default-container</code></td><td><code>--surface-disabled</code></td></tr>
+          <tr><td>Button border</td><td><code>--border-action</code></td><td><code>--border-action-hover</code></td><td><code>--border-action</code></td><td><code>--border-action-pressed</code></td><td><code>--border-disabled</code></td></tr>
+          <tr><td>Button icon</td><td><code>--text-action</code></td><td><code>--text-action-hover</code></td><td><code>--text-action</code></td><td><code>--surface-action-pressed</code></td><td><code>--text-action-disabled</code></td></tr>
+          <tr><td>Bar track</td><td colspan="5"><code>--surface-action-carousel</code></td></tr>
+          <tr><td>Bar fill</td><td colspan="5"><code>--surface-action</code></td></tr>
+          <tr><td>Focus ring</td><td colspan="5"><code>--border-action</code></td></tr>
+        </tbody>
+      </table>
+
+      <!-- ---- APPLICATION & CONTEXT ---- -->
+      <h2>Application and Context</h2>
+
+      <h3>For Developers</h3>
+      <table class="doc-table">
+        <thead><tr><th>Attribute / Class</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><code>.carousel</code></td><td>Container</td><td>-</td><td>Root wrapper. Add <code>data-carousel</code> to enable JS behavior.</td></tr>
+          <tr><td><code>.carousel-viewport</code></td><td>Layout</td><td>-</td><td>Overflow-hidden container that clips the content track.</td></tr>
+          <tr><td><code>.carousel-track</code></td><td>Layout</td><td>-</td><td>Flex row holding all content items. Translates horizontally on navigation.</td></tr>
+          <tr><td><code>.carousel-controls</code></td><td>Layout</td><td>-</td><td>Flex row containing the two buttons and the progress bar.</td></tr>
+          <tr><td><code>.carousel-btn</code></td><td>Element</td><td>Enabled</td><td>Navigation button. 34x32px pill shape with a chevron icon.</td></tr>
+          <tr><td><code>.carousel-btn.is-disabled</code></td><td>Modifier</td><td>-</td><td>Grays out the button. Add <code>disabled</code> attribute.</td></tr>
+          <tr><td><code>.carousel-bar</code></td><td>Element</td><td>-</td><td>Progress track. Flex-grows to fill available space between buttons.</td></tr>
+          <tr><td><code>.carousel-bar-fill</code></td><td>Element</td><td>-</td><td>Absolute-positioned fill inside the bar. JS sets <code>left</code> and <code>width</code>.</td></tr>
+          <tr><td><code>data-carousel</code></td><td>Data attr</td><td>-</td><td>Place on <code>.carousel</code> to auto-initialize JS behavior.</td></tr>
+          <tr><td><code>data-carousel-prev</code></td><td>Data attr</td><td>-</td><td>Place on the left <code>.carousel-btn</code>.</td></tr>
+          <tr><td><code>data-carousel-next</code></td><td>Data attr</td><td>-</td><td>Place on the right <code>.carousel-btn</code>.</td></tr>
+          <tr><td><code>data-carousel-fill</code></td><td>Data attr</td><td>-</td><td>Place on <code>.carousel-bar-fill</code> for JS to update position.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>For Designers</h3>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Use the Carousel for horizontally scrollable content sets such as image galleries, card collections, or featured stories.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't use the Carousel for sequential workflows or step-by-step processes. Use the Tab Bar component instead.</p>
+        </div>
+      </div>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Ensure carousel content items are uniform in size so the progress bar accurately represents position.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't hide critical content inside a carousel. Important actions or information should be visible without scrolling.</p>
+        </div>
+      </div>
+
+      <!-- ---- SPACING GUIDANCE ---- -->
+      <h2>Spacing Guidance</h2>
+      <table class="doc-table">
+        <thead><tr><th>Context</th><th>Property</th><th>Value</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Controls bar internal</td><td>gap</td><td>16px</td><td><code>--padding-m</code></td></tr>
+          <tr><td>Track items</td><td>gap</td><td>16px</td><td><code>--padding-m</code></td></tr>
+          <tr><td>Viewport to controls</td><td>gap</td><td>16px</td><td><code>--padding-m</code></td></tr>
+          <tr><td>Carousel to surrounding content</td><td>margin</td><td>16-24px</td><td><code>--padding-m</code> / <code>--padding-l</code></td></tr>
+        </tbody>
+      </table>
+
+      <!-- ---- USAGE EXAMPLES ---- -->
+      <h2>Usage Examples</h2>
+
+      <h3>Basic Carousel</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;div class="carousel" data-carousel role="region" aria-label="Featured stories"&gt;
+  &lt;div class="carousel-viewport"&gt;
+    &lt;div class="carousel-track"&gt;
+      &lt;div role="group" aria-roledescription="slide" aria-label="1 of 4"&gt;...&lt;/div&gt;
+      &lt;div role="group" aria-roledescription="slide" aria-label="2 of 4"&gt;...&lt;/div&gt;
+      &lt;div role="group" aria-roledescription="slide" aria-label="3 of 4"&gt;...&lt;/div&gt;
+      &lt;div role="group" aria-roledescription="slide" aria-label="4 of 4"&gt;...&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="carousel-controls"&gt;
+    &lt;button class="carousel-btn" type="button" aria-label="Previous" data-carousel-prev&gt;
+      &lt;i class="fa-solid fa-chevron-left"&gt;&lt;/i&gt;
+    &lt;/button&gt;
+    &lt;div class="carousel-bar" aria-hidden="true"&gt;
+      &lt;div class="carousel-bar-fill" data-carousel-fill&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button class="carousel-btn" type="button" aria-label="Next" data-carousel-next&gt;
+      &lt;i class="fa-solid fa-chevron-right"&gt;&lt;/i&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Controls Only (No Content)</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;div class="carousel-controls"&gt;
+  &lt;button class="carousel-btn" type="button" aria-label="Previous"&gt;
+    &lt;i class="fa-solid fa-chevron-left"&gt;&lt;/i&gt;
+  &lt;/button&gt;
+  &lt;div class="carousel-bar" aria-hidden="true"&gt;
+    &lt;div class="carousel-bar-fill" style="left:0%; width:25%;"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button class="carousel-btn" type="button" aria-label="Next"&gt;
+    &lt;i class="fa-solid fa-chevron-right"&gt;&lt;/i&gt;
   &lt;/button&gt;
 &lt;/div&gt;</code></pre>
       </div>
@@ -1585,6 +2487,398 @@
         disabled aria-disabled="true" aria-label="Info"&gt;
   &lt;i class="btn-icon fa-solid fa-circle-info"&gt;&lt;/i&gt;
 &lt;/button&gt;</code></pre>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         COMPONENT — INPUT
+         ================================================================ -->
+    <section class="page" id="comp-input">
+      <div class="page-breadcrumb">Components <span>/</span> Input</div>
+      <h1>Input</h1>
+      <p class="lead">A single-line text field that combines a label, input field with optional icons, and hint text into a complete form control.</p>
+
+      <!-- ---- OVERVIEW ---- -->
+      <h2>Overview</h2>
+      <p>The Input component is a composed form control made up of three sub-elements: a <strong>Label</strong> (with optional info icon and required indicator), a <strong>Field</strong> (with optional leading and trailing icons), and optional <strong>Hint Text</strong>. It supports four interaction states (default, hover, focus, disabled) and three validation states (error, success, information). The Input is also used within the <a href="#pattern-forms" data-page="pattern-forms">Forms</a> pattern. All field text uses Lato Regular at Body M (16px/24px). Hint text uses Body S (14px/18px). Icons use Font Awesome 6 Solid at 16px.</p>
+
+      <!-- ---- VARIANTS ---- -->
+      <h2>Variants</h2>
+
+      <h3>Label</h3>
+      <p>The label sits above the field. It pairs text with an optional trailing info icon. The required variant positions a red asterisk to the left of the label text (per WCAG best practice).</p>
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <label class="input-label">Label <i class="label-icon fa-solid fa-circle-question"></i></label>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Required</span>
+        <label class="input-label label-required">Label <i class="label-icon fa-solid fa-circle-question"></i></label>
+      </div>
+
+      <h3>Field States</h3>
+      <p>The field container supports four interaction states. Icons, border, and background change per state. Placeholder text uses <code>--text-placeholder</code>; typed text inherits the field's <code>--text-body</code> color.</p>
+
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <div class="form-field" style="width:336px">
+          <i class="field-icon fa-solid fa-user"></i>
+          <input type="text" placeholder="Placeholder">
+          <i class="field-icon fa-solid fa-circle-xmark"></i>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Hover</span>
+        <div class="form-field show-hover" style="width:336px">
+          <i class="field-icon fa-solid fa-user"></i>
+          <input type="text" placeholder="Placeholder">
+          <i class="field-icon fa-solid fa-circle-xmark"></i>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Focus</span>
+        <div class="form-field show-focus" style="width:336px">
+          <i class="field-icon fa-solid fa-user"></i>
+          <input type="text" placeholder="Placeholder">
+          <i class="field-icon fa-solid fa-circle-xmark"></i>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Disabled</span>
+        <div class="form-field is-disabled" style="width:336px">
+          <i class="field-icon fa-solid fa-user"></i>
+          <input type="text" placeholder="Placeholder" disabled>
+          <i class="field-icon fa-solid fa-circle-xmark"></i>
+        </div>
+      </div>
+
+      <h3>Validation States</h3>
+      <p>Validation feedback colors the field border, trailing icon, and hint text to indicate status. The trailing icon changes to <code>fa-circle-check</code> for success and <code>fa-circle-xmark</code> for error and information.</p>
+
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <div class="input-group" style="width:336px">
+          <label class="input-label">Label <i class="label-icon fa-solid fa-circle-question"></i></label>
+          <div class="form-field">
+            <i class="field-icon fa-solid fa-user"></i>
+            <input type="text" placeholder="First name">
+            <i class="field-icon fa-solid fa-circle-xmark"></i>
+          </div>
+          <span class="input-hint">Hint text</span>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Error</span>
+        <div class="input-group" style="width:336px">
+          <label class="input-label">Label <i class="label-icon fa-solid fa-circle-question"></i></label>
+          <div class="form-field field-error">
+            <i class="field-icon fa-solid fa-user"></i>
+            <input type="text" placeholder="First name">
+            <i class="field-icon field-status-icon fa-solid fa-circle-xmark"></i>
+          </div>
+          <span class="input-hint hint-error">Hint text</span>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Error Hover</span>
+        <div class="input-group" style="width:336px">
+          <label class="input-label">Label <i class="label-icon fa-solid fa-circle-question"></i></label>
+          <div class="form-field field-error show-hover">
+            <i class="field-icon fa-solid fa-user"></i>
+            <input type="text" placeholder="First name">
+            <i class="field-icon field-status-icon fa-solid fa-circle-xmark"></i>
+          </div>
+          <span class="input-hint hint-error">Hint text</span>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Success</span>
+        <div class="input-group" style="width:336px">
+          <label class="input-label">Label <i class="label-icon fa-solid fa-circle-question"></i></label>
+          <div class="form-field field-success">
+            <i class="field-icon fa-solid fa-user"></i>
+            <input type="text" placeholder="First name">
+            <i class="field-icon field-status-icon fa-solid fa-circle-check"></i>
+          </div>
+          <span class="input-hint hint-success">Hint text</span>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Success Hover</span>
+        <div class="input-group" style="width:336px">
+          <label class="input-label">Label <i class="label-icon fa-solid fa-circle-question"></i></label>
+          <div class="form-field field-success show-hover">
+            <i class="field-icon fa-solid fa-user"></i>
+            <input type="text" placeholder="First name">
+            <i class="field-icon field-status-icon fa-solid fa-circle-check"></i>
+          </div>
+          <span class="input-hint hint-success">Hint text</span>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Information</span>
+        <div class="input-group" style="width:336px">
+          <label class="input-label">Label <i class="label-icon fa-solid fa-circle-question"></i></label>
+          <div class="form-field field-information">
+            <i class="field-icon fa-solid fa-user"></i>
+            <input type="text" placeholder="First name">
+            <i class="field-icon field-status-icon fa-solid fa-circle-xmark"></i>
+          </div>
+          <span class="input-hint hint-information">Hint text</span>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Info Hover</span>
+        <div class="input-group" style="width:336px">
+          <label class="input-label">Label <i class="label-icon fa-solid fa-circle-question"></i></label>
+          <div class="form-field field-information show-hover">
+            <i class="field-icon fa-solid fa-user"></i>
+            <input type="text" placeholder="First name">
+            <i class="field-icon field-status-icon fa-solid fa-circle-xmark"></i>
+          </div>
+          <span class="input-hint hint-information">Hint text</span>
+        </div>
+      </div>
+
+      <h3>Assembled Input</h3>
+      <p>The full Input component with Label, Field, and Hint Text.</p>
+      <div class="preview-block">
+        <div class="input-group" style="width:336px">
+          <label class="input-label">Label <i class="label-icon fa-solid fa-circle-question"></i></label>
+          <div class="form-field">
+            <i class="field-icon fa-solid fa-user"></i>
+            <input type="text" placeholder="First name">
+            <i class="field-icon fa-solid fa-circle-xmark"></i>
+          </div>
+          <span class="input-hint">Hint text</span>
+        </div>
+      </div>
+
+      <!-- ---- ACCESSIBILITY ---- -->
+      <h2>Accessibility Considerations</h2>
+      <p>WCAG 2.1 AA target. Every input must be associated with a visible label for assistive technology.</p>
+
+      <h3>Keyboard Interactions</h3>
+      <table class="doc-table">
+        <thead><tr><th>Key</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td><code>Tab</code></td><td>Moves focus into the input field. Disabled fields are skipped automatically.</td></tr>
+          <tr><td>Any character</td><td>Enters text at the cursor position (standard native input behavior).</td></tr>
+          <tr><td><code>Backspace</code> / <code>Delete</code></td><td>Removes characters before / after cursor.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>ARIA and Semantics</h3>
+      <ul>
+        <li>Use <code>&lt;label for="id"&gt;</code> or wrap the input in a <code>&lt;label&gt;</code> to associate the label with the field.</li>
+        <li>Add <code>aria-required="true"</code> to required fields. The visual asterisk is decorative via CSS <code>::before</code>.</li>
+        <li>Connect hint/validation text via <code>aria-describedby</code> pointing to the hint element's <code>id</code>.</li>
+        <li>Set <code>aria-invalid="true"</code> on the input when in an error state.</li>
+        <li>Leading and trailing icons are decorative and must include <code>aria-hidden="true"</code>.</li>
+        <li>Use the native <code>disabled</code> attribute on <code>&lt;input&gt;</code> to remove disabled fields from tab order automatically.</li>
+      </ul>
+
+      <!-- ---- CONSTRUCTION ---- -->
+      <h2>Construction</h2>
+      <p>The Input is composed of three sub-elements stacked vertically: Label, Field, and Hint Text. All three sit inside a flex-column container (<code>.input-group</code>) with 8px gap.</p>
+
+      <h3>Scale and Spacing</h3>
+      <table class="doc-table">
+        <thead><tr><th>Property</th><th>Value</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Field padding (vertical)</td><td>8px</td><td><code>--padding-s</code></td></tr>
+          <tr><td>Field padding (horizontal)</td><td>12px</td><td><code>--padding-s-m</code></td></tr>
+          <tr><td>Field icon-to-text gap</td><td>8px</td><td><code>--padding-s</code></td></tr>
+          <tr><td>Field min-width</td><td>336px</td><td>Fixed</td></tr>
+          <tr><td>Field border width</td><td>1px</td><td><code>Border/Width/M default</code></td></tr>
+          <tr><td>Field border radius</td><td>8px</td><td><code>--radius-m</code></td></tr>
+          <tr><td>Focus ring width</td><td>2px</td><td><code>Border/Width/M action</code></td></tr>
+          <tr><td>Focus ring offset</td><td>-5px (inset)</td><td>Fixed</td></tr>
+          <tr><td>Focus ring radius</td><td>10px</td><td>Fixed</td></tr>
+          <tr><td>Label-to-field gap</td><td>8px</td><td><code>--padding-s</code></td></tr>
+          <tr><td>Field-to-hint gap</td><td>8px</td><td><code>--padding-s</code></td></tr>
+          <tr><td>Label icon gap</td><td>8px</td><td><code>--padding-s</code></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Styles</h3>
+      <table class="doc-table">
+        <thead><tr><th>Element</th><th>Font / Size</th></tr></thead>
+        <tbody>
+          <tr><td>Label text</td><td>Lato Regular (400), 16px/24px, 0.16px tracking</td></tr>
+          <tr><td>Label icon</td><td>FA6 Solid (900), 16px/24px, 0.4px tracking</td></tr>
+          <tr><td>Field text (typed)</td><td>Lato Regular (400), 16px/24px, 0.16px tracking</td></tr>
+          <tr><td>Field placeholder</td><td>Lato Regular (400), 16px/24px, 0.16px tracking</td></tr>
+          <tr><td>Field icons</td><td>FA6 Solid (900), 16px/24px, 0.4px tracking</td></tr>
+          <tr><td>Hint text</td><td>Lato Regular (400), 14px/18px</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Color Tokens</h3>
+      <table class="doc-table">
+        <thead><tr><th>Element</th><th>Default</th><th>Hover</th><th>Focus</th><th>Disabled</th></tr></thead>
+        <tbody>
+          <tr><td>Field border</td><td><code>--border-accent</code></td><td><code>--border-action-hover</code></td><td><code>--border-action</code></td><td><code>--border-disabled</code></td></tr>
+          <tr><td>Field background</td><td><code>--surface-default-container</code></td><td><code>--surface-action-hover</code></td><td><code>--surface-default-container</code></td><td><code>--surface-disabled</code></td></tr>
+          <tr><td>Field text / icons</td><td><code>--text-body</code></td><td><code>--text-action-hover</code></td><td><code>--text-body</code></td><td><code>--text-action-disabled</code></td></tr>
+          <tr><td>Placeholder</td><td colspan="3"><code>--text-placeholder</code></td><td><code>--text-placeholder</code></td></tr>
+          <tr><td>Focus ring</td><td colspan="2">&mdash;</td><td><code>--border-action</code> (2px)</td><td>&mdash;</td></tr>
+          <tr><td>Label text</td><td colspan="4"><code>--text-body</code></td></tr>
+          <tr><td>Hint text</td><td colspan="4"><code>--text-body</code></td></tr>
+        </tbody>
+      </table>
+
+      <table class="doc-table" style="margin-top:var(--padding-m)">
+        <thead><tr><th>Element</th><th>Error</th><th>Error Hover</th><th>Success</th><th>Success Hover</th><th>Information</th><th>Info Hover</th></tr></thead>
+        <tbody>
+          <tr><td>Field border</td><td><code>--border-error</code></td><td><code>--border-error</code></td><td><code>--border-success</code></td><td><code>--border-success</code></td><td><code>--border-information</code></td><td><code>--border-information</code></td></tr>
+          <tr><td>Field bg</td><td><code>--surface-default-container</code></td><td><code>--surface-error</code></td><td><code>--surface-default-container</code></td><td><code>--surface-success</code></td><td><code>--surface-default-container</code></td><td><code>--surface-information</code></td></tr>
+          <tr><td>Hint text</td><td><code>--text-status-error</code></td><td><code>--text-status-error</code></td><td><code>--text-status-success</code></td><td><code>--text-status-success</code></td><td><code>--text-status-information</code></td><td><code>--text-status-information</code></td></tr>
+          <tr><td>Status icon</td><td><code>--text-status-error</code></td><td><code>--text-status-error</code></td><td><code>--text-status-success</code></td><td><code>--text-status-success</code></td><td><code>--text-status-information</code></td><td><code>--text-status-information</code></td></tr>
+        </tbody>
+      </table>
+
+      <!-- ---- APPLICATION & CONTEXT ---- -->
+      <h2>Application and Context</h2>
+
+      <h3>For Developers</h3>
+      <table class="doc-table">
+        <thead><tr><th>Attribute / Class</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><code>.input-group</code></td><td>Container</td><td>&mdash;</td><td>Flex column, 8px gap. Wraps label, field, and hint.</td></tr>
+          <tr><td><code>.input-label</code></td><td>Label</td><td>&mdash;</td><td>Applied to <code>&lt;label&gt;</code>. Flex row, 8px icon gap, body color.</td></tr>
+          <tr><td><code>.label-required</code></td><td>Modifier</td><td>&mdash;</td><td>Adds red asterisk via <code>::before</code>. Requires <code>position: relative</code> on the label.</td></tr>
+          <tr><td><code>.label-icon</code></td><td>Element</td><td>&mdash;</td><td>Info icon inside the label. FA Solid, inherits color.</td></tr>
+          <tr><td><code>.form-field</code></td><td>Field container</td><td>Default state</td><td>Flex row, 8px gap, 8px/12px padding, 1px border, 8px radius.</td></tr>
+          <tr><td><code>.field-icon</code></td><td>Element</td><td>&mdash;</td><td>Leading or trailing icon inside the field. FA Solid, 16px.</td></tr>
+          <tr><td><code>.field-status-icon</code></td><td>Modifier</td><td>&mdash;</td><td>Applied to trailing icon for validation. Colors the icon per status.</td></tr>
+          <tr><td><code>.is-disabled</code></td><td>State</td><td>&mdash;</td><td>Disabled field. Also set the native <code>disabled</code> attribute on the input element.</td></tr>
+          <tr><td><code>.field-error</code></td><td>Validation</td><td>&mdash;</td><td>Error border + hover bg. Pair with <code>.hint-error</code> and <code>.field-status-icon</code>.</td></tr>
+          <tr><td><code>.field-success</code></td><td>Validation</td><td>&mdash;</td><td>Success border + hover bg. Pair with <code>.hint-success</code> and <code>.field-status-icon</code>.</td></tr>
+          <tr><td><code>.field-information</code></td><td>Validation</td><td>&mdash;</td><td>Information border + hover bg. Pair with <code>.hint-information</code> and <code>.field-status-icon</code>.</td></tr>
+          <tr><td><code>.input-hint</code></td><td>Element</td><td>&mdash;</td><td>Hint or validation message below the field. Body S, body color by default.</td></tr>
+          <tr><td><code>.hint-error</code></td><td>Modifier</td><td>&mdash;</td><td>Colors hint with <code>--text-status-error</code>.</td></tr>
+          <tr><td><code>.hint-success</code></td><td>Modifier</td><td>&mdash;</td><td>Colors hint with <code>--text-status-success</code>.</td></tr>
+          <tr><td><code>.hint-information</code></td><td>Modifier</td><td>&mdash;</td><td>Colors hint with <code>--text-status-information</code>.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>For Designers</h3>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Always pair an input field with a visible label. Placeholder text alone is not a substitute for a label.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't rely on placeholder text as the primary label. It disappears once the user starts typing and is not reliably read by screen readers.</p>
+        </div>
+      </div>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Use hint text to provide context or formatting guidance (e.g., "Enter your first name"). Keep it brief and actionable.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't use hint text for critical instructions. If the information is essential, place it in the label or nearby body text instead.</p>
+        </div>
+      </div>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Show validation messages immediately after the user leaves the field or submits the form. Use the appropriate status color.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't rely solely on color to communicate validation status. The border, icon, and text message work together to convey the state.</p>
+        </div>
+      </div>
+
+      <!-- ---- SPACING GUIDANCE ---- -->
+      <h2>Spacing Guidance</h2>
+      <table class="doc-table">
+        <thead><tr><th>Context</th><th>Property</th><th>Value</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Input group internal</td><td>gap</td><td>8px</td><td><code>--padding-s</code></td></tr>
+          <tr><td>Field internal</td><td>padding</td><td>8px 12px</td><td><code>--padding-s</code> / <code>--padding-s-m</code></td></tr>
+          <tr><td>Field icon to text</td><td>gap</td><td>8px</td><td><code>--padding-s</code></td></tr>
+          <tr><td>Label icon to text</td><td>gap</td><td>8px</td><td><code>--padding-s</code></td></tr>
+          <tr><td>Between stacked inputs</td><td>gap</td><td>24px</td><td><code>--space-300</code></td></tr>
+          <tr><td>Last input to submit</td><td>gap</td><td>24px</td><td><code>--space-300</code></td></tr>
+        </tbody>
+      </table>
+
+      <!-- ---- USAGE EXAMPLES ---- -->
+      <h2>Usage Examples</h2>
+
+      <h3>Basic Input with Label and Hint</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;div class="input-group"&gt;
+  &lt;label class="input-label" for="fname"&gt;
+    First name
+    &lt;i class="label-icon fa-solid fa-circle-question" aria-hidden="true"&gt;&lt;/i&gt;
+  &lt;/label&gt;
+  &lt;div class="form-field"&gt;
+    &lt;i class="field-icon fa-solid fa-user" aria-hidden="true"&gt;&lt;/i&gt;
+    &lt;input type="text" id="fname" placeholder="First name"&gt;
+    &lt;i class="field-icon fa-solid fa-circle-xmark" aria-hidden="true"&gt;&lt;/i&gt;
+  &lt;/div&gt;
+  &lt;span class="input-hint"&gt;Hint text&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Required Input</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;div class="input-group"&gt;
+  &lt;label class="input-label label-required" for="email"&gt;
+    Email
+    &lt;i class="label-icon fa-solid fa-circle-question" aria-hidden="true"&gt;&lt;/i&gt;
+  &lt;/label&gt;
+  &lt;div class="form-field"&gt;
+    &lt;i class="field-icon fa-solid fa-envelope" aria-hidden="true"&gt;&lt;/i&gt;
+    &lt;input type="email" id="email" placeholder="Email address"
+           aria-required="true"&gt;
+    &lt;i class="field-icon fa-solid fa-circle-xmark" aria-hidden="true"&gt;&lt;/i&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Input with Error Validation</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;div class="input-group"&gt;
+  &lt;label class="input-label" for="email-err"&gt;Email&lt;/label&gt;
+  &lt;div class="form-field field-error"&gt;
+    &lt;i class="field-icon fa-solid fa-envelope" aria-hidden="true"&gt;&lt;/i&gt;
+    &lt;input type="email" id="email-err" placeholder="Email"
+           aria-invalid="true" aria-describedby="email-err-hint"&gt;
+    &lt;i class="field-icon field-status-icon
+              fa-solid fa-circle-xmark" aria-hidden="true"&gt;&lt;/i&gt;
+  &lt;/div&gt;
+  &lt;span class="input-hint hint-error"
+        id="email-err-hint"&gt;Please enter a valid email.&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Input with Success Validation</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;div class="input-group"&gt;
+  &lt;label class="input-label" for="email-ok"&gt;Email&lt;/label&gt;
+  &lt;div class="form-field field-success"&gt;
+    &lt;i class="field-icon fa-solid fa-envelope" aria-hidden="true"&gt;&lt;/i&gt;
+    &lt;input type="email" id="email-ok" placeholder="Email"
+           aria-describedby="email-ok-hint"&gt;
+    &lt;i class="field-icon field-status-icon
+              fa-solid fa-circle-check" aria-hidden="true"&gt;&lt;/i&gt;
+  &lt;/div&gt;
+  &lt;span class="input-hint hint-success"
+        id="email-ok-hint"&gt;Email verified successfully.&lt;/span&gt;
+&lt;/div&gt;</code></pre>
       </div>
     </section>
 
@@ -2099,11 +3393,11 @@
     <section class="page" id="comp-snackbar">
       <div class="page-breadcrumb">Components <span>/</span> Snackbar</div>
       <h1>Snackbar</h1>
-      <p class="lead">A brief, non-modal notification that informs users of a process outcome or system event, such as a new campaign launch, an enrollment opening, or an incomplete account setup.</p>
+      <p class="lead">The Snackbar as a brief, modal notification to the user for things such as: A new fundraising campaign just launched, a new press release has been posted to the website, fundraising and sign-ups have opened for enrollment for Team World Vision, the user started setting up their account but hasn’t finished, etc. </p>
 
       <!-- ---- OVERVIEW ---- -->
       <h2>Overview</h2>
-      <p>The snackbar is a lightweight feedback surface at a fixed 336px width. It contains an optional status icon, a bold heading, body copy, an optional "Learn More" text link, a close button, and an optional progress bar (using the Progress Bar SM component) along the bottom edge. Four status variants (Default, Success, Error, Information) control the icon and heading color while body text stays neutral. All optional elements (icon, link, close, progress bar) can be included or omitted independently.</p>
+      <p>The snackbar is a lightweight feedback surface at a minimum of 336px width. It contains an optional status icon, a bold heading, body copy, an optional "Learn More" text link, a close button, and an optional progress bar (using the Progress Bar SM component) along the bottom edge. Four status variants (Default, Success, Error, Information) control the icon and heading color while body text stays neutral. All optional elements (icon, link, close, progress bar) can be included or omitted independently.</p>
 
       <!-- ---- VARIANTS ---- -->
       <h2>Variants</h2>
@@ -2119,7 +3413,7 @@
               <div class="snackbar-text">
                 <div class="snackbar-heading">Snackbar Title</div>
                 <div class="snackbar-body">Lorem Ipsum, the standard dummy text for a lot of digital placeholder text.</div>
-                <a class="snackbar-link" href="#"><span>Learn More</span> <i class="link-icon fa-solid fa-chevron-right"></i></a>
+                <a class="text-link text-link-m" href="#"><span class="link-label">Learn More</span> <i class="link-icon fa-solid fa-chevron-right"></i></a>
               </div>
             </div>
             <button class="snackbar-close" aria-label="Dismiss"><i class="fa-solid fa-xmark"></i></button>
@@ -2140,6 +3434,7 @@
             </div>
             <button class="snackbar-close" aria-label="Dismiss"><i class="fa-solid fa-xmark"></i></button>
           </div>
+          <div class="progress-bar progress-bar-sm"><div class="progress-bar-track"><div class="progress-bar-fill" style="width:60%"></div></div></div>
         </div>
       </div>
       <div class="state-row">
@@ -2150,7 +3445,24 @@
               <div class="snackbar-text">
                 <div class="snackbar-heading">Snackbar Title</div>
                 <div class="snackbar-body">Lorem Ipsum, the standard dummy text for a lot of digital placeholder text.</div>
-                <a class="snackbar-link" href="#"><span>Learn More</span> <i class="link-icon fa-solid fa-chevron-right"></i></a>
+                <a class="text-link text-link-m" href="#"><span class="link-label">Learn More</span> <i class="link-icon fa-solid fa-chevron-right"></i></a>
+              </div>
+            </div>
+            <button class="snackbar-close" aria-label="Dismiss"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+          <div class="progress-bar progress-bar-sm"><div class="progress-bar-track"><div class="progress-bar-fill" style="width:60%"></div></div></div>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">No Progress Bar</span>
+        <div class="snackbar">
+          <div class="snackbar-content">
+            <div class="snackbar-icon-text">
+              <div class="snackbar-icon"><i class="fa-solid fa-circle-info"></i></div>
+              <div class="snackbar-text">
+                <div class="snackbar-heading">Snackbar Title</div>
+                <div class="snackbar-body">Lorem Ipsum, the standard dummy text for a lot of digital placeholder text.</div>
+                <a class="text-link text-link-m" href="#"><span class="link-label">Learn More</span> <i class="link-icon fa-solid fa-chevron-right"></i></a>
               </div>
             </div>
             <button class="snackbar-close" aria-label="Dismiss"><i class="fa-solid fa-xmark"></i></button>
@@ -2169,7 +3481,7 @@
               <div class="snackbar-text">
                 <div class="snackbar-heading">Snackbar Title</div>
                 <div class="snackbar-body">Lorem Ipsum, the standard dummy text for a lot of digital placeholder text.</div>
-                <a class="snackbar-link" href="#"><span>Learn More</span> <i class="link-icon fa-solid fa-chevron-right"></i></a>
+                <a class="text-link text-link-m" href="#"><span class="link-label">Learn More</span> <i class="link-icon fa-solid fa-chevron-right"></i></a>
               </div>
             </div>
             <button class="snackbar-close" aria-label="Dismiss"><i class="fa-solid fa-xmark"></i></button>
@@ -2189,7 +3501,7 @@
               <div class="snackbar-text">
                 <div class="snackbar-heading">Snackbar Title</div>
                 <div class="snackbar-body">Lorem Ipsum, the standard dummy text for a lot of digital placeholder text.</div>
-                <a class="snackbar-link" href="#"><span>Learn More</span> <i class="link-icon fa-solid fa-chevron-right"></i></a>
+                <a class="text-link text-link-m" href="#"><span class="link-label">Learn More</span> <i class="link-icon fa-solid fa-chevron-right"></i></a>
               </div>
             </div>
             <button class="snackbar-close" aria-label="Dismiss"><i class="fa-solid fa-xmark"></i></button>
@@ -2209,7 +3521,7 @@
               <div class="snackbar-text">
                 <div class="snackbar-heading">Snackbar Title</div>
                 <div class="snackbar-body">Lorem Ipsum, the standard dummy text for a lot of digital placeholder text.</div>
-                <a class="snackbar-link" href="#"><span>Learn More</span> <i class="link-icon fa-solid fa-chevron-right"></i></a>
+                <a class="text-link text-link-m" href="#"><span class="link-label">Learn More</span> <i class="link-icon fa-solid fa-chevron-right"></i></a>
               </div>
             </div>
             <button class="snackbar-close" aria-label="Dismiss"><i class="fa-solid fa-xmark"></i></button>
@@ -2309,7 +3621,7 @@
           <tr><td><code>.snackbar-text</code></td><td>Layout</td><td>&mdash;</td><td>Flex column for heading, body, and link.</td></tr>
           <tr><td><code>.snackbar-heading</code></td><td>Element</td><td>&mdash;</td><td>Bold title. Color set by status modifier.</td></tr>
           <tr><td><code>.snackbar-body</code></td><td>Element</td><td>&mdash;</td><td>Body copy in neutral color.</td></tr>
-          <tr><td><code>.snackbar-link</code></td><td>Element</td><td>&mdash;</td><td>Optional inline link with chevron icon.</td></tr>
+          <tr><td><code>.text-link.text-link-m</code></td><td>Sub-component</td><td>&mdash;</td><td>Optional. Reuses the Body Link M component. Hover and focus states inherit automatically.</td></tr>
           <tr><td><code>.snackbar-close</code></td><td>Element</td><td>&mdash;</td><td>Dismiss button. Requires <code>aria-label="Dismiss"</code>.</td></tr>
           <tr><td><code>.progress-bar.progress-bar-sm</code></td><td>Sub-component</td><td>&mdash;</td><td>Optional. Embeds the Progress Bar SM at the bottom.</td></tr>
         </tbody>
@@ -2366,8 +3678,8 @@
       &lt;div class="snackbar-text"&gt;
         &lt;div class="snackbar-heading"&gt;Changes saved&lt;/div&gt;
         &lt;div class="snackbar-body"&gt;Your profile has been updated.&lt;/div&gt;
-        &lt;a class="snackbar-link" href="#"&gt;
-          &lt;span&gt;Learn More&lt;/span&gt;
+        &lt;a class="text-link text-link-m" href="#"&gt;
+          &lt;span class="link-label"&gt;Learn More&lt;/span&gt;
           &lt;i class="link-icon fa-solid fa-chevron-right"&gt;&lt;/i&gt;
         &lt;/a&gt;
       &lt;/div&gt;
@@ -2426,111 +3738,394 @@
 
 
     <!-- ================================================================
+         COMPONENT — TAB BAR
+         ================================================================ -->
+    <section class="page" id="comp-tab-bar">
+      <div class="page-breadcrumb">Components <span>/</span> Tab Bar</div>
+      <h1>Tab Bar</h1>
+      <p class="lead">A horizontal navigation element that shows users where they are in a multi-step process. Users can see completed steps, the current step, and remaining steps, and click any previous step to navigate back.</p>
+
+      <!-- ---- OVERVIEW ---- -->
+      <h2>Overview</h2>
+      <p>The Tab Bar is a linear, horizontal stepper that communicates progress through a multi-step workflow. Each tab represents one step. The selected (current) tab is visually distinguished with a bold label and an orange bottom border. Unselected tabs use regular-weight text with no bottom border. Two layout variants exist: <strong>Icons</strong> (each tab has an optional leading icon and a text label) and <strong>Numbers</strong> (each tab has a numeric prefix and a text label, no icon). Four interaction states apply per tab: Default, Hover, Focus, and Disabled.</p>
+
+      <!-- ---- VARIANTS ---- -->
+      <h2>Variants</h2>
+
+      <h3>Tab Item - Unselected</h3>
+      <p>Regular-weight label, no bottom border highlight. Used for steps the user has not yet reached or for completed steps they can revisit.</p>
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <button class="tab-item" type="button">
+          <span class="tab-icon fa-solid fa-heart" aria-hidden="true"></span>
+          <span class="tab-label">World Vision</span>
+        </button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Hover</span>
+        <button class="tab-item show-hover" type="button">
+          <span class="tab-icon fa-solid fa-heart" aria-hidden="true"></span>
+          <span class="tab-label">World Vision</span>
+        </button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Focus</span>
+        <button class="tab-item show-focus" type="button">
+          <span class="tab-icon fa-solid fa-heart" aria-hidden="true"></span>
+          <span class="tab-label">World Vision</span>
+        </button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Disabled</span>
+        <button class="tab-item is-disabled" type="button" disabled>
+          <span class="tab-icon fa-solid fa-heart" aria-hidden="true"></span>
+          <span class="tab-label">World Vision</span>
+        </button>
+      </div>
+
+      <h3>Tab Item - Selected</h3>
+      <p>Bold label with a 2px orange bottom border. Indicates the current active step in the process.</p>
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <button class="tab-item selected" type="button" aria-current="true">
+          <span class="tab-icon fa-solid fa-heart" aria-hidden="true"></span>
+          <span class="tab-label">World Vision</span>
+        </button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Hover</span>
+        <button class="tab-item selected show-hover" type="button" aria-current="true">
+          <span class="tab-icon fa-solid fa-heart" aria-hidden="true"></span>
+          <span class="tab-label">World Vision</span>
+        </button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Focus</span>
+        <button class="tab-item selected show-focus" type="button" aria-current="true">
+          <span class="tab-icon fa-solid fa-heart" aria-hidden="true"></span>
+          <span class="tab-label">World Vision</span>
+        </button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Disabled</span>
+        <button class="tab-item selected is-disabled" type="button" disabled aria-current="true">
+          <span class="tab-icon fa-solid fa-heart" aria-hidden="true"></span>
+          <span class="tab-label">World Vision</span>
+        </button>
+      </div>
+
+      <h3>Assembled - Icons Variant</h3>
+      <p>Each tab contains an icon and a text label. The full bar spans horizontally with a 1px bottom border. The second tab is shown as selected.</p>
+      <div class="state-row">
+        <span class="state-label">Icons</span>
+        <div class="tab-bar">
+          <button class="tab-item" type="button">
+            <span class="tab-icon fa-solid fa-heart" aria-hidden="true"></span>
+            <span class="tab-label">World Vision</span>
+          </button>
+          <button class="tab-item selected" type="button" aria-current="true">
+            <span class="tab-icon fa-solid fa-heart" aria-hidden="true"></span>
+            <span class="tab-label">World Vision</span>
+          </button>
+          <button class="tab-item" type="button">
+            <span class="tab-icon fa-solid fa-heart" aria-hidden="true"></span>
+            <span class="tab-label">World Vision</span>
+          </button>
+          <button class="tab-item" type="button">
+            <span class="tab-icon fa-solid fa-heart" aria-hidden="true"></span>
+            <span class="tab-label">World Vision</span>
+          </button>
+        </div>
+      </div>
+
+      <h3>Assembled - Numbers Variant</h3>
+      <p>Each tab uses a numeric prefix instead of an icon (e.g., "1. Name", "2. Address"). The second tab is shown as selected.</p>
+      <div class="state-row">
+        <span class="state-label">Numbers</span>
+        <div class="tab-bar">
+          <button class="tab-item" type="button">
+            <span class="tab-label">1. Name</span>
+          </button>
+          <button class="tab-item selected" type="button" aria-current="true">
+            <span class="tab-label">2. Address</span>
+          </button>
+          <button class="tab-item" type="button">
+            <span class="tab-label">3. Contact</span>
+          </button>
+          <button class="tab-item" type="button">
+            <span class="tab-label">4. Billing</span>
+          </button>
+          <button class="tab-item" type="button">
+            <span class="tab-label">5. World Vision</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ---- ACCESSIBILITY ---- -->
+      <h2>Accessibility Considerations</h2>
+      <p>WCAG 2.1 AA target. The Tab Bar uses a tablist role pattern so assistive technology can convey the number of steps, the current step, and allow keyboard navigation between them.</p>
+
+      <h3>Keyboard Interactions</h3>
+      <table class="doc-table">
+        <thead><tr><th>Key</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td><code>Tab</code></td><td>Moves focus into the tab bar, landing on the currently selected tab</td></tr>
+          <tr><td><code>Arrow Left</code> / <code>Arrow Right</code></td><td>Moves focus between tabs within the bar</td></tr>
+          <tr><td><code>Enter</code> / <code>Space</code></td><td>Activates the focused tab and navigates to that step</td></tr>
+          <tr><td><code>Home</code></td><td>Moves focus to the first tab</td></tr>
+          <tr><td><code>End</code></td><td>Moves focus to the last tab</td></tr>
+        </tbody>
+      </table>
+
+      <h3>ARIA and Semantics</h3>
+      <ul>
+        <li>The container should use <code>role="tablist"</code> to identify the group of tabs.</li>
+        <li>Each tab should use <code>role="tab"</code>.</li>
+        <li>The selected tab should have <code>aria-selected="true"</code>; all others <code>aria-selected="false"</code>.</li>
+        <li>Disabled tabs should have <code>aria-disabled="true"</code> and <code>tabindex="-1"</code> to remove them from the tab order.</li>
+        <li>Use <code>aria-label</code> on the tablist container to describe the process (e.g., "Registration steps").</li>
+        <li>Icons are decorative and must have <code>aria-hidden="true"</code>.</li>
+      </ul>
+
+      <!-- ---- CONSTRUCTION ---- -->
+      <h2>Construction</h2>
+      <p>The Tab Bar is a single-row flex container with individual tab items. Each tab item is a flex row combining an optional icon and a label. The selected state is indicated by bold text and a 2px bottom border.</p>
+
+      <h3>Scale and Spacing</h3>
+      <table class="doc-table">
+        <thead><tr><th>Property</th><th>Value</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Tab item padding</td><td>8px</td><td><code>--padding-s</code></td></tr>
+          <tr><td>Icon-to-label gap</td><td>8px</td><td><code>--padding-s</code></td></tr>
+          <tr><td>Bar bottom border</td><td>1px</td><td>Fixed</td></tr>
+          <tr><td>Selected bottom border</td><td>2px</td><td>Fixed</td></tr>
+          <tr><td>Focus ring width</td><td>2px</td><td>Fixed</td></tr>
+          <tr><td>Focus ring offset (unselected)</td><td>-4px all sides</td><td>Fixed</td></tr>
+          <tr><td>Focus ring offset (selected)</td><td>-4px top/right/left, -6px bottom</td><td>Fixed</td></tr>
+          <tr><td>Focus ring radius</td><td>4px</td><td><code>--radius-s</code></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Styles</h3>
+      <table class="doc-table">
+        <thead><tr><th>Element</th><th>Font / Size</th></tr></thead>
+        <tbody>
+          <tr><td>Label (unselected)</td><td>Lato Regular (400), 16px/24px, 0.16px tracking</td></tr>
+          <tr><td>Label (selected)</td><td>Lato Bold (700), 16px/24px, 0.16px tracking</td></tr>
+          <tr><td>Icon</td><td>FA6 Solid (900), 16px/24px, 0.4px tracking</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Color Tokens</h3>
+      <table class="doc-table">
+        <thead><tr><th>Element</th><th>Default</th><th>Hover</th><th>Focus</th><th>Disabled</th></tr></thead>
+        <tbody>
+          <tr><td>Tab background</td><td>transparent</td><td><code>--surface-action-hover</code></td><td>transparent</td><td><code>--surface-disabled</code></td></tr>
+          <tr><td>Label text</td><td><code>--text-body</code></td><td><code>--text-action-hover</code></td><td><code>--text-body</code></td><td><code>--text-action-disabled</code></td></tr>
+          <tr><td>Icon</td><td><code>--text-action</code></td><td><code>--text-action-hover</code></td><td><code>--text-action</code></td><td><code>--text-action-disabled</code></td></tr>
+          <tr><td>Selected bottom border</td><td><code>--border-action</code></td><td><code>--border-action</code></td><td><code>--border-action</code></td><td><code>--border-disabled</code></td></tr>
+          <tr><td>Bar bottom border</td><td colspan="4"><code>--border-default</code></td></tr>
+          <tr><td>Focus ring</td><td colspan="4"><code>--border-action</code></td></tr>
+        </tbody>
+      </table>
+
+      <!-- ---- APPLICATION & CONTEXT ---- -->
+      <h2>Application and Context</h2>
+
+      <h3>For Developers</h3>
+      <table class="doc-table">
+        <thead><tr><th>Attribute / Class</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><code>.tab-bar</code></td><td>Container</td><td>-</td><td>Root flex container with a 1px bottom border.</td></tr>
+          <tr><td><code>.tab-item</code></td><td>Element</td><td>Unselected</td><td>Individual tab. 8px padding, flex row with gap. Use <code>&lt;button&gt;</code> for interactivity.</td></tr>
+          <tr><td><code>.tab-item.selected</code></td><td>Modifier</td><td>-</td><td>Marks the current step. Applies bold weight and orange bottom border.</td></tr>
+          <tr><td><code>.tab-item.is-disabled</code></td><td>Modifier</td><td>-</td><td>Disables interaction. Gray background, muted text/icon. Add <code>disabled</code> attribute.</td></tr>
+          <tr><td><code>.tab-icon</code></td><td>Element</td><td>-</td><td>Optional. Leading icon inside a tab item. Use FA6 icon class.</td></tr>
+          <tr><td><code>.tab-label</code></td><td>Element</td><td>-</td><td>Text label. For the Numbers variant, include the number in the text (e.g., "1. Name").</td></tr>
+          <tr><td><code>role="tablist"</code></td><td>ARIA</td><td>-</td><td>Apply to the <code>.tab-bar</code> container.</td></tr>
+          <tr><td><code>role="tab"</code></td><td>ARIA</td><td>-</td><td>Apply to each <code>.tab-item</code>.</td></tr>
+          <tr><td><code>aria-selected</code></td><td>ARIA</td><td>false</td><td>Set to <code>"true"</code> on the selected tab.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>For Designers</h3>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Use the Tab Bar for multi-step workflows where users benefit from knowing their position and can navigate back to previous steps.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't use the Tab Bar for primary site navigation. It is designed for sequential, in-page processes.</p>
+        </div>
+      </div>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Use the Icons variant when each step has a clear, recognizable icon that aids comprehension at a glance.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't mix the Icons and Numbers variants in the same tab bar. Pick one layout and apply it consistently.</p>
+        </div>
+      </div>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Disable future steps when a user must complete the current step before proceeding.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't disable all tabs. At minimum, the current step must remain interactive.</p>
+        </div>
+      </div>
+
+      <!-- ---- SPACING GUIDANCE ---- -->
+      <h2>Spacing Guidance</h2>
+      <table class="doc-table">
+        <thead><tr><th>Context</th><th>Property</th><th>Value</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Tab item internal</td><td>padding</td><td>8px</td><td><code>--padding-s</code></td></tr>
+          <tr><td>Icon to label</td><td>gap</td><td>8px</td><td><code>--padding-s</code></td></tr>
+          <tr><td>Tab bar to surrounding content</td><td>margin</td><td>16-24px</td><td><code>--padding-m</code> / <code>--padding-l</code></td></tr>
+          <tr><td>Tab bar below content panel</td><td>gap</td><td>16-24px</td><td><code>--padding-m</code> / <code>--padding-l</code></td></tr>
+        </tbody>
+      </table>
+
+      <!-- ---- USAGE EXAMPLES ---- -->
+      <h2>Usage Examples</h2>
+
+      <h3>Icons Variant</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;div class="tab-bar" role="tablist" aria-label="Registration steps"&gt;
+  &lt;button class="tab-item" role="tab" aria-selected="false" type="button"&gt;
+    &lt;span class="tab-icon fa-solid fa-user" aria-hidden="true"&gt;&lt;/span&gt;
+    &lt;span class="tab-label"&gt;Profile&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class="tab-item selected" role="tab" aria-selected="true" type="button"&gt;
+    &lt;span class="tab-icon fa-solid fa-location-dot" aria-hidden="true"&gt;&lt;/span&gt;
+    &lt;span class="tab-label"&gt;Address&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class="tab-item" role="tab" aria-selected="false" type="button"&gt;
+    &lt;span class="tab-icon fa-solid fa-phone" aria-hidden="true"&gt;&lt;/span&gt;
+    &lt;span class="tab-label"&gt;Contact&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class="tab-item is-disabled" role="tab" aria-selected="false" aria-disabled="true" tabindex="-1" type="button" disabled&gt;
+    &lt;span class="tab-icon fa-solid fa-credit-card" aria-hidden="true"&gt;&lt;/span&gt;
+    &lt;span class="tab-label"&gt;Billing&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Numbers Variant</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;div class="tab-bar" role="tablist" aria-label="Checkout steps"&gt;
+  &lt;button class="tab-item" role="tab" aria-selected="false" type="button"&gt;
+    &lt;span class="tab-label"&gt;1. Name&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class="tab-item selected" role="tab" aria-selected="true" type="button"&gt;
+    &lt;span class="tab-label"&gt;2. Address&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class="tab-item" role="tab" aria-selected="false" type="button"&gt;
+    &lt;span class="tab-label"&gt;3. Contact&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class="tab-item" role="tab" aria-selected="false" type="button"&gt;
+    &lt;span class="tab-label"&gt;4. Billing&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class="tab-item" role="tab" aria-selected="false" type="button"&gt;
+    &lt;span class="tab-label"&gt;5. Review&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
          COMPONENT — TEXT LINK
          ================================================================ -->
     <section class="page" id="comp-text-link">
       <div class="page-breadcrumb">Components <span>/</span> Text Link</div>
       <h1>Text Link</h1>
-      <p class="lead">An inline interactive element that navigates users to another page or section. Two distinct components: <strong>Body Link (M)</strong> uses the action color for in-content links, and <strong>Small Link (S)</strong> uses body or status colors for navigation and contextual links.</p>
+      <p class="lead">An inline interactive element that navigates users to another page or section. Two sizes: <strong>Body Link (M)</strong> at 16px and <strong>Small Link (S)</strong> at 14px. Each supports optional left and right icons.</p>
 
       <!-- ---- OVERVIEW ---- -->
       <h2>Overview</h2>
-      <p>Text links sit within running text or stand alone as navigation aids. Both sizes support optional left and right Font Awesome icons. On hover, only the text label underlines (icons never receive an underline). The S size includes status type variants (information, success, error) that use semantic color tokens, plus an <strong>active</strong> variant with a persistent underline for current-page indicators. A <strong>Breadcrumb</strong> pattern composes Small Links with a home icon, chevron separators, and an underlined current-page crumb.</p>
+      <p>Text links sit within running text or stand alone as navigation aids. Both sizes support optional left and right Font Awesome icons. The Body Link (M) uses the action/orange color and underlines on hover. The Small Link (S) includes status type variants (Information, Success, Error) that use semantic color tokens. The Small Link (S) Default type uses <code>--text-body</code> color and is reserved exclusively for the <a href="#comp-breadcrumbs" data-page="comp-breadcrumbs" class="text-link text-link-m link-label">Breadcrumbs</a> and Navigation components. Do not use the body-colored Small Link Default in general content or standalone contexts.</p>
 
       <!-- ---- VARIANTS ---- -->
       <h2>Variants</h2>
 
       <h3>Body Link (M)</h3>
-      <p>Lato Bold, 16px/24px, action-colored. Used alongside Body M text. Optional left/right icons.</p>
+      <p>Lato Bold, 16px/24px, action-colored. Label underlines on hover. Used for in-content links.</p>
       <div class="state-row">
         <span class="state-label">Default</span>
-        <a class="text-link text-link-m" href="javascript:void(0)"><i class="link-icon fa-solid fa-arrow-left"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-right"></i></a>
+        <a class="text-link text-link-m" href="javascript:void(0)"><i class="link-icon fa-solid fa-circle-info"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-up-right-from-square"></i></a>
       </div>
       <div class="state-row">
         <span class="state-label">Hover</span>
-        <a class="text-link text-link-m show-hover" href="javascript:void(0)"><i class="link-icon fa-solid fa-arrow-left"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-right"></i></a>
+        <a class="text-link text-link-m show-hover" href="javascript:void(0)"><i class="link-icon fa-solid fa-circle-info"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-up-right-from-square"></i></a>
       </div>
       <div class="state-row">
-        <span class="state-label">Pressed</span>
-        <a class="text-link text-link-m show-pressed" href="javascript:void(0)"><i class="link-icon fa-solid fa-arrow-left"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-right"></i></a>
+        <span class="state-label">Focus</span>
+        <a class="text-link text-link-m show-focus" href="javascript:void(0)"><i class="link-icon fa-solid fa-circle-info"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-up-right-from-square"></i></a>
       </div>
       <div class="state-row">
         <span class="state-label">Disabled</span>
-        <span class="text-link text-link-m is-disabled"><i class="link-icon fa-solid fa-arrow-left"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-right"></i></span>
+        <span class="text-link text-link-m is-disabled"><i class="link-icon fa-solid fa-circle-info"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-up-right-from-square"></i></span>
       </div>
 
       <h3>Small Link (S) - Default</h3>
-      <p>Lato Bold, 14px/20px, body-colored. Used alongside Body S text for navigation and secondary links.</p>
+      <p>Lato Bold, 14px/20px, body-colored (<code>--text-body</code>). Label underlines on hover. <strong>Restricted usage:</strong> this variant is reserved for the <a href="#comp-breadcrumbs" data-page="comp-breadcrumbs">Breadcrumbs</a> and Navigation components only. Do not use it in general content or standalone contexts.</p>
       <div class="state-row">
         <span class="state-label">Default</span>
-        <a class="text-link text-link-s" href="javascript:void(0)"><i class="link-icon fa-solid fa-arrow-left"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-right"></i></a>
+        <a class="text-link text-link-s" href="javascript:void(0)"><i class="link-icon fa-solid fa-circle-info"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-up-right-from-square"></i></a>
       </div>
       <div class="state-row">
         <span class="state-label">Hover</span>
-        <a class="text-link text-link-s show-hover" href="javascript:void(0)"><i class="link-icon fa-solid fa-arrow-left"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-right"></i></a>
+        <a class="text-link text-link-s show-hover" href="javascript:void(0)"><i class="link-icon fa-solid fa-circle-info"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-up-right-from-square"></i></a>
       </div>
       <div class="state-row">
-        <span class="state-label">Pressed</span>
-        <a class="text-link text-link-s show-pressed" href="javascript:void(0)"><i class="link-icon fa-solid fa-arrow-left"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-right"></i></a>
+        <span class="state-label">Focus</span>
+        <a class="text-link text-link-s show-focus" href="javascript:void(0)"><i class="link-icon fa-solid fa-circle-info"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-up-right-from-square"></i></a>
       </div>
       <div class="state-row">
         <span class="state-label">Disabled</span>
-        <span class="text-link text-link-s is-disabled"><i class="link-icon fa-solid fa-arrow-left"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-right"></i></span>
-      </div>
-
-      <h3>Small Link (S) - Active</h3>
-      <p>Persistent underline on the label text. Used for current-page indicators in navigation.</p>
-      <div class="state-row">
-        <span class="state-label">Active</span>
-        <a class="text-link text-link-s active" href="javascript:void(0)"><i class="link-icon fa-solid fa-arrow-left"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-right"></i></a>
+        <span class="text-link text-link-s is-disabled"><i class="link-icon fa-solid fa-circle-info"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-up-right-from-square"></i></span>
       </div>
 
       <h3>Small Link (S) - Information</h3>
       <p>Uses the <code>--text-status-information</code> color for contextual informational links.</p>
       <div class="state-row">
         <span class="state-label">Default</span>
-        <a class="text-link text-link-s type-information" href="javascript:void(0)"><i class="link-icon fa-solid fa-arrow-left"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-right"></i></a>
+        <a class="text-link text-link-s type-information" href="javascript:void(0)"><i class="link-icon fa-solid fa-circle-info"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-up-right-from-square"></i></a>
       </div>
       <div class="state-row">
         <span class="state-label">Hover</span>
-        <a class="text-link text-link-s type-information show-hover" href="javascript:void(0)"><i class="link-icon fa-solid fa-arrow-left"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-right"></i></a>
+        <a class="text-link text-link-s type-information show-hover" href="javascript:void(0)"><i class="link-icon fa-solid fa-circle-info"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-up-right-from-square"></i></a>
       </div>
 
       <h3>Small Link (S) - Success</h3>
       <p>Uses the <code>--text-status-success</code> color for positive-outcome links.</p>
       <div class="state-row">
         <span class="state-label">Default</span>
-        <a class="text-link text-link-s type-success" href="javascript:void(0)"><i class="link-icon fa-solid fa-arrow-left"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-right"></i></a>
+        <a class="text-link text-link-s type-success" href="javascript:void(0)"><i class="link-icon fa-solid fa-circle-info"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-up-right-from-square"></i></a>
       </div>
       <div class="state-row">
         <span class="state-label">Hover</span>
-        <a class="text-link text-link-s type-success show-hover" href="javascript:void(0)"><i class="link-icon fa-solid fa-arrow-left"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-right"></i></a>
+        <a class="text-link text-link-s type-success show-hover" href="javascript:void(0)"><i class="link-icon fa-solid fa-circle-info"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-up-right-from-square"></i></a>
       </div>
 
       <h3>Small Link (S) - Error</h3>
       <p>Uses the <code>--text-status-error</code> color for destructive or error-context links.</p>
       <div class="state-row">
         <span class="state-label">Default</span>
-        <a class="text-link text-link-s type-error" href="javascript:void(0)"><i class="link-icon fa-solid fa-arrow-left"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-right"></i></a>
+        <a class="text-link text-link-s type-error" href="javascript:void(0)"><i class="link-icon fa-solid fa-circle-info"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-up-right-from-square"></i></a>
       </div>
       <div class="state-row">
         <span class="state-label">Hover</span>
-        <a class="text-link text-link-s type-error show-hover" href="javascript:void(0)"><i class="link-icon fa-solid fa-arrow-left"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-right"></i></a>
-      </div>
-
-      <h3>Breadcrumb</h3>
-      <p>A composed pattern of Small Link S elements with a home icon, chevron-right separators, and an underlined current-page crumb.</p>
-      <div class="state-row">
-        <span class="state-label">Example</span>
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a class="breadcrumb-item" href="javascript:void(0)"><i class="breadcrumb-icon fa-solid fa-house"></i><span>Home</span></a>
-          <i class="breadcrumb-separator fa-solid fa-chevron-right"></i>
-          <a class="breadcrumb-item" href="javascript:void(0)"><span>Components</span></a>
-          <i class="breadcrumb-separator fa-solid fa-chevron-right"></i>
-          <a class="breadcrumb-item" href="javascript:void(0)"><span>Links</span></a>
-          <i class="breadcrumb-separator fa-solid fa-chevron-right"></i>
-          <a class="breadcrumb-item current" href="javascript:void(0)"><span class="link-label">Text Link</span></a>
-        </nav>
+        <a class="text-link text-link-s type-error show-hover" href="javascript:void(0)"><i class="link-icon fa-solid fa-circle-info"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-up-right-from-square"></i></a>
       </div>
 
       <!-- ---- ACCESSIBILITY ---- -->
@@ -2551,9 +4146,8 @@
       <ul>
         <li>Use native <code>&lt;a href&gt;</code> elements for navigation links. Use <code>&lt;button&gt;</code> styled as a text link for in-page actions.</li>
         <li>The bold weight (700) on M and S sizes provides a secondary visual cue beyond color, aiding color-blind users.</li>
-        <li>Focus indicator: 2px solid outline in <code>--surface-action</code>, 2px offset.</li>
+        <li>Focus indicator: 2px solid outline in <code>--border-action</code>, 2px offset, 8px radius.</li>
         <li>Disabled links should use a <code>&lt;span&gt;</code> instead of <code>&lt;a&gt;</code> to remove from the tab order, or use <code>aria-disabled="true"</code> with <code>tabindex="-1"</code>.</li>
-        <li>Breadcrumb navigation should use <code>&lt;nav aria-label="Breadcrumb"&gt;</code>. The current page crumb uses <code>aria-current="page"</code>.</li>
       </ul>
 
       <!-- ---- CONSTRUCTION ---- -->
@@ -2564,7 +4158,9 @@
         <thead><tr><th>Size</th><th>Font</th><th>Weight</th><th>Size / Line Height</th><th>Letter Spacing</th><th>Token</th></tr></thead>
         <tbody>
           <tr><td>M (Body Link)</td><td>Lato</td><td>Bold (700)</td><td>16px / 24px</td><td>1%</td><td><code>Body/Text Links/M link</code></td></tr>
+          <tr><td>M icons</td><td>FA6 Solid</td><td>900</td><td>16px / 24px</td><td>2.5%</td><td><code>Body/Icons/M icon</code></td></tr>
           <tr><td>S (Small Link)</td><td>Lato</td><td>Bold (700)</td><td>14px / 20px</td><td>0%</td><td><code>Body/Text Links/S link</code></td></tr>
+          <tr><td>S icons</td><td>FA6 Solid</td><td>900</td><td>14px / 20px</td><td>0%</td><td><code>Body/Icons/S icon</code></td></tr>
         </tbody>
       </table>
 
@@ -2572,12 +4168,23 @@
       <table class="doc-table">
         <thead><tr><th>Variant</th><th>Default</th><th>Hover</th><th>Token Prefix</th></tr></thead>
         <tbody>
-          <tr><td>Body Link (M)</td><td>#e96620</td><td>#f78958</td><td><code>Text/Action</code></td></tr>
-          <tr><td>Small Link - Default</td><td>#464646</td><td>#f78958</td><td><code>Text/Body</code> / <code>Text/Action</code></td></tr>
-          <tr><td>Small Link - Information</td><td>#097892</td><td>#3a90a9</td><td><code>Text/Status/information</code></td></tr>
-          <tr><td>Small Link - Success</td><td>#438558</td><td>#609c71</td><td><code>Text/Status/success</code></td></tr>
-          <tr><td>Small Link - Error</td><td>#de515e</td><td>#ed6f76</td><td><code>Text/Status/error</code></td></tr>
-          <tr><td>Disabled</td><td>#464646 on #e9e9e9</td><td>n/a</td><td><code>Text/Body</code> + <code>Border/default</code></td></tr>
+          <tr><td>Body Link (M)</td><td><code>--text-action</code></td><td><code>--text-action-hover</code> + underline</td><td><code>Text/Action</code></td></tr>
+          <tr><td>Small Link S - Default</td><td><code>--text-body</code></td><td><code>--text-action-hover</code> + underline</td><td><code>Text/Body</code> / <code>Text/Action</code></td></tr>
+          <tr><td>Small Link S - Information</td><td><code>--text-status-information</code></td><td><code>--text-status-information-hover</code> + underline</td><td><code>Text/Status/information</code></td></tr>
+          <tr><td>Small Link S - Success</td><td><code>--text-status-success</code></td><td><code>--text-status-success-hover</code> + underline</td><td><code>Text/Status/success</code></td></tr>
+          <tr><td>Small Link S - Error</td><td><code>--text-status-error</code></td><td><code>--text-status-error-hover</code> + underline</td><td><code>Text/Status/error</code></td></tr>
+          <tr><td>Disabled (all)</td><td><code>--text-body</code> on <code>--border-default</code> bg</td><td>n/a</td><td>2px horizontal padding, 4px radius</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Focus Ring</h3>
+      <table class="doc-table">
+        <thead><tr><th>Property</th><th>Value</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Border width</td><td>2px</td><td><code>--border-width-m-action</code></td></tr>
+          <tr><td>Border color</td><td><code>--border-action</code></td><td>#F78958</td></tr>
+          <tr><td>Border radius</td><td>8px</td><td><code>--radius-m</code></td></tr>
+          <tr><td>Offset</td><td>~4px</td><td>Fixed</td></tr>
         </tbody>
       </table>
 
@@ -2588,12 +4195,11 @@
       <table class="doc-table">
         <thead><tr><th>Attribute / Class</th><th>Type</th><th>Description</th></tr></thead>
         <tbody>
-          <tr><td><code>.text-link</code></td><td>Base class</td><td>Applied to <code>&lt;a&gt;</code> or <code>&lt;button&gt;</code>. Uses <code>display: inline-flex</code> with gap.</td></tr>
-          <tr><td><code>.text-link-m</code></td><td>Size class</td><td>Body Link. Action color, 16px/24px, bold.</td></tr>
-          <tr><td><code>.text-link-s</code></td><td>Size class</td><td>Small Link. Body color, 14px/20px, bold.</td></tr>
+          <tr><td><code>.text-link</code></td><td>Base class</td><td>Applied to <code>&lt;a&gt;</code> or <code>&lt;button&gt;</code>. Uses <code>display: inline-flex</code> with 8px gap.</td></tr>
+          <tr><td><code>.text-link-m</code></td><td>Size class</td><td>Body Link. Action color, 16px/24px, bold. Underlines label on hover.</td></tr>
+          <tr><td><code>.text-link-s</code></td><td>Size class</td><td>Small Link. Body color, 14px/20px, bold. The default (body-colored) variant is reserved for <a href="#comp-breadcrumbs" data-page="comp-breadcrumbs">Breadcrumbs</a> and Navigation only.</td></tr>
           <tr><td><code>.link-label</code></td><td>Element</td><td><strong>Required.</strong> Wrap the text in <code>&lt;span class="link-label"&gt;</code> so hover underline only applies to the text, not icons.</td></tr>
           <tr><td><code>.link-icon</code></td><td>Element</td><td>Font Awesome icon inside the link. Never receives underline.</td></tr>
-          <tr><td><code>.active</code></td><td>Modifier</td><td>S size only. Persistent underline on <code>.link-label</code> for current-page state.</td></tr>
           <tr><td><code>.type-information</code> / <code>.type-success</code> / <code>.type-error</code></td><td>Modifier</td><td>S size only. Applies semantic status color.</td></tr>
           <tr><td><code>.is-disabled</code></td><td>State</td><td>Use on a <code>&lt;span&gt;</code> (not <code>&lt;a&gt;</code>) to remove from tab order.</td></tr>
         </tbody>
@@ -2613,11 +4219,11 @@
       <div class="guidance-grid">
         <div class="guidance-card do">
           <div class="label">Do</div>
-          <p>Use status type variants (information, success, error) when the link meaning aligns with a system status.</p>
+          <p>Reserve the body-colored Small Link (S) Default for the <a href="#comp-breadcrumbs" data-page="comp-breadcrumbs">Breadcrumbs</a> and Navigation components only.</p>
         </div>
         <div class="guidance-card dont">
           <div class="label">Don't</div>
-          <p>Don't underline all text links by default. Reserve underline for the active/current-page state or hover feedback.</p>
+          <p>Don't use the body-colored Small Link Default in general content, forms, or standalone contexts. Use a status type variant or the Body Link (M) instead.</p>
         </div>
       </div>
 
@@ -2628,17 +4234,9 @@
       <div class="code-block">
         <button class="copy-btn" aria-label="Copy code">Copy</button>
 <pre><code>&lt;a class="text-link text-link-m" href="/guidelines"&gt;
-  &lt;i class="link-icon fa-solid fa-arrow-left"&gt;&lt;/i&gt;
+  &lt;i class="link-icon fa-solid fa-circle-info"&gt;&lt;/i&gt;
   &lt;span class="link-label"&gt;Design guidelines&lt;/span&gt;
-  &lt;i class="link-icon fa-solid fa-arrow-right"&gt;&lt;/i&gt;
-&lt;/a&gt;</code></pre>
-      </div>
-
-      <h3>Text-Only Link (No Icons)</h3>
-      <div class="code-block">
-        <button class="copy-btn" aria-label="Copy code">Copy</button>
-<pre><code>&lt;a class="text-link text-link-m" href="/guidelines"&gt;
-  &lt;span class="link-label"&gt;Design guidelines&lt;/span&gt;
+  &lt;i class="link-icon fa-solid fa-arrow-up-right-from-square"&gt;&lt;/i&gt;
 &lt;/a&gt;</code></pre>
       </div>
 
@@ -2648,35 +4246,17 @@
 <pre><code>&lt;a class="text-link text-link-s type-information" href="/status"&gt;
   &lt;i class="link-icon fa-solid fa-circle-info"&gt;&lt;/i&gt;
   &lt;span class="link-label"&gt;View details&lt;/span&gt;
+  &lt;i class="link-icon fa-solid fa-arrow-up-right-from-square"&gt;&lt;/i&gt;
 &lt;/a&gt;</code></pre>
-      </div>
-
-      <h3>Breadcrumb Navigation</h3>
-      <div class="code-block">
-        <button class="copy-btn" aria-label="Copy code">Copy</button>
-<pre><code>&lt;nav class="breadcrumb" aria-label="Breadcrumb"&gt;
-  &lt;a class="breadcrumb-item" href="/"&gt;
-    &lt;i class="breadcrumb-icon fa-solid fa-house"&gt;&lt;/i&gt;
-    &lt;span&gt;Home&lt;/span&gt;
-  &lt;/a&gt;
-  &lt;i class="breadcrumb-separator fa-solid fa-chevron-right"&gt;&lt;/i&gt;
-  &lt;a class="breadcrumb-item" href="/components"&gt;
-    &lt;span&gt;Components&lt;/span&gt;
-  &lt;/a&gt;
-  &lt;i class="breadcrumb-separator fa-solid fa-chevron-right"&gt;&lt;/i&gt;
-  &lt;a class="breadcrumb-item current" href="/text-link" aria-current="page"&gt;
-    &lt;span class="link-label"&gt;Text Link&lt;/span&gt;
-  &lt;/a&gt;
-&lt;/nav&gt;</code></pre>
       </div>
 
       <h3>Disabled Link</h3>
       <div class="code-block">
         <button class="copy-btn" aria-label="Copy code">Copy</button>
 <pre><code>&lt;span class="text-link text-link-m is-disabled" aria-disabled="true"&gt;
-  &lt;i class="link-icon fa-solid fa-arrow-left"&gt;&lt;/i&gt;
+  &lt;i class="link-icon fa-solid fa-circle-info"&gt;&lt;/i&gt;
   &lt;span class="link-label"&gt;Unavailable link&lt;/span&gt;
-  &lt;i class="link-icon fa-solid fa-arrow-right"&gt;&lt;/i&gt;
+  &lt;i class="link-icon fa-solid fa-arrow-up-right-from-square"&gt;&lt;/i&gt;
 &lt;/span&gt;</code></pre>
       </div>
     </section>
@@ -3033,6 +4613,18 @@
         </div>
       </div>
       <div class="state-row">
+        <span class="state-label">Error Hover</span>
+        <div class="input-group" style="width:336px">
+          <label class="input-label">Label <i class="label-icon fa-solid fa-circle-question"></i></label>
+          <div class="form-field field-error show-hover">
+            <i class="field-icon fa-solid fa-user"></i>
+            <input type="text" placeholder="First name">
+            <i class="field-icon field-status-icon fa-solid fa-circle-xmark"></i>
+          </div>
+          <span class="input-hint hint-error">Hint text</span>
+        </div>
+      </div>
+      <div class="state-row">
         <span class="state-label">Success</span>
         <div class="input-group" style="width:336px">
           <label class="input-label">Label <i class="label-icon fa-solid fa-circle-question"></i></label>
@@ -3045,10 +4637,34 @@
         </div>
       </div>
       <div class="state-row">
+        <span class="state-label">Success Hover</span>
+        <div class="input-group" style="width:336px">
+          <label class="input-label">Label <i class="label-icon fa-solid fa-circle-question"></i></label>
+          <div class="form-field field-success show-hover">
+            <i class="field-icon fa-solid fa-user"></i>
+            <input type="text" placeholder="First name">
+            <i class="field-icon field-status-icon fa-solid fa-circle-check"></i>
+          </div>
+          <span class="input-hint hint-success">Hint text</span>
+        </div>
+      </div>
+      <div class="state-row">
         <span class="state-label">Information</span>
         <div class="input-group" style="width:336px">
           <label class="input-label">Label <i class="label-icon fa-solid fa-circle-question"></i></label>
           <div class="form-field field-information">
+            <i class="field-icon fa-solid fa-user"></i>
+            <input type="text" placeholder="First name">
+            <i class="field-icon field-status-icon fa-solid fa-circle-xmark"></i>
+          </div>
+          <span class="input-hint hint-information">Hint text</span>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Info Hover</span>
+        <div class="input-group" style="width:336px">
+          <label class="input-label">Label <i class="label-icon fa-solid fa-circle-question"></i></label>
+          <div class="form-field field-information show-hover">
             <i class="field-icon fa-solid fa-user"></i>
             <input type="text" placeholder="First name">
             <i class="field-icon field-status-icon fa-solid fa-circle-xmark"></i>
@@ -3167,7 +4783,8 @@
       <table class="doc-table">
         <thead><tr><th>Property</th><th>Value</th><th>Token</th></tr></thead>
         <tbody>
-          <tr><td>Field padding</td><td>16px</td><td><code>Fixed/padding/m</code></td></tr>
+          <tr><td>Field padding (vertical)</td><td>8px</td><td><code>Fixed/padding/s</code></td></tr>
+          <tr><td>Field padding (horizontal)</td><td>12px</td><td><code>Fixed/padding/s-m</code></td></tr>
           <tr><td>Field min-width</td><td>336px</td><td>Fixed</td></tr>
           <tr><td>Field border radius</td><td>8px</td><td><code>Corner Radius/M field</code></td></tr>
           <tr><td>Field border width</td><td>1px</td><td><code>Border/Width/M default</code></td></tr>
@@ -3480,18 +5097,28 @@
         <li>Active link highlighted with left border accent.</li>
       </ul>
       <h2>Breadcrumb Pattern</h2>
+      <p>For the full component specification, states, and usage guidelines, see the <a href="#comp-breadcrumbs" data-page="comp-breadcrumbs">Breadcrumbs</a> component page.</p>
       <ul>
-        <li>Shows hierarchy: Category / Page.</li>
-        <li>Separator uses <code>--text-placeholder</code> color.</li>
-        <li>Current page is not a link.</li>
+        <li>Shows hierarchy with chevron-right (<code>fa-chevron-right</code>) separators inside each crumb.</li>
+        <li>First crumb includes a home icon (<code>fa-house</code>).</li>
+        <li>Current page (last crumb) has a persistent underline and <code>aria-current="page"</code>.</li>
       </ul>
       <h2>Usage Examples</h2>
       <div class="code-block">
         <button class="copy-btn" aria-label="Copy code">Copy</button>
 <pre><code>&lt;nav class="breadcrumb" aria-label="Breadcrumb"&gt;
-  &lt;a href="#"&gt;Components&lt;/a&gt;
-  &lt;span aria-hidden="true"&gt;/&lt;/span&gt;
-  &lt;span aria-current="page"&gt;Button&lt;/span&gt;
+  &lt;a class="breadcrumb-item" href="/home"&gt;
+    &lt;i class="breadcrumb-icon fa-solid fa-house" aria-hidden="true"&gt;&lt;/i&gt;
+    &lt;span&gt;Home&lt;/span&gt;
+    &lt;i class="breadcrumb-icon fa-solid fa-chevron-right" aria-hidden="true"&gt;&lt;/i&gt;
+  &lt;/a&gt;
+  &lt;a class="breadcrumb-item" href="/components"&gt;
+    &lt;span&gt;Components&lt;/span&gt;
+    &lt;i class="breadcrumb-icon fa-solid fa-chevron-right" aria-hidden="true"&gt;&lt;/i&gt;
+  &lt;/a&gt;
+  &lt;a class="breadcrumb-item current" href="/components/button" aria-current="page"&gt;
+    &lt;span class="link-label"&gt;Button&lt;/span&gt;
+  &lt;/a&gt;
 &lt;/nav&gt;</code></pre>
       </div>
     </section>
