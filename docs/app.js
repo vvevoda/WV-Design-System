@@ -142,6 +142,114 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', () => update());
   });
 
+  document.querySelectorAll('.toggle-selector-demo').forEach(selector => {
+    const options = selector.querySelectorAll('.toggle-selector-option');
+    options.forEach((opt, i) => {
+      opt.addEventListener('click', () => {
+        options.forEach(o => {
+          o.classList.remove('is-active');
+          o.setAttribute('aria-checked', 'false');
+        });
+        opt.classList.add('is-active');
+        opt.setAttribute('aria-checked', 'true');
+        selector.classList.toggle('right-active', i === 1);
+      });
+    });
+  });
+
+  document.querySelectorAll('.menu-demo').forEach(menuNav => {
+    const items = menuNav.querySelectorAll('.menu-item:not(.is-disabled)');
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        menuNav.querySelectorAll('.menu-item').forEach(i => {
+          i.classList.remove('is-selected');
+          i.removeAttribute('aria-current');
+        });
+        item.classList.add('is-selected');
+        item.setAttribute('aria-current', 'page');
+      });
+    });
+  });
+
+  document.querySelectorAll('.sel-accordion-demo').forEach(menuGroup => {
+    const category = menuGroup.querySelector('.sel-accordion-category');
+    const dropdown = menuGroup.querySelector('.sel-accordion-dropdown');
+    if (!category || !dropdown) return;
+
+    let animating = false;
+    const DURATION = 300;
+    const isCollapsed = () => dropdown.classList.contains('is-collapsed');
+
+    function onTransitionDone(callback) {
+      let called = false;
+      function done() {
+        if (called) return;
+        called = true;
+        dropdown.classList.remove('is-animating');
+        dropdown.style.height = '';
+        callback();
+      }
+      dropdown.addEventListener('transitionend', done, { once: true });
+      setTimeout(done, DURATION + 50);
+    }
+
+    function expandDropdown() {
+      dropdown.classList.remove('is-collapsed');
+      dropdown.classList.add('is-animating');
+      dropdown.style.height = '0px';
+      dropdown.offsetHeight;
+      dropdown.style.height = dropdown.scrollHeight + 'px';
+      onTransitionDone(() => { animating = false; });
+    }
+
+    function collapseDropdown() {
+      dropdown.classList.add('is-animating');
+      dropdown.style.height = dropdown.scrollHeight + 'px';
+      dropdown.offsetHeight;
+      dropdown.style.height = '0px';
+      onTransitionDone(() => {
+        dropdown.classList.add('is-collapsed');
+        animating = false;
+      });
+    }
+
+    category.addEventListener('click', () => {
+      if (animating) return;
+      animating = true;
+      const expanded = category.getAttribute('aria-expanded') === 'true';
+      category.setAttribute('aria-expanded', String(!expanded));
+      category.classList.toggle('is-expanded', !expanded);
+      if (expanded) {
+        collapseDropdown();
+      } else {
+        expandDropdown();
+      }
+    });
+
+    dropdown.querySelectorAll('.sel-accordion-option:not(.is-disabled)').forEach(opt => {
+      opt.addEventListener('click', () => {
+        dropdown.querySelectorAll('.sel-accordion-option').forEach(o => {
+          o.classList.remove('is-selected');
+          o.removeAttribute('aria-selected');
+        });
+        opt.classList.add('is-selected');
+        opt.setAttribute('aria-selected', 'true');
+        category.querySelector('span').textContent = opt.textContent;
+      });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !isCollapsed()) {
+        if (animating) return;
+        animating = true;
+        category.setAttribute('aria-expanded', 'false');
+        category.classList.remove('is-expanded');
+        collapseDropdown();
+        category.focus();
+      }
+    });
+  });
+
   const hash = window.location.hash.slice(1);
   if (hash && document.getElementById(hash)) {
     navigateTo(hash);

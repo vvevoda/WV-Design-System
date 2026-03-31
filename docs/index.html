@@ -37,6 +37,7 @@
           Components <span class="chevron">&#9660;</span>
         </button>
         <ul class="sidebar-links">
+          <li><a class="sidebar-link" href="#comp-sel-accordion" data-page="comp-sel-accordion" tabindex="0">Selector Accordion</a></li>
           <li><a class="sidebar-link" href="#comp-alert" data-page="comp-alert" tabindex="0">Alert</a></li>
           <li><a class="sidebar-link" href="#comp-breadcrumbs" data-page="comp-breadcrumbs" tabindex="0">Breadcrumbs</a></li>
           <li><a class="sidebar-link" href="#comp-button" data-page="comp-button" tabindex="0">Button</a></li>
@@ -45,12 +46,14 @@
           <li><a class="sidebar-link" href="#comp-checkbox" data-page="comp-checkbox" tabindex="0">Checkbox</a></li>
           <li><a class="sidebar-link" href="#comp-icon-button" data-page="comp-icon-button" tabindex="0">Icon Button</a></li>
           <li><a class="sidebar-link" href="#comp-input" data-page="comp-input" tabindex="0">Input</a></li>
+          <li><a class="sidebar-link" href="#comp-menu" data-page="comp-menu" tabindex="0">Menu</a></li>
           <li><a class="sidebar-link" href="#comp-progress-bar" data-page="comp-progress-bar" tabindex="0">Progress Bar</a></li>
           <li><a class="sidebar-link" href="#comp-radio-button" data-page="comp-radio-button" tabindex="0">Radio Button</a></li>
           <li><a class="sidebar-link" href="#comp-snackbar" data-page="comp-snackbar" tabindex="0">Snackbar</a></li>
           <li><a class="sidebar-link" href="#comp-tab-bar" data-page="comp-tab-bar" tabindex="0">Tab Bar</a></li>
           <li><a class="sidebar-link" href="#comp-text-link" data-page="comp-text-link" tabindex="0">Text Link</a></li>
           <li><a class="sidebar-link" href="#comp-toggle" data-page="comp-toggle" tabindex="0">Toggle</a></li>
+          <li><a class="sidebar-link" href="#comp-toggle-selector" data-page="comp-toggle-selector" tabindex="0">Toggle Selector</a></li>
         </ul>
       </div>
 
@@ -72,6 +75,7 @@
           Patterns <span class="chevron">&#9660;</span>
         </button>
         <ul class="sidebar-links">
+          <li><a class="sidebar-link" href="#pattern-filter" data-page="pattern-filter" tabindex="0">Filter</a></li>
           <li><a class="sidebar-link" href="#pattern-forms" data-page="pattern-forms" tabindex="0">Forms</a></li>
           <li><a class="sidebar-link" href="#pattern-navigation" data-page="pattern-navigation" tabindex="0">Navigation</a></li>
         </ul>
@@ -230,23 +234,129 @@
         <div class="swatch"><div class="swatch-color" style="background:#b10831"></div><div class="swatch-info"><span class="name">800</span><span class="value">#b10831</span></div></div>
       </div>
 
-      <h2>Mapped Surface Tokens (Light)</h2>
+      <h2>Mapped Surface Tokens</h2>
       <h3>Page Elements</h3>
-      <p>These tokens are used to style the page surfaces and layout.</p>
-      <div class="swatch-grid">
-        <div class="swatch"><div class="swatch-color" style="background:#fafafa"></div><div class="swatch-info"><span class="name">page</span><span class="value">Neutral.25</span></div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#f5f5f5"></div><div class="swatch-info"><span class="name">bottom container</span><span class="value">Neutral.50</span></div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#e9e9e9"></div><div class="swatch-info"><span class="name">middle container</span><span class="value">Neutral.100</span></div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#d0d0d0"></div><div class="swatch-info"><span class="name">top container</span><span class="value">Neutral.200</span></div></div>
+      <p>Surface tokens for page backgrounds and layout containers in both light and dark modes.</p>
+      <div class="theme-comparison">
+        <div class="theme-panel light-panel">
+          <div class="theme-panel-label">Light Mode</div>
+          <div class="swatch-grid">
+            <div class="swatch"><div class="swatch-color" style="background:#fafafa"></div><div class="swatch-info"><span class="name">page</span><span class="value">#fafafa</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#fdfdfd"></div><div class="swatch-info"><span class="name">default container</span><span class="value">#fdfdfd</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#f5f5f5"></div><div class="swatch-info"><span class="name">top container</span><span class="value">#f5f5f5</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#e9e9e9"></div><div class="swatch-info"><span class="name">middle container</span><span class="value">#e9e9e9</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#d0d0d0"></div><div class="swatch-info"><span class="name">bottom container</span><span class="value">#d0d0d0</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#f5f5f5"></div><div class="swatch-info"><span class="name">disabled</span><span class="value">#f5f5f5</span></div></div>
+          </div>
         </div>
+        <div class="theme-panel dark-panel">
+          <div class="theme-panel-label">Dark Mode</div>
+          <div class="swatch-grid">
+            <div class="swatch"><div class="swatch-color" style="background:#2b2b2b"></div><div class="swatch-info"><span class="name">page</span><span class="value">#2b2b2b</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#393939"></div><div class="swatch-info"><span class="name">default container</span><span class="value">#393939</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#666666"></div><div class="swatch-info"><span class="name">top container</span><span class="value">#666666</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#555555"></div><div class="swatch-info"><span class="name">middle container</span><span class="value">#555555</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#464646"></div><div class="swatch-info"><span class="name">bottom container</span><span class="value">#464646</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#2b2b2b"></div><div class="swatch-info"><span class="name">disabled</span><span class="value">#2b2b2b</span></div></div>
+          </div>
+        </div>
+      </div>
 
-      <h3>Action-oriented Elements</h3>
-      <p>These tokens are used to style all actionable elements.</p>
-        <div class="swatch-grid">
-        <div class="swatch"><div class="swatch-color" style="background:#e96620"></div><div class="swatch-info"><span class="name">action</span><span class="value">Primary.500</span></div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#fff1eb"></div><div class="swatch-info"><span class="name">action-hover</span><span class="value">Primary.50</span></div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#d14000"></div><div class="swatch-info"><span class="name">action-pressed</span><span class="value">Primary.600</span></div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#7d7d7d"></div><div class="swatch-info"><span class="name">action-disabled</span><span class="value">Neutral.500</span></div></div>
+      <h3>Action Surfaces</h3>
+      <p>Surface tokens for all actionable and interactive elements.</p>
+      <div class="theme-comparison">
+        <div class="theme-panel light-panel">
+          <div class="theme-panel-label">Light Mode</div>
+          <div class="swatch-grid">
+            <div class="swatch"><div class="swatch-color" style="background:#e96620"></div><div class="swatch-info"><span class="name">action</span><span class="value">#e96620</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#f78958"></div><div class="swatch-info"><span class="name">action-hover</span><span class="value">#f78958</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#d14000"></div><div class="swatch-info"><span class="name">action-pressed</span><span class="value">#d14000</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#ffe2d4"></div><div class="swatch-info"><span class="name">indicator bg</span><span class="value">#ffe2d4</span></div></div>
+          </div>
+        </div>
+        <div class="theme-panel dark-panel">
+          <div class="theme-panel-label">Dark Mode</div>
+          <div class="swatch-grid">
+            <div class="swatch"><div class="swatch-color" style="background:rgba(233,102,32,0.5)"></div><div class="swatch-info"><span class="name">action (50%)</span><span class="value">Primary/500 @ 50%</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:rgba(247,137,88,0.5)"></div><div class="swatch-info"><span class="name">action-hover (50%)</span><span class="value">Primary/400 @ 50%</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:rgba(209,64,0,0.5)"></div><div class="swatch-info"><span class="name">action-pressed (50%)</span><span class="value">Primary/600 @ 50%</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:rgba(255,226,212,0.5)"></div><div class="swatch-info"><span class="name">indicator bg (50%)</span><span class="value">Primary/100 @ 50%</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Status Surfaces</h3>
+      <div class="theme-comparison">
+        <div class="theme-panel light-panel">
+          <div class="theme-panel-label">Light Mode</div>
+          <div class="swatch-grid">
+            <div class="swatch"><div class="swatch-color" style="background:#eff7f9"></div><div class="swatch-info"><span class="name">information</span><span class="value">#eff7f9</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#f1f7f2"></div><div class="swatch-info"><span class="name">success</span><span class="value">#f1f7f2</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#fff1f1"></div><div class="swatch-info"><span class="name">error</span><span class="value">#fff1f1</span></div></div>
+          </div>
+        </div>
+        <div class="theme-panel dark-panel">
+          <div class="theme-panel-label">Dark Mode</div>
+          <div class="swatch-grid">
+            <div class="swatch"><div class="swatch-color" style="background:#00313e"></div><div class="swatch-info"><span class="name">information</span><span class="value">#00313e</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#003617"></div><div class="swatch-info"><span class="name">success</span><span class="value">#003617</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#570013"></div><div class="swatch-info"><span class="name">error</span><span class="value">#570013</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Mapped Text Tokens</h2>
+      <div class="theme-comparison">
+        <div class="theme-panel light-panel">
+          <div class="theme-panel-label">Light Mode</div>
+          <div class="swatch-grid">
+            <div class="swatch"><div class="swatch-color" style="background:#393939"></div><div class="swatch-info"><span class="name">headings</span><span class="value">#393939</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#464646"></div><div class="swatch-info"><span class="name">body</span><span class="value">#464646</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#666666"></div><div class="swatch-info"><span class="name">captions</span><span class="value">#666666</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#7d7d7d"></div><div class="swatch-info"><span class="name">placeholder</span><span class="value">#7d7d7d</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#e96620"></div><div class="swatch-info"><span class="name">action</span><span class="value">#e96620</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#ffffff; border: 1px solid #e9e9e9"></div><div class="swatch-info"><span class="name">action-on</span><span class="value">#ffffff</span></div></div>
+          </div>
+        </div>
+        <div class="theme-panel dark-panel">
+          <div class="theme-panel-label">Dark Mode</div>
+          <div class="swatch-grid">
+            <div class="swatch"><div class="swatch-color" style="background:#fafafa"></div><div class="swatch-info"><span class="name">headings</span><span class="value">#fafafa</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#d0d0d0"></div><div class="swatch-info"><span class="name">body</span><span class="value">#d0d0d0</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#b3b3b3"></div><div class="swatch-info"><span class="name">captions</span><span class="value">#b3b3b3</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#666666"></div><div class="swatch-info"><span class="name">placeholder</span><span class="value">#666666</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#e96620"></div><div class="swatch-info"><span class="name">action</span><span class="value">#e96620</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#ffe2d4"></div><div class="swatch-info"><span class="name">action-on</span><span class="value">#ffe2d4</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Mapped Border Tokens</h2>
+      <div class="theme-comparison">
+        <div class="theme-panel light-panel">
+          <div class="theme-panel-label">Light Mode</div>
+          <div class="swatch-grid">
+            <div class="swatch"><div class="swatch-color" style="background:#e9e9e9"></div><div class="swatch-info"><span class="name">default</span><span class="value">#e9e9e9</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#d0d0d0"></div><div class="swatch-info"><span class="name">accent</span><span class="value">#d0d0d0</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#e9e9e9"></div><div class="swatch-info"><span class="name">disabled</span><span class="value">#e9e9e9</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#f78958"></div><div class="swatch-info"><span class="name">action</span><span class="value">#f78958</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#3a90a9"></div><div class="swatch-info"><span class="name">information</span><span class="value">#3a90a9</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#609c71"></div><div class="swatch-info"><span class="name">success</span><span class="value">#609c71</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#f88c90"></div><div class="swatch-info"><span class="name">error</span><span class="value">#f88c90</span></div></div>
+          </div>
+        </div>
+        <div class="theme-panel dark-panel">
+          <div class="theme-panel-label">Dark Mode</div>
+          <div class="swatch-grid">
+            <div class="swatch"><div class="swatch-color" style="background:#555555"></div><div class="swatch-info"><span class="name">default</span><span class="value">#555555</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#464646"></div><div class="swatch-info"><span class="name">accent</span><span class="value">#464646</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#464646"></div><div class="swatch-info"><span class="name">disabled</span><span class="value">#464646</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:rgba(233,102,32,0.5)"></div><div class="swatch-info"><span class="name">action (50%)</span><span class="value">Primary/500 @ 50%</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#004050"></div><div class="swatch-info"><span class="name">information</span><span class="value">#004050</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:#054722"></div><div class="swatch-info"><span class="name">success</span><span class="value">#054722</span></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:rgba(133,0,34,0.5)"></div><div class="swatch-info"><span class="name">error (50%)</span><span class="value">Error/900 @ 50%</span></div></div>
+          </div>
+        </div>
       </div>
 
     </section>
@@ -278,6 +388,48 @@
       <div class="spacing-row"><span class="spacing-label">scale-800</span><div class="spacing-bar" style="width:64px"></div><span class="spacing-value">64px</span></div>
       <div class="spacing-row"><span class="spacing-label">scale-900</span><div class="spacing-bar" style="width:72px"></div><span class="spacing-value">72px</span></div>
       <div class="spacing-row"><span class="spacing-label">scale-1000</span><div class="spacing-bar" style="width:80px"></div><span class="spacing-value">80px</span></div>
+      <div class="spacing-row"><span class="spacing-label">scale-1100</span><div class="spacing-bar" style="width:88px"></div><span class="spacing-value">88px</span></div>
+      <div class="spacing-row"><span class="spacing-label">scale-1200</span><div class="spacing-bar" style="width:96px"></div><span class="spacing-value">96px</span></div>
+      <div class="spacing-row"><span class="spacing-label">scale-1300</span><div class="spacing-bar" style="width:104px"></div><span class="spacing-value">104px</span></div>
+      <div class="spacing-row"><span class="spacing-label">scale-1400</span><div class="spacing-bar" style="width:112px"></div><span class="spacing-value">112px</span></div>
+      <div class="spacing-row"><span class="spacing-label">scale-2500</span><div class="spacing-bar" style="width:200px"></div><span class="spacing-value">200px</span></div>
+      <div class="spacing-row"><span class="spacing-label">scale-2800</span><div class="spacing-bar" style="width:244px"></div><span class="spacing-value">244px</span></div>
+      <div class="spacing-row"><span class="spacing-label">scale-4200</span><div class="spacing-bar" style="width:336px"></div><span class="spacing-value">336px</span></div>
+      <div class="spacing-row"><span class="spacing-label">scale-9100</span><div class="spacing-bar" style="width:400px"></div><span class="spacing-value">728px</span></div>
+
+      <h2>Scale Reference</h2>
+      <table class="doc-table">
+        <thead>
+          <tr><th>Application</th><th>Variable Name</th><th>Multiplier</th><th>Value (px)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Container width</td><td>9100</td><td>91</td><td>728</td></tr>
+          <tr><td>Container width</td><td>4200</td><td>42</td><td>336</td></tr>
+          <tr><td>Scale</td><td>2800</td><td>28</td><td>244</td></tr>
+          <tr><td>Scale</td><td>2500</td><td>25</td><td>200</td></tr>
+          <tr><td>Scale</td><td>1400</td><td>14</td><td>112</td></tr>
+          <tr><td>Scale</td><td>1300</td><td>13</td><td>104</td></tr>
+          <tr><td>Scale</td><td>1200</td><td>12</td><td>96</td></tr>
+          <tr><td>Scale</td><td>1100</td><td>11</td><td>88</td></tr>
+          <tr><td>Scale</td><td>1000</td><td>10</td><td>80</td></tr>
+          <tr><td>Scale</td><td>900</td><td>9</td><td>72</td></tr>
+          <tr><td>Scale</td><td>800</td><td>8</td><td>64</td></tr>
+          <tr><td>Scale</td><td>700</td><td>7</td><td>56</td></tr>
+          <tr><td>Scale</td><td>600</td><td>6</td><td>48</td></tr>
+          <tr><td>Scale</td><td>500</td><td>5</td><td>40</td></tr>
+          <tr><td>Scale</td><td>400</td><td>4</td><td>32</td></tr>
+          <tr><td>Scale</td><td>300</td><td>3</td><td>24</td></tr>
+          <tr><td>Font size only</td><td>250</td><td>2.5</td><td>20</td></tr>
+          <tr><td>Base font size only</td><td>225</td><td>2.25</td><td>18</td></tr>
+          <tr><td>Scale</td><td>200</td><td>2</td><td>16</td></tr>
+          <tr><td>Padding only</td><td>150</td><td>1.5</td><td>12</td></tr>
+          <tr><td>Scale</td><td>100</td><td>1</td><td>8</td></tr>
+          <tr><td>Padding and Corner radius only</td><td>50</td><td>0.5</td><td>4</td></tr>
+          <tr><td>Corner radius and Stroke only</td><td>25</td><td>0.25</td><td>2</td></tr>
+          <tr><td>Corner radius and Stroke only</td><td>10</td><td>0.10</td><td>1</td></tr>
+          <tr><td>Scale</td><td>0</td><td>0</td><td>0</td></tr>
+        </tbody>
+      </table>
 
       <h2>Jumper Tokens (Desktop vs Mobile)</h2>
       <p>Jumper tokens are responsive spacing values that shrink across breakpoints.</p>
@@ -591,6 +743,123 @@
           <tr><td>1%</td><td>Body M, Body XS, XS Link, M Link</td></tr>
         </tbody>
       </table>
+
+      <!-- Light / Dark Type Scale Comparison -->
+      <h2>Type Scale: Light vs Dark</h2>
+      <p>The type scale uses the same sizes and weights in both modes. Only the text and background colors change between light and dark themes.</p>
+
+      <h3>Body Copy Comparison</h3>
+      <div class="theme-comparison theme-comparison-full">
+        <div class="theme-panel light-panel">
+          <div class="theme-panel-label">Light Mode</div>
+          <div class="type-sample">
+            <div style="font-family:'Lato',sans-serif;font-size:12px;line-height:14px;font-weight:400;color:#464646">Body XS. The brown fox jumped over the tall fence. The cat came running after.</div>
+          </div>
+          <div class="type-sample">
+            <div style="font-family:'Lato',sans-serif;font-size:14px;line-height:20px;font-weight:400;color:#464646">Body S. The brown fox jumped over the tall fence. The cat came running after.</div>
+          </div>
+          <div class="type-sample">
+            <div style="font-family:'Lato',sans-serif;font-size:16px;line-height:24px;font-weight:400;color:#464646">Body M. The brown fox jumped over the tall fence. The cat came running after.</div>
+          </div>
+          <div class="type-sample">
+            <div style="font-family:'Lato',sans-serif;font-size:20px;line-height:28px;font-weight:400;color:#464646">Body L. The brown fox jumped over the tall fence. The cat came running after.</div>
+          </div>
+          <div class="type-sample">
+            <div style="font-family:'Lato',sans-serif;font-size:24px;line-height:32px;font-weight:900;color:#464646">Body XL. The brown fox jumped over the tall fence. The cat came running after.</div>
+          </div>
+          <div class="type-sample">
+            <div style="font-family:'Lato',sans-serif;font-size:32px;line-height:40px;font-weight:900;color:#464646">Body XXL. The brown fox jumped over the tall fence.</div>
+          </div>
+        </div>
+        <div class="theme-panel dark-panel">
+          <div class="theme-panel-label">Dark Mode</div>
+          <div class="type-sample">
+            <div style="font-family:'Lato',sans-serif;font-size:12px;line-height:14px;font-weight:400;color:#d0d0d0">Body XS. The brown fox jumped over the tall fence. The cat came running after.</div>
+          </div>
+          <div class="type-sample">
+            <div style="font-family:'Lato',sans-serif;font-size:14px;line-height:20px;font-weight:400;color:#d0d0d0">Body S. The brown fox jumped over the tall fence. The cat came running after.</div>
+          </div>
+          <div class="type-sample">
+            <div style="font-family:'Lato',sans-serif;font-size:16px;line-height:24px;font-weight:400;color:#d0d0d0">Body M. The brown fox jumped over the tall fence. The cat came running after.</div>
+          </div>
+          <div class="type-sample">
+            <div style="font-family:'Lato',sans-serif;font-size:20px;line-height:28px;font-weight:400;color:#d0d0d0">Body L. The brown fox jumped over the tall fence. The cat came running after.</div>
+          </div>
+          <div class="type-sample">
+            <div style="font-family:'Lato',sans-serif;font-size:24px;line-height:32px;font-weight:900;color:#d0d0d0">Body XL. The brown fox jumped over the tall fence. The cat came running after.</div>
+          </div>
+          <div class="type-sample">
+            <div style="font-family:'Lato',sans-serif;font-size:32px;line-height:40px;font-weight:900;color:#d0d0d0">Body XXL. The brown fox jumped over the tall fence.</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Heading Scale Comparison</h3>
+      <div class="theme-comparison theme-comparison-full">
+        <div class="theme-panel light-panel">
+          <div class="theme-panel-label">Light Mode</div>
+          <div class="type-sample">
+            <div style="font-family:'Lato',sans-serif;font-size:20px;line-height:24px;font-weight:700;color:#393939">H6 XS Heading</div>
+            <div style="font-family:'Lato',sans-serif;font-size:12px;line-height:14px;font-weight:400;color:#464646">The brown fox jumped over the tall fence. The cat came running after.</div>
+          </div>
+          <div class="type-sample">
+            <div style="font-family:'Lato',sans-serif;font-size:24px;line-height:28px;font-weight:900;color:#393939">H5 S Heading</div>
+            <div style="font-family:'Lato',sans-serif;font-size:14px;line-height:20px;font-weight:400;color:#464646">The brown fox jumped over the tall fence. The cat came running after.</div>
+          </div>
+          <div class="type-sample">
+            <div style="font-family:'Lato',sans-serif;font-size:32px;line-height:40px;font-weight:900;color:#393939">H4 M Heading</div>
+            <div style="font-family:'Lato',sans-serif;font-size:16px;line-height:24px;font-weight:400;color:#464646">The brown fox jumped over the tall fence. The cat came running after.</div>
+          </div>
+          <div class="type-sample">
+            <div style="font-family:'Lato',sans-serif;font-size:40px;line-height:48px;font-weight:900;color:#393939">H3 L Heading</div>
+            <div style="font-family:'Lato',sans-serif;font-size:20px;line-height:28px;font-weight:400;color:#464646">The brown fox jumped over the tall fence. The cat came running after.</div>
+          </div>
+          <div class="type-sample">
+            <div style="font-family:'Lato',sans-serif;font-size:48px;line-height:56px;font-weight:900;color:#393939">H2 XL Heading</div>
+            <div style="font-family:'Lato',sans-serif;font-size:24px;line-height:32px;font-weight:900;color:#464646">The brown fox jumped over the tall fence.</div>
+          </div>
+          <div class="type-sample">
+            <div style="font-family:'Lato',sans-serif;font-size:56px;line-height:64px;font-weight:900;color:#393939">H1 XXL</div>
+            <div style="font-family:'Lato',sans-serif;font-size:32px;line-height:40px;font-weight:900;color:#464646">The brown fox jumped over the tall fence.</div>
+          </div>
+          <div class="type-sample">
+            <div style="font-family:'Lato',sans-serif;font-size:64px;line-height:76px;font-weight:900;color:#393939">Hero</div>
+            <div style="font-family:'Lato',sans-serif;font-size:32px;line-height:40px;font-weight:900;color:#464646">The brown fox jumped over the tall fence.</div>
+          </div>
+        </div>
+        <div class="theme-panel dark-panel">
+          <div class="theme-panel-label">Dark Mode</div>
+          <div class="type-sample">
+            <div style="font-family:'Lato',sans-serif;font-size:20px;line-height:24px;font-weight:700;color:#fafafa">H6 XS Heading</div>
+            <div style="font-family:'Lato',sans-serif;font-size:12px;line-height:14px;font-weight:400;color:#d0d0d0">The brown fox jumped over the tall fence. The cat came running after.</div>
+          </div>
+          <div class="type-sample">
+            <div style="font-family:'Lato',sans-serif;font-size:24px;line-height:28px;font-weight:900;color:#fafafa">H5 S Heading</div>
+            <div style="font-family:'Lato',sans-serif;font-size:14px;line-height:20px;font-weight:400;color:#d0d0d0">The brown fox jumped over the tall fence. The cat came running after.</div>
+          </div>
+          <div class="type-sample">
+            <div style="font-family:'Lato',sans-serif;font-size:32px;line-height:40px;font-weight:900;color:#fafafa">H4 M Heading</div>
+            <div style="font-family:'Lato',sans-serif;font-size:16px;line-height:24px;font-weight:400;color:#d0d0d0">The brown fox jumped over the tall fence. The cat came running after.</div>
+          </div>
+          <div class="type-sample">
+            <div style="font-family:'Lato',sans-serif;font-size:40px;line-height:48px;font-weight:900;color:#fafafa">H3 L Heading</div>
+            <div style="font-family:'Lato',sans-serif;font-size:20px;line-height:28px;font-weight:400;color:#d0d0d0">The brown fox jumped over the tall fence. The cat came running after.</div>
+          </div>
+          <div class="type-sample">
+            <div style="font-family:'Lato',sans-serif;font-size:48px;line-height:56px;font-weight:900;color:#fafafa">H2 XL Heading</div>
+            <div style="font-family:'Lato',sans-serif;font-size:24px;line-height:32px;font-weight:900;color:#d0d0d0">The brown fox jumped over the tall fence.</div>
+          </div>
+          <div class="type-sample">
+            <div style="font-family:'Lato',sans-serif;font-size:56px;line-height:64px;font-weight:900;color:#fafafa">H1 XXL</div>
+            <div style="font-family:'Lato',sans-serif;font-size:32px;line-height:40px;font-weight:900;color:#d0d0d0">The brown fox jumped over the tall fence.</div>
+          </div>
+          <div class="type-sample">
+            <div style="font-family:'Lato',sans-serif;font-size:64px;line-height:76px;font-weight:900;color:#fafafa">Hero</div>
+            <div style="font-family:'Lato',sans-serif;font-size:32px;line-height:40px;font-weight:900;color:#d0d0d0">The brown fox jumped over the tall fence.</div>
+          </div>
+        </div>
+      </div>
+
     </section>
 
 
@@ -1035,71 +1304,94 @@
         </span>
       </div>
 
-      <!-- ---- COLOR TOKENS ---- -->
-      <h2>Color Tokens</h2>
-      <table>
-        <thead><tr><th>Element</th><th>State</th><th>Token</th></tr></thead>
+      <!-- ---- ACCESSIBILITY ---- -->
+      <h2>Accessibility Considerations</h2>
+      <p>WCAG 2.1 AA target. Breadcrumbs expose hierarchy and current location; focus order follows the visual trail left to right.</p>
+
+      <h3>Keyboard Interactions</h3>
+      <table class="doc-table">
+        <thead><tr><th>Key</th><th>Action</th></tr></thead>
         <tbody>
-          <tr><td>Text + Icons</td><td>Default</td><td><code>--text-body</code></td></tr>
-          <tr><td>Text + Icons</td><td>Hover</td><td><code>--text-action-hover</code></td></tr>
-          <tr><td>Current page text</td><td>Default</td><td><code>--text-body</code> + underline</td></tr>
-          <tr><td>Current page text</td><td>Hover</td><td><code>--text-action-hover</code> + underline</td></tr>
-          <tr><td>Focus ring</td><td>Focus</td><td><code>--border-action</code> (2px, offset 2px)</td></tr>
-          <tr><td>Disabled background</td><td>Disabled</td><td><code>--border-default</code></td></tr>
-          <tr><td>Disabled text</td><td>Disabled</td><td><code>--text-body</code></td></tr>
+          <tr><td><code>Tab</code> / <code>Shift+Tab</code></td><td>Moves focus between crumb links</td></tr>
+          <tr><td><code>Enter</code></td><td>Activates the focused link (parent pages only)</td></tr>
         </tbody>
       </table>
 
-      <!-- ---- SPACING / SIZING ---- -->
-      <h2>Spacing &amp; Sizing</h2>
-      <table>
+      <h3>ARIA and Semantics</h3>
+      <ul>
+        <li>Wrap the trail in <code>&lt;nav aria-label="Breadcrumb"&gt;</code> (or another concise label).</li>
+        <li>Add <code>aria-current="page"</code> to the last (current) item.</li>
+        <li>Home icon and chevron separators use <code>aria-hidden="true"</code>.</li>
+        <li>Disabled crumbs use <code>&lt;span&gt;</code> instead of <code>&lt;a&gt;</code> so they are not in the tab order.</li>
+        <li>Focus indicator: 2px solid <code>--border-action</code>, <strong>6px</strong> outline offset from the crumb, 10px radius (<code>--radius-focus-ring</code>), matching the Small Link focus treatment in Figma.</li>
+      </ul>
+
+      <!-- ---- CONSTRUCTION ---- -->
+      <h2>Construction</h2>
+
+      <h3>Typography</h3>
+      <table class="doc-table">
+        <thead><tr><th>Role</th><th>Font</th><th>Weight</th><th>Size / Line Height</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Crumb label</td><td>Lato</td><td>Bold (700)</td><td>14px / 18px</td><td><code>Body/Text Links/S link</code> (<code>--body-s-size</code>, <code>--body-s-line</code>)</td></tr>
+          <tr><td>Icons (home, chevron)</td><td>FA6 Solid</td><td>900</td><td>14px / 18px</td><td><code>Body/Icons/S icon</code></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Color Tokens</h3>
+      <table class="doc-table">
+        <thead><tr><th>Element</th><th>State</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Text + icons (non-current)</td><td>Default</td><td><code>--text-body</code></td></tr>
+          <tr><td>Text + icons (non-current)</td><td>Hover</td><td><code>--text-action-hover</code></td></tr>
+          <tr><td>Current page label</td><td>Default</td><td><code>--text-body</code> + underline (<code>.link-label</code>)</td></tr>
+          <tr><td>Current page label</td><td>Hover</td><td><code>--text-action-hover</code> + underline</td></tr>
+          <tr><td>Disabled background</td><td>Disabled</td><td><code>--border-default</code></td></tr>
+          <tr><td>Disabled text + icons</td><td>Disabled</td><td><code>--text-body</code></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Focus Ring</h3>
+      <table class="doc-table">
         <thead><tr><th>Property</th><th>Value</th><th>Token</th></tr></thead>
         <tbody>
-          <tr><td>Container gap (between items)</td><td>8px</td><td><code>--padding-s</code></td></tr>
-          <tr><td>Item internal gap</td><td>8px</td><td><code>--padding-s</code></td></tr>
-          <tr><td>Font size</td><td>14px</td><td><code>--body-s-size</code></td></tr>
-          <tr><td>Line height</td><td>18px</td><td><code>--body-s-line</code></td></tr>
-          <tr><td>Font weight</td><td>700 (Bold)</td><td>Lato Bold</td></tr>
-          <tr><td>Icon size</td><td>14px</td><td><code>--body-s-size</code></td></tr>
-          <tr><td>Focus ring radius</td><td>8px</td><td><code>--radius-m</code></td></tr>
-          <tr><td>Disabled padding</td><td>0 2px</td><td>Fixed</td></tr>
+          <tr><td>Border width</td><td>2px</td><td><code>--border-width-m-action</code></td></tr>
+          <tr><td>Border color</td><td><code>--border-action</code></td><td>#F78958</td></tr>
+          <tr><td>Border radius</td><td>10px</td><td><code>--radius-focus-ring</code></td></tr>
+          <tr><td>Offset</td><td>6px</td><td>Matches Figma Small Link / breadcrumb crumb focus inset</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Spacing</h3>
+      <table class="doc-table">
+        <thead><tr><th>Property</th><th>Value</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Gap between crumbs</td><td>8px</td><td><code>--padding-s</code></td></tr>
+          <tr><td>Internal gap (icon, label, chevron)</td><td>8px</td><td><code>--padding-s</code></td></tr>
+          <tr><td>Disabled horizontal padding</td><td>2px</td><td>Fixed</td></tr>
           <tr><td>Disabled border-radius</td><td>4px</td><td><code>--radius-s</code></td></tr>
         </tbody>
       </table>
 
-      <!-- ---- ACCESSIBILITY ---- -->
-      <h2>Accessibility</h2>
-      <table>
-        <thead><tr><th>Requirement</th><th>Implementation</th></tr></thead>
-        <tbody>
-          <tr><td>Landmark</td><td>Wrap in <code>&lt;nav aria-label="Breadcrumb"&gt;</code>.</td></tr>
-          <tr><td>Current page</td><td>Add <code>aria-current="page"</code> to the last (current) item.</td></tr>
-          <tr><td>Decorative icons</td><td>Home icon and chevron separators use <code>aria-hidden="true"</code>.</td></tr>
-          <tr><td>Keyboard navigation</td><td>Each crumb is a focusable <code>&lt;a&gt;</code>. Tab moves between items.</td></tr>
-          <tr><td>Focus indicator</td><td>2px <code>--border-action</code> outline, offset 2px, 8px radius.</td></tr>
-          <tr><td>Disabled items</td><td>Use <code>&lt;span&gt;</code> instead of <code>&lt;a&gt;</code> to remove from tab order. <code>pointer-events: none</code> prevents interaction.</td></tr>
-          <tr><td>WCAG target</td><td>AA contrast for all text/icon states. Focus ring meets 3:1 contrast against background.</td></tr>
-        </tbody>
-      </table>
+      <!-- ---- APPLICATION & CONTEXT ---- -->
+      <h2>Application and Context</h2>
 
-      <!-- ---- DEVELOPER API ---- -->
-      <h2>Developer Reference</h2>
-      <table>
-        <thead><tr><th>Class / Attribute</th><th>Role</th><th>Notes</th></tr></thead>
+      <h3>For Developers</h3>
+      <table class="doc-table">
+        <thead><tr><th>Attribute / Class</th><th>Type</th><th>Description</th></tr></thead>
         <tbody>
           <tr><td><code>.breadcrumb</code></td><td>Container</td><td>Applied to <code>&lt;nav&gt;</code>. Flex row, 8px gap, centered items.</td></tr>
-          <tr><td><code>.breadcrumb-item</code></td><td>Crumb link</td><td>Applied to <code>&lt;a&gt;</code>. Inline-flex, 8px internal gap, body color.</td></tr>
-          <tr><td><code>.breadcrumb-icon</code></td><td>Icon element</td><td>Font Awesome icon inside a crumb. Used for home icon and chevron separator.</td></tr>
+          <tr><td><code>.breadcrumb-item</code></td><td>Crumb</td><td>Applied to <code>&lt;a&gt;</code> (or <code>&lt;span&gt;</code> when disabled). Inline-flex, 8px internal gap, body color by default.</td></tr>
+          <tr><td><code>.breadcrumb-icon</code></td><td>Element</td><td>Font Awesome icon inside a crumb (home, chevron).</td></tr>
           <tr><td><code>.current</code></td><td>Modifier</td><td>Last item (current page). Adds persistent underline to <code>.link-label</code>.</td></tr>
-          <tr><td><code>.link-label</code></td><td>Element</td><td><strong>Required on current item.</strong> Wrap text in <code>&lt;span class="link-label"&gt;</code> for underline styling.</td></tr>
-          <tr><td><code>.is-disabled</code></td><td>State</td><td>Disabled crumb. Use <code>&lt;span&gt;</code> instead of <code>&lt;a&gt;</code>. Adds gray background, removes pointer events.</td></tr>
-          <tr><td><code>aria-current="page"</code></td><td>Attribute</td><td>Required on the current page crumb for screen readers.</td></tr>
-          <tr><td><code>aria-hidden="true"</code></td><td>Attribute</td><td>Required on all <code>&lt;i&gt;</code> icons (home and chevron) to hide from assistive technology.</td></tr>
+          <tr><td><code>.link-label</code></td><td>Element</td><td><strong>Required on current item.</strong> Wrap the current page text for underline styling.</td></tr>
+          <tr><td><code>.is-disabled</code></td><td>State</td><td>Disabled crumb on <code>&lt;span&gt;</code>; gray background, no pointer events.</td></tr>
+          <tr><td><code>aria-current="page"</code></td><td>Attribute</td><td>On the current page crumb.</td></tr>
+          <tr><td><code>aria-hidden="true"</code></td><td>Attribute</td><td>On decorative <code>&lt;i&gt;</code> icons.</td></tr>
         </tbody>
       </table>
 
-      <!-- ---- DESIGNER GUIDELINES ---- -->
-      <h2>Designer Guidelines</h2>
+      <h3>For Designers</h3>
       <div class="guidance-grid">
         <div class="guidance-card do">
           <div class="label">Do</div>
@@ -1286,7 +1578,7 @@
       <h3>Disabled State</h3>
       <ul>
         <li>Uses <code>aria-disabled="true"</code> to remain in tab order for discoverability.</li>
-        <li>Text and icon color: <code>Text/Action/action-disabled</code> (#7d7d7d). Reduced contrast but still legible against both filled (#e9e9e9) and page (#fafafa) backgrounds.</li>
+        <li>Text and icon color: <code>Text/Action/action-disabled</code> (#979797). Reduced contrast but still legible against both filled (#f5f5f5) and page (#fafafa) backgrounds.</li>
       </ul>
 
       <!-- ---- CONSTRUCTION ---- -->
@@ -1322,11 +1614,11 @@
       <table class="doc-table">
         <thead><tr><th>State</th><th>Background</th><th>Border</th><th>Text</th><th>Icons</th></tr></thead>
         <tbody>
-          <tr><td>Default</td><td><code>Surface/Button/Primary/bg</code><br>#e96620</td><td><code>Border/Button/Primary/border</code><br>#f78958</td><td><code>Text/Button/Primary/text</code><br>#ffffff</td><td><code>Icons/Action/action-on</code><br>#ffffff</td></tr>
-          <tr><td>Hover</td><td><code>Surface/Button/Primary/bg-hover</code><br>#fff1eb</td><td><code>Border/Button/Primary/border-hover</code><br>#ffa984</td><td><code>Text/Button/Primary/text-hover</code><br>#f78958</td><td><code>Icons/Action/action-hover</code><br>#f78958</td></tr>
+          <tr><td>Default</td><td><code>Surface/Button/Primary/bg</code><br>#e96620</td><td><code>Border/Button/Primary/border</code><br>#f78958</td><td><code>Text/Button/Primary/text</code><br>#ffffff</td><td><code>Icons/Button/Primary/icon</code><br>#ffffff</td></tr>
+          <tr><td>Hover</td><td><code>Surface/Button/Primary/bg-hover</code><br>#f78958</td><td><code>Border/Button/Primary/action-hover</code><br>#ffa984</td><td><code>Text/Button/Primary/text-hover</code><br>#fff1eb</td><td><code>Icons/Button/Primary/icon-hover</code><br>#fff1eb</td></tr>
           <tr><td>Focus</td><td>(same as default)</td><td>(same as default)</td><td>(same as default)</td><td>(same as default)</td></tr>
-          <tr><td>Pressed</td><td><code>Surface/Button/Primary/bg-pressed</code><br>#d14000</td><td><code>Border/Button/Primary/border-pressed</code><br>#b11500</td><td><code>Text/Action/action-on</code><br>#ffffff</td><td>(inherits text)</td></tr>
-          <tr><td>Disabled</td><td><code>Surface/Button/Primary/bg-disabled</code><br>#e9e9e9</td><td><code>Border/Action/disabled</code><br>#b3b3b3</td><td><code>Text/Action/action-disabled</code><br>#7d7d7d</td><td><code>Icons/Action/action-disabled</code><br>#7d7d7d</td></tr>
+          <tr><td>Pressed</td><td><code>Surface/Button/Primary/bg-pressed</code><br>#d14000</td><td><code>Border/Button/Primary/action-pressed</code><br>#e96620</td><td><code>Text/Button/Primary/text-pressed</code><br>#ffc7ae</td><td><code>Icons/Button/Primary/icon-pressed</code><br>#ffc7ae</td></tr>
+          <tr><td>Disabled</td><td><code>Surface/Button/Primary/bg-disabled</code><br>#f5f5f5</td><td><code>Border/Action/disabled</code><br>#e9e9e9</td><td><code>Text/Button/Primary/text-disabled</code><br>#979797</td><td><code>Icons/Button/Primary/icon-disabled</code><br>#979797</td></tr>
         </tbody>
       </table>
 
@@ -1335,10 +1627,10 @@
         <thead><tr><th>State</th><th>Background</th><th>Border</th><th>Text</th><th>Icons</th></tr></thead>
         <tbody>
           <tr><td>Default</td><td><code>Surface/Global/page</code><br>#fafafa</td><td><code>Border/Button/Primary/outline</code><br>#e96620</td><td><code>Text/Action/action</code><br>#e96620</td><td><code>Icons/Action/action</code><br>#e96620</td></tr>
-          <tr><td>Hover</td><td>(same as default)</td><td><code>Border/Button/Primary/border-hover</code><br>#ffa984</td><td><code>Text/Action/action-hover</code><br>#f78958</td><td><code>Icons/Action/action-hover</code><br>#f78958</td></tr>
+          <tr><td>Hover</td><td>(same as default)</td><td><code>Border/Button/Primary/outline border-hover</code><br>#ffa984</td><td><code>Text/Action/action-hover</code><br>#f78958</td><td><code>Icons/Action/action-hover</code><br>#f78958</td></tr>
           <tr><td>Focus</td><td>(same as default)</td><td>(same as default)</td><td>(same as default)</td><td>(same as default)</td></tr>
-          <tr><td>Pressed</td><td>(same as default)</td><td><code>Border/Button/Primary/border-pressed</code><br>#b11500</td><td><code>Text/Button/Primary/text-pressed</code><br>#d14000</td><td><code>Icons/Action/action-pressed</code><br>#d14000</td></tr>
-          <tr><td>Disabled</td><td>(same as default)</td><td><code>Border/Action/disabled</code><br>#b3b3b3</td><td><code>Text/Action/action-disabled</code><br>#7d7d7d</td><td><code>Icons/Action/action-disabled</code><br>#7d7d7d</td></tr>
+          <tr><td>Pressed</td><td>(same as default)</td><td><code>Border/Button/Primary/outline border-pressed</code><br>#b11500</td><td><code>Text/Button/Primary/outline text-pressed</code><br>#d14000</td><td><code>Icons/Button/Primary/outline icon-pressed</code><br>#d14000</td></tr>
+          <tr><td>Disabled</td><td>(same as default)</td><td><code>Border/Action/disabled</code><br>#e9e9e9</td><td><code>Text/Action/action-disabled</code><br>#979797</td><td><code>Icons/Action/action-disabled</code><br>#979797</td></tr>
         </tbody>
       </table>
 
@@ -1597,9 +1889,9 @@
           </tr>
           <tr>
             <td>Hover</td>
-            <td><code>Surface/Action/action-hover</code><br>#fff1eb</td>
+            <td><code>Surface/Action/action-hover</code><br>#f78958</td>
             <td><code>Border/Action/action-hover</code><br>#ffa984</td>
-            <td><code>Text/Button/Primary/text-hover</code><br>#f78958</td>
+            <td><code>Text/Action/action-on-hover</code><br>#fff1eb</td>
           </tr>
           <tr>
             <td>Selected</td>
@@ -1609,9 +1901,9 @@
           </tr>
           <tr>
             <td>Disabled</td>
-            <td><code>Surface/Action/disabled</code><br>#e9e9e9</td>
-            <td><code>Border/Action/disabled</code><br>#b3b3b3</td>
-            <td><code>Text/Action/action-disabled</code><br>#7d7d7d</td>
+            <td><code>Surface/Action/disabled</code><br>#f5f5f5</td>
+            <td><code>Border/Action/disabled</code><br>#e9e9e9</td>
+            <td><code>Text/Action/action-disabled</code><br>#979797</td>
           </tr>
         </tbody>
       </table>
@@ -1905,12 +2197,12 @@
           <tr><td>Button padding (horizontal)</td><td>12px</td><td><code>--padding-s-m</code></td></tr>
           <tr><td>Button padding (vertical)</td><td>4px</td><td><code>--padding-xxs</code></td></tr>
           <tr><td>Button border radius</td><td>48px</td><td><code>--radius-xxl</code></td></tr>
-          <tr><td>Button border width</td><td>1px</td><td>Fixed</td></tr>
+          <tr><td>Button border width</td><td>2px</td><td><code>--border-width-m-action</code></td></tr>
           <tr><td>Bar height</td><td>8px</td><td>Fixed</td></tr>
           <tr><td>Bar border radius</td><td>48px</td><td><code>--radius-xxl</code></td></tr>
           <tr><td>Controls gap</td><td>16px</td><td><code>--padding-m</code></td></tr>
           <tr><td>Track item gap</td><td>16px</td><td><code>--padding-m</code></td></tr>
-          <tr><td>Focus ring width</td><td>2px</td><td>Fixed</td></tr>
+          <tr><td>Focus ring width</td><td>2px</td><td><code>--border-width-m-action</code></td></tr>
           <tr><td>Focus ring offset</td><td>-5px (inset)</td><td>Fixed</td></tr>
           <tr><td>Focus ring radius</td><td>48px</td><td><code>--radius-xxl</code></td></tr>
         </tbody>
@@ -1931,7 +2223,7 @@
           <tr><td>Button bg</td><td><code>--surface-default-container</code></td><td><code>--surface-action-hover</code></td><td><code>--surface-default-container</code></td><td><code>--surface-default-container</code></td><td><code>--surface-disabled</code></td></tr>
           <tr><td>Button border</td><td><code>--border-action</code></td><td><code>--border-action-hover</code></td><td><code>--border-action</code></td><td><code>--border-action-pressed</code></td><td><code>--border-disabled</code></td></tr>
           <tr><td>Button icon</td><td><code>--text-action</code></td><td><code>--text-action-hover</code></td><td><code>--text-action</code></td><td><code>--surface-action-pressed</code></td><td><code>--text-action-disabled</code></td></tr>
-          <tr><td>Bar track</td><td colspan="5"><code>--surface-action-carousel</code></td></tr>
+          <tr><td>Bar track</td><td colspan="5"><code>--surface-indicator-bg</code> (same as Progress Bar track)</td></tr>
           <tr><td>Bar fill</td><td colspan="5"><code>--surface-action</code></td></tr>
           <tr><td>Focus ring</td><td colspan="5"><code>--border-action</code></td></tr>
         </tbody>
@@ -2518,11 +2810,14 @@
       </div>
 
       <h3>Field States</h3>
-      <p>The field container supports four interaction states. Icons, border, and background change per state. Placeholder text uses <code>--text-placeholder</code>; typed text inherits the field's <code>--text-body</code> color.</p>
+      <p>The field supports four interaction states combined with two content states: <strong>Pre-filled</strong> (placeholder text visible, field is empty) and <strong>Not Pre-filled</strong> (user has entered text). In the pre-filled state, icons and text use <code>--text-placeholder</code> to signal the field awaits input.</p>
+
+      <h4>Pre-filled (Placeholder)</h4>
+      <p>When the field is empty, placeholder text and icons display in <code>--text-placeholder</code>.</p>
 
       <div class="state-row">
         <span class="state-label">Default</span>
-        <div class="form-field" style="width:336px">
+        <div class="form-field is-placeholder" style="width:336px">
           <i class="field-icon fa-solid fa-user"></i>
           <input type="text" placeholder="Placeholder">
           <i class="field-icon fa-solid fa-circle-xmark"></i>
@@ -2530,7 +2825,7 @@
       </div>
       <div class="state-row">
         <span class="state-label">Hover</span>
-        <div class="form-field show-hover" style="width:336px">
+        <div class="form-field is-placeholder show-hover" style="width:336px">
           <i class="field-icon fa-solid fa-user"></i>
           <input type="text" placeholder="Placeholder">
           <i class="field-icon fa-solid fa-circle-xmark"></i>
@@ -2538,7 +2833,7 @@
       </div>
       <div class="state-row">
         <span class="state-label">Focus</span>
-        <div class="form-field show-focus" style="width:336px">
+        <div class="form-field is-placeholder show-focus" style="width:336px">
           <i class="field-icon fa-solid fa-user"></i>
           <input type="text" placeholder="Placeholder">
           <i class="field-icon fa-solid fa-circle-xmark"></i>
@@ -2546,9 +2841,45 @@
       </div>
       <div class="state-row">
         <span class="state-label">Disabled</span>
-        <div class="form-field is-disabled" style="width:336px">
+        <div class="form-field is-placeholder is-disabled" style="width:336px">
           <i class="field-icon fa-solid fa-user"></i>
           <input type="text" placeholder="Placeholder" disabled>
+          <i class="field-icon fa-solid fa-circle-xmark"></i>
+        </div>
+      </div>
+
+      <h4>Not Pre-filled (Typed Text)</h4>
+      <p>Once the user has entered text, icons and text use <code>--text-body</code> or the current interaction-state color.</p>
+
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <div class="form-field" style="width:336px">
+          <i class="field-icon fa-solid fa-user"></i>
+          <input type="text" value="Placeholder">
+          <i class="field-icon fa-solid fa-circle-xmark"></i>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Hover</span>
+        <div class="form-field show-hover" style="width:336px">
+          <i class="field-icon fa-solid fa-user"></i>
+          <input type="text" value="Placeholder">
+          <i class="field-icon fa-solid fa-circle-xmark"></i>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Focus</span>
+        <div class="form-field show-focus" style="width:336px">
+          <i class="field-icon fa-solid fa-user"></i>
+          <input type="text" value="Placeholder">
+          <i class="field-icon fa-solid fa-circle-xmark"></i>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Disabled</span>
+        <div class="form-field is-disabled" style="width:336px">
+          <i class="field-icon fa-solid fa-user"></i>
+          <input type="text" value="Placeholder" disabled>
           <i class="field-icon fa-solid fa-circle-xmark"></i>
         </div>
       </div>
@@ -2695,7 +3026,7 @@
           <tr><td>Field border radius</td><td>8px</td><td><code>--radius-m</code></td></tr>
           <tr><td>Focus ring width</td><td>2px</td><td><code>Border/Width/M action</code></td></tr>
           <tr><td>Focus ring offset</td><td>-5px (inset)</td><td>Fixed</td></tr>
-          <tr><td>Focus ring radius</td><td>10px</td><td>Fixed</td></tr>
+          <tr><td>Focus ring radius</td><td>12px</td><td>Fixed</td></tr>
           <tr><td>Label-to-field gap</td><td>8px</td><td><code>--padding-s</code></td></tr>
           <tr><td>Field-to-hint gap</td><td>8px</td><td><code>--padding-s</code></td></tr>
           <tr><td>Label icon gap</td><td>8px</td><td><code>--padding-s</code></td></tr>
@@ -2720,9 +3051,10 @@
         <thead><tr><th>Element</th><th>Default</th><th>Hover</th><th>Focus</th><th>Disabled</th></tr></thead>
         <tbody>
           <tr><td>Field border</td><td><code>--border-accent</code></td><td><code>--border-action-hover</code></td><td><code>--border-action</code></td><td><code>--border-disabled</code></td></tr>
-          <tr><td>Field background</td><td><code>--surface-default-container</code></td><td><code>--surface-action-hover</code></td><td><code>--surface-default-container</code></td><td><code>--surface-disabled</code></td></tr>
-          <tr><td>Field text / icons</td><td><code>--text-body</code></td><td><code>--text-action-hover</code></td><td><code>--text-body</code></td><td><code>--text-action-disabled</code></td></tr>
-          <tr><td>Placeholder</td><td colspan="3"><code>--text-placeholder</code></td><td><code>--text-placeholder</code></td></tr>
+          <tr><td>Field background</td><td><code>--surface-default-container</code></td><td><code>--surface-default-container</code></td><td><code>--surface-default-container</code></td><td><code>--surface-disabled</code></td></tr>
+          <tr><td>Text / icons (typed)</td><td><code>--text-body</code></td><td><code>--text-action-hover</code></td><td><code>--text-body</code></td><td><code>--text-action-disabled</code></td></tr>
+          <tr><td>Text / icons (placeholder)</td><td><code>--text-placeholder</code></td><td><code>--text-action-hover</code></td><td><code>--text-placeholder</code></td><td><code>--text-action-disabled</code></td></tr>
+          <tr><td>Placeholder text</td><td colspan="3"><code>--text-placeholder</code></td><td><code>--text-placeholder</code></td></tr>
           <tr><td>Focus ring</td><td colspan="2">&mdash;</td><td><code>--border-action</code> (2px)</td><td>&mdash;</td></tr>
           <tr><td>Label text</td><td colspan="4"><code>--text-body</code></td></tr>
           <tr><td>Hint text</td><td colspan="4"><code>--text-body</code></td></tr>
@@ -2751,6 +3083,7 @@
           <tr><td><code>.label-required</code></td><td>Modifier</td><td>&mdash;</td><td>Adds red asterisk via <code>::before</code>. Requires <code>position: relative</code> on the label.</td></tr>
           <tr><td><code>.label-icon</code></td><td>Element</td><td>&mdash;</td><td>Info icon inside the label. FA Solid, inherits color.</td></tr>
           <tr><td><code>.form-field</code></td><td>Field container</td><td>Default state</td><td>Flex row, 8px gap, 8px/12px padding, 1px border, 8px radius.</td></tr>
+          <tr><td><code>.is-placeholder</code></td><td>State</td><td>&mdash;</td><td>Applies placeholder color to icons when the field is empty (pre-filled). Remove when the user has typed text.</td></tr>
           <tr><td><code>.field-icon</code></td><td>Element</td><td>&mdash;</td><td>Leading or trailing icon inside the field. FA Solid, 16px.</td></tr>
           <tr><td><code>.field-status-icon</code></td><td>Modifier</td><td>&mdash;</td><td>Applied to trailing icon for validation. Colors the icon per status.</td></tr>
           <tr><td><code>.is-disabled</code></td><td>State</td><td>&mdash;</td><td>Disabled field. Also set the native <code>disabled</code> attribute on the input element.</td></tr>
@@ -2879,6 +3212,828 @@
   &lt;span class="input-hint hint-success"
         id="email-ok-hint"&gt;Email verified successfully.&lt;/span&gt;
 &lt;/div&gt;</code></pre>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         COMPONENT — SELECTOR ACCORDION
+         ================================================================ -->
+    <section class="page" id="comp-sel-accordion">
+      <div class="page-breadcrumb">Components <span>/</span> Selector Accordion</div>
+      <h1>Selector Accordion</h1>
+
+      <!-- ---- OVERVIEW ---- -->
+      <h2>Overview</h2>
+      <p class="lead">A collapsible dropdown list that organises selectable options under a category header. Clicking the header expands a panel of options; clicking an option selects it.</p>
+      <p>The Selector Accordion is built from two sub-components: a <strong>Category</strong> header (with label and chevron icon) and <strong>Option</strong> items. The category header toggles between collapsed and expanded states. When expanded, options appear in a connected list below the header. The last option receives bottom border-radius to close the visual container. Options can be unselected, selected, or disabled. The category header and all options share a consistent set of interaction states (default, hover, pressed, disabled). Category text uses Body M (16px/24px). Option text uses Body S (14px/18px). The chevron icon uses Font Awesome 6 Solid.</p>
+
+      <!-- ---- VARIANTS ---- -->
+      <h2>Variants</h2>
+
+      <h3>Category Header (Collapsed)</h3>
+      <p>The category header in its collapsed state. A chevron-down icon indicates the selector accordion can be expanded.</p>
+
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <button class="sel-accordion-category" type="button" style="width:160px">
+          <span>Label</span>
+          <i class="sel-accordion-icon fa-solid fa-chevron-down"></i>
+        </button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Hover</span>
+        <button class="sel-accordion-category show-hover" type="button" style="width:160px">
+          <span>Label</span>
+          <i class="sel-accordion-icon fa-solid fa-chevron-down"></i>
+        </button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Pressed</span>
+        <button class="sel-accordion-category show-pressed" type="button" style="width:160px">
+          <span>Label</span>
+          <i class="sel-accordion-icon fa-solid fa-chevron-down"></i>
+        </button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Focus</span>
+        <button class="sel-accordion-category show-focus" type="button" style="width:160px">
+          <span>Label</span>
+          <i class="sel-accordion-icon fa-solid fa-chevron-down"></i>
+        </button>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Disabled</span>
+        <button class="sel-accordion-category is-disabled" type="button" style="width:160px" disabled>
+          <span>Label</span>
+          <i class="sel-accordion-icon fa-solid fa-chevron-down"></i>
+        </button>
+      </div>
+
+      <h3>Category Header (Expanded)</h3>
+      <p>When expanded, the category header loses its bottom border-radius, connecting visually to the options below. The chevron rotates 180 degrees.</p>
+
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <div style="width:160px">
+          <button class="sel-accordion-category is-expanded" type="button">
+            <span>Label</span>
+            <i class="sel-accordion-icon fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="sel-accordion-dropdown">
+            <div class="sel-accordion-option">Label</div>
+            <div class="sel-accordion-option">Label</div>
+            <div class="sel-accordion-option">Label</div>
+          </div>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Hover (header)</span>
+        <div style="width:160px">
+          <button class="sel-accordion-category is-expanded show-hover" type="button">
+            <span>Label</span>
+            <i class="sel-accordion-icon fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="sel-accordion-dropdown">
+            <div class="sel-accordion-option">Label</div>
+            <div class="sel-accordion-option">Label</div>
+            <div class="sel-accordion-option">Label</div>
+          </div>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Pressed (header)</span>
+        <div style="width:160px">
+          <button class="sel-accordion-category is-expanded show-pressed" type="button">
+            <span>Label</span>
+            <i class="sel-accordion-icon fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="sel-accordion-dropdown">
+            <div class="sel-accordion-option">Label</div>
+            <div class="sel-accordion-option">Label</div>
+            <div class="sel-accordion-option">Label</div>
+          </div>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Focus (header)</span>
+        <div style="width:160px">
+          <button class="sel-accordion-category is-expanded show-focus" type="button">
+            <span>Label</span>
+            <i class="sel-accordion-icon fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="sel-accordion-dropdown">
+            <div class="sel-accordion-option">Label</div>
+            <div class="sel-accordion-option">Label</div>
+            <div class="sel-accordion-option">Label</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Option States (Unselected)</h3>
+      <p>Individual option rows within an expanded selector accordion. Options use Body S typography. These show the unselected variant.</p>
+
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <div style="width:160px">
+          <div class="sel-accordion-option" style="border-top:1px solid var(--border-default); border-radius:var(--radius-m) var(--radius-m) 0 0">Label</div>
+          <div class="sel-accordion-option" style="border-radius:0 0 var(--radius-m) var(--radius-m)">Label</div>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Hover</span>
+        <div style="width:160px">
+          <div class="sel-accordion-option show-hover" style="border-top:1px solid var(--border-action-hover); border-radius:var(--radius-m) var(--radius-m) 0 0">Label</div>
+          <div class="sel-accordion-option show-hover" style="border-radius:0 0 var(--radius-m) var(--radius-m)">Label</div>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Pressed</span>
+        <div style="width:160px">
+          <div class="sel-accordion-option show-pressed" style="border-top:1px solid var(--border-action-pressed); border-radius:var(--radius-m) var(--radius-m) 0 0">Label</div>
+          <div class="sel-accordion-option show-pressed" style="border-radius:0 0 var(--radius-m) var(--radius-m)">Label</div>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Focus</span>
+        <div style="width:160px; padding:8px;">
+          <div class="sel-accordion-option show-focus" style="border-top:1px solid var(--border-default)">Label</div>
+          <div style="display:none"></div>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Disabled</span>
+        <div style="width:160px">
+          <div class="sel-accordion-option is-disabled" style="border-top:1px solid var(--border-disabled); border-radius:var(--radius-m) var(--radius-m) 0 0">Label</div>
+          <div class="sel-accordion-option is-disabled" style="border-radius:0 0 var(--radius-m) var(--radius-m)">Label</div>
+        </div>
+      </div>
+
+      <h3>Option States (Selected)</h3>
+      <p>Options in the selected state, indicating the currently chosen value.</p>
+
+      <div class="state-row">
+        <span class="state-label">Selected</span>
+        <div style="width:160px">
+          <div class="sel-accordion-option is-selected" style="border-top:1px solid var(--border-action); border-radius:var(--radius-m) var(--radius-m) 0 0">Label</div>
+          <div class="sel-accordion-option is-selected" style="border-radius:0 0 var(--radius-m) var(--radius-m)">Label</div>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Selected + Hover</span>
+        <div style="width:160px">
+          <div class="sel-accordion-option is-selected show-hover" style="border-top:1px solid var(--border-action-hover); border-radius:var(--radius-m) var(--radius-m) 0 0">Label</div>
+          <div class="sel-accordion-option is-selected show-hover" style="border-radius:0 0 var(--radius-m) var(--radius-m)">Label</div>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Selected + Pressed</span>
+        <div style="width:160px">
+          <div class="sel-accordion-option is-selected show-pressed" style="border-top:1px solid var(--border-action-pressed); border-radius:var(--radius-m) var(--radius-m) 0 0">Label</div>
+          <div class="sel-accordion-option is-selected show-pressed" style="border-radius:0 0 var(--radius-m) var(--radius-m)">Label</div>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Selected + Focus</span>
+        <div style="width:160px; padding:8px;">
+          <div class="sel-accordion-option is-selected show-focus" style="border-top:1px solid var(--border-action)">Label</div>
+          <div style="display:none"></div>
+        </div>
+      </div>
+
+      <h3>Last Option Focus</h3>
+      <p>The last option in a selector accordion receives bottom border-radius on its focus ring using <code>--radius-focus-ring</code> (10px) to match the container shape.</p>
+
+      <div class="state-row">
+        <span class="state-label">Focus (last, selected)</span>
+        <div style="width:160px; padding:8px;">
+          <div class="sel-accordion-option is-selected show-focus" style="border-top:1px solid var(--border-action); border-radius:0 0 var(--radius-m) var(--radius-m)">Label</div>
+        </div>
+      </div>
+
+      <h3>Assembled Selector Accordion</h3>
+      <p>The full Selector Accordion component with a label, an info icon, and a dropdown. The category header toggles expanded/collapsed on click.</p>
+
+      <div class="state-row">
+        <span class="state-label">Collapsed</span>
+        <div class="sel-accordion-group">
+          <div class="sel-accordion-label">Label <i class="label-icon fa-solid fa-circle-question" aria-hidden="true"></i></div>
+          <div class="sel-accordion-stack">
+            <button class="sel-accordion-category" type="button">
+              <span>Label</span>
+              <i class="sel-accordion-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Expanded</span>
+        <div class="sel-accordion-group">
+          <div class="sel-accordion-label">Label <i class="label-icon fa-solid fa-circle-question" aria-hidden="true"></i></div>
+          <div class="sel-accordion-stack">
+            <button class="sel-accordion-category is-expanded" type="button">
+              <span>Label</span>
+              <i class="sel-accordion-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="sel-accordion-dropdown">
+              <div class="sel-accordion-option">Label</div>
+              <div class="sel-accordion-option">Label</div>
+              <div class="sel-accordion-option">Label</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---- WORKING DEMO ---- -->
+      <h2>Working Demo</h2>
+      <p>Click the category header to expand or collapse. Click an option to select it.</p>
+
+      <div style="margin:16px 0 24px;">
+        <div class="sel-accordion-group sel-accordion-demo" style="max-width:var(--card-s)">
+          <div class="sel-accordion-label" id="sel-accordion-demo-label">Choose a category <i class="label-icon fa-solid fa-circle-question" aria-hidden="true"></i></div>
+          <div class="sel-accordion-stack">
+            <button class="sel-accordion-category" type="button" aria-expanded="false" aria-controls="sel-accordion-demo-options" aria-labelledby="sel-accordion-demo-label">
+              <span>Select option</span>
+              <i class="sel-accordion-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="sel-accordion-dropdown is-collapsed" id="sel-accordion-demo-options" role="group" aria-label="Options">
+              <button class="sel-accordion-option" type="button">Option Alpha</button>
+              <button class="sel-accordion-option" type="button">Option Beta</button>
+              <button class="sel-accordion-option" type="button">Option Gamma</button>
+              <button class="sel-accordion-option is-disabled" type="button" disabled aria-disabled="true">Option Delta (disabled)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---- ACCESSIBILITY ---- -->
+      <h2>Accessibility Considerations</h2>
+      <p>WCAG 2.1 AA target. The Selector Accordion should behave as a disclosure widget: the category header is a <code>&lt;button&gt;</code> that toggles visibility of the options panel.</p>
+
+      <h3>Keyboard Interactions</h3>
+      <table class="doc-table">
+        <thead><tr><th>Key</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td><code>Tab</code></td><td>Moves focus to the category header. When expanded, <code>Tab</code> moves through option items.</td></tr>
+          <tr><td><code>Enter</code> / <code>Space</code></td><td>On the category header: toggles expanded/collapsed. On an option: selects it.</td></tr>
+          <tr><td><code>Escape</code></td><td>Collapses the selector accordion and returns focus to the category header.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>ARIA and Semantics</h3>
+      <ul>
+        <li>The category header must be a <code>&lt;button&gt;</code> with <code>aria-expanded="true|false"</code>.</li>
+        <li>Use <code>aria-controls</code> on the header pointing to the options container's <code>id</code>.</li>
+        <li>Options should use <code>role="option"</code> or be native <code>&lt;button&gt;</code> elements.</li>
+        <li>The selected option should include <code>aria-selected="true"</code> or <code>aria-current="true"</code>.</li>
+        <li>Disabled options must include the <code>disabled</code> attribute and <code>aria-disabled="true"</code>.</li>
+        <li>The chevron icon is decorative: add <code>aria-hidden="true"</code>.</li>
+      </ul>
+
+      <!-- ---- CONSTRUCTION ---- -->
+      <h2>Construction</h2>
+      <p>The Selector Accordion is composed of a label row, a category header, and an options panel. The label sits above the header in a flex-column container with an 8px gap. Wrap the category button and the options panel in <code>.sel-accordion-stack</code> so the pair gets a definite width inside flex layouts (for example documentation state rows or the <a href="#pattern-filter" data-page="pattern-filter">Filter</a> pattern). The options panel stacks vertically below the header with no gap, creating a seamless bordered list.</p>
+
+      <h3>Scale and Spacing</h3>
+      <table class="doc-table">
+        <thead><tr><th>Property</th><th>Value</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Category padding (vertical)</td><td>8px</td><td><code>--padding-s</code></td></tr>
+          <tr><td>Category padding (horizontal)</td><td>16px</td><td><code>--padding-m</code></td></tr>
+          <tr><td>Category label-to-icon spacing</td><td><code>space-between</code>, min gap 16px</td><td>CSS <code>justify-content</code> + <code>gap: var(--jumper-xxs-xxxs)</code></td></tr>
+          <tr><td>Expand/collapse animation</td><td>300ms ease-in-out</td><td>Height transition with <code>ease-in-out</code> easing</td></tr>
+          <tr><td>Category border width</td><td>1px</td><td><code>Border/Width/M default</code></td></tr>
+          <tr><td>Category border radius</td><td>8px</td><td><code>--radius-m</code></td></tr>
+          <tr><td>Option padding (vertical)</td><td>8px</td><td><code>--padding-s</code></td></tr>
+          <tr><td>Option padding (horizontal)</td><td>16px</td><td><code>--padding-m</code></td></tr>
+          <tr><td>Option border width</td><td>1px (left, right, bottom)</td><td><code>Border/Width/M default</code></td></tr>
+          <tr><td>Last option border radius (bottom)</td><td>8px</td><td><code>--radius-m</code></td></tr>
+          <tr><td>Label-to-header gap</td><td>8px</td><td><code>--jumper-xxxs-tiny</code></td></tr>
+          <tr><td>Min width</td><td>128px (desktop)</td><td><code>--card-xs</code></td></tr>
+          <tr><td>Focus ring width</td><td>2px</td><td><code>Border/Width/M action</code></td></tr>
+          <tr><td>Focus ring offset (category)</td><td>-5px (inset)</td><td>Fixed</td></tr>
+          <tr><td>Focus ring radius (category, collapsed)</td><td>10px</td><td><code>--radius-focus-ring</code></td></tr>
+          <tr><td>Focus ring radius (category, expanded)</td><td>10px 10px 0 0</td><td><code>--radius-focus-ring</code> (top corners only)</td></tr>
+          <tr><td>Focus ring offset (option)</td><td>top: -4px, left/right/bottom: -5px</td><td>Fixed</td></tr>
+          <tr><td>Focus ring radius (option)</td><td>0px (rectangular)</td><td>Fixed</td></tr>
+          <tr><td>Focus ring radius (last option)</td><td>0 0 10px 10px</td><td><code>--radius-focus-ring</code> (bottom corners only)</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Styles</h3>
+      <table class="doc-table">
+        <thead><tr><th>Element</th><th>Font / Size</th></tr></thead>
+        <tbody>
+          <tr><td>Label text</td><td>Lato Regular (400), 16px/24px, 0.16px tracking</td></tr>
+          <tr><td>Label icon</td><td>FA6 Solid (900), 16px/24px, 0.4px tracking</td></tr>
+          <tr><td>Category text</td><td>Lato Regular (400), 16px/24px, 0.16px tracking</td></tr>
+          <tr><td>Category chevron</td><td>FA6 Solid (900), 16px/24px, 0.4px tracking</td></tr>
+          <tr><td>Option text</td><td>Lato Regular (400), 14px/18px</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Color Tokens</h3>
+      <table class="doc-table">
+        <thead><tr><th>Element</th><th>Default</th><th>Hover</th><th>Pressed</th><th>Disabled</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Category bg</td>
+            <td><code>--surface-default-container</code></td>
+            <td><code>--surface-action-hover</code></td>
+            <td><code>--surface-action-pressed</code></td>
+            <td><code>--surface-disabled</code></td>
+          </tr>
+          <tr>
+            <td>Category border</td>
+            <td><code>--border-default</code></td>
+            <td><code>--border-action-hover</code></td>
+            <td><code>--border-action-pressed</code></td>
+            <td><code>--border-disabled</code></td>
+          </tr>
+          <tr>
+            <td>Category text / icon</td>
+            <td><code>--text-body</code></td>
+            <td><code>--text-action-on-hover</code></td>
+            <td><code>--text-action-on-pressed</code></td>
+            <td><code>--text-action-disabled</code></td>
+          </tr>
+          <tr>
+            <td>Focus ring</td>
+            <td colspan="4"><code>--border-action</code> (2px)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="doc-table" style="margin-top:var(--padding-m)">
+        <thead><tr><th>Element</th><th>Default</th><th>Hover</th><th>Pressed</th><th>Selected</th><th>Selected + Hover</th><th>Selected + Pressed</th><th>Disabled</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Option bg</td>
+            <td><code>--surface-default-container</code></td>
+            <td><code>--surface-action-hover</code></td>
+            <td><code>--surface-action-pressed</code></td>
+            <td><code>--surface-action</code></td>
+            <td><code>--surface-action-hover</code></td>
+            <td><code>--surface-action-pressed</code></td>
+            <td><code>--surface-disabled</code></td>
+          </tr>
+          <tr>
+            <td>Option border</td>
+            <td><code>--border-default</code></td>
+            <td><code>--border-action-hover</code></td>
+            <td><code>--border-action-pressed</code></td>
+            <td><code>--border-action</code></td>
+            <td><code>--border-action-hover</code></td>
+            <td><code>--border-action-pressed</code></td>
+            <td><code>--border-disabled</code></td>
+          </tr>
+          <tr>
+            <td>Option text</td>
+            <td><code>--text-body</code></td>
+            <td><code>--text-action-on-hover</code></td>
+            <td><code>--text-action-on-pressed</code></td>
+            <td><code>--text-action-on</code></td>
+            <td><code>--text-action-on-hover</code></td>
+            <td><code>--text-action-on-pressed</code></td>
+            <td><code>--text-action-disabled</code></td>
+          </tr>
+          <tr>
+            <td>Focus ring</td>
+            <td colspan="7"><code>--border-action</code> (2px)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- ---- APPLICATION & CONTEXT ---- -->
+      <h2>Application and Context</h2>
+
+      <h3>For Developers</h3>
+      <table class="doc-table">
+        <thead><tr><th>Attribute / Class</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><code>.sel-accordion-group</code></td><td>Container</td><td>&mdash;</td><td>Flex column wrapper. Holds the label and the category + options block.</td></tr>
+          <tr><td><code>.sel-accordion-label</code></td><td>Element</td><td>&mdash;</td><td>Label row above the category header. Supports an optional <code>.label-icon</code>.</td></tr>
+          <tr><td><code>.sel-accordion-category</code></td><td>Element</td><td>Collapsed</td><td>The expandable header button. Must be a <code>&lt;button&gt;</code> with <code>aria-expanded</code>.</td></tr>
+          <tr><td><code>.sel-accordion-icon</code></td><td>Element</td><td>&mdash;</td><td>Chevron icon inside the category header. Rotates 180deg when expanded.</td></tr>
+          <tr><td><code>.is-expanded</code></td><td>State</td><td>&mdash;</td><td>Applied to the category header when the options panel is visible. Removes bottom border-radius and rotates the chevron.</td></tr>
+          <tr><td><code>.sel-accordion-dropdown</code></td><td>Container</td><td>&mdash;</td><td>Flex column wrapper for option items. Hidden when collapsed.</td></tr>
+          <tr><td><code>.sel-accordion-option</code></td><td>Element</td><td>&mdash;</td><td>An individual option row. The last child automatically gets bottom border-radius.</td></tr>
+          <tr><td><code>.is-selected</code></td><td>State</td><td>&mdash;</td><td>Marks the currently selected option. Applies action background and white text.</td></tr>
+          <tr><td><code>.is-disabled</code></td><td>State</td><td>&mdash;</td><td>Disabled state. Also set the native <code>disabled</code> attribute and <code>aria-disabled="true"</code>.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>For Designers</h3>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Always pair the selector accordion with a visible label so users understand what category they are selecting from.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't nest selector accordions inside selector accordions. For multi-level hierarchies, consider a different navigation pattern.</p>
+        </div>
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Keep option labels short and scannable. Users should quickly identify the right choice.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't use the Selector Accordion as a navigation element. It is designed for selecting values, not routing between pages.</p>
+        </div>
+      </div>
+
+      <!-- ---- SPACING ---- -->
+      <h2>Spacing Guidance</h2>
+      <table class="doc-table">
+        <thead><tr><th>Context</th><th>Recommendation</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Label above category</td><td>8px gap</td><td><code>--jumper-xxxs-tiny</code></td></tr>
+          <tr><td>Internal category padding</td><td>8px vertical, 16px horizontal</td><td><code>--padding-s</code> / <code>--padding-m</code></td></tr>
+          <tr><td>Internal option padding</td><td>8px vertical, 16px horizontal</td><td><code>--padding-s</code> / <code>--padding-m</code></td></tr>
+          <tr><td>Selector Accordion in a form layout</td><td>16px below preceding field</td><td><code>--padding-m</code></td></tr>
+        </tbody>
+      </table>
+
+      <!-- ---- CODE EXAMPLE ---- -->
+      <h2>Usage Examples</h2>
+
+      <h3>Basic Selector Accordion (collapsed)</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;div class="sel-accordion-group"&gt;
+  &lt;div class="sel-accordion-label"&gt;Category &lt;i class="label-icon fa-solid fa-circle-question"&gt;&lt;/i&gt;&lt;/div&gt;
+  &lt;div&gt;
+    &lt;button class="sel-accordion-category" type="button" aria-expanded="false" aria-controls="sel-accordion-options"&gt;
+      &lt;span&gt;Select option&lt;/span&gt;
+      &lt;i class="sel-accordion-icon fa-solid fa-chevron-down" aria-hidden="true"&gt;&lt;/i&gt;
+    &lt;/button&gt;
+    &lt;div class="sel-accordion-dropdown" id="sel-accordion-options" hidden&gt;
+      &lt;button class="sel-accordion-option" type="button"&gt;Option A&lt;/button&gt;
+      &lt;button class="sel-accordion-option" type="button"&gt;Option B&lt;/button&gt;
+      &lt;button class="sel-accordion-option" type="button"&gt;Option C&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Expanded with selected option</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;div class="sel-accordion-group"&gt;
+  &lt;div class="sel-accordion-label"&gt;Category&lt;/div&gt;
+  &lt;div&gt;
+    &lt;button class="sel-accordion-category is-expanded" type="button" aria-expanded="true" aria-controls="sel-accordion-opts"&gt;
+      &lt;span&gt;Category&lt;/span&gt;
+      &lt;i class="sel-accordion-icon fa-solid fa-chevron-down" aria-hidden="true"&gt;&lt;/i&gt;
+    &lt;/button&gt;
+    &lt;div class="sel-accordion-dropdown" id="sel-accordion-opts"&gt;
+      &lt;button class="sel-accordion-option" type="button"&gt;Option A&lt;/button&gt;
+      &lt;button class="sel-accordion-option is-selected" type="button" aria-selected="true"&gt;Option B&lt;/button&gt;
+      &lt;button class="sel-accordion-option" type="button"&gt;Option C&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         COMPONENT — MENU
+         ================================================================ -->
+    <section class="page" id="comp-menu">
+      <div class="page-breadcrumb">Components <span>/</span> Menu</div>
+      <h1>Menu</h1>
+
+      <!-- ---- OVERVIEW ---- -->
+      <h2>Overview</h2>
+      <p class="lead">A vertical list of navigational items used in sidebars or flyout panels. Each item contains an optional left icon, a text label, and an optional right arrow icon.</p>
+      <p>The Menu is a navigation component for mobile sidebars and flyout panels. Each menu item is a full-width row with consistent padding, a 2px bottom border, and support for left and right icons. Items can be unselected, selected (indicating the current page/section), or disabled. When assembled, items stack inside a bordered container with rounded corners. The first and last items receive top and bottom border-radius respectively.</p>
+
+      <!-- ---- VARIANTS ---- -->
+      <h2>Variants</h2>
+
+      <h3>Menu Item (Unselected)</h3>
+      <p>Individual menu items in the unselected state across all interaction states.</p>
+
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <div class="menu-item" style="min-width:336px">
+          <i class="menu-item-icon fa-solid fa-user" aria-hidden="true"></i>
+          <span class="menu-item-label">Menu item</span>
+          <i class="menu-item-icon fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Hover</span>
+        <div class="menu-item show-hover" style="min-width:336px">
+          <i class="menu-item-icon fa-solid fa-user" aria-hidden="true"></i>
+          <span class="menu-item-label">Menu item</span>
+          <i class="menu-item-icon fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Pressed</span>
+        <div class="menu-item show-pressed" style="min-width:336px">
+          <i class="menu-item-icon fa-solid fa-user" aria-hidden="true"></i>
+          <span class="menu-item-label">Menu item</span>
+          <i class="menu-item-icon fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Focus</span>
+        <div class="menu-item show-focus" style="min-width:336px; position:relative">
+          <i class="menu-item-icon fa-solid fa-user" aria-hidden="true"></i>
+          <span class="menu-item-label">Menu item</span>
+          <i class="menu-item-icon fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Disabled</span>
+        <div class="menu-item is-disabled" style="min-width:336px">
+          <i class="menu-item-icon fa-solid fa-user" aria-hidden="true"></i>
+          <span class="menu-item-label">Menu item</span>
+          <i class="menu-item-icon fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+
+      <h3>Menu Item (Selected)</h3>
+      <p>Menu items in the selected state, indicating the currently active page or section.</p>
+
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <div class="menu-item is-selected" style="min-width:336px">
+          <i class="menu-item-icon fa-solid fa-user" aria-hidden="true"></i>
+          <span class="menu-item-label">Menu item</span>
+          <i class="menu-item-icon fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Hover</span>
+        <div class="menu-item is-selected show-hover" style="min-width:336px">
+          <i class="menu-item-icon fa-solid fa-user" aria-hidden="true"></i>
+          <span class="menu-item-label">Menu item</span>
+          <i class="menu-item-icon fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Pressed</span>
+        <div class="menu-item is-selected show-pressed" style="min-width:336px">
+          <i class="menu-item-icon fa-solid fa-user" aria-hidden="true"></i>
+          <span class="menu-item-label">Menu item</span>
+          <i class="menu-item-icon fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="state-row">
+        <span class="state-label">Disabled</span>
+        <div class="menu-item is-disabled" style="min-width:336px">
+          <i class="menu-item-icon fa-solid fa-user" aria-hidden="true"></i>
+          <span class="menu-item-label">Menu item</span>
+          <i class="menu-item-icon fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+
+      <h3>Assembled Menu</h3>
+      <p>Menu items stacked in a bordered container. One item is selected. The container has rounded corners with 1px side/top borders. Each item's 2px bottom border separates rows; the last item has no bottom border.</p>
+
+      <div class="state-row">
+        <span class="state-label">Default</span>
+        <nav class="menu-nav" style="width:336px" aria-label="Sidebar navigation">
+          <button class="menu-item" type="button">
+            <i class="menu-item-icon fa-solid fa-user" aria-hidden="true"></i>
+            <span class="menu-item-label">Menu item</span>
+            <i class="menu-item-icon fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </button>
+          <button class="menu-item" type="button">
+            <i class="menu-item-icon fa-solid fa-user" aria-hidden="true"></i>
+            <span class="menu-item-label">Menu item</span>
+            <i class="menu-item-icon fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </button>
+          <button class="menu-item" type="button">
+            <i class="menu-item-icon fa-solid fa-user" aria-hidden="true"></i>
+            <span class="menu-item-label">Menu item</span>
+            <i class="menu-item-icon fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </button>
+          <button class="menu-item is-selected" type="button" aria-current="page">
+            <i class="menu-item-icon fa-solid fa-user" aria-hidden="true"></i>
+            <span class="menu-item-label">Menu item</span>
+            <i class="menu-item-icon fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </button>
+          <button class="menu-item" type="button">
+            <i class="menu-item-icon fa-solid fa-user" aria-hidden="true"></i>
+            <span class="menu-item-label">Menu item</span>
+            <i class="menu-item-icon fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </button>
+          <button class="menu-item" type="button">
+            <i class="menu-item-icon fa-solid fa-user" aria-hidden="true"></i>
+            <span class="menu-item-label">Menu item</span>
+            <i class="menu-item-icon fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </button>
+          <button class="menu-item" type="button">
+            <i class="menu-item-icon fa-solid fa-user" aria-hidden="true"></i>
+            <span class="menu-item-label">Menu item</span>
+            <i class="menu-item-icon fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </button>
+          <button class="menu-item" type="button">
+            <i class="menu-item-icon fa-solid fa-user" aria-hidden="true"></i>
+            <span class="menu-item-label">Menu item</span>
+            <i class="menu-item-icon fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </button>
+        </nav>
+      </div>
+
+      <!-- ---- WORKING DEMO ---- -->
+      <h2>Working Demo</h2>
+      <p>Click a menu item to select it. The previously selected item returns to its default state.</p>
+
+      <div style="margin:16px 0 24px;">
+        <nav class="menu-nav menu-demo" style="width:336px" aria-label="Demo navigation">
+          <button class="menu-item" type="button">
+            <i class="menu-item-icon fa-solid fa-house" aria-hidden="true"></i>
+            <span class="menu-item-label">Dashboard</span>
+            <i class="menu-item-icon fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </button>
+          <button class="menu-item" type="button">
+            <i class="menu-item-icon fa-solid fa-user" aria-hidden="true"></i>
+            <span class="menu-item-label">Profile</span>
+            <i class="menu-item-icon fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </button>
+          <button class="menu-item is-selected" type="button" aria-current="page">
+            <i class="menu-item-icon fa-solid fa-gear" aria-hidden="true"></i>
+            <span class="menu-item-label">Settings</span>
+            <i class="menu-item-icon fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </button>
+          <button class="menu-item" type="button">
+            <i class="menu-item-icon fa-solid fa-bell" aria-hidden="true"></i>
+            <span class="menu-item-label">Notifications</span>
+            <i class="menu-item-icon fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </button>
+          <button class="menu-item is-disabled" type="button" disabled aria-disabled="true">
+            <i class="menu-item-icon fa-solid fa-lock" aria-hidden="true"></i>
+            <span class="menu-item-label">Admin (disabled)</span>
+            <i class="menu-item-icon fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </button>
+        </nav>
+      </div>
+
+      <!-- ---- ACCESSIBILITY ---- -->
+      <h2>Accessibility Considerations</h2>
+      <p>WCAG 2.1 AA target. The Menu should use <code>&lt;nav&gt;</code> with an <code>aria-label</code> for navigation context. Items should be focusable <code>&lt;button&gt;</code> or <code>&lt;a&gt;</code> elements.</p>
+
+      <h3>Keyboard Interactions</h3>
+      <table class="doc-table">
+        <thead><tr><th>Key</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td><code>Tab</code></td><td>Moves focus to the next menu item.</td></tr>
+          <tr><td><code>Shift + Tab</code></td><td>Moves focus to the previous menu item.</td></tr>
+          <tr><td><code>Enter</code> / <code>Space</code></td><td>Activates the focused menu item (navigates or selects).</td></tr>
+        </tbody>
+      </table>
+
+      <h3>ARIA and Semantics</h3>
+      <ul>
+        <li>Wrap items in a <code>&lt;nav&gt;</code> element with a descriptive <code>aria-label</code>.</li>
+        <li>The selected item should include <code>aria-current="page"</code> to indicate the active page.</li>
+        <li>Disabled items must include the <code>disabled</code> attribute and <code>aria-disabled="true"</code>.</li>
+        <li>Left and right icons are decorative: add <code>aria-hidden="true"</code>.</li>
+      </ul>
+
+      <!-- ---- CONSTRUCTION ---- -->
+      <h2>Construction</h2>
+      <p>The Menu is a <code>&lt;nav&gt;</code> container wrapping a vertical stack of menu item <code>&lt;button&gt;</code> or <code>&lt;a&gt;</code> elements. The container provides the outer border and border-radius. Each item provides its own 2px bottom border as a separator, except the last item.</p>
+
+      <h3>Scale and Spacing</h3>
+      <table class="doc-table">
+        <thead><tr><th>Property</th><th>Value</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Item padding (vertical)</td><td>12px</td><td><code>--padding-s-m</code></td></tr>
+          <tr><td>Item padding (horizontal)</td><td>16px</td><td><code>--padding-m</code></td></tr>
+          <tr><td>Icon-to-label gap</td><td>8px</td><td><code>--padding-s</code></td></tr>
+          <tr><td>Item bottom border width</td><td>2px</td><td><code>Border/Width/Action</code></td></tr>
+          <tr><td>Container border width</td><td>1px</td><td><code>Border/Width/Default</code></td></tr>
+          <tr><td>Container border radius</td><td>8px</td><td><code>--radius-m</code></td></tr>
+          <tr><td>Min width (standalone item)</td><td>336px</td><td>Fixed</td></tr>
+          <tr><td>Focus ring width</td><td>2px</td><td><code>Border/Width/Action</code></td></tr>
+          <tr><td>Focus ring offset</td><td>-4px (inset)</td><td>Fixed</td></tr>
+          <tr><td>Focus ring radius</td><td>12px</td><td>Fixed</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Styles</h3>
+      <table class="doc-table">
+        <thead><tr><th>Element</th><th>Font / Size</th></tr></thead>
+        <tbody>
+          <tr><td>Item label</td><td>Lato Regular (400), 16px/24px, 0.16px tracking</td></tr>
+          <tr><td>Left icon</td><td>FA6 Solid (900), 16px/24px, 0.4px tracking</td></tr>
+          <tr><td>Right icon</td><td>FA6 Solid (900), 16px/24px, 0.4px tracking</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Color Tokens</h3>
+      <table class="doc-table">
+        <thead><tr><th>Element</th><th>Default</th><th>Hover</th><th>Pressed</th><th>Selected</th><th>Disabled</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Item bg</td>
+            <td><code>--surface-default-container</code></td>
+            <td><code>--surface-action-hover</code></td>
+            <td><code>--surface-action-pressed</code></td>
+            <td><code>--surface-action</code></td>
+            <td><code>--surface-disabled</code></td>
+          </tr>
+          <tr>
+            <td>Item border</td>
+            <td><code>--border-default</code></td>
+            <td><code>--border-action-hover</code></td>
+            <td><code>--border-action-pressed</code></td>
+            <td><code>--border-action</code></td>
+            <td><code>--border-disabled</code></td>
+          </tr>
+          <tr>
+            <td>Text / icons</td>
+            <td><code>--text-body</code></td>
+            <td><code>--text-action-on-hover</code></td>
+            <td><code>--text-action-on-pressed</code></td>
+            <td><code>--text-action-on</code></td>
+            <td><code>--text-action-disabled</code></td>
+          </tr>
+          <tr>
+            <td>Focus ring</td>
+            <td colspan="5"><code>--border-action</code> (2px)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- ---- APPLICATION & CONTEXT ---- -->
+      <h2>Application and Context</h2>
+
+      <h3>For Developers</h3>
+      <table class="doc-table">
+        <thead><tr><th>Attribute / Class</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><code>.menu-nav</code></td><td>Container</td><td>&mdash;</td><td>Bordered container with rounded corners. Use <code>&lt;nav&gt;</code> with <code>aria-label</code>.</td></tr>
+          <tr><td><code>.menu-item</code></td><td>Element</td><td>Unselected</td><td>A single menu row. Use <code>&lt;button&gt;</code> or <code>&lt;a&gt;</code>.</td></tr>
+          <tr><td><code>.menu-item-icon</code></td><td>Element</td><td>&mdash;</td><td>Icon element (left or right). Uses Font Awesome 6 Solid.</td></tr>
+          <tr><td><code>.menu-item-label</code></td><td>Element</td><td>&mdash;</td><td>Text label. Flex-grows to fill remaining space.</td></tr>
+          <tr><td><code>.is-selected</code></td><td>State</td><td>&mdash;</td><td>Marks the currently active item. Applies action background and on-action text.</td></tr>
+          <tr><td><code>.is-disabled</code></td><td>State</td><td>&mdash;</td><td>Disabled state. Also set the native <code>disabled</code> attribute and <code>aria-disabled="true"</code>.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>For Designers</h3>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Use the Menu for sidebar or flyout navigation where each item leads to a distinct page or section.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't use the Menu for selecting form values. Use the Selector Accordion or a native select for form inputs.</p>
+        </div>
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Keep labels short and descriptive. Use icons consistently across all items to reinforce scannability.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't mix items with and without icons in the same menu. Maintain visual consistency.</p>
+        </div>
+      </div>
+
+      <!-- ---- SPACING ---- -->
+      <h2>Spacing Guidance</h2>
+      <table class="doc-table">
+        <thead><tr><th>Context</th><th>Recommendation</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Internal item padding</td><td>12px vertical, 16px horizontal</td><td><code>--padding-s-m</code> / <code>--padding-m</code></td></tr>
+          <tr><td>Icon-to-label gap</td><td>8px</td><td><code>--padding-s</code></td></tr>
+          <tr><td>Menu in a sidebar layout</td><td>Fill available width, 336px min</td><td>Fixed</td></tr>
+        </tbody>
+      </table>
+
+      <!-- ---- CODE EXAMPLE ---- -->
+      <h2>Usage Examples</h2>
+
+      <h3>Basic Menu</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;nav class="menu-nav" aria-label="Main navigation"&gt;
+  &lt;button class="menu-item" type="button"&gt;
+    &lt;i class="menu-item-icon fa-solid fa-house" aria-hidden="true"&gt;&lt;/i&gt;
+    &lt;span class="menu-item-label"&gt;Dashboard&lt;/span&gt;
+    &lt;i class="menu-item-icon fa-solid fa-arrow-right" aria-hidden="true"&gt;&lt;/i&gt;
+  &lt;/button&gt;
+  &lt;button class="menu-item is-selected" type="button" aria-current="page"&gt;
+    &lt;i class="menu-item-icon fa-solid fa-user" aria-hidden="true"&gt;&lt;/i&gt;
+    &lt;span class="menu-item-label"&gt;Profile&lt;/span&gt;
+    &lt;i class="menu-item-icon fa-solid fa-arrow-right" aria-hidden="true"&gt;&lt;/i&gt;
+  &lt;/button&gt;
+  &lt;button class="menu-item" type="button"&gt;
+    &lt;i class="menu-item-icon fa-solid fa-gear" aria-hidden="true"&gt;&lt;/i&gt;
+    &lt;span class="menu-item-label"&gt;Settings&lt;/span&gt;
+    &lt;i class="menu-item-icon fa-solid fa-arrow-right" aria-hidden="true"&gt;&lt;/i&gt;
+  &lt;/button&gt;
+&lt;/nav&gt;</code></pre>
       </div>
     </section>
 
@@ -4146,7 +5301,8 @@
       <ul>
         <li>Use native <code>&lt;a href&gt;</code> elements for navigation links. Use <code>&lt;button&gt;</code> styled as a text link for in-page actions.</li>
         <li>The bold weight (700) on M and S sizes provides a secondary visual cue beyond color, aiding color-blind users.</li>
-        <li>Focus indicator: 2px solid outline in <code>--border-action</code>, 2px offset, 8px radius.</li>
+        <li><strong>Body Link (M):</strong> 2px <code>--border-action</code> focus ring, 10px radius (<code>--radius-focus-ring</code>), inset 4px top/bottom and 8px/9px left/right from content (Figma).</li>
+        <li><strong>Small Link (S):</strong> 2px <code>--border-action</code> outline, <strong>6px</strong> offset, same radius (matches Figma Small Link focus).</li>
         <li>Disabled links should use a <code>&lt;span&gt;</code> instead of <code>&lt;a&gt;</code> to remove from the tab order, or use <code>aria-disabled="true"</code> with <code>tabindex="-1"</code>.</li>
       </ul>
 
@@ -4179,12 +5335,10 @@
 
       <h3>Focus Ring</h3>
       <table class="doc-table">
-        <thead><tr><th>Property</th><th>Value</th><th>Token</th></tr></thead>
+        <thead><tr><th>Size</th><th>Implementation</th><th>Offset / inset</th><th>Token</th></tr></thead>
         <tbody>
-          <tr><td>Border width</td><td>2px</td><td><code>--border-width-m-action</code></td></tr>
-          <tr><td>Border color</td><td><code>--border-action</code></td><td>#F78958</td></tr>
-          <tr><td>Border radius</td><td>8px</td><td><code>--radius-m</code></td></tr>
-          <tr><td>Offset</td><td>~4px</td><td>Fixed</td></tr>
+          <tr><td>Body Link (M)</td><td>2px border via <code>::after</code> (no outline)</td><td>4px top/bottom, 8px left, 9px right from content box (Figma)</td><td><code>--border-width-m-action</code>, <code>--border-action</code>, <code>--radius-focus-ring</code></td></tr>
+          <tr><td>Small Link (S)</td><td>2px outline</td><td>6px <code>outline-offset</code> (Figma uniform inset)</td><td><code>--border-width-m-action</code>, <code>--border-action</code>, <code>--radius-focus-ring</code></td></tr>
         </tbody>
       </table>
 
@@ -4268,7 +5422,7 @@
     <section class="page" id="comp-toggle">
       <div class="page-breadcrumb">Components <span>/</span> Toggle</div>
       <h1>Toggle</h1>
-      <p class="lead">A binary switch that lets users turn a setting on or off with immediate effect. Pairs a 64x32 track with a sliding 24px knob and an optional text label.</p>
+      <p class="lead">A binary switch that lets users turn a setting on or off with immediate effect. Pairs a 48x24 track with a sliding 26x16 knob and an optional text label.</p>
 
       <!-- ---- OVERVIEW ---- -->
       <h2>Overview</h2>
@@ -4350,7 +5504,7 @@
         <li>Add <code>role="switch"</code> to the input for AT that distinguishes switches from checkboxes. The checked state maps to <code>aria-checked</code>.</li>
         <li>The wrapping <code>&lt;label&gt;</code> automatically associates the text with the control.</li>
         <li>Disabled toggles use the native <code>disabled</code> attribute, which removes them from tab order.</li>
-        <li>Focus ring: 2px solid <code>--border-action</code>, 3px offset, fully rounded to match the track shape.</li>
+        <li>Focus ring: 2px solid <code>--border-action</code>, -6px inset, 104px border-radius to match the track shape.</li>
       </ul>
 
       <!-- ---- CONSTRUCTION ---- -->
@@ -4360,16 +5514,18 @@
       <table class="doc-table">
         <thead><tr><th>Property</th><th>Value</th><th>Token</th></tr></thead>
         <tbody>
-          <tr><td>Track width</td><td>64px</td><td>n/a</td></tr>
-          <tr><td>Track height</td><td>32px</td><td><code>--space-400</code></td></tr>
-          <tr><td>Knob size</td><td>24 x 24px</td><td><code>--space-300</code></td></tr>
-          <tr><td>Track padding</td><td>4px</td><td><code>--space-50</code></td></tr>
-          <tr><td>Border width</td><td>1px</td><td><code>--space-10</code></td></tr>
-          <tr><td>Border radius</td><td>104px (fully round)</td><td>n/a</td></tr>
-          <tr><td>Knob travel distance</td><td>32px (translateX)</td><td>n/a</td></tr>
-          <tr><td>Toggle-to-label gap</td><td>8px</td><td><code>--space-100</code></td></tr>
-          <tr><td>Focus ring offset</td><td>3px</td><td>n/a</td></tr>
-          <tr><td>Focus ring width</td><td>2px</td><td>n/a</td></tr>
+          <tr><td>Track width</td><td>48px</td><td>Fixed</td></tr>
+          <tr><td>Track height</td><td>24px</td><td>Fixed</td></tr>
+          <tr><td>Knob size</td><td>26 x 16px</td><td>Fixed</td></tr>
+          <tr><td>Track border width</td><td>2px</td><td>Fixed</td></tr>
+          <tr><td>Border radius (track)</td><td>104px (fully round)</td><td>Fixed</td></tr>
+          <tr><td>Border radius (knob)</td><td>100px (pill)</td><td>Fixed</td></tr>
+          <tr><td>Knob OFF position</td><td>left: 2px, top: 2px</td><td>Fixed</td></tr>
+          <tr><td>Knob ON position</td><td>left: 16px, top: 2px</td><td>Fixed</td></tr>
+          <tr><td>Toggle-to-label gap</td><td>8px</td><td><code>--padding-s</code></td></tr>
+          <tr><td>Focus ring offset</td><td>-6px (inset)</td><td>Fixed</td></tr>
+          <tr><td>Focus ring width</td><td>2px</td><td>Fixed</td></tr>
+          <tr><td>Focus ring radius</td><td>104px</td><td>Fixed</td></tr>
         </tbody>
       </table>
 
@@ -4377,8 +5533,7 @@
       <table class="doc-table">
         <thead><tr><th>Property</th><th>Value</th></tr></thead>
         <tbody>
-          <tr><td>Knob shape</td><td>Circle (border-radius: 50%)</td></tr>
-          <tr><td>Knob shadow (default)</td><td>0 1px 3px rgba(0,0,0,0.15)</td></tr>
+          <tr><td>Knob shape</td><td>Pill (border-radius: 100px), absolutely positioned</td></tr>
           <tr><td>Transition</td><td>0.2s ease on background, border-color, transform</td></tr>
           <tr><td>Label font</td><td>Lato Regular (400), 16px/24px</td></tr>
           <tr><td>Label color</td><td><code>--text-body</code> (#464646)</td></tr>
@@ -4389,11 +5544,11 @@
       <table class="doc-table">
         <thead><tr><th>State</th><th>Track Background</th><th>Track Border</th><th>Knob</th></tr></thead>
         <tbody>
-          <tr><td>Off (default)</td><td><code>--surface-default-container</code></td><td><code>--border-action</code></td><td>white</td></tr>
-          <tr><td>On (default)</td><td><code>--surface-action</code></td><td><code>--border-action</code></td><td>white</td></tr>
-          <tr><td>Hover</td><td><code>--surface-action-hover</code></td><td><code>--border-action-hover</code></td><td><code>--border-action-hover</code></td></tr>
+          <tr><td>Off (default)</td><td><code>--surface-action-on</code></td><td>2px <code>--border-action</code></td><td><code>--btn-icon-action</code></td></tr>
+          <tr><td>On (default)</td><td><code>--surface-action</code></td><td>2px <code>--border-action</code></td><td><code>--btn-icon-action-on</code></td></tr>
+          <tr><td>Hover (both)</td><td><code>--surface-action-hover</code></td><td>2px <code>--border-action-hover</code></td><td><code>--btn-icon-on-hover</code></td></tr>
           <tr><td>Focus</td><td>(same as default)</td><td>(same as default)</td><td>(same as default)</td></tr>
-          <tr><td>Disabled</td><td><code>--surface-disabled</code></td><td><code>--border-disabled</code></td><td><code>--border-disabled</code></td></tr>
+          <tr><td>Disabled</td><td>#f5f5f5</td><td>2px <code>--border-default</code></td><td><code>--btn-icon-action-disabled</code></td></tr>
         </tbody>
       </table>
 
@@ -4406,8 +5561,8 @@
         <tbody>
           <tr><td><code>.form-toggle</code></td><td>Container</td><td>Wrapping <code>&lt;label&gt;</code>. Flex row with 8px gap.</td></tr>
           <tr><td><code>input[type="checkbox"]</code></td><td>Element</td><td>Visually hidden native checkbox. Drives checked state via CSS sibling selectors.</td></tr>
-          <tr><td><code>.toggle-track</code></td><td>Element</td><td>The 64x32 pill-shaped track. Styled via adjacent sibling of the hidden input.</td></tr>
-          <tr><td><code>.toggle-knob</code></td><td>Element</td><td>The 24px circular knob inside the track. Slides right on checked.</td></tr>
+          <tr><td><code>.toggle-track</code></td><td>Element</td><td>The 48x24 pill-shaped track with 2px border. Styled via adjacent sibling of the hidden input.</td></tr>
+          <tr><td><code>.toggle-knob</code></td><td>Element</td><td>The 26x16 pill-shaped knob, absolutely positioned inside the track. Slides from left: 2px (off) to left: 16px (on).</td></tr>
           <tr><td><code>checked</code></td><td>Attribute</td><td>Native checked. Fills track with action color and slides knob to the right.</td></tr>
           <tr><td><code>disabled</code></td><td>Attribute</td><td>Native disabled. Grays out track and knob.</td></tr>
           <tr><td><code>role="switch"</code></td><td>Attribute</td><td>Recommended. Tells screen readers this is a switch, not a checkbox.</td></tr>
@@ -4517,6 +5672,759 @@
     SMS alerts
   &lt;/label&gt;
 &lt;/fieldset&gt;</code></pre>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         COMPONENT — TOGGLE SELECTOR
+         ================================================================ -->
+    <section class="page" id="comp-toggle-selector">
+      <div class="page-breadcrumb">Components <span>/</span> Toggle Selector</div>
+      <h1>Toggle Selector</h1>
+
+      <!-- ---- OVERVIEW ---- -->
+      <h2>Overview</h2>
+      <p class="lead">A pill-shaped binary selector that lets users switch between two mutually exclusive options. An animated indicator pill slides between sides to reinforce which option is active. This component is intended for use as a sub-component within larger patterns (e.g., search filters, view toggles).</p>
+      <p>The Toggle Selector pairs two text labels inside a rounded container. Clicking an inactive label slides the internal pill to that side. Unlike the Toggle (switch), which represents on/off state, this component presents two named choices.</p>
+
+      <!-- ---- VARIANTS ---- -->
+      <h2>Variants</h2>
+
+      <h3>Mobile (40px height)</h3>
+      <p>Default viewport. Uses <code>--body-s</code> typography (14px / 20px).</p>
+      <div class="variant-row" style="display:flex; gap:32px; flex-wrap:wrap; align-items:center; margin:16px 0 24px;">
+        <div style="text-align:center">
+          <div class="state-label">Left Active</div>
+          <div class="toggle-selector" style="width:260px;">
+            <span class="toggle-selector-pill"></span>
+            <button class="toggle-selector-option is-active" type="button">Option A</button>
+            <button class="toggle-selector-option" type="button">Option B</button>
+          </div>
+        </div>
+        <div style="text-align:center">
+          <div class="state-label">Right Active</div>
+          <div class="toggle-selector right-active" style="width:260px;">
+            <span class="toggle-selector-pill"></span>
+            <button class="toggle-selector-option" type="button">Option A</button>
+            <button class="toggle-selector-option is-active" type="button">Option B</button>
+          </div>
+        </div>
+      </div>
+
+      <h3>Desktop (46px height)</h3>
+      <p>Uses <code>--body-m</code> typography (16px / 24px, 0.16px letter-spacing).</p>
+      <div class="variant-row" style="display:flex; gap:32px; flex-wrap:wrap; align-items:center; margin:16px 0 24px;">
+        <div style="text-align:center">
+          <div class="state-label">Left Active</div>
+          <div class="toggle-selector toggle-selector-desktop" style="width:310px;">
+            <span class="toggle-selector-pill"></span>
+            <button class="toggle-selector-option is-active" type="button">Option A</button>
+            <button class="toggle-selector-option" type="button">Option B</button>
+          </div>
+        </div>
+        <div style="text-align:center">
+          <div class="state-label">Right Active</div>
+          <div class="toggle-selector toggle-selector-desktop right-active" style="width:310px;">
+            <span class="toggle-selector-pill"></span>
+            <button class="toggle-selector-option" type="button">Option A</button>
+            <button class="toggle-selector-option is-active" type="button">Option B</button>
+          </div>
+        </div>
+      </div>
+
+      <h3>Text States</h3>
+      <p>Text labels change color based on their active/inactive status and the current interaction state.</p>
+      <table class="doc-table">
+        <thead><tr><th>State</th><th>Active Text (on pill)</th><th>Inactive Text (off pill)</th></tr></thead>
+        <tbody>
+          <tr><td>Default</td><td><code>--text-action-on</code> (white)</td><td><code>--text-action</code> (#e96620)</td></tr>
+          <tr><td>Hover</td><td><code>--text-action-on-hover</code> (#fff1eb)</td><td><code>--text-action-hover</code> (#f78958)</td></tr>
+          <tr><td>Pressed</td><td><code>--text-action-on-pressed</code> (#ffc7ae)</td><td><code>--text-action-pressed</code> (#d14000)</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Text State Previews (Mobile)</h4>
+      <div class="variant-row" style="display:flex; gap:24px; flex-wrap:wrap; align-items:flex-start; margin:16px 0 24px;">
+        <div style="text-align:center">
+          <div class="state-label">Default</div>
+          <div class="toggle-selector" style="width:260px;">
+            <span class="toggle-selector-pill"></span>
+            <button class="toggle-selector-option is-active" type="button">Active</button>
+            <button class="toggle-selector-option" type="button">Inactive</button>
+          </div>
+        </div>
+        <div style="text-align:center">
+          <div class="state-label">Hover</div>
+          <div class="toggle-selector" style="width:260px;">
+            <span class="toggle-selector-pill"></span>
+            <button class="toggle-selector-option is-active show-hover" type="button">Active</button>
+            <button class="toggle-selector-option show-hover" type="button">Inactive</button>
+          </div>
+        </div>
+        <div style="text-align:center">
+          <div class="state-label">Pressed</div>
+          <div class="toggle-selector" style="width:260px;">
+            <span class="toggle-selector-pill"></span>
+            <button class="toggle-selector-option is-active show-pressed" type="button">Active</button>
+            <button class="toggle-selector-option show-pressed" type="button">Inactive</button>
+          </div>
+        </div>
+        <div style="text-align:center">
+          <div class="state-label">Focus</div>
+          <div class="toggle-selector" style="width:260px;">
+            <span class="toggle-selector-pill"></span>
+            <button class="toggle-selector-option is-active" type="button">Active</button>
+            <button class="toggle-selector-option show-focus" type="button">Inactive</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---- WORKING DEMO ---- -->
+      <h2>Working Demo</h2>
+      <p>Click either label to slide the selector. The animation uses a custom Bezier curve (<code>cubic-bezier(0.4, 0, 0.58, 1)</code>) at <strong>300ms</strong> for a natural feel.</p>
+
+      <h3>Mobile</h3>
+      <div style="margin:16px 0 24px;">
+        <div class="toggle-selector toggle-selector-demo" style="width:260px;" role="radiogroup" aria-label="Toggle selector demo">
+          <span class="toggle-selector-pill"></span>
+          <button class="toggle-selector-option is-active" type="button" role="radio" aria-checked="true">Search by Details</button>
+          <button class="toggle-selector-option" type="button" role="radio" aria-checked="false">Search by Need</button>
+        </div>
+      </div>
+
+      <h3>Desktop</h3>
+      <div style="margin:16px 0 24px;">
+        <div class="toggle-selector toggle-selector-desktop toggle-selector-demo" style="width:310px;" role="radiogroup" aria-label="Toggle selector demo desktop">
+          <span class="toggle-selector-pill"></span>
+          <button class="toggle-selector-option is-active" type="button" role="radio" aria-checked="true">Search by Details</button>
+          <button class="toggle-selector-option" type="button" role="radio" aria-checked="false">Search by Need</button>
+        </div>
+      </div>
+
+      <!-- ---- ACCESSIBILITY ---- -->
+      <h2>Accessibility</h2>
+      <table class="doc-table">
+        <thead><tr><th>Attribute</th><th>Detail</th></tr></thead>
+        <tbody>
+          <tr><td>WCAG Target</td><td>AA (4.5:1 for text, 3:1 for non-text elements)</td></tr>
+          <tr><td>Role</td><td>Container uses <code>role="radiogroup"</code>; each option uses <code>role="radio"</code></td></tr>
+          <tr><td>ARIA</td><td>Active option: <code>aria-checked="true"</code>; inactive: <code>aria-checked="false"</code></td></tr>
+          <tr><td>Keyboard</td><td><code>Tab</code> focuses the group; <code>Arrow Left/Right</code> switches between options; <code>Enter/Space</code> activates the focused option</td></tr>
+          <tr><td>Focus ring</td><td><code>::after</code> pseudo-element with <code>inset: -5px</code>, 2px solid <code>--border-action</code>, <code>border-radius: 48px</code></td></tr>
+          <tr><td>Screen reader</td><td>Announce option label and selected state. Container <code>aria-label</code> describes the group purpose.</td></tr>
+        </tbody>
+      </table>
+
+      <!-- ---- CONSTRUCTION ---- -->
+      <h2>Construction</h2>
+
+      <h3>Scale and Spacing</h3>
+      <table class="doc-table">
+        <thead><tr><th>Property</th><th>Mobile</th><th>Desktop</th></tr></thead>
+        <tbody>
+          <tr><td>Container height</td><td>40px</td><td>46px</td></tr>
+          <tr><td>Container border</td><td colspan="2">2px solid <code>--surface-action</code></td></tr>
+          <tr><td>Container radius</td><td colspan="2">48px</td></tr>
+          <tr><td>Pill inset (top/bottom/sides)</td><td colspan="2">1px</td></tr>
+          <tr><td>Pill border</td><td colspan="2">1px solid <code>--border-action</code></td></tr>
+          <tr><td>Pill radius</td><td colspan="2">48px</td></tr>
+          <tr><td>Option padding (horizontal)</td><td>12px</td><td>16px</td></tr>
+          <tr><td>Font size</td><td>14px (<code>--body-s-size</code>)</td><td>16px (<code>--body-m-size</code>)</td></tr>
+          <tr><td>Line height</td><td>20px (<code>--body-s-line</code>)</td><td>24px (<code>--body-m-line</code>)</td></tr>
+          <tr><td>Letter spacing</td><td>0</td><td>0.16px</td></tr>
+          <tr><td>Font weight</td><td colspan="2">700 (Bold)</td></tr>
+          <tr><td>Focus ring offset</td><td colspan="2">-5px inset, 2px solid <code>--border-action</code></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Styles</h3>
+      <table class="doc-table">
+        <thead><tr><th>Element</th><th>Detail</th></tr></thead>
+        <tbody>
+          <tr><td>Container shape</td><td>Pill (border-radius: 48px), overflow: clip</td></tr>
+          <tr><td>Pill shape</td><td>Pill (border-radius: 48px), absolutely positioned, covers 50% of the container width</td></tr>
+          <tr><td>Pill animation</td><td><code>cubic-bezier(0.4, 0, 0.58, 1)</code> at 300ms on <code>left</code> and <code>right</code> properties</td></tr>
+          <tr><td>Text animation</td><td><code>color</code> transitions at 300ms with the same Bezier curve</td></tr>
+          <tr><td>Layout</td><td>Inline flex, two equal-width button children</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Color Tokens</h3>
+      <table class="doc-table">
+        <thead><tr><th>Element</th><th>Token</th><th>Value (Light)</th></tr></thead>
+        <tbody>
+          <tr><td>Container background</td><td><code>--surface-action-on</code></td><td>#ffffff</td></tr>
+          <tr><td>Container border</td><td><code>--surface-action</code></td><td>#e96620</td></tr>
+          <tr><td>Pill background</td><td><code>--surface-action</code></td><td>#e96620</td></tr>
+          <tr><td>Pill border</td><td><code>--border-action</code></td><td>#f78958</td></tr>
+          <tr><td>Active text (default)</td><td><code>--text-action-on</code></td><td>#ffffff</td></tr>
+          <tr><td>Active text (hover)</td><td><code>--text-action-on-hover</code></td><td>#fff1eb</td></tr>
+          <tr><td>Active text (pressed)</td><td><code>--text-action-on-pressed</code></td><td>#ffc7ae</td></tr>
+          <tr><td>Inactive text (default)</td><td><code>--text-action</code></td><td>#e96620</td></tr>
+          <tr><td>Inactive text (hover)</td><td><code>--text-action-hover</code></td><td>#f78958</td></tr>
+          <tr><td>Inactive text (pressed)</td><td><code>--text-action-pressed</code></td><td>#d14000</td></tr>
+          <tr><td>Focus ring</td><td><code>--border-action</code></td><td>#f78958</td></tr>
+        </tbody>
+      </table>
+
+      <!-- ---- APPLICATION & CONTEXT ---- -->
+      <h2>Application &amp; Context</h2>
+
+      <h3>For Developers</h3>
+      <table class="doc-table">
+        <thead><tr><th>Class / Attribute</th><th>Role</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><code>.toggle-selector</code></td><td>Container</td><td>Outer pill container. Add <code>.right-active</code> to slide the pill right.</td></tr>
+          <tr><td><code>.toggle-selector-desktop</code></td><td>Modifier</td><td>Applies desktop sizing (46px height, body-m typography).</td></tr>
+          <tr><td><code>.right-active</code></td><td>State</td><td>Slides the pill to the right side. Toggled via JavaScript on click.</td></tr>
+          <tr><td><code>.toggle-selector-pill</code></td><td>Indicator</td><td>The sliding pill element. Must be the first child of the container.</td></tr>
+          <tr><td><code>.toggle-selector-option</code></td><td>Button</td><td>Each clickable text option. Use <code>&lt;button type="button"&gt;</code>.</td></tr>
+          <tr><td><code>.is-active</code></td><td>State (option)</td><td>Marks the currently selected option. Updates text color to on-action tokens.</td></tr>
+          <tr><td><code>.show-hover</code></td><td>Preview modifier</td><td>Forces hover text color for documentation previews.</td></tr>
+          <tr><td><code>.show-pressed</code></td><td>Preview modifier</td><td>Forces pressed text color for documentation previews.</td></tr>
+          <tr><td><code>.show-focus</code></td><td>Preview modifier</td><td>Forces focus ring for documentation previews.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>For Designers</h3>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Use the Toggle Selector for binary filtering or view switching where both options are always visible and labeled.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't use for on/off settings. Use the Toggle (switch) for boolean state changes.</p>
+        </div>
+      </div>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Keep both labels short and similar in length for balanced visual weight.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't use for more than two options. Use a Tab Bar or segmented control for three or more choices.</p>
+        </div>
+      </div>
+
+      <!-- ---- SPACING GUIDANCE ---- -->
+      <h2>Spacing Guidance</h2>
+      <table class="doc-table">
+        <thead><tr><th>Context</th><th>Property</th><th>Value</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Selector to adjacent content</td><td>margin-bottom</td><td>16-24px</td><td><code>--space-200</code> to <code>--space-300</code></td></tr>
+          <tr><td>Selector within a filter bar</td><td>gap</td><td>16px</td><td><code>--space-200</code></td></tr>
+          <tr><td>Selector to heading above</td><td>margin-top</td><td>8px</td><td><code>--space-100</code></td></tr>
+        </tbody>
+      </table>
+
+      <!-- ---- USAGE EXAMPLES ---- -->
+      <h2>Usage Examples</h2>
+
+      <h3>Basic Toggle Selector (Mobile)</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;div class="toggle-selector" role="radiogroup" aria-label="Search method"&gt;
+  &lt;span class="toggle-selector-pill"&gt;&lt;/span&gt;
+  &lt;button class="toggle-selector-option is-active" type="button"
+          role="radio" aria-checked="true"&gt;
+    Search by Details
+  &lt;/button&gt;
+  &lt;button class="toggle-selector-option" type="button"
+          role="radio" aria-checked="false"&gt;
+    Search by Need
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Desktop Variant (Right Active)</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;div class="toggle-selector toggle-selector-desktop right-active"
+     role="radiogroup" aria-label="Search method"&gt;
+  &lt;span class="toggle-selector-pill"&gt;&lt;/span&gt;
+  &lt;button class="toggle-selector-option" type="button"
+          role="radio" aria-checked="false"&gt;
+    Search by Details
+  &lt;/button&gt;
+  &lt;button class="toggle-selector-option is-active" type="button"
+          role="radio" aria-checked="true"&gt;
+    Search by Need
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>JavaScript Initialization</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>document.querySelectorAll('.toggle-selector').forEach(selector =&gt; {
+  const options = selector.querySelectorAll('.toggle-selector-option');
+  options.forEach((opt, i) =&gt; {
+    opt.addEventListener('click', () =&gt; {
+      options.forEach(o =&gt; {
+        o.classList.remove('is-active');
+        o.setAttribute('aria-checked', 'false');
+      });
+      opt.classList.add('is-active');
+      opt.setAttribute('aria-checked', 'true');
+      selector.classList.toggle('right-active', i === 1);
+    });
+  });
+});</code></pre>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         PATTERN — FILTER
+         ================================================================ -->
+    <section class="page page--full-width" id="pattern-filter">
+      <div class="doc-layout-narrow">
+      <div class="page-breadcrumb">Patterns <span>/</span> Filter</div>
+      <h1>Filter</h1>
+      <p class="lead">A composed pattern for refining search results: a mode toggle (Details vs Need), optional filter controls, and primary actions. Mobile uses a compact bar with an expand affordance; desktop lays out criteria in a horizontal row.</p>
+
+      <!-- ---- OVERVIEW ---- -->
+      <h2>Overview</h2>
+      <p>The Filter pattern combines existing system components: the <a href="#comp-toggle-selector" data-page="comp-toggle-selector">Toggle Selector</a> (Search by Details / Search by Need), <a href="#comp-button" data-page="comp-button">Buttons</a> (outline and primary icon-only for filter open, primary icon-only for close, text buttons for Clear all and Close), and one <a href="#comp-sel-accordion" data-page="comp-sel-accordion">Selector Accordion</a> per criterion when <strong>Search by Details</strong> is active. <strong>Search by Need</strong> swaps the criteria region for a separate option list (<code>.pattern-filter-need-options</code> / <code>.pattern-filter-need-option</code>), not accordions. Omit the optional info icon on Details criterion labels unless a specific field exposes contextual help.</p>
+      <p><strong>Mobile (Figma size S, 336px max width):</strong> 40px toggle height, 14px bold labels on the selector, filter icon in an outline icon-only button when the panel is collapsed. Expanded state shows the same toggle, a primary icon-only close control, stacked criteria, and a row with <strong>Clear all</strong> (disabled when no changes) and <strong>Close</strong>.</p>
+      <p><strong>Desktop (Figma size M):</strong> 46px toggle height, 16px bold labels on the selector, criteria in a horizontal row (narrow columns), and <strong>Clear all</strong> aligned to the trailing edge. Spacing follows jumper and padding tokens from the file.</p>
+      <p><strong>Figma source:</strong> <a href="https://www.figma.com/design/k3URA8b9qRKn4p8Hdmv2je/WV-Design-System-1.01?node-id=16101-1967" target="_blank" rel="noopener noreferrer">WV Design System 1.01 — Drop-down filter menu</a> (component set; node <code>16101:1967</code>).</p>
+
+      <!-- ---- VARIANTS ---- -->
+      <h2>Variants</h2>
+
+      <h3>Mobile — Collapsed</h3>
+      <p>Toggle selector plus outline filter icon. Full width is capped at <code>--card-s</code> (336px).</p>
+      <div class="preview-block">
+        <div class="pattern-filter pattern-filter-mobile" role="region" aria-label="Filter (mobile collapsed example)">
+          <div class="pattern-filter__header">
+            <div class="toggle-selector toggle-selector-demo" style="width:260px;" role="radiogroup" aria-label="Search mode">
+              <span class="toggle-selector-pill"></span>
+              <button class="toggle-selector-option is-active" type="button" role="radio" aria-checked="true">Search by Details</button>
+              <button class="toggle-selector-option" type="button" role="radio" aria-checked="false">Search by Need</button>
+            </div>
+            <button type="button" class="btn btn-outline btn-icon-only btn-s" aria-label="Open filters"><i class="btn-icon fa-solid fa-filter" aria-hidden="true"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <h3>Mobile — Expanded</h3>
+      <p>Close control replaces the filter icon. Criteria stack vertically with <code>--padding-m</code> between blocks.</p>
+      <div class="preview-block">
+        <div class="pattern-filter pattern-filter-mobile pattern-filter-mobile-expanded" role="region" aria-label="Filter (mobile expanded example)">
+          <div class="pattern-filter__header">
+            <div class="toggle-selector toggle-selector-demo" style="width:260px;" role="radiogroup" aria-label="Search mode expanded">
+              <span class="toggle-selector-pill"></span>
+              <button class="toggle-selector-option is-active" type="button" role="radio" aria-checked="true">Search by Details</button>
+              <button class="toggle-selector-option" type="button" role="radio" aria-checked="false">Search by Need</button>
+            </div>
+            <button type="button" class="btn btn-primary btn-icon-only btn-s" aria-label="Close filters"><i class="btn-icon fa-solid fa-xmark" aria-hidden="true"></i></button>
+          </div>
+          <div class="pattern-filter__body">
+            <div class="pattern-filter__field">
+              <div class="sel-accordion-group sel-accordion-demo">
+                <div class="sel-accordion-label" id="pf-mx-loc-label">Location</div>
+                <div class="sel-accordion-stack">
+                  <button type="button" class="sel-accordion-category" aria-expanded="false" aria-controls="pf-mx-loc-opts" aria-labelledby="pf-mx-loc-label">
+                    <span>No preference</span>
+                    <i class="sel-accordion-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                  </button>
+                  <div class="sel-accordion-dropdown is-collapsed" id="pf-mx-loc-opts" role="group" aria-label="Location options">
+                    <button type="button" class="sel-accordion-option is-selected" aria-selected="true">No preference</button>
+                    <button type="button" class="sel-accordion-option">Option A</button>
+                    <button type="button" class="sel-accordion-option">Option B</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pattern-filter__field">
+              <div class="sel-accordion-group sel-accordion-demo">
+                <div class="sel-accordion-label" id="pf-mx-gen-label">Gender</div>
+                <div class="sel-accordion-stack">
+                  <button type="button" class="sel-accordion-category" aria-expanded="false" aria-controls="pf-mx-gen-opts" aria-labelledby="pf-mx-gen-label">
+                    <span>No preference</span>
+                    <i class="sel-accordion-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                  </button>
+                  <div class="sel-accordion-dropdown is-collapsed" id="pf-mx-gen-opts" role="group" aria-label="Gender options">
+                    <button type="button" class="sel-accordion-option is-selected" aria-selected="true">No preference</button>
+                    <button type="button" class="sel-accordion-option">Option A</button>
+                    <button type="button" class="sel-accordion-option">Option B</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pattern-filter__field">
+              <div class="sel-accordion-group sel-accordion-demo">
+                <div class="sel-accordion-label" id="pf-mx-age-label">Age</div>
+                <div class="sel-accordion-stack">
+                  <button type="button" class="sel-accordion-category" aria-expanded="false" aria-controls="pf-mx-age-opts" aria-labelledby="pf-mx-age-label">
+                    <span>No preference</span>
+                    <i class="sel-accordion-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                  </button>
+                  <div class="sel-accordion-dropdown is-collapsed" id="pf-mx-age-opts" role="group" aria-label="Age options">
+                    <button type="button" class="sel-accordion-option is-selected" aria-selected="true">No preference</button>
+                    <button type="button" class="sel-accordion-option">Option A</button>
+                    <button type="button" class="sel-accordion-option">Option B</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pattern-filter__field">
+              <div class="sel-accordion-group sel-accordion-demo">
+                <div class="sel-accordion-label" id="pf-mx-mo-label">Birth Month</div>
+                <div class="sel-accordion-stack">
+                  <button type="button" class="sel-accordion-category" aria-expanded="false" aria-controls="pf-mx-mo-opts" aria-labelledby="pf-mx-mo-label">
+                    <span>No preference</span>
+                    <i class="sel-accordion-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                  </button>
+                  <div class="sel-accordion-dropdown is-collapsed" id="pf-mx-mo-opts" role="group" aria-label="Birth month options">
+                    <button type="button" class="sel-accordion-option is-selected" aria-selected="true">No preference</button>
+                    <button type="button" class="sel-accordion-option">Option A</button>
+                    <button type="button" class="sel-accordion-option">Option B</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pattern-filter__field">
+              <div class="sel-accordion-group sel-accordion-demo">
+                <div class="sel-accordion-label" id="pf-mx-day-label">Birth Day</div>
+                <div class="sel-accordion-stack">
+                  <button type="button" class="sel-accordion-category" aria-expanded="false" aria-controls="pf-mx-day-opts" aria-labelledby="pf-mx-day-label">
+                    <span>No preference</span>
+                    <i class="sel-accordion-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                  </button>
+                  <div class="sel-accordion-dropdown is-collapsed" id="pf-mx-day-opts" role="group" aria-label="Birth day options">
+                    <button type="button" class="sel-accordion-option is-selected" aria-selected="true">No preference</button>
+                    <button type="button" class="sel-accordion-option">Option A</button>
+                    <button type="button" class="sel-accordion-option">Option B</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pattern-filter__cta-row">
+              <button type="button" class="btn btn-primary btn-m is-disabled" disabled aria-disabled="true"><span class="btn-label">Clear all</span></button>
+              <button type="button" class="btn btn-primary btn-m"><span class="btn-label">Close</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Mobile — Expanded (Search by Need)</h3>
+      <p>Criteria are replaced by a single <strong>Search by Need</strong> list: icon + label rows inside one bordered container (not Selector Accordions). Footer is a single disabled <strong>Close</strong> control in the default spec. Matches Figma <code>state=expanded, filter=need, size=S</code>.</p>
+      <div class="preview-block">
+        <div class="pattern-filter pattern-filter-mobile pattern-filter-mobile-expanded" role="region" aria-label="Filter (mobile expanded, Search by Need)">
+          <div class="pattern-filter__header">
+            <div class="toggle-selector toggle-selector-demo right-active" style="width:260px;" role="radiogroup" aria-label="Search mode (Need)">
+              <span class="toggle-selector-pill"></span>
+              <button class="toggle-selector-option" type="button" role="radio" aria-checked="false">Search by Details</button>
+              <button class="toggle-selector-option is-active" type="button" role="radio" aria-checked="true">Search by Need</button>
+            </div>
+            <button type="button" class="btn btn-primary btn-icon-only btn-s" aria-label="Close filters"><i class="btn-icon fa-solid fa-xmark" aria-hidden="true"></i></button>
+          </div>
+          <div class="pattern-filter__body pattern-filter__body--need">
+            <div class="pattern-filter-need-options" role="group" aria-label="Search by Need options">
+              <button type="button" class="pattern-filter-need-option">
+                <i class="pattern-filter-need-option__icon fa-solid fa-calendar-days" aria-hidden="true"></i>
+                <span class="pattern-filter-need-option__label">Waiting over 1 year</span>
+              </button>
+              <button type="button" class="pattern-filter-need-option">
+                <i class="pattern-filter-need-option__icon fa-solid fa-child" aria-hidden="true"></i>
+                <span class="pattern-filter-need-option__label">Orphaned child</span>
+              </button>
+              <button type="button" class="pattern-filter-need-option">
+                <i class="pattern-filter-need-option__icon fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+                <span class="pattern-filter-need-option__label">Higher-risk area</span>
+              </button>
+              <button type="button" class="pattern-filter-need-option">
+                <i class="pattern-filter-need-option__icon fa-solid fa-bowl-rice" aria-hidden="true"></i>
+                <span class="pattern-filter-need-option__label">Hunger crisis area</span>
+              </button>
+            </div>
+            <div class="pattern-filter__cta-row pattern-filter__cta-row--need-only">
+              <button type="button" class="btn btn-primary btn-m is-disabled" disabled aria-disabled="true"><span class="btn-label">Close</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      </div>
+
+      <div class="doc-layout-narrow">
+      <h3>Desktop — Details mode</h3>
+      <p>Toggle centered above a criteria row sized to the Figma content width (1057px inside the 1105px frame). Criterion columns use <code>flex: 1</code> with <code>min-width: 128px</code> on the accordion trigger so 128px is a minimum, not a fixed width. Gaps use <code>--jumper-xs-xxs</code> (24px). <strong>Clear all</strong> uses intrinsic button width; extra horizontal space goes to the criteria columns. Top padding <code>--jumper-sm-xs</code> (32px) aligns the button with the triggers.</p>
+      </div>
+
+      <div class="doc-layout-full">
+      <div class="preview-block">
+        <div class="pattern-filter pattern-filter-desktop" role="region" aria-label="Filter (desktop example)">
+          <div class="toggle-selector toggle-selector-desktop toggle-selector-demo" style="width:310px;" role="radiogroup" aria-label="Search mode desktop">
+            <span class="toggle-selector-pill"></span>
+            <button class="toggle-selector-option is-active" type="button" role="radio" aria-checked="true">Search by Details</button>
+            <button class="toggle-selector-option" type="button" role="radio" aria-checked="false">Search by Need</button>
+          </div>
+          <div class="pattern-filter__body">
+            <div class="pattern-filter__field">
+              <div class="sel-accordion-group sel-accordion-demo">
+                <div class="sel-accordion-label" id="pf-d-loc-label">Location</div>
+                <div class="sel-accordion-stack">
+                  <button type="button" class="sel-accordion-category" aria-expanded="false" aria-controls="pf-d-loc-opts" aria-labelledby="pf-d-loc-label">
+                    <span>No preference</span>
+                    <i class="sel-accordion-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                  </button>
+                  <div class="sel-accordion-dropdown is-collapsed" id="pf-d-loc-opts" role="group" aria-label="Location options">
+                    <button type="button" class="sel-accordion-option is-selected" aria-selected="true">No preference</button>
+                    <button type="button" class="sel-accordion-option">Option A</button>
+                    <button type="button" class="sel-accordion-option">Option B</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pattern-filter__field">
+              <div class="sel-accordion-group sel-accordion-demo">
+                <div class="sel-accordion-label" id="pf-d-gen-label">Gender</div>
+                <div class="sel-accordion-stack">
+                  <button type="button" class="sel-accordion-category" aria-expanded="false" aria-controls="pf-d-gen-opts" aria-labelledby="pf-d-gen-label">
+                    <span>No preference</span>
+                    <i class="sel-accordion-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                  </button>
+                  <div class="sel-accordion-dropdown is-collapsed" id="pf-d-gen-opts" role="group" aria-label="Gender options">
+                    <button type="button" class="sel-accordion-option is-selected" aria-selected="true">No preference</button>
+                    <button type="button" class="sel-accordion-option">Option A</button>
+                    <button type="button" class="sel-accordion-option">Option B</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pattern-filter__field">
+              <div class="sel-accordion-group sel-accordion-demo">
+                <div class="sel-accordion-label" id="pf-d-age-label">Age</div>
+                <div class="sel-accordion-stack">
+                  <button type="button" class="sel-accordion-category" aria-expanded="false" aria-controls="pf-d-age-opts" aria-labelledby="pf-d-age-label">
+                    <span>No preference</span>
+                    <i class="sel-accordion-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                  </button>
+                  <div class="sel-accordion-dropdown is-collapsed" id="pf-d-age-opts" role="group" aria-label="Age options">
+                    <button type="button" class="sel-accordion-option is-selected" aria-selected="true">No preference</button>
+                    <button type="button" class="sel-accordion-option">Option A</button>
+                    <button type="button" class="sel-accordion-option">Option B</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pattern-filter__field">
+              <div class="sel-accordion-group sel-accordion-demo">
+                <div class="sel-accordion-label" id="pf-d-mo-label">Birth Month</div>
+                <div class="sel-accordion-stack">
+                  <button type="button" class="sel-accordion-category" aria-expanded="false" aria-controls="pf-d-mo-opts" aria-labelledby="pf-d-mo-label">
+                    <span>No preference</span>
+                    <i class="sel-accordion-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                  </button>
+                  <div class="sel-accordion-dropdown is-collapsed" id="pf-d-mo-opts" role="group" aria-label="Birth month options">
+                    <button type="button" class="sel-accordion-option is-selected" aria-selected="true">No preference</button>
+                    <button type="button" class="sel-accordion-option">Option A</button>
+                    <button type="button" class="sel-accordion-option">Option B</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pattern-filter__field">
+              <div class="sel-accordion-group sel-accordion-demo">
+                <div class="sel-accordion-label" id="pf-d-day-label">Birth Day</div>
+                <div class="sel-accordion-stack">
+                  <button type="button" class="sel-accordion-category" aria-expanded="false" aria-controls="pf-d-day-opts" aria-labelledby="pf-d-day-label">
+                    <span>No preference</span>
+                    <i class="sel-accordion-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                  </button>
+                  <div class="sel-accordion-dropdown is-collapsed" id="pf-d-day-opts" role="group" aria-label="Birth day options">
+                    <button type="button" class="sel-accordion-option is-selected" aria-selected="true">No preference</button>
+                    <button type="button" class="sel-accordion-option">Option A</button>
+                    <button type="button" class="sel-accordion-option">Option B</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pattern-filter__cta">
+              <button type="button" class="btn btn-primary btn-m is-disabled" disabled aria-disabled="true"><span class="btn-label">Clear all</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="doc-layout-narrow">
+      <h3>Desktop — Search by Need</h3>
+      <p>With <strong>Search by Need</strong> active, the criteria area is a horizontal segmented row: four equal segments, each with a leading icon and label. The first segment uses a neutral icon color; the others use action color (Figma size M). No filter icon appears in this collapsed frame.</p>
+      </div>
+
+      <div class="doc-layout-full">
+      <div class="preview-block">
+        <div class="pattern-filter pattern-filter-desktop" role="region" aria-label="Filter (desktop Search by Need)">
+          <div class="toggle-selector toggle-selector-desktop toggle-selector-demo right-active" style="width:310px;" role="radiogroup" aria-label="Search mode desktop (Need)">
+            <span class="toggle-selector-pill"></span>
+            <button class="toggle-selector-option" type="button" role="radio" aria-checked="false">Search by Details</button>
+            <button class="toggle-selector-option is-active" type="button" role="radio" aria-checked="true">Search by Need</button>
+          </div>
+          <div class="pattern-filter__body pattern-filter__body--sole-need">
+            <div class="pattern-filter-need-options" role="group" aria-label="Search by Need options">
+              <button type="button" class="pattern-filter-need-option pattern-filter-need-option--neutral-icon">
+                <i class="pattern-filter-need-option__icon fa-solid fa-calendar-days" aria-hidden="true"></i>
+                <span class="pattern-filter-need-option__label">Waiting over 1 year</span>
+              </button>
+              <button type="button" class="pattern-filter-need-option">
+                <i class="pattern-filter-need-option__icon fa-solid fa-child" aria-hidden="true"></i>
+                <span class="pattern-filter-need-option__label">Orphaned child</span>
+              </button>
+              <button type="button" class="pattern-filter-need-option">
+                <i class="pattern-filter-need-option__icon fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+                <span class="pattern-filter-need-option__label">Higher-risk area</span>
+              </button>
+              <button type="button" class="pattern-filter-need-option">
+                <i class="pattern-filter-need-option__icon fa-solid fa-bowl-rice" aria-hidden="true"></i>
+                <span class="pattern-filter-need-option__label">Hunger crisis area</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="doc-layout-narrow">
+      <!-- ---- ACCESSIBILITY ---- -->
+      <h2>Accessibility Considerations</h2>
+      <p>WCAG 2.1 AA target. The pattern exposes multiple controls; each interactive element must have an accessible name.</p>
+      <h3>Keyboard and focus</h3>
+      <ul>
+        <li>Tab through the toggle options (buttons), filter/close icon buttons, each Selector Accordion category header and option, and footer actions in DOM order.</li>
+        <li>Toggle selector options should use <code>role="radio"</code> and <code>aria-checked</code>, or be implemented as a single <code>tablist</code> if you adopt that variant from the Toggle Selector page.</li>
+        <li>When <strong>Search by Details</strong> is active, each criterion uses the <a href="#comp-sel-accordion" data-page="comp-sel-accordion">Selector Accordion</a> disclosure pattern: category <code>&lt;button&gt;</code> with <code>aria-expanded</code> and <code>aria-controls</code>, options as <code>&lt;button&gt;</code> rows with <code>aria-selected</code> on the current value (see that component page).</li>
+        <li>When <strong>Search by Need</strong> is active, need criteria are plain <code>&lt;button&gt;</code> rows inside <code>role="group"</code> with an <code>aria-label</code>; wire selection state when you implement behavior.</li>
+      </ul>
+      <h3>ARIA</h3>
+      <ul>
+        <li>Wrap the panel in <code>role="region"</code> with <code>aria-label</code> (e.g. &quot;Search filters&quot;) when it is a distinct landmark.</li>
+        <li>Icon-only buttons require <code>aria-label</code> (e.g. &quot;Open filters&quot;, &quot;Close filters&quot;).</li>
+      </ul>
+
+      <!-- ---- CONSTRUCTION ---- -->
+      <h2>Construction</h2>
+      <h3>Layout tokens</h3>
+      <table class="doc-table">
+        <thead><tr><th>Property</th><th>Mobile</th><th>Desktop</th></tr></thead>
+        <tbody>
+          <tr><td>Panel max width</td><td><code>--card-s</code> (336px)</td><td>1105px (Figma frame)</td></tr>
+          <tr><td>Panel padding</td><td><code>--padding-m</code> (16px)</td><td><code>--jumper-xs-xxs</code> (24px)</td></tr>
+          <tr><td>Panel border</td><td colspan="2"><code>1px solid var(--border-default)</code></td></tr>
+          <tr><td>Panel radius</td><td colspan="2"><code>--radius-m</code></td></tr>
+          <tr><td>Header gap (toggle to icon button)</td><td colspan="2"><code>--padding-m</code></td></tr>
+          <tr><td>Body gap (stack / row)</td><td><code>--padding-m</code></td><td><code>--jumper-xs-xxs</code></td></tr>
+          <tr><td>Label to category (Selector Accordion)</td><td colspan="2"><code>--jumper-xxxs-tiny</code> (8px), per Selector Accordion spec</td></tr>
+          <tr><td>Desktop criteria row</td><td>—</td><td>Max width 1057px; five criterion columns <code>flex: 1 1 0</code> with <code>min-width: 128px</code>; accordion category <code>min-width: 128px</code>, <code>width: 100%</code>; gap <code>--jumper-xs-xxs</code></td></tr>
+          <tr><td>Desktop Clear all</td><td>—</td><td><code>flex: 0 0 auto</code>; button intrinsic width; column <code>padding-top: var(--jumper-sm-xs)</code> (32px)</td></tr>
+        </tbody>
+      </table>
+      <h3>Components used</h3>
+      <table class="doc-table">
+        <thead><tr><th>Part</th><th>Implementation</th></tr></thead>
+        <tbody>
+          <tr><td>Mode switch</td><td><code>.toggle-selector</code> + <code>.toggle-selector-desktop</code> on desktop; widths 260px / 310px per Toggle Selector spec.</td></tr>
+          <tr><td>Open / Close</td><td><code>.btn.btn-outline.btn-icon-only.btn-s</code> with <code>fa-filter</code>; <code>.btn.btn-primary.btn-icon-only.btn-s</code> with <code>fa-xmark</code>.</td></tr>
+          <tr><td>Details criterion row</td><td><a href="#comp-sel-accordion" data-page="comp-sel-accordion">Selector Accordion</a>: <code>.sel-accordion-group</code>, <code>.sel-accordion-label</code>, <code>.sel-accordion-stack</code> (category + <code>.sel-accordion-dropdown</code>).</td></tr>
+          <tr><td>Need criteria</td><td><code>.pattern-filter-need-options</code> container; each <code>.pattern-filter-need-option</code> is an icon + label <code>&lt;button&gt;</code>. Mobile: vertical stack + horizontal rules. Desktop: row with 2px vertical dividers; first segment may use <code>.pattern-filter-need-option--neutral-icon</code> for the calendar affordance.</td></tr>
+          <tr><td>Actions</td><td><code>.btn.btn-primary.btn-m</code>; <code>Clear all</code> disabled per spec when no dirty filters.</td></tr>
+        </tbody>
+      </table>
+
+      <!-- ---- APPLICATION & CONTEXT ---- -->
+      <h2>Application and Context</h2>
+      <h3>For Developers</h3>
+      <table class="doc-table">
+        <thead><tr><th>Class / region</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td><code>.page.page--full-width</code></td><td>On the docs site (or app shell): use on the page section when mixing a 728px reading column with a full-width preview row. Pair with <code>.doc-layout-narrow</code> and <code>.doc-layout-full</code>.</td></tr>
+          <tr><td><code>.doc-layout-narrow</code></td><td>Constrains content to <code>--grid-body-max-width</code> (728px), centered.</td></tr>
+          <tr><td><code>.doc-layout-full</code></td><td>Breaks out to the main column edges using page gutter tokens; at 1512px+ horizontal inset uses <code>--grid-col-margin</code>.</td></tr>
+          <tr><td><code>.pattern-filter</code></td><td>Root panel; add <code>.pattern-filter-mobile</code> or <code>.pattern-filter-desktop</code>.</td></tr>
+          <tr><td><code>.pattern-filter-mobile-expanded</code></td><td>Applies vertical gap between header and body on mobile expanded state.</td></tr>
+          <tr><td><code>.pattern-filter__header</code></td><td>Row: toggle + trailing icon button.</td></tr>
+          <tr><td><code>.pattern-filter__body</code></td><td>Criteria and optional CTA row / column.</td></tr>
+          <tr><td><code>.pattern-filter__field</code></td><td>Wraps one <code>.sel-accordion-group</code> per criterion (spacing between fields uses body gap tokens above).</td></tr>
+          <tr><td><code>.sel-accordion-demo</code></td><td>Optional (docs site): enables expand/collapse and option selection in the demo shell, same as the Selector Accordion page.</td></tr>
+          <tr><td>Criterion label icon</td><td>Do not add <code>.label-icon</code> on filter criteria by default (matches Figma). Use it only when the product implements an active info control for that field.</td></tr>
+          <tr><td><code>.pattern-filter__cta-row</code></td><td>Mobile footer buttons (flex row, wrap).</td></tr>
+          <tr><td><code>.pattern-filter__cta</code></td><td>Desktop trailing column for <strong>Clear all</strong>.</td></tr>
+          <tr><td><code>.toggle-selector-demo</code></td><td>Optional: enables existing doc-site JS for pill animation (same as Toggle Selector page).</td></tr>
+        </tbody>
+      </table>
+      <h3>For Designers</h3>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Use the Filter pattern when users need to narrow a dataset (e.g. sponsorship search) without leaving the current view.</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't use this pattern for linear step-by-step flows; use the Tab Bar or a dedicated wizard.</p>
+        </div>
+      </div>
+      <div class="guidance-grid">
+        <div class="guidance-card do">
+          <div class="label">Do</div>
+          <p>Keep criterion labels short and match typography to Input labels (Body M).</p>
+        </div>
+        <div class="guidance-card dont">
+          <div class="label">Don't</div>
+          <p>Don't invent new field chrome; stay on <code>--border-default</code> and shared radii for triggers.</p>
+        </div>
+      </div>
+
+      <!-- ---- USAGE EXAMPLES ---- -->
+      <h2>Usage Examples</h2>
+      <h3>Mobile panel markup</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;div class="pattern-filter pattern-filter-mobile pattern-filter-mobile-expanded"
+     role="region" aria-label="Filters"&gt;
+  &lt;div class="pattern-filter__header"&gt;
+    &lt;div class="toggle-selector" style="width:260px" role="radiogroup"
+         aria-label="Search mode"&gt;
+      &lt;span class="toggle-selector-pill"&gt;&lt;/span&gt;
+      &lt;button type="button" class="toggle-selector-option is-active"
+              role="radio" aria-checked="true"&gt;Search by Details&lt;/button&gt;
+      &lt;button type="button" class="toggle-selector-option"
+              role="radio" aria-checked="false"&gt;Search by Need&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;button type="button" class="btn btn-primary btn-icon-only btn-s"
+            aria-label="Close filters"&gt;
+      &lt;i class="btn-icon fa-solid fa-xmark" aria-hidden="true"&gt;&lt;/i&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="pattern-filter__body"&gt;
+    &lt;div class="pattern-filter__field"&gt;
+      &lt;div class="sel-accordion-group"&gt;
+        &lt;div class="sel-accordion-label" id="city-lbl"&gt;Location&lt;/div&gt;
+        &lt;div class="sel-accordion-stack"&gt;
+          &lt;button type="button" class="sel-accordion-category"
+                  aria-expanded="false" aria-controls="city-opts" aria-labelledby="city-lbl"&gt;
+            &lt;span&gt;No preference&lt;/span&gt;
+            &lt;i class="sel-accordion-icon fa-solid fa-chevron-down" aria-hidden="true"&gt;&lt;/i&gt;
+          &lt;/button&gt;
+          &lt;div class="sel-accordion-dropdown is-collapsed" id="city-opts"
+               role="group" aria-label="Location options"&gt;
+            &lt;button type="button" class="sel-accordion-option is-selected" aria-selected="true"&gt;No preference&lt;/button&gt;
+            &lt;button type="button" class="sel-accordion-option"&gt;Option A&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- repeat fields --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+      <h3>Initialize demos (optional, docs site)</h3>
+      <p>Add <code>toggle-selector-demo</code> on the toggle for pill animation (see <a href="#comp-toggle-selector" data-page="comp-toggle-selector">Toggle Selector</a>). Add <code>sel-accordion-demo</code> on each <code>.sel-accordion-group</code> for expand/collapse and option selection (see <a href="#comp-sel-accordion" data-page="comp-sel-accordion">Selector Accordion</a>).</p>
       </div>
     </section>
 
@@ -4823,7 +6731,7 @@
           </tr>
           <tr>
             <td>Hover</td>
-            <td><code>Surface/Action/action-hover</code><br>#fff1eb</td>
+            <td><code>Surface/Global/default container</code><br>#fdfdfd</td>
             <td><code>Border/Action/action-hover</code><br>#ffa984</td>
             <td><code>Text/Action/action-hover</code><br>#f78958</td>
           </tr>
@@ -4835,9 +6743,9 @@
           </tr>
           <tr>
             <td>Disabled</td>
-            <td><code>Surface/Button/Primary/bg-disabled</code><br>#e9e9e9</td>
-            <td><code>Border/Action/disabled</code><br>#b3b3b3</td>
-            <td><code>Text/Action/action-disabled</code><br>#7d7d7d</td>
+            <td><code>Surface/Button/Primary/bg-disabled</code><br>#f5f5f5</td>
+            <td><code>Border/Action/disabled</code><br>#e9e9e9</td>
+            <td><code>Text/Action/action-disabled</code><br>#979797</td>
           </tr>
           <tr>
             <td>Error</td>
@@ -5033,7 +6941,7 @@
 
       <div class="form-example-row">
         <div class="example-desktop">
-          <h4 style="margin-bottom:var(--padding-m);color:var(--text-body)">Desktop (672px)</h4>
+          <h4 style="margin-bottom:var(--padding-m);color:var(--text-body)">Desktop (728px)</h4>
           <div class="form-example-card">
             <div class="card-heading">
               <h3>We're here to pray for you</h3>
@@ -5188,12 +7096,12 @@
           <tr><td>Gutter</td><td>32px</td><td>16px</td></tr>
           <tr><td>Margin</td><td>244px</td><td>24px</td></tr>
           <tr><td>Row Gap</td><td>64px</td><td>32px</td></tr>
-          <tr><td>Body Max Width</td><td>672px</td><td>336px</td></tr>
+          <tr><td>Body Max Width</td><td>728px</td><td>336px</td></tr>
         </tbody>
       </table>
 
       <h2>Readability</h2>
-      <p>Body text (Body M, 16px) should be constrained to 60-75 characters per line. The grid's <code>Body text.max width</code> token (672px on Desktop, 336px on Mobile) enforces this.</p>
+      <p>Body text (Body M, 16px) should be constrained to 60-75 characters per line. The grid's <code>Body text.max width</code> token (728px on Desktop, 336px on Mobile) enforces this.</p>
     </section>
 
 
