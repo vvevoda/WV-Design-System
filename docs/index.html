@@ -4717,7 +4717,7 @@
       <table class="doc-table">
         <thead><tr><th>Property</th><th>Value</th><th>Token</th></tr></thead>
         <tbody>
-          <tr><td>Container width</td><td>336px</td><td>Fixed</td></tr>
+          <tr><td>Container width</td><td>100% / max var(--card-xl)</td><td><code>--card-xl</code></td></tr>
           <tr><td>Container border radius</td><td>8px</td><td><code>--radius-m</code></td></tr>
           <tr><td>Container border width</td><td>1px</td><td>Fixed</td></tr>
           <tr><td>Content padding</td><td>16px</td><td><code>--padding-m</code></td></tr>
@@ -4766,7 +4766,7 @@
       <table class="doc-table">
         <thead><tr><th>Attribute / Class</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
         <tbody>
-          <tr><td><code>.snackbar</code></td><td>Container</td><td>Default status</td><td>Root element. 336px wide, rounded, bordered.</td></tr>
+          <tr><td><code>.snackbar</code></td><td>Container</td><td>Default status</td><td>Root element. 100% wide, max-width 728px, rounded, bordered.</td></tr>
           <tr><td><code>.snackbar-success</code></td><td>Modifier</td><td>&mdash;</td><td>Applies success color to icon and heading.</td></tr>
           <tr><td><code>.snackbar-error</code></td><td>Modifier</td><td>&mdash;</td><td>Applies error color to icon and heading.</td></tr>
           <tr><td><code>.snackbar-information</code></td><td>Modifier</td><td>&mdash;</td><td>Applies information color to icon and heading.</td></tr>
@@ -5988,10 +5988,159 @@
 
       <!-- ---- OVERVIEW ---- -->
       <h2>Overview</h2>
-      <p>The Filter pattern combines existing system components: the <a href="#comp-toggle-selector" data-page="comp-toggle-selector">Toggle Selector</a> (Search by Details / Search by Need), <a href="#comp-button" data-page="comp-button">Buttons</a> (outline and primary icon-only for filter open, primary icon-only for close, text buttons for Clear all and Close), and one <a href="#comp-sel-accordion" data-page="comp-sel-accordion">Selector Accordion</a> per criterion when <strong>Search by Details</strong> is active. <strong>Search by Need</strong> swaps the criteria region for a separate option list (<code>.pattern-filter-need-options</code> / <code>.pattern-filter-need-option</code>), not accordions. Omit the optional info icon on Details criterion labels unless a specific field exposes contextual help.</p>
+      <p>The Filter pattern combines existing system components: the <a href="#comp-toggle-selector" data-page="comp-toggle-selector">Toggle Selector</a> (Search by Details / Search by Need), <a href="#comp-button" data-page="comp-button">Buttons</a> (outline and primary icon-only for filter open, primary icon-only for close, text buttons for Clear all and Close), and one <a href="#comp-sel-accordion" data-page="comp-sel-accordion">Selector Accordion</a> per criterion when <strong>Search by Details</strong> is active. <strong>Search by Need</strong> swaps the criteria region for a <a href="#comp-button-group" data-page="comp-button-group">Button Group</a> (<code>.btn-group</code> / <code>.btn-group-item</code> with <code>.btn-group-icon</code>), not accordions. Omit the optional info icon on Details criterion labels unless a specific field exposes contextual help.</p>
       <p><strong>Mobile (Figma size S, 336px max width):</strong> 40px toggle height, 14px bold labels on the selector, filter icon in an outline icon-only button when the panel is collapsed. Expanded state shows the same toggle, a primary icon-only close control, stacked criteria, and a row with <strong>Clear all</strong> (disabled when no changes) and <strong>Close</strong>.</p>
       <p><strong>Desktop (Figma size M):</strong> 46px toggle height, 16px bold labels on the selector, criteria in a horizontal row (narrow columns), and <strong>Clear all</strong> aligned to the trailing edge. Spacing follows jumper and padding tokens from the file.</p>
-      <p><strong>Figma source:</strong> <a href="https://www.figma.com/design/k3URA8b9qRKn4p8Hdmv2je/WV-Design-System-1.01?node-id=16101-1967" target="_blank" rel="noopener noreferrer">WV Design System 1.01 — Drop-down filter menu</a> (component set; node <code>16101:1967</code>).</p>
+      <p><strong>Figma source:</strong> <a href="https://www.figma.com/design/JN80bbuhNdMdXwiajJXOdm/WV-Design-System-1.02?node-id=16318-5349" target="_blank" rel="noopener noreferrer">WV Design System 1.02 — Drop-down filter menu</a> (component set; node <code>16318:5349</code>).</p>
+      <p><strong>Breakpoint:</strong> The desktop layout transitions to the mobile layout at <code>1103px</code> (tablet max). See the Working Example below.</p>
+
+      <!-- ---- WORKING EXAMPLE ---- -->
+      <h2>Working Example</h2>
+      <p>Interactive demo. Toggle between Details and Need; select accordion options or need buttons. Resize the browser below 1104px to see the mobile layout.</p>
+      </div>
+
+      <div class="doc-layout-full">
+      <div class="preview-block">
+        <div class="pattern-filter pattern-filter-responsive pattern-filter-expanded" role="region" aria-label="Filter working example" data-filter-demo>
+          <!-- Mobile header: toggle + filter/close icon (hidden at desktop via CSS) -->
+          <div class="pattern-filter-header">
+            <div class="toggle-selector toggle-selector-demo" role="radiogroup" aria-label="Search mode">
+              <span class="toggle-selector-pill"></span>
+              <button class="toggle-selector-option is-active" type="button" role="radio" aria-checked="true" data-filter-mode="details">Search by Details</button>
+              <button class="toggle-selector-option" type="button" role="radio" aria-checked="false" data-filter-mode="need">Search by Need</button>
+            </div>
+            <button type="button" class="btn btn-primary btn-icon-only btn-s pattern-filter-collapse-btn" aria-label="Close filters" data-filter-collapse><i class="btn-icon fa-solid fa-xmark" aria-hidden="true"></i></button>
+          </div>
+          <!-- Desktop toggle: shown only at >= 1104px -->
+          <div class="pattern-filter-toggle-desktop">
+            <div class="toggle-selector toggle-selector-desktop toggle-selector-demo" role="radiogroup" aria-label="Search mode">
+              <span class="toggle-selector-pill"></span>
+              <button class="toggle-selector-option is-active" type="button" role="radio" aria-checked="true" data-filter-mode="details">Search by Details</button>
+              <button class="toggle-selector-option" type="button" role="radio" aria-checked="false" data-filter-mode="need">Search by Need</button>
+            </div>
+          </div>
+          <!-- Details body -->
+          <div class="pattern-filter-body" data-filter-body="details">
+            <div class="pattern-filter-field">
+              <div class="sel-accordion-group sel-accordion-demo">
+                <div class="sel-accordion-label" id="pf-demo-loc-label">Location</div>
+                <div class="sel-accordion-stack">
+                  <button type="button" class="sel-accordion-category" aria-expanded="false" aria-controls="pf-demo-loc-opts" aria-labelledby="pf-demo-loc-label">
+                    <span>No preference</span>
+                    <i class="sel-accordion-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                  </button>
+                  <div class="sel-accordion-dropdown is-collapsed" id="pf-demo-loc-opts" role="group" aria-label="Location options">
+                    <button type="button" class="sel-accordion-option is-selected" aria-selected="true">No preference</button>
+                    <button type="button" class="sel-accordion-option">Kenya</button>
+                    <button type="button" class="sel-accordion-option">Nigeria</button>
+                    <button type="button" class="sel-accordion-option">Zimbabwe</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pattern-filter-field">
+              <div class="sel-accordion-group sel-accordion-demo">
+                <div class="sel-accordion-label" id="pf-demo-gen-label">Gender</div>
+                <div class="sel-accordion-stack">
+                  <button type="button" class="sel-accordion-category" aria-expanded="false" aria-controls="pf-demo-gen-opts" aria-labelledby="pf-demo-gen-label">
+                    <span>No preference</span>
+                    <i class="sel-accordion-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                  </button>
+                  <div class="sel-accordion-dropdown is-collapsed" id="pf-demo-gen-opts" role="group" aria-label="Gender options">
+                    <button type="button" class="sel-accordion-option is-selected" aria-selected="true">No preference</button>
+                    <button type="button" class="sel-accordion-option">Male</button>
+                    <button type="button" class="sel-accordion-option">Female</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pattern-filter-field">
+              <div class="sel-accordion-group sel-accordion-demo">
+                <div class="sel-accordion-label" id="pf-demo-age-label">Age</div>
+                <div class="sel-accordion-stack">
+                  <button type="button" class="sel-accordion-category" aria-expanded="false" aria-controls="pf-demo-age-opts" aria-labelledby="pf-demo-age-label">
+                    <span>No preference</span>
+                    <i class="sel-accordion-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                  </button>
+                  <div class="sel-accordion-dropdown is-collapsed" id="pf-demo-age-opts" role="group" aria-label="Age options">
+                    <button type="button" class="sel-accordion-option is-selected" aria-selected="true">No preference</button>
+                    <button type="button" class="sel-accordion-option">3-6</button>
+                    <button type="button" class="sel-accordion-option">7-10</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pattern-filter-field">
+              <div class="sel-accordion-group sel-accordion-demo">
+                <div class="sel-accordion-label" id="pf-demo-mo-label">Birth Month</div>
+                <div class="sel-accordion-stack">
+                  <button type="button" class="sel-accordion-category" aria-expanded="false" aria-controls="pf-demo-mo-opts" aria-labelledby="pf-demo-mo-label">
+                    <span>No preference</span>
+                    <i class="sel-accordion-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                  </button>
+                  <div class="sel-accordion-dropdown is-collapsed" id="pf-demo-mo-opts" role="group" aria-label="Birth month options">
+                    <button type="button" class="sel-accordion-option is-selected" aria-selected="true">No preference</button>
+                    <button type="button" class="sel-accordion-option">January</button>
+                    <button type="button" class="sel-accordion-option">February</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pattern-filter-field">
+              <div class="sel-accordion-group sel-accordion-demo">
+                <div class="sel-accordion-label" id="pf-demo-day-label">Birth Day</div>
+                <div class="sel-accordion-stack">
+                  <button type="button" class="sel-accordion-category" aria-expanded="false" aria-controls="pf-demo-day-opts" aria-labelledby="pf-demo-day-label">
+                    <span>No preference</span>
+                    <i class="sel-accordion-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                  </button>
+                  <div class="sel-accordion-dropdown is-collapsed" id="pf-demo-day-opts" role="group" aria-label="Birth day options">
+                    <button type="button" class="sel-accordion-option is-selected" aria-selected="true">No preference</button>
+                    <button type="button" class="sel-accordion-option">1-10</button>
+                    <button type="button" class="sel-accordion-option">11-20</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pattern-filter-cta">
+              <button type="button" class="btn btn-primary btn-m is-disabled" disabled aria-disabled="true"><span class="btn-label">Clear all</span></button>
+            </div>
+          </div>
+          <!-- Need body -->
+          <div class="pattern-filter-body pattern-filter-body--need" data-filter-body="need" style="display:none;">
+            <div class="btn-group" role="group" aria-label="Search by Need options">
+              <button type="button" class="btn-group-item" data-need="waiting">
+                <i class="btn-group-icon fa-solid fa-calendar" aria-hidden="true"></i>
+                Waiting over 1 year
+              </button>
+              <button type="button" class="btn-group-item" data-need="orphan">
+                <i class="btn-group-icon fa-solid fa-child" aria-hidden="true"></i>
+                Orphaned child
+              </button>
+              <button type="button" class="btn-group-item" data-need="risk">
+                <i class="btn-group-icon fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+                Higher-risk area
+              </button>
+              <button type="button" class="btn-group-item" data-need="hunger">
+                <i class="btn-group-icon fa-solid fa-bowl-rice" aria-hidden="true"></i>
+                Hunger crisis area
+              </button>
+            </div>
+            <div class="snackbar" data-need-snackbar style="display:none;">
+              <div class="snackbar-content">
+                <div class="snackbar-icon-text">
+                  <div class="snackbar-text">
+                    <p class="snackbar-body" data-need-description></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="doc-layout-narrow">
 
       <!-- ---- VARIANTS ---- -->
       <h2>Variants</h2>
@@ -6000,7 +6149,7 @@
       <p>Toggle selector plus outline filter icon. Full width is capped at <code>--card-s</code> (336px).</p>
       <div class="preview-block">
         <div class="pattern-filter pattern-filter-mobile" role="region" aria-label="Filter (mobile collapsed example)">
-          <div class="pattern-filter__header">
+          <div class="pattern-filter-header">
             <div class="toggle-selector toggle-selector-demo" style="width:260px;" role="radiogroup" aria-label="Search mode">
               <span class="toggle-selector-pill"></span>
               <button class="toggle-selector-option is-active" type="button" role="radio" aria-checked="true">Search by Details</button>
@@ -6015,7 +6164,7 @@
       <p>Close control replaces the filter icon. Criteria stack vertically with <code>--padding-m</code> between blocks.</p>
       <div class="preview-block">
         <div class="pattern-filter pattern-filter-mobile pattern-filter-mobile-expanded" role="region" aria-label="Filter (mobile expanded example)">
-          <div class="pattern-filter__header">
+          <div class="pattern-filter-header">
             <div class="toggle-selector toggle-selector-demo" style="width:260px;" role="radiogroup" aria-label="Search mode expanded">
               <span class="toggle-selector-pill"></span>
               <button class="toggle-selector-option is-active" type="button" role="radio" aria-checked="true">Search by Details</button>
@@ -6023,8 +6172,8 @@
             </div>
             <button type="button" class="btn btn-primary btn-icon-only btn-s" aria-label="Close filters"><i class="btn-icon fa-solid fa-xmark" aria-hidden="true"></i></button>
           </div>
-          <div class="pattern-filter__body">
-            <div class="pattern-filter__field">
+          <div class="pattern-filter-body">
+            <div class="pattern-filter-field">
               <div class="sel-accordion-group sel-accordion-demo">
                 <div class="sel-accordion-label" id="pf-mx-loc-label">Location</div>
                 <div class="sel-accordion-stack">
@@ -6040,7 +6189,7 @@
                 </div>
               </div>
             </div>
-            <div class="pattern-filter__field">
+            <div class="pattern-filter-field">
               <div class="sel-accordion-group sel-accordion-demo">
                 <div class="sel-accordion-label" id="pf-mx-gen-label">Gender</div>
                 <div class="sel-accordion-stack">
@@ -6056,7 +6205,7 @@
                 </div>
               </div>
             </div>
-            <div class="pattern-filter__field">
+            <div class="pattern-filter-field">
               <div class="sel-accordion-group sel-accordion-demo">
                 <div class="sel-accordion-label" id="pf-mx-age-label">Age</div>
                 <div class="sel-accordion-stack">
@@ -6072,7 +6221,7 @@
                 </div>
               </div>
             </div>
-            <div class="pattern-filter__field">
+            <div class="pattern-filter-field">
               <div class="sel-accordion-group sel-accordion-demo">
                 <div class="sel-accordion-label" id="pf-mx-mo-label">Birth Month</div>
                 <div class="sel-accordion-stack">
@@ -6088,7 +6237,7 @@
                 </div>
               </div>
             </div>
-            <div class="pattern-filter__field">
+            <div class="pattern-filter-field">
               <div class="sel-accordion-group sel-accordion-demo">
                 <div class="sel-accordion-label" id="pf-mx-day-label">Birth Day</div>
                 <div class="sel-accordion-stack">
@@ -6104,7 +6253,7 @@
                 </div>
               </div>
             </div>
-            <div class="pattern-filter__cta-row">
+            <div class="pattern-filter-cta-row">
               <button type="button" class="btn btn-primary btn-m is-disabled" disabled aria-disabled="true"><span class="btn-label">Clear all</span></button>
               <button type="button" class="btn btn-primary btn-m"><span class="btn-label">Close</span></button>
             </div>
@@ -6112,11 +6261,11 @@
         </div>
       </div>
 
-      <h3>Mobile — Expanded (Search by Need)</h3>
-      <p>Criteria are replaced by a single <strong>Search by Need</strong> list: icon + label rows inside one bordered container (not Selector Accordions). Footer is a single disabled <strong>Close</strong> control in the default spec. Matches Figma <code>state=expanded, filter=need, size=S</code>.</p>
+      <h3>Mobile — Expanded (Search by Need, default)</h3>
+      <p>Criteria are replaced by a stacked <a href="#comp-button-group" data-page="comp-button-group">Button Group</a>. Bottom borders use <code>1px</code> (<code>--border-width-default</code>). Footer is a single disabled <strong>Close</strong> button. Figma <code>state=expanded, filter=need, viewport=mobile</code>.</p>
       <div class="preview-block">
         <div class="pattern-filter pattern-filter-mobile pattern-filter-mobile-expanded" role="region" aria-label="Filter (mobile expanded, Search by Need)">
-          <div class="pattern-filter__header">
+          <div class="pattern-filter-header">
             <div class="toggle-selector toggle-selector-demo right-active" style="width:260px;" role="radiogroup" aria-label="Search mode (Need)">
               <span class="toggle-selector-pill"></span>
               <button class="toggle-selector-option" type="button" role="radio" aria-checked="false">Search by Details</button>
@@ -6124,27 +6273,74 @@
             </div>
             <button type="button" class="btn btn-primary btn-icon-only btn-s" aria-label="Close filters"><i class="btn-icon fa-solid fa-xmark" aria-hidden="true"></i></button>
           </div>
-          <div class="pattern-filter__body pattern-filter__body--need">
-            <div class="pattern-filter-need-options" role="group" aria-label="Search by Need options">
-              <button type="button" class="pattern-filter-need-option">
-                <i class="pattern-filter-need-option__icon fa-solid fa-calendar-days" aria-hidden="true"></i>
-                <span class="pattern-filter-need-option__label">Waiting over 1 year</span>
+          <div class="pattern-filter-body pattern-filter-body--need">
+            <div class="btn-group" role="group" aria-label="Search by Need options">
+              <button type="button" class="btn-group-item">
+                <i class="btn-group-icon fa-solid fa-calendar" aria-hidden="true"></i>
+                Waiting over 1 year
               </button>
-              <button type="button" class="pattern-filter-need-option">
-                <i class="pattern-filter-need-option__icon fa-solid fa-child" aria-hidden="true"></i>
-                <span class="pattern-filter-need-option__label">Orphaned child</span>
+              <button type="button" class="btn-group-item">
+                <i class="btn-group-icon fa-solid fa-child" aria-hidden="true"></i>
+                Orphaned child
               </button>
-              <button type="button" class="pattern-filter-need-option">
-                <i class="pattern-filter-need-option__icon fa-solid fa-circle-exclamation" aria-hidden="true"></i>
-                <span class="pattern-filter-need-option__label">Higher-risk area</span>
+              <button type="button" class="btn-group-item">
+                <i class="btn-group-icon fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+                Higher-risk area
               </button>
-              <button type="button" class="pattern-filter-need-option">
-                <i class="pattern-filter-need-option__icon fa-solid fa-bowl-rice" aria-hidden="true"></i>
-                <span class="pattern-filter-need-option__label">Hunger crisis area</span>
+              <button type="button" class="btn-group-item">
+                <i class="btn-group-icon fa-solid fa-bowl-rice" aria-hidden="true"></i>
+                Hunger crisis area
               </button>
             </div>
-            <div class="pattern-filter__cta-row pattern-filter__cta-row--need-only">
+            <div class="pattern-filter-cta-row pattern-filter-cta-row--need-only">
               <button type="button" class="btn btn-primary btn-m is-disabled" disabled aria-disabled="true"><span class="btn-label">Close</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Mobile — Expanded (Search by Need, "Waiting" selected)</h3>
+      <p>When a need is selected, the Snackbar with descriptive text appears between the Button Group and Close button. Close becomes active. Figma <code>state=expanded, filter=need waiting, status=selected, viewport=mobile</code>.</p>
+      <div class="preview-block">
+        <div class="pattern-filter pattern-filter-mobile pattern-filter-mobile-expanded" role="region" aria-label="Filter (mobile expanded, Search by Need waiting selected)">
+          <div class="pattern-filter-header">
+            <div class="toggle-selector toggle-selector-demo right-active" style="width:260px;" role="radiogroup" aria-label="Search mode (Need waiting)">
+              <span class="toggle-selector-pill"></span>
+              <button class="toggle-selector-option" type="button" role="radio" aria-checked="false">Search by Details</button>
+              <button class="toggle-selector-option is-active" type="button" role="radio" aria-checked="true">Search by Need</button>
+            </div>
+            <button type="button" class="btn btn-primary btn-icon-only btn-s" aria-label="Close filters"><i class="btn-icon fa-solid fa-xmark" aria-hidden="true"></i></button>
+          </div>
+          <div class="pattern-filter-body pattern-filter-body--need">
+            <div class="btn-group" role="group" aria-label="Search by Need options">
+              <button type="button" class="btn-group-item selected">
+                <i class="btn-group-icon fa-solid fa-calendar" aria-hidden="true"></i>
+                Waiting over 1 year
+              </button>
+              <button type="button" class="btn-group-item">
+                <i class="btn-group-icon fa-solid fa-child" aria-hidden="true"></i>
+                Orphaned child
+              </button>
+              <button type="button" class="btn-group-item">
+                <i class="btn-group-icon fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+                Higher-risk area
+              </button>
+              <button type="button" class="btn-group-item">
+                <i class="btn-group-icon fa-solid fa-bowl-rice" aria-hidden="true"></i>
+                Hunger crisis area
+              </button>
+            </div>
+            <div class="snackbar">
+              <div class="snackbar-content">
+                <div class="snackbar-icon-text">
+                  <div class="snackbar-text">
+                    <p class="snackbar-body">Children who have been waiting for a sponsor for 12 months or more.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pattern-filter-cta-row pattern-filter-cta-row--need-only">
+              <button type="button" class="btn btn-primary btn-m"><span class="btn-label">Close</span></button>
             </div>
           </div>
         </div>
@@ -6165,8 +6361,8 @@
             <button class="toggle-selector-option is-active" type="button" role="radio" aria-checked="true">Search by Details</button>
             <button class="toggle-selector-option" type="button" role="radio" aria-checked="false">Search by Need</button>
           </div>
-          <div class="pattern-filter__body">
-            <div class="pattern-filter__field">
+          <div class="pattern-filter-body">
+            <div class="pattern-filter-field">
               <div class="sel-accordion-group sel-accordion-demo">
                 <div class="sel-accordion-label" id="pf-d-loc-label">Location</div>
                 <div class="sel-accordion-stack">
@@ -6176,13 +6372,14 @@
                   </button>
                   <div class="sel-accordion-dropdown is-collapsed" id="pf-d-loc-opts" role="group" aria-label="Location options">
                     <button type="button" class="sel-accordion-option is-selected" aria-selected="true">No preference</button>
-                    <button type="button" class="sel-accordion-option">Option A</button>
-                    <button type="button" class="sel-accordion-option">Option B</button>
+                    <button type="button" class="sel-accordion-option">Kenya</button>
+                    <button type="button" class="sel-accordion-option">Nigeria</button>
+                    <button type="button" class="sel-accordion-option">Zimbabwe</button>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="pattern-filter__field">
+            <div class="pattern-filter-field">
               <div class="sel-accordion-group sel-accordion-demo">
                 <div class="sel-accordion-label" id="pf-d-gen-label">Gender</div>
                 <div class="sel-accordion-stack">
@@ -6192,13 +6389,13 @@
                   </button>
                   <div class="sel-accordion-dropdown is-collapsed" id="pf-d-gen-opts" role="group" aria-label="Gender options">
                     <button type="button" class="sel-accordion-option is-selected" aria-selected="true">No preference</button>
-                    <button type="button" class="sel-accordion-option">Option A</button>
-                    <button type="button" class="sel-accordion-option">Option B</button>
+                    <button type="button" class="sel-accordion-option">Male</button>
+                    <button type="button" class="sel-accordion-option">Female</button>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="pattern-filter__field">
+            <div class="pattern-filter-field">
               <div class="sel-accordion-group sel-accordion-demo">
                 <div class="sel-accordion-label" id="pf-d-age-label">Age</div>
                 <div class="sel-accordion-stack">
@@ -6208,13 +6405,13 @@
                   </button>
                   <div class="sel-accordion-dropdown is-collapsed" id="pf-d-age-opts" role="group" aria-label="Age options">
                     <button type="button" class="sel-accordion-option is-selected" aria-selected="true">No preference</button>
-                    <button type="button" class="sel-accordion-option">Option A</button>
-                    <button type="button" class="sel-accordion-option">Option B</button>
+                    <button type="button" class="sel-accordion-option">3-6</button>
+                    <button type="button" class="sel-accordion-option">7-10</button>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="pattern-filter__field">
+            <div class="pattern-filter-field">
               <div class="sel-accordion-group sel-accordion-demo">
                 <div class="sel-accordion-label" id="pf-d-mo-label">Birth Month</div>
                 <div class="sel-accordion-stack">
@@ -6230,7 +6427,7 @@
                 </div>
               </div>
             </div>
-            <div class="pattern-filter__field">
+            <div class="pattern-filter-field">
               <div class="sel-accordion-group sel-accordion-demo">
                 <div class="sel-accordion-label" id="pf-d-day-label">Birth Day</div>
                 <div class="sel-accordion-stack">
@@ -6246,7 +6443,7 @@
                 </div>
               </div>
             </div>
-            <div class="pattern-filter__cta">
+            <div class="pattern-filter-cta">
               <button type="button" class="btn btn-primary btn-m is-disabled" disabled aria-disabled="true"><span class="btn-label">Clear all</span></button>
             </div>
           </div>
@@ -6255,8 +6452,8 @@
       </div>
 
       <div class="doc-layout-narrow">
-      <h3>Desktop — Search by Need</h3>
-      <p>With <strong>Search by Need</strong> active, the criteria area is a horizontal segmented row: four equal segments, each with a leading icon and label. The first segment uses a neutral icon color; the others use action color (Figma size M). No filter icon appears in this collapsed frame.</p>
+      <h3>Desktop — Search by Need (collapsed)</h3>
+      <p>With <strong>Search by Need</strong> active, the criteria area shows a <a href="#comp-button-group" data-page="comp-button-group">Button Group</a> at its intrinsic width (not stretched). All four icons use the action color (<code>--btn-icon-action</code>). Figma <code>state=collapsed, filter=need, viewport=desktop</code>.</p>
       </div>
 
       <div class="doc-layout-full">
@@ -6267,24 +6464,70 @@
             <button class="toggle-selector-option" type="button" role="radio" aria-checked="false">Search by Details</button>
             <button class="toggle-selector-option is-active" type="button" role="radio" aria-checked="true">Search by Need</button>
           </div>
-          <div class="pattern-filter__body pattern-filter__body--sole-need">
-            <div class="pattern-filter-need-options" role="group" aria-label="Search by Need options">
-              <button type="button" class="pattern-filter-need-option pattern-filter-need-option--neutral-icon">
-                <i class="pattern-filter-need-option__icon fa-solid fa-calendar-days" aria-hidden="true"></i>
-                <span class="pattern-filter-need-option__label">Waiting over 1 year</span>
+          <div class="pattern-filter-body pattern-filter-body--need">
+            <div class="btn-group" role="group" aria-label="Search by Need options">
+              <button type="button" class="btn-group-item">
+                <i class="btn-group-icon fa-solid fa-calendar" aria-hidden="true"></i>
+                Waiting over 1 year
               </button>
-              <button type="button" class="pattern-filter-need-option">
-                <i class="pattern-filter-need-option__icon fa-solid fa-child" aria-hidden="true"></i>
-                <span class="pattern-filter-need-option__label">Orphaned child</span>
+              <button type="button" class="btn-group-item">
+                <i class="btn-group-icon fa-solid fa-child" aria-hidden="true"></i>
+                Orphaned child
               </button>
-              <button type="button" class="pattern-filter-need-option">
-                <i class="pattern-filter-need-option__icon fa-solid fa-circle-exclamation" aria-hidden="true"></i>
-                <span class="pattern-filter-need-option__label">Higher-risk area</span>
+              <button type="button" class="btn-group-item">
+                <i class="btn-group-icon fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+                Higher-risk area
               </button>
-              <button type="button" class="pattern-filter-need-option">
-                <i class="pattern-filter-need-option__icon fa-solid fa-bowl-rice" aria-hidden="true"></i>
-                <span class="pattern-filter-need-option__label">Hunger crisis area</span>
+              <button type="button" class="btn-group-item">
+                <i class="btn-group-icon fa-solid fa-bowl-rice" aria-hidden="true"></i>
+                Hunger crisis area
               </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="doc-layout-narrow">
+      <h3>Desktop — Search by Need (expanded, "Waiting" selected)</h3>
+      <p>When a need option is selected, the Button Group shows the selected item and a <a href="#comp-snackbar" data-page="comp-snackbar">Snackbar</a> appears below it with descriptive text. The Button Group and Snackbar are grouped with a <code>--jumper-xs-xxs</code> (24px) gap. Figma <code>state=expanded, filter=need waiting, viewport=desktop</code>.</p>
+      </div>
+
+      <div class="doc-layout-full">
+      <div class="preview-block">
+        <div class="pattern-filter pattern-filter-desktop" role="region" aria-label="Filter (desktop Search by Need, waiting selected)">
+          <div class="toggle-selector toggle-selector-desktop toggle-selector-demo right-active" style="width:310px;" role="radiogroup" aria-label="Search mode desktop (Need waiting)">
+            <span class="toggle-selector-pill"></span>
+            <button class="toggle-selector-option" type="button" role="radio" aria-checked="false">Search by Details</button>
+            <button class="toggle-selector-option is-active" type="button" role="radio" aria-checked="true">Search by Need</button>
+          </div>
+          <div class="pattern-filter-body pattern-filter-body--need">
+            <div class="btn-group" role="group" aria-label="Search by Need options">
+              <button type="button" class="btn-group-item selected">
+                <i class="btn-group-icon fa-solid fa-calendar" aria-hidden="true"></i>
+                Waiting over 1 year
+              </button>
+              <button type="button" class="btn-group-item">
+                <i class="btn-group-icon fa-solid fa-child" aria-hidden="true"></i>
+                Orphaned child
+              </button>
+              <button type="button" class="btn-group-item">
+                <i class="btn-group-icon fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+                Higher-risk area
+              </button>
+              <button type="button" class="btn-group-item">
+                <i class="btn-group-icon fa-solid fa-bowl-rice" aria-hidden="true"></i>
+                Hunger crisis area
+              </button>
+            </div>
+            <div class="snackbar">
+              <div class="snackbar-content">
+                <div class="snackbar-icon-text">
+                  <div class="snackbar-text">
+                    <p class="snackbar-body">Children who have been waiting for a sponsor for 12 months or more.</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -6300,7 +6543,7 @@
         <li>Tab through the toggle options (buttons), filter/close icon buttons, each Selector Accordion category header and option, and footer actions in DOM order.</li>
         <li>Toggle selector options should use <code>role="radio"</code> and <code>aria-checked</code>, or be implemented as a single <code>tablist</code> if you adopt that variant from the Toggle Selector page.</li>
         <li>When <strong>Search by Details</strong> is active, each criterion uses the <a href="#comp-sel-accordion" data-page="comp-sel-accordion">Selector Accordion</a> disclosure pattern: category <code>&lt;button&gt;</code> with <code>aria-expanded</code> and <code>aria-controls</code>, options as <code>&lt;button&gt;</code> rows with <code>aria-selected</code> on the current value (see that component page).</li>
-        <li>When <strong>Search by Need</strong> is active, need criteria are plain <code>&lt;button&gt;</code> rows inside <code>role="group"</code> with an <code>aria-label</code>; wire selection state when you implement behavior.</li>
+        <li>When <strong>Search by Need</strong> is active, need criteria use the <a href="#comp-button-group" data-page="comp-button-group">Button Group</a> (<code>.btn-group</code> / <code>.btn-group-item</code>); follow that page for keyboard and selection semantics when you wire behavior.</li>
       </ul>
       <h3>ARIA</h3>
       <ul>
@@ -6323,6 +6566,9 @@
           <tr><td>Label to category (Selector Accordion)</td><td colspan="2"><code>--jumper-xxxs-tiny</code> (8px), per Selector Accordion spec</td></tr>
           <tr><td>Desktop criteria row</td><td>—</td><td>Max width 1057px; five criterion columns <code>flex: 1 1 0</code> with <code>min-width: 128px</code>; accordion category <code>min-width: 128px</code>, <code>width: 100%</code>; gap <code>--jumper-xs-xxs</code></td></tr>
           <tr><td>Desktop Clear all</td><td>—</td><td><code>flex: 0 0 auto</code>; button intrinsic width; column <code>padding-top: var(--jumper-sm-xs)</code> (32px)</td></tr>
+          <tr><td>Responsive breakpoint</td><td colspan="2">Desktop at <code>min-width: 1104px</code> (<code>--bp-desktop-min</code>). Mobile/tablet at <code>max-width: 1103px</code> (<code>--bp-tablet-max</code>).</td></tr>
+          <tr><td>Shadow (Snackbar)</td><td colspan="2"><code>var(--shadow-default)</code>: <code>0px 8px 16px 0px</code> with color <code>--shadow-default-container</code> (light: rgba(179,179,179,0.1), dark: rgba(24,24,24,0.1))</td></tr>
+          <tr><td>Need Snackbar width</td><td>100% (full width)</td><td><code>--space-9100</code> (728px)</td></tr>
         </tbody>
       </table>
       <h3>Components used</h3>
@@ -6332,7 +6578,8 @@
           <tr><td>Mode switch</td><td><code>.toggle-selector</code> + <code>.toggle-selector-desktop</code> on desktop; widths 260px / 310px per Toggle Selector spec.</td></tr>
           <tr><td>Open / Close</td><td><code>.btn.btn-outline.btn-icon-only.btn-s</code> with <code>fa-filter</code>; <code>.btn.btn-primary.btn-icon-only.btn-s</code> with <code>fa-xmark</code>.</td></tr>
           <tr><td>Details criterion row</td><td><a href="#comp-sel-accordion" data-page="comp-sel-accordion">Selector Accordion</a>: <code>.sel-accordion-group</code>, <code>.sel-accordion-label</code>, <code>.sel-accordion-stack</code> (category + <code>.sel-accordion-dropdown</code>).</td></tr>
-          <tr><td>Need criteria</td><td><code>.pattern-filter-need-options</code> container; each <code>.pattern-filter-need-option</code> is an icon + label <code>&lt;button&gt;</code>. Mobile: vertical stack + horizontal rules. Desktop: row with 2px vertical dividers; first segment may use <code>.pattern-filter-need-option--neutral-icon</code> for the calendar affordance.</td></tr>
+          <tr><td>Need criteria</td><td><a href="#comp-button-group" data-page="comp-button-group">Button Group</a>: <code>.btn-group</code>, <code>.btn-group-item</code>, <code>.btn-group-icon</code>. Mobile: stacked column with <code>1px</code> bottom borders. Desktop: intrinsic-width horizontal row (not stretched). All icons use <code>--btn-icon-action</code>; selected items inherit the Button Group <code>.selected</code> state colors.</td></tr>
+          <tr><td>Need expanded (Snackbar)</td><td>When a need option is selected, a <a href="#comp-snackbar" data-page="comp-snackbar">Snackbar</a> (<code>.snackbar</code>) appears below the Button Group with descriptive text. Grouped with <code>--jumper-xs-xxs</code> gap. Desktop width: <code>--space-9100</code> (728px). Mobile: full width.</td></tr>
           <tr><td>Actions</td><td><code>.btn.btn-primary.btn-m</code>; <code>Clear all</code> disabled per spec when no dirty filters.</td></tr>
         </tbody>
       </table>
@@ -6348,14 +6595,18 @@
           <tr><td><code>.doc-layout-full</code></td><td>Breaks out to the main column edges using page gutter tokens; at 1512px+ horizontal inset uses <code>--grid-col-margin</code>.</td></tr>
           <tr><td><code>.pattern-filter</code></td><td>Root panel; add <code>.pattern-filter-mobile</code> or <code>.pattern-filter-desktop</code>.</td></tr>
           <tr><td><code>.pattern-filter-mobile-expanded</code></td><td>Applies vertical gap between header and body on mobile expanded state.</td></tr>
-          <tr><td><code>.pattern-filter__header</code></td><td>Row: toggle + trailing icon button.</td></tr>
-          <tr><td><code>.pattern-filter__body</code></td><td>Criteria and optional CTA row / column.</td></tr>
-          <tr><td><code>.pattern-filter__field</code></td><td>Wraps one <code>.sel-accordion-group</code> per criterion (spacing between fields uses body gap tokens above).</td></tr>
+          <tr><td><code>.pattern-filter-header</code></td><td>Row: toggle + trailing icon button.</td></tr>
+          <tr><td><code>.pattern-filter-body</code></td><td>Criteria and optional CTA row / column.</td></tr>
+          <tr><td><code>.pattern-filter-field</code></td><td>Wraps one <code>.sel-accordion-group</code> per criterion (spacing between fields uses body gap tokens above).</td></tr>
           <tr><td><code>.sel-accordion-demo</code></td><td>Optional (docs site): enables expand/collapse and option selection in the demo shell, same as the Selector Accordion page.</td></tr>
           <tr><td>Criterion label icon</td><td>Do not add <code>.label-icon</code> on filter criteria by default (matches Figma). Use it only when the product implements an active info control for that field.</td></tr>
-          <tr><td><code>.pattern-filter__cta-row</code></td><td>Mobile footer buttons (flex row, wrap).</td></tr>
-          <tr><td><code>.pattern-filter__cta</code></td><td>Desktop trailing column for <strong>Clear all</strong>.</td></tr>
+          <tr><td><code>.pattern-filter-cta-row</code></td><td>Mobile footer buttons (flex row, wrap).</td></tr>
+          <tr><td><code>.pattern-filter-cta</code></td><td>Desktop trailing column for <strong>Clear all</strong>.</td></tr>
           <tr><td><code>.toggle-selector-demo</code></td><td>Optional: enables existing doc-site JS for pill animation (same as Toggle Selector page).</td></tr>
+          <tr><td><code>.pattern-filter-body--need</code></td><td>Applied to <code>.pattern-filter-body</code> when "Search by Need" is active. Centers the Button Group on desktop, stacks vertically on mobile. Groups button group + Snackbar with <code>--jumper-xs-xxs</code> gap.</td></tr>
+          <tr><td><code>[data-filter-demo]</code></td><td>Working Example wiring: enables toggle switching (Details/Need), need button selection, Snackbar display, and Clear all logic via <code>app.js</code>.</td></tr>
+          <tr><td><code>[data-filter-mode]</code></td><td>On toggle buttons inside <code>[data-filter-demo]</code>. Values: <code>details</code> or <code>need</code>. Toggles visibility of the corresponding <code>[data-filter-body]</code>.</td></tr>
+          <tr><td><code>[data-need]</code></td><td>On <code>.btn-group-item</code> buttons. Values: <code>waiting</code>, <code>orphan</code>, <code>risk</code>, <code>hunger</code>. Click selects/deselects and shows the corresponding Snackbar description.</td></tr>
         </tbody>
       </table>
       <h3>For Designers</h3>
@@ -6382,14 +6633,105 @@
 
       <!-- ---- USAGE EXAMPLES ---- -->
       <h2>Usage Examples</h2>
-      <h3>Mobile panel markup</h3>
+
+      <h3>Desktop markup</h3>
+      <p>At viewport widths of <code>1104px</code> and above, the filter uses <code>.pattern-filter-desktop</code>. The toggle selector sits at the top, followed by a horizontal row of accordion fields and a "Clear all" button. When "Search by Need" is active, the body switches to a centered button group with a Snackbar.</p>
       <div class="code-block">
         <button class="copy-btn" aria-label="Copy code">Copy</button>
-<pre><code>&lt;div class="pattern-filter pattern-filter-mobile pattern-filter-mobile-expanded"
+<pre><code>&lt;div class="pattern-filter pattern-filter-desktop"
      role="region" aria-label="Filters"&gt;
-  &lt;div class="pattern-filter__header"&gt;
-    &lt;div class="toggle-selector" style="width:260px" role="radiogroup"
-         aria-label="Search mode"&gt;
+
+  &lt;div class="toggle-selector toggle-selector-desktop" style="width:310px"
+       role="radiogroup" aria-label="Search mode"&gt;
+    &lt;span class="toggle-selector-pill"&gt;&lt;/span&gt;
+    &lt;button type="button" class="toggle-selector-option is-active"
+            role="radio" aria-checked="true"&gt;Search by Details&lt;/button&gt;
+    &lt;button type="button" class="toggle-selector-option"
+            role="radio" aria-checked="false"&gt;Search by Need&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Search by Details body --&gt;
+  &lt;div class="pattern-filter-body"&gt;
+    &lt;div class="pattern-filter-field"&gt;
+      &lt;div class="sel-accordion-group"&gt;
+        &lt;div class="sel-accordion-label" id="loc-lbl"&gt;Location&lt;/div&gt;
+        &lt;div class="sel-accordion-stack"&gt;
+          &lt;button type="button" class="sel-accordion-category"
+                  aria-expanded="false" aria-controls="loc-opts"
+                  aria-labelledby="loc-lbl"&gt;
+            &lt;span&gt;No preference&lt;/span&gt;
+            &lt;i class="sel-accordion-icon fa-solid fa-chevron-down"
+               aria-hidden="true"&gt;&lt;/i&gt;
+          &lt;/button&gt;
+          &lt;div class="sel-accordion-dropdown is-collapsed" id="loc-opts"
+               role="group" aria-label="Location options"&gt;
+            &lt;button type="button" class="sel-accordion-option is-selected"
+                    aria-selected="true"&gt;No preference&lt;/button&gt;
+            &lt;button type="button" class="sel-accordion-option"&gt;Kenya&lt;/button&gt;
+            &lt;button type="button" class="sel-accordion-option"&gt;Nigeria&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- repeat .pattern-filter-field for Gender, Age, Birth Month, Birth Day --&gt;
+    &lt;div class="pattern-filter-cta"&gt;
+      &lt;button type="button" class="btn btn-primary btn-m is-disabled"
+              disabled aria-disabled="true"&gt;
+        &lt;span class="btn-label"&gt;Clear all&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Search by Need body (hidden by default) --&gt;
+  &lt;div class="pattern-filter-body pattern-filter-body--need"
+       style="display:none"&gt;
+    &lt;div class="btn-group" role="group" aria-label="Search by Need"&gt;
+      &lt;button type="button" class="btn-group-item selected"
+              data-need="waiting"&gt;
+        &lt;i class="btn-group-icon fa-solid fa-calendar"
+           aria-hidden="true"&gt;&lt;/i&gt;
+        Waiting over 1 year
+      &lt;/button&gt;
+      &lt;button type="button" class="btn-group-item" data-need="orphan"&gt;
+        &lt;i class="btn-group-icon fa-solid fa-child"
+           aria-hidden="true"&gt;&lt;/i&gt;
+        Orphaned child
+      &lt;/button&gt;
+      &lt;button type="button" class="btn-group-item" data-need="risk"&gt;
+        &lt;i class="btn-group-icon fa-solid fa-circle-exclamation"
+           aria-hidden="true"&gt;&lt;/i&gt;
+        Higher-risk area
+      &lt;/button&gt;
+      &lt;button type="button" class="btn-group-item" data-need="hunger"&gt;
+        &lt;i class="btn-group-icon fa-solid fa-bowl-rice"
+           aria-hidden="true"&gt;&lt;/i&gt;
+        Hunger crisis area
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="snackbar"&gt;
+      &lt;div class="snackbar-content"&gt;
+        &lt;div class="snackbar-icon-text"&gt;
+          &lt;div class="snackbar-text"&gt;
+            &lt;p class="snackbar-body"&gt;Children who have been waiting
+               for a sponsor for 12 months or more.&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Mobile markup</h3>
+      <p>At viewport widths of <code>1103px</code> and below, the filter uses <code>.pattern-filter-mobile</code>. A header row holds the toggle selector (260px) and a collapse/expand icon button. The body stacks fields vertically and hides when collapsed.</p>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;div class="pattern-filter pattern-filter-mobile pattern-filter-expanded"
+     role="region" aria-label="Filters"&gt;
+
+  &lt;div class="pattern-filter-header"&gt;
+    &lt;div class="toggle-selector" style="width:260px"
+         role="radiogroup" aria-label="Search mode"&gt;
       &lt;span class="toggle-selector-pill"&gt;&lt;/span&gt;
       &lt;button type="button" class="toggle-selector-option is-active"
               role="radio" aria-checked="true"&gt;Search by Details&lt;/button&gt;
@@ -6401,30 +6743,171 @@
       &lt;i class="btn-icon fa-solid fa-xmark" aria-hidden="true"&gt;&lt;/i&gt;
     &lt;/button&gt;
   &lt;/div&gt;
-  &lt;div class="pattern-filter__body"&gt;
-    &lt;div class="pattern-filter__field"&gt;
+
+  &lt;!-- Search by Details body --&gt;
+  &lt;div class="pattern-filter-body"&gt;
+    &lt;div class="pattern-filter-field"&gt;
       &lt;div class="sel-accordion-group"&gt;
-        &lt;div class="sel-accordion-label" id="city-lbl"&gt;Location&lt;/div&gt;
+        &lt;div class="sel-accordion-label" id="m-loc-lbl"&gt;Location&lt;/div&gt;
         &lt;div class="sel-accordion-stack"&gt;
           &lt;button type="button" class="sel-accordion-category"
-                  aria-expanded="false" aria-controls="city-opts" aria-labelledby="city-lbl"&gt;
+                  aria-expanded="false" aria-controls="m-loc-opts"
+                  aria-labelledby="m-loc-lbl"&gt;
             &lt;span&gt;No preference&lt;/span&gt;
-            &lt;i class="sel-accordion-icon fa-solid fa-chevron-down" aria-hidden="true"&gt;&lt;/i&gt;
+            &lt;i class="sel-accordion-icon fa-solid fa-chevron-down"
+               aria-hidden="true"&gt;&lt;/i&gt;
           &lt;/button&gt;
-          &lt;div class="sel-accordion-dropdown is-collapsed" id="city-opts"
+          &lt;div class="sel-accordion-dropdown is-collapsed" id="m-loc-opts"
                role="group" aria-label="Location options"&gt;
-            &lt;button type="button" class="sel-accordion-option is-selected" aria-selected="true"&gt;No preference&lt;/button&gt;
-            &lt;button type="button" class="sel-accordion-option"&gt;Option A&lt;/button&gt;
+            &lt;button type="button" class="sel-accordion-option is-selected"
+                    aria-selected="true"&gt;No preference&lt;/button&gt;
+            &lt;button type="button" class="sel-accordion-option"&gt;Kenya&lt;/button&gt;
+            &lt;button type="button" class="sel-accordion-option"&gt;Nigeria&lt;/button&gt;
           &lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
-    &lt;!-- repeat fields --&gt;
+    &lt;!-- repeat .pattern-filter-field for Gender, Age, Birth Month, Birth Day --&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Search by Need body (hidden by default) --&gt;
+  &lt;div class="pattern-filter-body pattern-filter-body--need"
+       style="display:none"&gt;
+    &lt;div class="btn-group" role="group" aria-label="Search by Need"&gt;
+      &lt;button type="button" class="btn-group-item selected"
+              data-need="waiting"&gt;
+        &lt;i class="btn-group-icon fa-solid fa-calendar"
+           aria-hidden="true"&gt;&lt;/i&gt;
+        Waiting over 1 year
+      &lt;/button&gt;
+      &lt;button type="button" class="btn-group-item" data-need="orphan"&gt;
+        &lt;i class="btn-group-icon fa-solid fa-child"
+           aria-hidden="true"&gt;&lt;/i&gt;
+        Orphaned child
+      &lt;/button&gt;
+      &lt;button type="button" class="btn-group-item" data-need="risk"&gt;
+        &lt;i class="btn-group-icon fa-solid fa-circle-exclamation"
+           aria-hidden="true"&gt;&lt;/i&gt;
+        Higher-risk area
+      &lt;/button&gt;
+      &lt;button type="button" class="btn-group-item" data-need="hunger"&gt;
+        &lt;i class="btn-group-icon fa-solid fa-bowl-rice"
+           aria-hidden="true"&gt;&lt;/i&gt;
+        Hunger crisis area
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="snackbar"&gt;
+      &lt;div class="snackbar-content"&gt;
+        &lt;div class="snackbar-icon-text"&gt;
+          &lt;div class="snackbar-text"&gt;
+            &lt;p class="snackbar-body"&gt;Children who have been waiting
+               for a sponsor for 12 months or more.&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
       </div>
+
+      <h3>Responsive markup (recommended)</h3>
+      <p>Use <code>.pattern-filter-responsive</code> instead of viewport-specific classes. A single markup auto-switches between desktop and mobile layouts at the <code>1103px</code> breakpoint via CSS media queries.</p>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>&lt;div class="pattern-filter pattern-filter-responsive pattern-filter-expanded"
+     role="region" aria-label="Filters" data-filter-demo&gt;
+
+  &lt;!-- Mobile header (hidden at &gt;= 1104px) --&gt;
+  &lt;div class="pattern-filter-header"&gt;
+    &lt;div class="toggle-selector" role="radiogroup"
+         aria-label="Search mode"&gt;
+      &lt;span class="toggle-selector-pill"&gt;&lt;/span&gt;
+      &lt;button type="button" class="toggle-selector-option is-active"
+              role="radio" aria-checked="true"
+              data-filter-mode="details"&gt;Search by Details&lt;/button&gt;
+      &lt;button type="button" class="toggle-selector-option"
+              role="radio" aria-checked="false"
+              data-filter-mode="need"&gt;Search by Need&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;button type="button" class="btn btn-primary btn-icon-only btn-s"
+            aria-label="Close filters" data-filter-collapse&gt;
+      &lt;i class="btn-icon fa-solid fa-xmark" aria-hidden="true"&gt;&lt;/i&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Desktop toggle (hidden at &lt;= 1103px) --&gt;
+  &lt;div class="pattern-filter-toggle-desktop"&gt;
+    &lt;div class="toggle-selector" role="radiogroup"
+         aria-label="Search mode"&gt;
+      &lt;span class="toggle-selector-pill"&gt;&lt;/span&gt;
+      &lt;button type="button" class="toggle-selector-option is-active"
+              role="radio" aria-checked="true"
+              data-filter-mode="details"&gt;Search by Details&lt;/button&gt;
+      &lt;button type="button" class="toggle-selector-option"
+              role="radio" aria-checked="false"
+              data-filter-mode="need"&gt;Search by Need&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Details body --&gt;
+  &lt;div class="pattern-filter-body" data-filter-body="details"&gt;
+    &lt;div class="pattern-filter-field"&gt;
+      &lt;div class="sel-accordion-group"&gt;&lt;!-- accordion --&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- repeat .pattern-filter-field --&gt;
+    &lt;div class="pattern-filter-cta"&gt;
+      &lt;button type="button" class="btn btn-primary btn-m is-disabled"
+              disabled aria-disabled="true"&gt;
+        &lt;span class="btn-label"&gt;Clear all&lt;/span&gt;&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Need body --&gt;
+  &lt;div class="pattern-filter-body pattern-filter-body--need"
+       data-filter-body="need" style="display:none"&gt;
+    &lt;div class="btn-group" role="group" aria-label="Search by Need"&gt;
+      &lt;button type="button" class="btn-group-item"
+              data-need="waiting"&gt;
+        &lt;i class="btn-group-icon fa-solid fa-calendar"
+           aria-hidden="true"&gt;&lt;/i&gt;
+        Waiting over 1 year
+      &lt;/button&gt;
+      &lt;!-- repeat for orphan, risk, hunger --&gt;
+    &lt;/div&gt;
+    &lt;div class="snackbar" data-need-snackbar
+         style="display:none"&gt;&lt;!-- snackbar content --&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Key CSS breakpoints</h3>
+      <div class="code-block">
+        <button class="copy-btn" aria-label="Copy code">Copy</button>
+<pre><code>/* Mobile / Tablet */
+@media (max-width: 1103px) {
+  .pattern-filter-responsive .pattern-filter-toggle-desktop { display: none; }
+  .pattern-filter-responsive .pattern-filter-header { display: flex; }
+  .pattern-filter-responsive .pattern-filter-body { display: none; }
+  .pattern-filter-responsive.pattern-filter-expanded .pattern-filter-body {
+    display: flex;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1104px) {
+  .pattern-filter-responsive .pattern-filter-header { display: none; }
+  .pattern-filter-responsive .pattern-filter-toggle-desktop { display: flex; }
+  .pattern-filter-responsive .pattern-filter-body {
+    display: flex; flex-direction: row;
+  }
+  .pattern-filter-responsive .pattern-filter-body.pattern-filter-body--need {
+    flex-direction: column; align-items: center;
+  }
+}</code></pre>
+      </div>
+
       <h3>Initialize demos (optional, docs site)</h3>
-      <p>Add <code>toggle-selector-demo</code> on the toggle for pill animation (see <a href="#comp-toggle-selector" data-page="comp-toggle-selector">Toggle Selector</a>). Add <code>sel-accordion-demo</code> on each <code>.sel-accordion-group</code> for expand/collapse and option selection (see <a href="#comp-sel-accordion" data-page="comp-sel-accordion">Selector Accordion</a>).</p>
+      <p>Add <code>toggle-selector-demo</code> on the toggle for pill animation (see <a href="#comp-toggle-selector" data-page="comp-toggle-selector">Toggle Selector</a>). Add <code>sel-accordion-demo</code> on each <code>.sel-accordion-group</code> for expand/collapse and option selection (see <a href="#comp-sel-accordion" data-page="comp-sel-accordion">Selector Accordion</a>). Add <code>data-filter-demo</code> on the root <code>.pattern-filter</code> to wire up mode toggling and need selection.</p>
       </div>
     </section>
 

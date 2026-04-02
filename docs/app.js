@@ -235,6 +235,13 @@ document.addEventListener('DOMContentLoaded', () => {
         opt.classList.add('is-selected');
         opt.setAttribute('aria-selected', 'true');
         category.querySelector('span').textContent = opt.textContent;
+
+        if (!animating && !isCollapsed()) {
+          animating = true;
+          category.setAttribute('aria-expanded', 'false');
+          category.classList.remove('is-expanded');
+          collapseDropdown();
+        }
       });
     });
 
@@ -248,6 +255,134 @@ document.addEventListener('DOMContentLoaded', () => {
         category.focus();
       }
     });
+  });
+
+  // --- Filter Pattern: toggle Details/Need + Need selection ---
+  const needDescriptions = {
+    waiting: 'Children who have been waiting for a sponsor for 12 months or more.',
+    orphan: 'Children who have lost one or both parents.',
+    risk: 'Children living in regions with elevated security or health risks.',
+    hunger: 'Children living in areas affected by food insecurity or famine.'
+  };
+
+  document.querySelectorAll('[data-filter-demo]').forEach(demo => {
+    const detailsBody = demo.querySelector('[data-filter-body="details"]');
+    const needBody = demo.querySelector('[data-filter-body="need"]');
+    const snackbar = demo.querySelector('[data-need-snackbar]');
+    const descEl = demo.querySelector('[data-need-description]');
+    const needItems = demo.querySelectorAll('.btn-group-item[data-need]');
+    const allToggleBtns = demo.querySelectorAll('[data-filter-mode]');
+    const collapseBtn = demo.querySelector('[data-filter-collapse]');
+
+    function selectNeedItem(item) {
+      needItems.forEach(i => i.classList.remove('selected'));
+      item.classList.add('selected');
+      if (snackbar && descEl) {
+        descEl.textContent = needDescriptions[item.dataset.need] || '';
+        snackbar.style.display = '';
+      }
+    }
+
+    function setMode(mode) {
+      if (mode === 'details') {
+        if (detailsBody) detailsBody.style.display = '';
+        if (needBody) needBody.style.display = 'none';
+      } else {
+        if (detailsBody) detailsBody.style.display = 'none';
+        if (needBody) needBody.style.display = '';
+        const waitingBtn = demo.querySelector('.btn-group-item[data-need="waiting"]');
+        if (waitingBtn) selectNeedItem(waitingBtn);
+      }
+      allToggleBtns.forEach(b => {
+        const active = b.dataset.filterMode === mode;
+        b.classList.toggle('is-active', active);
+        b.setAttribute('aria-checked', String(active));
+        const selector = b.closest('.toggle-selector');
+        if (selector) selector.classList.toggle('right-active', mode === 'need');
+      });
+    }
+
+    allToggleBtns.forEach(btn => {
+      btn.addEventListener('click', () => setMode(btn.dataset.filterMode));
+    });
+
+    if (collapseBtn) {
+      collapseBtn.addEventListener('click', () => {
+        demo.classList.toggle('pattern-filter-expanded');
+        const isExpanded = demo.classList.contains('pattern-filter-expanded');
+        const icon = collapseBtn.querySelector('.btn-icon');
+        if (isExpanded) {
+          collapseBtn.classList.remove('btn-outline');
+          collapseBtn.classList.add('btn-primary');
+          if (icon) { icon.classList.remove('fa-filter'); icon.classList.add('fa-xmark'); }
+          collapseBtn.setAttribute('aria-label', 'Close filters');
+        } else {
+          collapseBtn.classList.remove('btn-primary');
+          collapseBtn.classList.add('btn-outline');
+          if (icon) { icon.classList.remove('fa-xmark'); icon.classList.add('fa-filter'); }
+          collapseBtn.setAttribute('aria-label', 'Open filters');
+        }
+      });
+    }
+
+    needItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const wasSelected = item.classList.contains('selected');
+        if (!wasSelected) {
+          selectNeedItem(item);
+        } else {
+          needItems.forEach(i => i.classList.remove('selected'));
+          if (snackbar) snackbar.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // --- Filter Pattern: Clear all + accordion selection wiring ---
+  document.querySelectorAll('.pattern-filter').forEach(filter => {
+    const clearBtn = filter.querySelector('.pattern-filter-cta .btn, .pattern-filter-cta-row .btn');
+    if (!clearBtn || !clearBtn.textContent.trim().match(/^Clear all$/i)) return;
+
+    function checkDirty() {
+      let dirty = false;
+      filter.querySelectorAll('.sel-accordion-category span').forEach(span => {
+        if (span.textContent.trim() !== 'No preference') dirty = true;
+      });
+      if (dirty) {
+        clearBtn.classList.remove('is-disabled');
+        clearBtn.removeAttribute('disabled');
+        clearBtn.removeAttribute('aria-disabled');
+      } else {
+        clearBtn.classList.add('is-disabled');
+        clearBtn.setAttribute('disabled', '');
+        clearBtn.setAttribute('aria-disabled', 'true');
+      }
+    }
+
+    filter.querySelectorAll('.sel-accordion-option').forEach(opt => {
+      opt.addEventListener('click', () => {
+        requestAnimationFrame(checkDirty);
+      });
+    });
+
+    clearBtn.addEventListener('click', () => {
+      filter.querySelectorAll('.sel-accordion-group').forEach(group => {
+        const cat = group.querySelector('.sel-accordion-category span');
+        if (cat) cat.textContent = 'No preference';
+        group.querySelectorAll('.sel-accordion-option').forEach(opt => {
+          opt.classList.remove('is-selected');
+          opt.removeAttribute('aria-selected');
+        });
+        const first = group.querySelector('.sel-accordion-option');
+        if (first) {
+          first.classList.add('is-selected');
+          first.setAttribute('aria-selected', 'true');
+        }
+      });
+      checkDirty();
+    });
+
+    checkDirty();
   });
 
   const hash = window.location.hash.slice(1);
