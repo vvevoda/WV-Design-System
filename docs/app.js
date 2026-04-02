@@ -260,9 +260,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Filter Pattern: toggle Details/Need + Need selection ---
   const needDescriptions = {
     waiting: 'Children who have been waiting for a sponsor for 12 months or more.',
-    orphan: 'Children who have lost one or both parents.',
-    risk: 'Children living in regions with elevated security or health risks.',
-    hunger: 'Children living in areas affected by food insecurity or famine.'
+    orphan: 'The U.N. defines an orphan as a child who has lost one or both parents.',
+    risk: 'Children living in countries classified as some of the world&rsquo;s most fragile places, where children and communities are especially vulnerable.',
+    hunger: 'Children living in countries affected by the hunger crisis in East Africa including Niger, Chad, Uganda, Ethiopia, and Kenya.'
   };
 
   document.querySelectorAll('[data-filter-demo]').forEach(demo => {
@@ -306,24 +306,41 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.addEventListener('click', () => setMode(btn.dataset.filterMode));
     });
 
+    function collapseFilter() {
+      demo.classList.remove('pattern-filter-expanded');
+      if (collapseBtn) {
+        collapseBtn.classList.remove('btn-primary');
+        collapseBtn.classList.add('btn-outline');
+        const icon = collapseBtn.querySelector('.btn-icon');
+        if (icon) { icon.classList.remove('fa-xmark'); icon.classList.add('fa-filter'); }
+        collapseBtn.setAttribute('aria-label', 'Open filters');
+      }
+    }
+
+    function expandFilter() {
+      demo.classList.add('pattern-filter-expanded');
+      if (collapseBtn) {
+        collapseBtn.classList.remove('btn-outline');
+        collapseBtn.classList.add('btn-primary');
+        const icon = collapseBtn.querySelector('.btn-icon');
+        if (icon) { icon.classList.remove('fa-filter'); icon.classList.add('fa-xmark'); }
+        collapseBtn.setAttribute('aria-label', 'Close filters');
+      }
+    }
+
     if (collapseBtn) {
       collapseBtn.addEventListener('click', () => {
-        demo.classList.toggle('pattern-filter-expanded');
-        const isExpanded = demo.classList.contains('pattern-filter-expanded');
-        const icon = collapseBtn.querySelector('.btn-icon');
-        if (isExpanded) {
-          collapseBtn.classList.remove('btn-outline');
-          collapseBtn.classList.add('btn-primary');
-          if (icon) { icon.classList.remove('fa-filter'); icon.classList.add('fa-xmark'); }
-          collapseBtn.setAttribute('aria-label', 'Close filters');
+        if (demo.classList.contains('pattern-filter-expanded')) {
+          collapseFilter();
         } else {
-          collapseBtn.classList.remove('btn-primary');
-          collapseBtn.classList.add('btn-outline');
-          if (icon) { icon.classList.remove('fa-xmark'); icon.classList.add('fa-filter'); }
-          collapseBtn.setAttribute('aria-label', 'Open filters');
+          expandFilter();
         }
       });
     }
+
+    demo.querySelectorAll('[data-filter-close]').forEach(btn => {
+      btn.addEventListener('click', () => collapseFilter());
+    });
 
     needItems.forEach(item => {
       item.addEventListener('click', () => {

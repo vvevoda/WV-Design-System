@@ -2047,6 +2047,16 @@ pre code {
   .pattern-filter-responsive .pattern-filter-body--need .snackbar {
     width: 100%;
   }
+
+  /* Mobile: hide desktop CTA column, show mobile CTA row */
+  .pattern-filter-responsive .pattern-filter-cta {
+    display: none;
+  }
+  .pattern-filter-responsive .pattern-filter-cta-row {
+    display: flex;
+    gap: var(--padding-m);
+    flex-wrap: wrap;
+  }
 }
 
 /* ---- Desktop (min-width: 1104px) ---- */
@@ -2100,11 +2110,16 @@ pre code {
     align-items: flex-start;
   }
 
+  /* Desktop: hide mobile CTA rows */
+  .pattern-filter-responsive .pattern-filter-cta-row {
+    display: none;
+  }
+
   /* Need body: column, centered */
   .pattern-filter-responsive .pattern-filter-body.pattern-filter-body--need {
     flex-direction: column;
     align-items: center;
-    gap: var(--jumper-xs-xxs);
+    gap: var(--jumper-xxs-xxxs);
   }
   .pattern-filter-responsive .pattern-filter-body--need .snackbar {
     width: var(--space-9100);
@@ -3199,13 +3214,15 @@ pre code {
 .snackbar.snackbar-error .snackbar-heading { color: var(--text-status-error); }
 .snackbar.snackbar-information .snackbar-heading { color: var(--text-status-information); }
 
-.snackbar-body {
+p.snackbar-body {
   font-family: var(--font-primary);
   font-weight: 400;
   font-size: var(--body-m-size);
   line-height: var(--body-m-line);
   letter-spacing: 0.16px;
   color: var(--text-body);
+  margin: 0;
+  max-width: none;
 }
 
 .snackbar-close {
