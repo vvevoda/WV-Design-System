@@ -134,7 +134,7 @@
   --card-xl: var(--space-9100);
   --card-l: 672px;
   --card-m: 512px;
-  --card-s: 336px;
+  --card-s: var(--space-4200);
   --card-xs: 128px;
 
   /* --- Typography (Desktop) --- */
@@ -209,6 +209,35 @@
   --btn-border-disabled: #e9e9e9;
   --btn-border-width: 2px;
   --btn-radius: 48px;
+
+  /* --- Shadow (Brand scale) --- */
+  --shadow-0: rgba(255, 255, 255, 0);
+  --shadow-200: rgba(208, 208, 208, 0.1);
+  --shadow-300: rgba(179, 179, 179, 0.1);
+  --shadow-400: rgba(151, 151, 151, 0.1);
+  --shadow-1100: rgba(24, 24, 24, 0.1);
+  --shadow-1100-50: rgba(24, 24, 24, 0.5);
+
+  /* --- Shadow Mapped Tokens --- */
+  --shadow-default-container: var(--shadow-300);
+  --shadow-button: var(--shadow-0);
+  --shadow-l: var(--shadow-300);
+  --shadow-offset-y: 8px;
+  --shadow-blur-m: 16px;
+
+  /* --- Shadow Shorthand --- */
+  --shadow-default: 0px var(--shadow-offset-y) var(--shadow-blur-m) 0px var(--shadow-default-container);
+  --shadow-btn: 0px var(--shadow-offset-y) var(--shadow-blur-m) 0px var(--shadow-button);
+  --shadow-large: 0px var(--shadow-offset-y) var(--shadow-blur-m) 0px var(--shadow-l);
+
+  /* --- Breakpoints --- */
+  --bp-mobile-min: 320px;
+  --bp-mobile-max: 743px;
+  --bp-tablet-min: 744px;
+  --bp-tablet-max: 1103px;
+  --bp-desktop-min: 1104px;
+  --bp-desktop-max: 1919px;
+  --bp-mega-min: 1920px;
 
   /* --- Sidebar width --- */
   --sidebar-width: 280px;
@@ -294,6 +323,11 @@
   --btn-icon-on-hover: #fff1eb;
   --btn-icon-on-pressed: #ffc7ae;
   --btn-border-disabled: #464646;
+
+  /* --- Shadow Mapped Tokens (dark) --- */
+  --shadow-default-container: var(--shadow-1100);
+  --shadow-button: var(--shadow-1100-50);
+  --shadow-l: var(--shadow-1100-50);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -372,6 +406,11 @@
     --btn-icon-on-hover: #fff1eb;
     --btn-icon-on-pressed: #ffc7ae;
     --btn-border-disabled: #464646;
+
+    /* --- Shadow Mapped Tokens (dark) --- */
+    --shadow-default-container: var(--shadow-1100);
+    --shadow-button: var(--shadow-1100-50);
+    --shadow-l: var(--shadow-1100-50);
   }
 }
 
@@ -1751,7 +1790,7 @@ pre code {
   gap: var(--jumper-sm-xs);
 }
 
-.pattern-filter__header {
+.pattern-filter-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1760,23 +1799,23 @@ pre code {
 }
 
 /* Figma size S: open filter + close are the same 34×34 circular control. */
-.pattern-filter.pattern-filter-mobile .pattern-filter__header .btn.btn-icon-only.btn-s {
+.pattern-filter.pattern-filter-mobile .pattern-filter-header .btn.btn-icon-only.btn-s {
   box-sizing: border-box;
   width: 34px;
   height: 34px;
   min-width: 34px;
   min-height: 34px;
   padding: 0;
-  border-radius: 50%;
+  border-radius: var(--radius-xxl);
 }
 
-.pattern-filter.pattern-filter-mobile .pattern-filter__header .btn.btn-primary.btn-icon-only.btn-s:focus-visible::after,
-.pattern-filter.pattern-filter-mobile .pattern-filter__header .btn.btn-outline.btn-icon-only.btn-s:focus-visible::after,
-.pattern-filter.pattern-filter-mobile .pattern-filter__header .btn.btn-icon-only.btn-s.show-focus::after {
-  border-radius: 50%;
+.pattern-filter.pattern-filter-mobile .pattern-filter-header .btn.btn-primary.btn-icon-only.btn-s:focus-visible::after,
+.pattern-filter.pattern-filter-mobile .pattern-filter-header .btn.btn-outline.btn-icon-only.btn-s:focus-visible::after,
+.pattern-filter.pattern-filter-mobile .pattern-filter-header .btn.btn-icon-only.btn-s.show-focus::after {
+  border-radius: var(--radius-xxl);
 }
 
-.pattern-filter__body {
+.pattern-filter-body {
   display: flex;
   flex-direction: column;
   gap: var(--padding-m);
@@ -1784,7 +1823,7 @@ pre code {
 }
 
 /* Figma size M: criteria row is 1057px inside the 1105px frame (horizontal padding 2× --jumper-xs-xxs). */
-.pattern-filter.pattern-filter-desktop .pattern-filter__body {
+.pattern-filter.pattern-filter-desktop .pattern-filter-body {
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: flex-start;
@@ -1796,7 +1835,7 @@ pre code {
   box-sizing: border-box;
 }
 
-.pattern-filter__field {
+.pattern-filter-field {
   display: flex;
   flex-direction: column;
   gap: var(--padding-xxxs);
@@ -1805,7 +1844,7 @@ pre code {
 }
 
 /* Desktop: criterion columns share extra row space; 128px is the accordion minimum, not a fixed column width. */
-.pattern-filter.pattern-filter-desktop .pattern-filter__field {
+.pattern-filter.pattern-filter-desktop .pattern-filter-field {
   flex: 1 1 0;
   min-width: 128px;
   width: auto;
@@ -1813,23 +1852,23 @@ pre code {
   gap: var(--padding-s);
 }
 
-.pattern-filter__field > .sel-accordion-group {
+.pattern-filter-field > .sel-accordion-group {
   width: 100%;
 }
 
-.pattern-filter.pattern-filter-desktop .pattern-filter__field .sel-accordion-stack {
+.pattern-filter.pattern-filter-desktop .pattern-filter-field .sel-accordion-stack {
   width: 100%;
   min-width: 0;
 }
 
-.pattern-filter.pattern-filter-desktop .pattern-filter__field .sel-accordion-category {
+.pattern-filter.pattern-filter-desktop .pattern-filter-field .sel-accordion-category {
   box-sizing: border-box;
   width: 100%;
   min-width: 128px;
 }
 
 /* Figma size S: label row to selector uses 2px gap (--padding-xxxs); desktop keeps Selector Accordion token gap on the group. */
-.pattern-filter.pattern-filter-mobile .pattern-filter__field .sel-accordion-group {
+.pattern-filter.pattern-filter-mobile .pattern-filter-field .sel-accordion-group {
   gap: var(--padding-xxxs);
 }
 
@@ -1840,7 +1879,7 @@ pre code {
   text-overflow: ellipsis;
 }
 
-.pattern-filter__cta-row {
+.pattern-filter-cta-row {
   display: flex;
   flex-wrap: wrap;
   gap: var(--padding-m);
@@ -1848,7 +1887,7 @@ pre code {
 }
 
 /* CTA: natural button width; horizontal growth goes to criterion columns (each min 128px). */
-.pattern-filter.pattern-filter-desktop .pattern-filter__cta {
+.pattern-filter.pattern-filter-desktop .pattern-filter-cta {
   flex: 0 0 auto;
   min-width: 0;
   align-self: stretch;
@@ -1858,118 +1897,218 @@ pre code {
   align-items: flex-start;
 }
 
-.pattern-filter.pattern-filter-desktop .pattern-filter__cta .btn {
+.pattern-filter.pattern-filter-desktop .pattern-filter-cta .btn {
   box-sizing: border-box;
   width: auto;
   max-width: 100%;
 }
 
-/* --- Search by Need options (not Selector Accordions; Figma “Search by Need options”) --- */
-.pattern-filter__body--need {
+/* --- Search by Need: Button Group inside Filter pattern --- */
+.pattern-filter-body--need {
   display: flex;
   flex-direction: column;
-  gap: var(--padding-m);
+  gap: var(--jumper-xs-xxs);
   width: 100%;
-}
-
-.pattern-filter__body--sole-need {
-  display: block;
-  width: 100%;
-  max-width: min(100%, calc(1105px - 2 * var(--jumper-xs-xxs)));
-  margin-inline: auto;
-  box-sizing: border-box;
-}
-
-.pattern-filter-need-options {
-  display: flex;
-  width: 100%;
-  background: var(--surface-action-on);
-  border: 1px solid var(--border-default);
-  border-radius: var(--radius-s);
-  overflow: clip;
-}
-
-.pattern-filter.pattern-filter-mobile .pattern-filter-need-options {
-  flex-direction: column;
-}
-
-.pattern-filter.pattern-filter-desktop .pattern-filter-need-options {
-  flex-direction: row;
-  align-items: stretch;
-}
-
-.pattern-filter-need-option {
-  display: flex;
   align-items: center;
-  gap: var(--padding-s);
-  margin: 0;
-  padding: var(--padding-s) var(--padding-m);
+}
+
+/* Desktop Need: override the row direction set by .pattern-filter-body on desktop */
+.pattern-filter.pattern-filter-desktop .pattern-filter-body.pattern-filter-body--need {
+  flex-direction: column;
+  align-items: center;
+  gap: var(--jumper-xs-xxs);
+}
+
+/* Mobile: stacked button group, full width */
+.pattern-filter.pattern-filter-mobile .pattern-filter-body--need .btn-group {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   width: 100%;
-  box-sizing: border-box;
-  border: none;
-  border-bottom: 1px solid var(--border-default);
-  background: transparent;
-  font-family: var(--font-primary);
-  font-size: var(--body-m-size);
-  line-height: var(--body-m-line);
-  letter-spacing: 0.01em;
-  color: var(--text-body);
-  text-align: left;
-  cursor: pointer;
-  transition: background 0.15s ease, color 0.15s ease;
 }
 
-.pattern-filter.pattern-filter-desktop .pattern-filter-need-option {
-  flex: 1 1 0;
-  min-width: 0;
-  width: auto;
-  border-bottom: none;
-  border-right: 2px solid var(--border-default);
-  justify-content: center;
-  text-align: left;
-}
-
-.pattern-filter.pattern-filter-desktop .pattern-filter-need-option:last-child {
+.pattern-filter.pattern-filter-mobile .pattern-filter-body--need .btn-group-item {
+  justify-content: flex-start;
   border-right: none;
+  border-bottom: 1px solid var(--border-default);
 }
 
-.pattern-filter.pattern-filter-mobile .pattern-filter-need-option:last-child {
+.pattern-filter.pattern-filter-mobile .pattern-filter-body--need .btn-group-item:last-child {
   border-bottom: none;
 }
 
-.pattern-filter-need-option__icon {
-  flex-shrink: 0;
-  width: 18px;
-  text-align: center;
-  font-size: var(--body-m-size);
-  line-height: var(--body-m-line);
+/* Desktop: intrinsic-width button group, not stretched */
+.pattern-filter.pattern-filter-desktop .pattern-filter-body--need .btn-group {
+  align-self: center;
+}
+
+/* Filter overrides icon color to action orange for all items */
+.pattern-filter .btn-group-item .btn-group-icon {
   color: var(--btn-icon-action);
 }
 
-.pattern-filter-need-option--neutral-icon .pattern-filter-need-option__icon {
-  color: var(--text-body);
+.pattern-filter .btn-group-item:is(:hover, .selected, .show-hover, .show-selected) .btn-group-icon,
+.pattern-filter .btn-group-item:is(:disabled, .is-disabled) .btn-group-icon {
+  color: inherit;
 }
 
-.pattern-filter-need-option__label {
-  white-space: nowrap;
+/* Snackbar inside need body: desktop = 728px, mobile = full width */
+.pattern-filter.pattern-filter-desktop .pattern-filter-body--need .snackbar {
+  width: var(--space-9100);
+}
+.pattern-filter.pattern-filter-mobile .pattern-filter-body--need .snackbar {
+  width: 100%;
 }
 
-.pattern-filter-need-option:hover {
-  background: var(--surface-action-hover);
-}
-
-.pattern-filter-need-option:focus-visible {
-  outline: 2px solid var(--surface-action);
-  outline-offset: -2px;
-  position: relative;
-  z-index: 1;
-}
-
-.pattern-filter__cta-row--need-only {
+/* Need CTA row (mobile only) */
+.pattern-filter-cta-row--need-only {
   display: flex;
   flex-wrap: wrap;
   gap: var(--padding-m);
   align-items: center;
+  width: 100%;
+}
+
+/* --- Responsive Filter: auto-switches at --bp-tablet-max / --bp-desktop-min --- */
+.pattern-filter-responsive {
+  box-sizing: border-box;
+  background: var(--surface-default-container);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-m);
+  width: 100%;
+}
+
+/* ---- Mobile / Tablet (max-width: 1103px) ---- */
+@media (max-width: 1103px) {
+  .pattern-filter-responsive {
+    max-width: var(--card-s);
+    padding: var(--padding-m);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .pattern-filter-responsive.pattern-filter-expanded {
+    gap: var(--jumper-sm-xs);
+  }
+
+  /* Hide desktop toggle, show mobile header */
+  .pattern-filter-responsive .pattern-filter-toggle-desktop {
+    display: none;
+  }
+  .pattern-filter-responsive .pattern-filter-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .pattern-filter-responsive .pattern-filter-header .toggle-selector {
+    width: 260px;
+    height: 40px;
+  }
+  .pattern-filter-responsive .pattern-filter-header .btn.btn-icon-only.btn-s {
+    box-sizing: border-box;
+    width: 34px; height: 34px;
+    min-width: 34px; min-height: 34px;
+    padding: 0;
+    border-radius: var(--radius-xxl);
+  }
+
+  /* Body hidden when collapsed; shown when .pattern-filter-expanded */
+  .pattern-filter-responsive .pattern-filter-body {
+    display: none;
+    flex-direction: column;
+    gap: var(--padding-m);
+    width: 100%;
+  }
+  .pattern-filter-responsive.pattern-filter-expanded .pattern-filter-body {
+    display: flex;
+  }
+
+  /* Need: stacked button group */
+  .pattern-filter-responsive .pattern-filter-body--need {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--jumper-xxs-xxxs);
+  }
+  .pattern-filter-responsive .pattern-filter-body--need .btn-group {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  .pattern-filter-responsive .pattern-filter-body--need .btn-group-item {
+    justify-content: flex-start;
+    border-right: none;
+    border-bottom: 1px solid var(--border-default);
+  }
+  .pattern-filter-responsive .pattern-filter-body--need .btn-group-item:last-child {
+    border-bottom: none;
+  }
+  .pattern-filter-responsive .pattern-filter-body--need .snackbar {
+    width: 100%;
+  }
+}
+
+/* ---- Desktop (min-width: 1104px) ---- */
+@media (min-width: 1104px) {
+  .pattern-filter-responsive {
+    max-width: 1105px;
+    margin-inline: auto;
+    padding: var(--jumper-xs-xxs);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--jumper-sm-xs);
+  }
+
+  /* Hide mobile header, show desktop toggle */
+  .pattern-filter-responsive .pattern-filter-header {
+    display: none;
+  }
+  .pattern-filter-responsive .pattern-filter-toggle-desktop {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .pattern-filter-responsive .pattern-filter-toggle-desktop .toggle-selector {
+    width: 310px;
+    height: 46px;
+  }
+
+  /* Body always visible on desktop */
+  .pattern-filter-responsive .pattern-filter-body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: var(--jumper-xs-xxs);
+    width: 100%;
+    max-width: min(100%, calc(1105px - 2 * var(--jumper-xs-xxs)));
+    margin-inline: auto;
+  }
+  .pattern-filter-responsive .pattern-filter-field {
+    flex: 1 1 0;
+    min-width: 128px;
+    width: auto;
+    gap: var(--padding-s);
+  }
+  .pattern-filter-responsive .pattern-filter-cta {
+    flex: 0 0 auto;
+    padding-top: var(--jumper-sm-xs);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Need body: column, centered */
+  .pattern-filter-responsive .pattern-filter-body.pattern-filter-body--need {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--jumper-xs-xxs);
+  }
+  .pattern-filter-responsive .pattern-filter-body--need .snackbar {
+    width: var(--space-9100);
+  }
 }
 
 /* ==========================================================================
@@ -2992,10 +3131,12 @@ pre code {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 336px;
+  width: 100%;
+  max-width: var(--card-xl);
   background: var(--surface-default-container);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-m);
+  box-shadow: var(--shadow-default);
   overflow: clip;
 }
 
