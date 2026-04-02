@@ -872,12 +872,16 @@ html, body {
   color: var(--text-headings);
   background: var(--surface-middle-container);
   border-bottom: 2px solid var(--border-accent);
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .doc-table td {
   padding: var(--padding-s) var(--padding-m);
   border-bottom: 1px solid var(--border-default);
   vertical-align: top;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .doc-table code {
@@ -1907,7 +1911,7 @@ pre code {
 .pattern-filter-body--need {
   display: flex;
   flex-direction: column;
-  gap: var(--jumper-xs-xxs);
+  gap: var(--jumper-xxs-xxxs);
   width: 100%;
   align-items: center;
 }
@@ -1916,7 +1920,7 @@ pre code {
 .pattern-filter.pattern-filter-desktop .pattern-filter-body.pattern-filter-body--need {
   flex-direction: column;
   align-items: center;
-  gap: var(--jumper-xs-xxs);
+  gap: var(--jumper-xxs-xxxs);
 }
 
 /* Mobile: stacked button group, full width */

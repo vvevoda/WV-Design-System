@@ -2793,7 +2793,7 @@
 
       <!-- ---- OVERVIEW ---- -->
       <h2>Overview</h2>
-      <p>The Input component is a composed form control made up of three sub-elements: a <strong>Label</strong> (with optional info icon and required indicator), a <strong>Field</strong> (with optional leading and trailing icons), and optional <strong>Hint Text</strong>. It supports four interaction states (default, hover, focus, disabled) and three validation states (error, success, information). The Input is also used within the <a href="#pattern-forms" data-page="pattern-forms">Forms</a> pattern. All field text uses Lato Regular at Body M (16px/24px). Hint text uses Body S (14px/18px). Icons use Font Awesome 6 Solid at 16px.</p>
+      <p>The Input component is a composed form control made up of three sub-elements: a <strong>Label</strong> (with optional info icon and required indicator), a <strong>Field</strong> (with optional leading and trailing icons), and optional <strong>Hint Text</strong>. It supports four interaction states (default, hover, focus, disabled) and three validation states (error, success, information). The Input is also used within the <a class="text-link text-link-m" href="#pattern-forms" data-page="pattern-forms"><span class="link-label">Forms</span></a> pattern. All field text uses Lato Regular at Body M (16px/24px). Hint text uses Body S (14px/18px). Icons use Font Awesome 6 Solid at 16px.</p>
 
       <!-- ---- VARIANTS ---- -->
       <h2>Variants</h2>
@@ -3492,7 +3492,7 @@
 
       <!-- ---- CONSTRUCTION ---- -->
       <h2>Construction</h2>
-      <p>The Selector Accordion is composed of a label row, a category header, and an options panel. The label sits above the header in a flex-column container with an 8px gap. Wrap the category button and the options panel in <code>.sel-accordion-stack</code> so the pair gets a definite width inside flex layouts (for example documentation state rows or the <a href="#pattern-filter" data-page="pattern-filter">Filter</a> pattern). The options panel stacks vertically below the header with no gap, creating a seamless bordered list.</p>
+      <p>The Selector Accordion is composed of a label row, a category header, and an options panel. The label sits above the header in a flex-column container with an 8px gap. Wrap the category button and the options panel in <code>.sel-accordion-stack</code> so the pair gets a definite width inside flex layouts (for example documentation state rows or the <a class="text-link text-link-m" href="#pattern-filter" data-page="pattern-filter"><span class="link-label">Filter</span></a> pattern). The options panel stacks vertically below the header with no gap, creating a seamless bordered list.</p>
 
       <h3>Scale and Spacing</h3>
       <table class="doc-table">
@@ -5232,7 +5232,7 @@
       </div>
 
       <h3>Small Link (S) - Default</h3>
-      <p>Lato Bold, 14px/20px, body-colored (<code>--text-body</code>). Label underlines on hover. <strong>Restricted usage:</strong> this variant is reserved for the <a href="#comp-breadcrumbs" data-page="comp-breadcrumbs">Breadcrumbs</a> and Navigation components only. Do not use it in general content or standalone contexts.</p>
+      <p>Lato Bold, 14px/20px, body-colored (<code>--text-body</code>). Label underlines on hover. <strong>Restricted usage:</strong> this variant is reserved for the <a class="text-link text-link-m" href="#comp-breadcrumbs" data-page="comp-breadcrumbs"><span class="link-label">Breadcrumbs</span></a> and Navigation components only. Do not use it in general content or standalone contexts.</p>
       <div class="state-row">
         <span class="state-label">Default</span>
         <a class="text-link text-link-s" href="javascript:void(0)"><i class="link-icon fa-solid fa-circle-info"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-up-right-from-square"></i></a>
@@ -5351,7 +5351,7 @@
         <tbody>
           <tr><td><code>.text-link</code></td><td>Base class</td><td>Applied to <code>&lt;a&gt;</code> or <code>&lt;button&gt;</code>. Uses <code>display: inline-flex</code> with 8px gap.</td></tr>
           <tr><td><code>.text-link-m</code></td><td>Size class</td><td>Body Link. Action color, 16px/24px, bold. Underlines label on hover.</td></tr>
-          <tr><td><code>.text-link-s</code></td><td>Size class</td><td>Small Link. Body color, 14px/20px, bold. The default (body-colored) variant is reserved for <a href="#comp-breadcrumbs" data-page="comp-breadcrumbs">Breadcrumbs</a> and Navigation only.</td></tr>
+          <tr><td><code>.text-link-s</code></td><td>Size class</td><td>Small Link. Body color, 14px/20px, bold. The default (body-colored) variant is reserved for <a class="text-link text-link-m" href="#comp-breadcrumbs" data-page="comp-breadcrumbs"><span class="link-label">Breadcrumbs</span></a> and Navigation only.</td></tr>
           <tr><td><code>.link-label</code></td><td>Element</td><td><strong>Required.</strong> Wrap the text in <code>&lt;span class="link-label"&gt;</code> so hover underline only applies to the text, not icons.</td></tr>
           <tr><td><code>.link-icon</code></td><td>Element</td><td>Font Awesome icon inside the link. Never receives underline.</td></tr>
           <tr><td><code>.type-information</code> / <code>.type-success</code> / <code>.type-error</code></td><td>Modifier</td><td>S size only. Applies semantic status color.</td></tr>
@@ -5373,7 +5373,7 @@
       <div class="guidance-grid">
         <div class="guidance-card do">
           <div class="label">Do</div>
-          <p>Reserve the body-colored Small Link (S) Default for the <a href="#comp-breadcrumbs" data-page="comp-breadcrumbs">Breadcrumbs</a> and Navigation components only.</p>
+          <p>Reserve the body-colored Small Link (S) Default for the <a class="text-link text-link-m" href="#comp-breadcrumbs" data-page="comp-breadcrumbs"><span class="link-label">Breadcrumbs</span></a> and Navigation components only.</p>
         </div>
         <div class="guidance-card dont">
           <div class="label">Don't</div>
@@ -5988,7 +5988,7 @@
 
       <!-- ---- OVERVIEW ---- -->
       <h2>Overview</h2>
-      <p>The Filter pattern combines existing system components: the <a href="#comp-toggle-selector" data-page="comp-toggle-selector">Toggle Selector</a> (Search by Details / Search by Need), <a href="#comp-button" data-page="comp-button">Buttons</a> (outline and primary icon-only for filter open, primary icon-only for close, text buttons for Clear all and Close), and one <a href="#comp-sel-accordion" data-page="comp-sel-accordion">Selector Accordion</a> per criterion when <strong>Search by Details</strong> is active. <strong>Search by Need</strong> swaps the criteria region for a <a href="#comp-button-group" data-page="comp-button-group">Button Group</a> (<code>.btn-group</code> / <code>.btn-group-item</code> with <code>.btn-group-icon</code>), not accordions. Omit the optional info icon on Details criterion labels unless a specific field exposes contextual help.</p>
+      <p>The Filter pattern combines existing system components: the <a class="text-link text-link-m" href="#comp-toggle-selector" data-page="comp-toggle-selector"><span class="link-label">Toggle Selector</span></a> (Search by Details / Search by Need), <a class="text-link text-link-m" href="#comp-button" data-page="comp-button"><span class="link-label">Buttons</span></a> (outline and primary icon-only for filter open, primary icon-only for close, text buttons for Clear all and Close), and one <a class="text-link text-link-m" href="#comp-sel-accordion" data-page="comp-sel-accordion"><span class="link-label">Selector Accordion</span></a> per criterion when <strong>Search by Details</strong> is active. <strong>Search by Need</strong> swaps the criteria region for a <a class="text-link text-link-m" href="#comp-button-group" data-page="comp-button-group"><span class="link-label">Button Group</span></a> (<code>.btn-group</code> / <code>.btn-group-item</code> with <code>.btn-group-icon</code>), not accordions. Omit the optional info icon on Details criterion labels unless a specific field exposes contextual help.</p>
       <p><strong>Mobile (Figma size S, 336px max width):</strong> 40px toggle height, 14px bold labels on the selector, filter icon in an outline icon-only button when the panel is collapsed. Expanded state shows the same toggle, a primary icon-only close control, stacked criteria, and a row with <strong>Clear all</strong> (disabled when no changes) and <strong>Close</strong>.</p>
       <p><strong>Desktop (Figma size M):</strong> 46px toggle height, 16px bold labels on the selector, criteria in a horizontal row (narrow columns), and <strong>Clear all</strong> aligned to the trailing edge. Spacing follows jumper and padding tokens from the file.</p>
       <p><strong>Figma source:</strong> <a href="https://www.figma.com/design/JN80bbuhNdMdXwiajJXOdm/WV-Design-System-1.02?node-id=16318-5349" target="_blank" rel="noopener noreferrer">WV Design System 1.02 — Drop-down filter menu</a> (component set; node <code>16318:5349</code>).</p>
@@ -6425,7 +6425,7 @@
 
       <div class="doc-layout-narrow">
       <h3>Desktop — Search by Need ("Waiting" selected)</h3>
-      <p>The default state for Search by Need pre-selects "Waiting over 1 year." The Button Group shows the selected item at its intrinsic width (not stretched) and a <a href="#comp-snackbar" data-page="comp-snackbar">Snackbar</a> appears below it with descriptive text. All four icons use the action color (<code>--btn-icon-action</code>). The Button Group and Snackbar are grouped with a <code>--jumper-xs-xxs</code> (24px) gap. Figma <code>state=expanded, filter=need waiting, viewport=desktop</code>.</p>
+      <p>The default state for Search by Need pre-selects "Waiting over 1 year." The Button Group shows the selected item at its intrinsic width (not stretched) and a <a class="text-link text-link-m" href="#comp-snackbar" data-page="comp-snackbar"><span class="link-label">Snackbar</span></a> appears below it with descriptive text. All four icons use the action color (<code>--btn-icon-action</code>). The Button Group and Snackbar are grouped with a <code>--jumper-xxs-xxxs</code> (16px) gap. Figma <code>state=expanded, filter=need waiting, viewport=desktop</code>.</p>
       </div>
 
       <div class="doc-layout-full">
@@ -6477,8 +6477,8 @@
       <ul>
         <li>Tab through the toggle options (buttons), filter/close icon buttons, each Selector Accordion category header and option, and footer actions in DOM order.</li>
         <li>Toggle selector options should use <code>role="radio"</code> and <code>aria-checked</code>, or be implemented as a single <code>tablist</code> if you adopt that variant from the Toggle Selector page.</li>
-        <li>When <strong>Search by Details</strong> is active, each criterion uses the <a href="#comp-sel-accordion" data-page="comp-sel-accordion">Selector Accordion</a> disclosure pattern: category <code>&lt;button&gt;</code> with <code>aria-expanded</code> and <code>aria-controls</code>, options as <code>&lt;button&gt;</code> rows with <code>aria-selected</code> on the current value (see that component page).</li>
-        <li>When <strong>Search by Need</strong> is active, need criteria use the <a href="#comp-button-group" data-page="comp-button-group">Button Group</a> (<code>.btn-group</code> / <code>.btn-group-item</code>); follow that page for keyboard and selection semantics when you wire behavior.</li>
+        <li>When <strong>Search by Details</strong> is active, each criterion uses the <a class="text-link text-link-m" href="#comp-sel-accordion" data-page="comp-sel-accordion"><span class="link-label">Selector Accordion</span></a> disclosure pattern: category <code>&lt;button&gt;</code> with <code>aria-expanded</code> and <code>aria-controls</code>, options as <code>&lt;button&gt;</code> rows with <code>aria-selected</code> on the current value (see that component page).</li>
+        <li>When <strong>Search by Need</strong> is active, need criteria use the <a class="text-link text-link-m" href="#comp-button-group" data-page="comp-button-group"><span class="link-label">Button Group</span></a> (<code>.btn-group</code> / <code>.btn-group-item</code>); follow that page for keyboard and selection semantics when you wire behavior.</li>
       </ul>
       <h3>ARIA</h3>
       <ul>
@@ -6489,7 +6489,12 @@
       <!-- ---- CONSTRUCTION ---- -->
       <h2>Construction</h2>
       <h3>Layout tokens</h3>
-      <table class="doc-table">
+      <table class="doc-table" style="table-layout:fixed; width:100%;">
+        <colgroup>
+          <col style="width:30%;">
+          <col style="width:35%;">
+          <col style="width:35%;">
+        </colgroup>
         <thead><tr><th>Property</th><th>Mobile</th><th>Desktop</th></tr></thead>
         <tbody>
           <tr><td>Panel max width</td><td><code>--card-s</code> (336px)</td><td>1105px (Figma frame)</td></tr>
@@ -6512,9 +6517,9 @@
         <tbody>
           <tr><td>Mode switch</td><td><code>.toggle-selector</code> + <code>.toggle-selector-desktop</code> on desktop; widths 260px / 310px per Toggle Selector spec.</td></tr>
           <tr><td>Open / Close</td><td><code>.btn.btn-outline.btn-icon-only.btn-s</code> with <code>fa-filter</code>; <code>.btn.btn-primary.btn-icon-only.btn-s</code> with <code>fa-xmark</code>.</td></tr>
-          <tr><td>Details criterion row</td><td><a href="#comp-sel-accordion" data-page="comp-sel-accordion">Selector Accordion</a>: <code>.sel-accordion-group</code>, <code>.sel-accordion-label</code>, <code>.sel-accordion-stack</code> (category + <code>.sel-accordion-dropdown</code>).</td></tr>
-          <tr><td>Need criteria</td><td><a href="#comp-button-group" data-page="comp-button-group">Button Group</a>: <code>.btn-group</code>, <code>.btn-group-item</code>, <code>.btn-group-icon</code>. Mobile: stacked column with <code>1px</code> bottom borders. Desktop: intrinsic-width horizontal row (not stretched). All icons use <code>--btn-icon-action</code>; selected items inherit the Button Group <code>.selected</code> state colors.</td></tr>
-          <tr><td>Need expanded (Snackbar)</td><td>When a need option is selected, a <a href="#comp-snackbar" data-page="comp-snackbar">Snackbar</a> (<code>.snackbar</code>) appears below the Button Group with descriptive text. Grouped with <code>--jumper-xs-xxs</code> gap. Desktop width: <code>--space-9100</code> (728px). Mobile: full width.</td></tr>
+          <tr><td>Details criterion row</td><td><a class="text-link text-link-m" href="#comp-sel-accordion" data-page="comp-sel-accordion"><span class="link-label">Selector Accordion</span></a>: <code>.sel-accordion-group</code>, <code>.sel-accordion-label</code>, <code>.sel-accordion-stack</code> (category + <code>.sel-accordion-dropdown</code>).</td></tr>
+          <tr><td>Need criteria</td><td><a class="text-link text-link-m" href="#comp-button-group" data-page="comp-button-group"><span class="link-label">Button Group</span></a>: <code>.btn-group</code>, <code>.btn-group-item</code>, <code>.btn-group-icon</code>. Mobile: stacked column with <code>1px</code> bottom borders. Desktop: intrinsic-width horizontal row (not stretched). All icons use <code>--btn-icon-action</code>; selected items inherit the Button Group <code>.selected</code> state colors.</td></tr>
+          <tr><td>Need expanded (Snackbar)</td><td>When a need option is selected, a <a class="text-link text-link-m" href="#comp-snackbar" data-page="comp-snackbar"><span class="link-label">Snackbar</span></a> (<code>.snackbar</code>) appears below the Button Group with descriptive text. Grouped with <code>--jumper-xxs-xxxs</code> gap. Desktop width: <code>--space-9100</code> (728px). Mobile: full width.</td></tr>
           <tr><td>Actions</td><td><code>.btn.btn-primary.btn-m</code>; <code>Clear all</code> disabled per spec when no dirty filters.</td></tr>
         </tbody>
       </table>
@@ -6538,7 +6543,7 @@
           <tr><td><code>.pattern-filter-cta-row</code></td><td>Mobile footer buttons (flex row, wrap).</td></tr>
           <tr><td><code>.pattern-filter-cta</code></td><td>Desktop trailing column for <strong>Clear all</strong>.</td></tr>
           <tr><td><code>.toggle-selector-demo</code></td><td>Optional: enables existing doc-site JS for pill animation (same as Toggle Selector page).</td></tr>
-          <tr><td><code>.pattern-filter-body--need</code></td><td>Applied to <code>.pattern-filter-body</code> when "Search by Need" is active. Centers the Button Group on desktop, stacks vertically on mobile. Groups button group + Snackbar with <code>--jumper-xs-xxs</code> gap.</td></tr>
+          <tr><td><code>.pattern-filter-body--need</code></td><td>Applied to <code>.pattern-filter-body</code> when "Search by Need" is active. Centers the Button Group on desktop, stacks vertically on mobile. Groups button group + Snackbar with <code>--jumper-xxs-xxxs</code> gap.</td></tr>
           <tr><td><code>[data-filter-demo]</code></td><td>Working Example wiring: enables toggle switching (Details/Need), need button selection, Snackbar display, and Clear all logic via <code>app.js</code>.</td></tr>
           <tr><td><code>[data-filter-mode]</code></td><td>On toggle buttons inside <code>[data-filter-demo]</code>. Values: <code>details</code> or <code>need</code>. Toggles visibility of the corresponding <code>[data-filter-body]</code>.</td></tr>
           <tr><td><code>[data-need]</code></td><td>On <code>.btn-group-item</code> buttons. Values: <code>waiting</code>, <code>orphan</code>, <code>risk</code>, <code>hunger</code>. Click selects/deselects and shows the corresponding Snackbar description.</td></tr>
@@ -6842,7 +6847,7 @@
       </div>
 
       <h3>Initialize demos (optional, docs site)</h3>
-      <p>Add <code>toggle-selector-demo</code> on the toggle for pill animation (see <a href="#comp-toggle-selector" data-page="comp-toggle-selector">Toggle Selector</a>). Add <code>sel-accordion-demo</code> on each <code>.sel-accordion-group</code> for expand/collapse and option selection (see <a href="#comp-sel-accordion" data-page="comp-sel-accordion">Selector Accordion</a>). Add <code>data-filter-demo</code> on the root <code>.pattern-filter</code> to wire up mode toggling and need selection.</p>
+      <p>Add <code>toggle-selector-demo</code> on the toggle for pill animation (see <a class="text-link text-link-m" href="#comp-toggle-selector" data-page="comp-toggle-selector"><span class="link-label">Toggle Selector</span></a>). Add <code>sel-accordion-demo</code> on each <code>.sel-accordion-group</code> for expand/collapse and option selection (see <a class="text-link text-link-m" href="#comp-sel-accordion" data-page="comp-sel-accordion"><span class="link-label">Selector Accordion</span></a>). Add <code>data-filter-demo</code> on the root <code>.pattern-filter</code> to wire up mode toggling and need selection.</p>
       </div>
     </section>
 
@@ -7423,7 +7428,7 @@
         <li>Active link highlighted with left border accent.</li>
       </ul>
       <h2>Breadcrumb Pattern</h2>
-      <p>For the full component specification, states, and usage guidelines, see the <a href="#comp-breadcrumbs" data-page="comp-breadcrumbs">Breadcrumbs</a> component page.</p>
+      <p>For the full component specification, states, and usage guidelines, see the <a class="text-link text-link-m" href="#comp-breadcrumbs" data-page="comp-breadcrumbs"><span class="link-label">Breadcrumbs</span></a> component page.</p>
       <ul>
         <li>Shows hierarchy with chevron-right (<code>fa-chevron-right</code>) separators inside each crumb.</li>
         <li>First crumb includes a home icon (<code>fa-house</code>).</li>
