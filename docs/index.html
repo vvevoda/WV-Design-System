@@ -6102,8 +6102,14 @@
                 </div>
               </div>
             </div>
+            <!-- Desktop: trailing Clear all (hidden at mobile via CSS) -->
             <div class="pattern-filter-cta">
               <button type="button" class="btn btn-primary btn-m is-disabled" disabled aria-disabled="true"><span class="btn-label">Clear all</span></button>
+            </div>
+            <!-- Mobile: bottom row with Clear all + Close (hidden at desktop via CSS) -->
+            <div class="pattern-filter-cta-row">
+              <button type="button" class="btn btn-primary btn-m is-disabled" disabled aria-disabled="true"><span class="btn-label">Clear all</span></button>
+              <button type="button" class="btn btn-outline btn-m" data-filter-close><span class="btn-label">Close</span></button>
             </div>
           </div>
           <!-- Need body -->
@@ -6134,6 +6140,10 @@
                   </div>
                 </div>
               </div>
+            </div>
+            <!-- Mobile: Close button for Need (hidden at desktop via CSS) -->
+            <div class="pattern-filter-cta-row pattern-filter-cta-row--need-only">
+              <button type="button" class="btn btn-outline btn-m" data-filter-close><span class="btn-label">Close</span></button>
             </div>
           </div>
         </div>
@@ -6255,52 +6265,14 @@
             </div>
             <div class="pattern-filter-cta-row">
               <button type="button" class="btn btn-primary btn-m is-disabled" disabled aria-disabled="true"><span class="btn-label">Clear all</span></button>
-              <button type="button" class="btn btn-primary btn-m"><span class="btn-label">Close</span></button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <h3>Mobile — Expanded (Search by Need, default)</h3>
-      <p>Criteria are replaced by a stacked <a href="#comp-button-group" data-page="comp-button-group">Button Group</a>. Bottom borders use <code>1px</code> (<code>--border-width-default</code>). Footer is a single disabled <strong>Close</strong> button. Figma <code>state=expanded, filter=need, viewport=mobile</code>.</p>
-      <div class="preview-block">
-        <div class="pattern-filter pattern-filter-mobile pattern-filter-mobile-expanded" role="region" aria-label="Filter (mobile expanded, Search by Need)">
-          <div class="pattern-filter-header">
-            <div class="toggle-selector toggle-selector-demo right-active" style="width:260px;" role="radiogroup" aria-label="Search mode (Need)">
-              <span class="toggle-selector-pill"></span>
-              <button class="toggle-selector-option" type="button" role="radio" aria-checked="false">Search by Details</button>
-              <button class="toggle-selector-option is-active" type="button" role="radio" aria-checked="true">Search by Need</button>
-            </div>
-            <button type="button" class="btn btn-primary btn-icon-only btn-s" aria-label="Close filters"><i class="btn-icon fa-solid fa-xmark" aria-hidden="true"></i></button>
-          </div>
-          <div class="pattern-filter-body pattern-filter-body--need">
-            <div class="btn-group" role="group" aria-label="Search by Need options">
-              <button type="button" class="btn-group-item">
-                <i class="btn-group-icon fa-solid fa-calendar" aria-hidden="true"></i>
-                Waiting over 1 year
-              </button>
-              <button type="button" class="btn-group-item">
-                <i class="btn-group-icon fa-solid fa-child" aria-hidden="true"></i>
-                Orphaned child
-              </button>
-              <button type="button" class="btn-group-item">
-                <i class="btn-group-icon fa-solid fa-circle-exclamation" aria-hidden="true"></i>
-                Higher-risk area
-              </button>
-              <button type="button" class="btn-group-item">
-                <i class="btn-group-icon fa-solid fa-bowl-rice" aria-hidden="true"></i>
-                Hunger crisis area
-              </button>
-            </div>
-            <div class="pattern-filter-cta-row pattern-filter-cta-row--need-only">
-              <button type="button" class="btn btn-primary btn-m is-disabled" disabled aria-disabled="true"><span class="btn-label">Close</span></button>
+              <button type="button" class="btn btn-outline btn-m"><span class="btn-label">Close</span></button>
             </div>
           </div>
         </div>
       </div>
 
       <h3>Mobile — Expanded (Search by Need, "Waiting" selected)</h3>
-      <p>When a need is selected, the Snackbar with descriptive text appears between the Button Group and Close button. Close becomes active. Figma <code>state=expanded, filter=need waiting, status=selected, viewport=mobile</code>.</p>
+      <p>The default state for Search by Need pre-selects "Waiting over 1 year" and shows its Snackbar. The Button Group stacks vertically with <code>1px</code> bottom borders. The footer has a single "Close" button (<code>btn-outline</code>). Figma <code>state=expanded, filter=need waiting, status=selected, viewport=mobile</code>.</p>
       <div class="preview-block">
         <div class="pattern-filter pattern-filter-mobile pattern-filter-mobile-expanded" role="region" aria-label="Filter (mobile expanded, Search by Need waiting selected)">
           <div class="pattern-filter-header">
@@ -6340,7 +6312,7 @@
               </div>
             </div>
             <div class="pattern-filter-cta-row pattern-filter-cta-row--need-only">
-              <button type="button" class="btn btn-primary btn-m"><span class="btn-label">Close</span></button>
+              <button type="button" class="btn btn-outline btn-m"><span class="btn-label">Close</span></button>
             </div>
           </div>
         </div>
@@ -6452,45 +6424,8 @@
       </div>
 
       <div class="doc-layout-narrow">
-      <h3>Desktop — Search by Need (collapsed)</h3>
-      <p>With <strong>Search by Need</strong> active, the criteria area shows a <a href="#comp-button-group" data-page="comp-button-group">Button Group</a> at its intrinsic width (not stretched). All four icons use the action color (<code>--btn-icon-action</code>). Figma <code>state=collapsed, filter=need, viewport=desktop</code>.</p>
-      </div>
-
-      <div class="doc-layout-full">
-      <div class="preview-block">
-        <div class="pattern-filter pattern-filter-desktop" role="region" aria-label="Filter (desktop Search by Need)">
-          <div class="toggle-selector toggle-selector-desktop toggle-selector-demo right-active" style="width:310px;" role="radiogroup" aria-label="Search mode desktop (Need)">
-            <span class="toggle-selector-pill"></span>
-            <button class="toggle-selector-option" type="button" role="radio" aria-checked="false">Search by Details</button>
-            <button class="toggle-selector-option is-active" type="button" role="radio" aria-checked="true">Search by Need</button>
-          </div>
-          <div class="pattern-filter-body pattern-filter-body--need">
-            <div class="btn-group" role="group" aria-label="Search by Need options">
-              <button type="button" class="btn-group-item">
-                <i class="btn-group-icon fa-solid fa-calendar" aria-hidden="true"></i>
-                Waiting over 1 year
-              </button>
-              <button type="button" class="btn-group-item">
-                <i class="btn-group-icon fa-solid fa-child" aria-hidden="true"></i>
-                Orphaned child
-              </button>
-              <button type="button" class="btn-group-item">
-                <i class="btn-group-icon fa-solid fa-circle-exclamation" aria-hidden="true"></i>
-                Higher-risk area
-              </button>
-              <button type="button" class="btn-group-item">
-                <i class="btn-group-icon fa-solid fa-bowl-rice" aria-hidden="true"></i>
-                Hunger crisis area
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-
-      <div class="doc-layout-narrow">
-      <h3>Desktop — Search by Need (expanded, "Waiting" selected)</h3>
-      <p>When a need option is selected, the Button Group shows the selected item and a <a href="#comp-snackbar" data-page="comp-snackbar">Snackbar</a> appears below it with descriptive text. The Button Group and Snackbar are grouped with a <code>--jumper-xs-xxs</code> (24px) gap. Figma <code>state=expanded, filter=need waiting, viewport=desktop</code>.</p>
+      <h3>Desktop — Search by Need ("Waiting" selected)</h3>
+      <p>The default state for Search by Need pre-selects "Waiting over 1 year." The Button Group shows the selected item at its intrinsic width (not stretched) and a <a href="#comp-snackbar" data-page="comp-snackbar">Snackbar</a> appears below it with descriptive text. All four icons use the action color (<code>--btn-icon-action</code>). The Button Group and Snackbar are grouped with a <code>--jumper-xs-xxs</code> (24px) gap. Figma <code>state=expanded, filter=need waiting, viewport=desktop</code>.</p>
       </div>
 
       <div class="doc-layout-full">
