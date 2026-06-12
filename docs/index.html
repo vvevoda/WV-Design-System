@@ -392,10 +392,11 @@
       <div class="spacing-row"><span class="spacing-label">scale-1200</span><div class="spacing-bar" style="width:96px"></div><span class="spacing-value">96px</span></div>
       <div class="spacing-row"><span class="spacing-label">scale-1300</span><div class="spacing-bar" style="width:104px"></div><span class="spacing-value">104px</span></div>
       <div class="spacing-row"><span class="spacing-label">scale-1400</span><div class="spacing-bar" style="width:112px"></div><span class="spacing-value">112px</span></div>
-      <div class="spacing-row"><span class="spacing-label">scale-2500</span><div class="spacing-bar" style="width:200px"></div><span class="spacing-value">200px</span></div>
-      <div class="spacing-row"><span class="spacing-label">scale-2800</span><div class="spacing-bar" style="width:244px"></div><span class="spacing-value">244px</span></div>
+      <div class="spacing-row"><span class="spacing-label">scale-2200</span><div class="spacing-bar" style="width:176px"></div><span class="spacing-value">176px</span></div>
+      <div class="spacing-row"><span class="spacing-label">scale-2400</span><div class="spacing-bar" style="width:192px"></div><span class="spacing-value">192px</span></div>
       <div class="spacing-row"><span class="spacing-label">scale-4200</span><div class="spacing-bar" style="width:336px"></div><span class="spacing-value">336px</span></div>
-      <div class="spacing-row"><span class="spacing-label">scale-9100</span><div class="spacing-bar" style="width:400px"></div><span class="spacing-value">728px</span></div>
+      <div class="spacing-row"><span class="spacing-label">scale-5600</span><div class="spacing-bar" style="width:400px"></div><span class="spacing-value">448px</span></div>
+      <div class="spacing-row"><span class="spacing-label">scale-9200</span><div class="spacing-bar" style="width:400px"></div><span class="spacing-value">736px</span></div>
 
       <h2>Scale Reference</h2>
       <table class="doc-table">
@@ -403,10 +404,11 @@
           <tr><th>Application</th><th>Variable Name</th><th>Multiplier</th><th>Value (px)</th></tr>
         </thead>
         <tbody>
-          <tr><td>Container width</td><td>9100</td><td>91</td><td>728</td></tr>
+          <tr><td>Container width</td><td>9200</td><td>92</td><td>736</td></tr>
+          <tr><td>Container width</td><td>5600</td><td>56</td><td>448</td></tr>
           <tr><td>Container width</td><td>4200</td><td>42</td><td>336</td></tr>
-          <tr><td>Scale</td><td>2800</td><td>28</td><td>244</td></tr>
-          <tr><td>Scale</td><td>2500</td><td>25</td><td>200</td></tr>
+          <tr><td>Scale</td><td>2400</td><td>24</td><td>192</td></tr>
+          <tr><td>Scale</td><td>2200</td><td>22</td><td>176</td></tr>
           <tr><td>Scale</td><td>1400</td><td>14</td><td>112</td></tr>
           <tr><td>Scale</td><td>1300</td><td>13</td><td>104</td></tr>
           <tr><td>Scale</td><td>1200</td><td>12</td><td>96</td></tr>
@@ -431,33 +433,34 @@
         </tbody>
       </table>
 
-      <h2>Jumper Tokens (Desktop vs Mobile)</h2>
+      <h2>Jumper Tokens (Desktop / Tablet / Mobile)</h2>
       <p>Jumper tokens are responsive spacing values that shrink across breakpoints.</p>
       <table class="doc-table">
         <thead>
-          <tr><th>Token</th><th>Desktop</th><th>Mobile</th></tr>
+          <tr><th>Token</th><th>Desktop</th><th>Tablet</th><th>Mobile</th></tr>
         </thead>
         <tbody>
-          <tr><td><code>xl-lg</code></td><td>96px</td><td>48px</td></tr>
-          <tr><td><code>lg-md</code></td><td>64px</td><td>32px</td></tr>
-          <tr><td><code>md-sm</code></td><td>48px</td><td>24px</td></tr>
-          <tr><td><code>sm-xs</code></td><td>32px</td><td>16px</td></tr>
-          <tr><td><code>xs-xxs</code></td><td>24px</td><td>16px</td></tr>
-          <tr><td><code>xxs-xxxs</code></td><td>16px</td><td>8px</td></tr>
-          <tr><td><code>xxxs-tiny</code></td><td>8px</td><td>4px</td></tr>
+          <tr><td><code>xl-lg</code></td><td>96px</td><td>80px</td><td>64px</td></tr>
+          <tr><td><code>lg-md</code></td><td>64px</td><td>56px</td><td>48px</td></tr>
+          <tr><td><code>md-sm</code></td><td>48px</td><td>40px</td><td>32px</td></tr>
+          <tr><td><code>sm-xs</code></td><td>32px</td><td>32px</td><td>24px</td></tr>
+          <tr><td><code>xs-xxs</code></td><td>24px</td><td>24px</td><td>16px</td></tr>
+          <tr><td><code>xxs-xxxs</code></td><td>16px</td><td>16px</td><td>8px</td></tr>
+          <tr><td><code>xxxs-tiny</code></td><td>8px</td><td>8px</td><td>4px</td></tr>
+          <tr><td><code>tiny</code></td><td>4px</td><td>4px</td><td>2px</td></tr>
         </tbody>
       </table>
 
-      <h2>Margin Tokens (Desktop vs Mobile)</h2>
+      <h2>Grid Margins</h2>
+      <p>Page margins are composed of a Global Margin (the outer gutter) and a Col Margin (the outermost column's margin). On a fixed layout, the total side margin is Global Margin + Col Margin. On a fluid layout, the margin is Global Margin only, allowing content to extend to the column edges.</p>
       <table class="doc-table">
         <thead>
-          <tr><th>Token</th><th>Desktop</th><th>Mobile</th></tr>
+          <tr><th>Token</th><th>Desktop</th><th>Tablet</th><th>Mobile</th></tr>
         </thead>
         <tbody>
-          <tr><td><code>margin.xl</code></td><td>244px</td><td>24px</td></tr>
-          <tr><td><code>margin.l</code></td><td>128px</td><td>24px</td></tr>
-          <tr><td><code>margin.m</code></td><td>64px</td><td>24px</td></tr>
-          <tr><td><code>margin.s</code></td><td>32px</td><td>16px</td></tr>
+          <tr><td><code>Grid / Global Margin</code></td><td>176px</td><td>80px</td><td>16px</td></tr>
+          <tr><td><code>Grid / Col Margin</code></td><td>16px</td><td>16px</td><td>8px</td></tr>
+          <tr><td><code>Total fixed margin (per side)</code></td><td>192px</td><td>96px</td><td>24px</td></tr>
         </tbody>
       </table>
 
@@ -467,8 +470,8 @@
 <pre><code>.section {
   padding-top: var(--jumper-lg-md);
   padding-bottom: var(--jumper-md-sm);
-  margin-left: var(--margin-m);
-  margin-right: var(--margin-m);
+  margin-left: var(--grid-global-margin);
+  margin-right: var(--grid-global-margin);
   gap: var(--space-300);
 }</code></pre>
       </div>
@@ -503,10 +506,10 @@
           <tr><td>Headings</td><td>H6 XS</td><td>2.5</td><td>20</td><td>24</td></tr>
           <tr><td>Body</td><td>Body XXL</td><td>4</td><td>32</td><td>40</td></tr>
           <tr><td>Body</td><td>Body XL</td><td>3</td><td>24</td><td>32</td></tr>
-          <tr><td>Body</td><td>Body L</td><td>2.5</td><td>20</td><td>28</td></tr>
-          <tr><td>Body</td><td>Body M</td><td>2</td><td>16</td><td>24</td></tr>
+          <tr><td>Body</td><td>Body L</td><td>2.5</td><td>20</td><td>32</td></tr>
+          <tr><td>Body</td><td>Body M</td><td>2</td><td>16</td><td>26</td></tr>
           <tr><td>Body</td><td>Body S</td><td>1.75</td><td>14</td><td>20</td></tr>
-          <tr><td>Body</td><td>Body XS</td><td>1.5</td><td>12</td><td>14</td></tr>
+          <tr><td>Body</td><td>Body XS</td><td>1.5</td><td>12</td><td>16</td></tr>
         </tbody>
       </table>
 
@@ -587,8 +590,8 @@
 
       <div class="type-sample">
         <div style="font-family:var(--font-primary);font-size:16px;line-height:20px;font-weight:700;color:var(--text-headings)">H6 XS Heading</div>
-        <div style="font-family:var(--font-primary);font-size:12px;line-height:14px;font-weight:400;color:var(--text-body)">Body XS pairs with H6 XS. The brown fox jumped over the tall fence. The cat came running after.</div>
-        <div class="type-meta"><span>H6 XS (16/20) + Body XS (12/14)</span></div>
+        <div style="font-family:var(--font-primary);font-size:12px;line-height:16px;font-weight:400;color:var(--text-body)">Body XS pairs with H6 XS. The brown fox jumped over the tall fence. The cat came running after.</div>
+        <div class="type-meta"><span>H6 XS (16/20) + Body XS (12/16)</span></div>
       </div>
 
       <div class="type-sample">
@@ -599,26 +602,26 @@
 
       <div class="type-sample">
         <div style="font-family:var(--font-primary);font-size:20px;line-height:28px;font-weight:900;color:var(--text-headings)">H4 M Heading</div>
-        <div style="font-family:var(--font-primary);font-size:16px;line-height:24px;font-weight:400;color:var(--text-body)">Body M pairs with H4 M. The brown fox jumped over the tall fence. The cat came running after.</div>
-        <div class="type-meta"><span>H4 M (20/28) + Body M (16/24)</span></div>
+        <div style="font-family:var(--font-primary);font-size:16px;line-height:26px;font-weight:400;color:var(--text-body)">Body M pairs with H4 M. The brown fox jumped over the tall fence. The cat came running after.</div>
+        <div class="type-meta"><span>H4 M (20/28) + Body M (16/26)</span></div>
       </div>
 
       <div class="type-sample">
         <div style="font-family:var(--font-primary);font-size:24px;line-height:32px;font-weight:900;color:var(--text-headings)">H3 L Heading</div>
-        <div style="font-family:var(--font-primary);font-size:20px;line-height:28px;font-weight:700;color:var(--text-body)">Body L pairs with H3 L. The brown fox jumped over the tall fence. The cat came running after. And then the whole farm began to join in the fun.</div>
-        <div class="type-meta"><span>H3 L (24/32) + Body L (20/28)</span></div>
+        <div style="font-family:var(--font-primary);font-size:20px;line-height:32px;font-weight:400;color:var(--text-body)">Body L pairs with H3 L. The brown fox jumped over the tall fence. The cat came running after. And then the whole farm began to join in the fun.</div>
+        <div class="type-meta"><span>H3 L (24/32) + Body L (20/32)</span></div>
       </div>
 
       <div class="type-sample">
         <div style="font-family:var(--font-primary);font-size:28px;line-height:36px;font-weight:900;color:var(--text-headings)">H2 XL Heading</div>
-        <div style="font-family:var(--font-primary);font-size:20px;line-height:28px;font-weight:900;color:var(--text-body)">Body XL pairs with H2 XL. The brown fox jumped over the tall fence. The cat came running after. And then the whole farm began to join in the fun.</div>
-        <div class="type-meta"><span>H2 XL (28/36) + Body XL (20/28)</span></div>
+        <div style="font-family:var(--font-primary);font-size:20px;line-height:32px;font-weight:900;color:var(--text-body)">Body XL pairs with H2 XL. The brown fox jumped over the tall fence. The cat came running after. And then the whole farm began to join in the fun.</div>
+        <div class="type-meta"><span>H2 XL (28/36) + Body XL (20/32)</span></div>
       </div>
 
       <div class="type-sample">
         <div style="font-family:var(--font-primary);font-size:32px;line-height:40px;font-weight:900;color:var(--text-headings)">H1 XXL Heading</div>
-        <div style="font-family:var(--font-primary);font-size:24px;line-height:32px;font-weight:900;color:var(--text-body)">Body XXL pairs with H1 XXL. The brown fox jumped over the tall fence. The cat came running after.</div>
-        <div class="type-meta"><span>H1 XXL (32/40) + Body XXL (24/32)</span></div>
+        <div style="font-family:var(--font-primary);font-size:24px;line-height:36px;font-weight:900;color:var(--text-body)">Body XXL pairs with H1 XXL. The brown fox jumped over the tall fence. The cat came running after.</div>
+        <div class="type-meta"><span>H1 XXL (32/40) + Body XXL (24/36)</span></div>
       </div>
 
       <div class="type-sample">
@@ -640,19 +643,19 @@
       <div class="type-sample">
         <div style="font-family:var(--font-primary);font-size:var(--h5-size);line-height:var(--h5-line);font-weight:var(--h5-weight);color:var(--text-headings)">H5 S Heading</div>
         <div style="font-family:var(--font-primary);font-size:var(--body-m-size);line-height:var(--body-m-line);font-weight:400;color:var(--text-body)">Body M pairs with H5 S on desktop. The brown fox jumped over the tall fence. The cat came running after.</div>
-        <div class="type-meta"><span>H5 S (24/28) + Body M (16/24)</span></div>
+        <div class="type-meta"><span>H5 S (24/28) + Body M (16/26)</span></div>
       </div>
 
       <div class="type-sample">
         <div style="font-family:var(--font-primary);font-size:var(--h4-size);line-height:var(--h4-line);font-weight:var(--h4-weight);color:var(--text-headings)">H4 M Heading</div>
         <div style="font-family:var(--font-primary);font-size:var(--body-m-size);line-height:var(--body-m-line);font-weight:400;color:var(--text-body)">Body M pairs with H4 M on desktop. The brown fox jumped over the tall fence. The cat came running after.</div>
-        <div class="type-meta"><span>H4 M (32/40) + Body M (16/24)</span></div>
+        <div class="type-meta"><span>H4 M (32/40) + Body M (16/26)</span></div>
       </div>
 
       <div class="type-sample">
         <div style="font-family:var(--font-primary);font-size:var(--h3-size);line-height:var(--h3-line);font-weight:var(--h3-weight);color:var(--text-headings)">H3 L Heading</div>
         <div style="font-family:var(--font-primary);font-size:var(--body-l-size);line-height:var(--body-l-line);font-weight:700;color:var(--text-body)">Body L pairs with H3 L on desktop. The brown fox jumped over the tall fence. The cat came running after. And then the whole farm began to join in the fun.</div>
-        <div class="type-meta"><span>H3 L (40/48) + Body L (20/28)</span></div>
+        <div class="type-meta"><span>H3 L (40/48) + Body L (20/32)</span></div>
       </div>
 
       <div class="type-sample">
@@ -706,12 +709,12 @@
           <tr><td>H4 M</td><td>32 / 40</td><td>20 / 28</td></tr>
           <tr><td>H5 S</td><td>24 / 28</td><td>18 / 24</td></tr>
           <tr><td>H6 XS</td><td>20 / 24</td><td>16 / 20</td></tr>
-          <tr><td>Body XXL</td><td>32 / 40</td><td>24 / 32</td></tr>
-          <tr><td>Body XL</td><td>24 / 32</td><td>20 / 28</td></tr>
-          <tr><td>Body L</td><td>20 / 28</td><td>20 / 28</td></tr>
-          <tr><td>Body M</td><td>16 / 24</td><td>16 / 24</td></tr>
+          <tr><td>Body XXL</td><td>32 / 44</td><td>24 / 36</td></tr>
+          <tr><td>Body XL</td><td>24 / 40</td><td>20 / 32</td></tr>
+          <tr><td>Body L</td><td>20 / 32</td><td>20 / 32</td></tr>
+          <tr><td>Body M</td><td>16 / 26</td><td>16 / 26</td></tr>
           <tr><td>Body S</td><td>14 / 20</td><td>14 / 20</td></tr>
-          <tr><td>Body XS</td><td>12 / 14</td><td>12 / 14</td></tr>
+          <tr><td>Body XS</td><td>12 / 16</td><td>12 / 16</td></tr>
         </tbody>
       </table>
 
@@ -722,8 +725,8 @@
           <tr><th>Weight Name</th><th>Value</th><th>Used In</th></tr>
         </thead>
         <tbody>
-          <tr><td>Regular</td><td>400</td><td>Body M, Body S, Body XS, XS Link</td></tr>
-          <tr><td>Bold</td><td>700</td><td>H6 XS, Body L, S Link, M Link</td></tr>
+          <tr><td>Regular</td><td>400</td><td>Body L, Body M, Body S, Body XS, XS Link</td></tr>
+          <tr><td>Bold</td><td>700</td><td>H6 XS, S Link, M Link</td></tr>
           <tr><td>Black</td><td>900</td><td>Hero, H1-H5, Body XXL, Body XL</td></tr>
         </tbody>
       </table>
@@ -753,16 +756,16 @@
         <div class="theme-panel light-panel">
           <div class="theme-panel-label">Light Mode</div>
           <div class="type-sample">
-            <div style="font-family:'Lato',sans-serif;font-size:12px;line-height:14px;font-weight:400;color:#464646">Body XS. The brown fox jumped over the tall fence. The cat came running after.</div>
+            <div style="font-family:'Lato',sans-serif;font-size:12px;line-height:16px;font-weight:400;color:#464646">Body XS. The brown fox jumped over the tall fence. The cat came running after.</div>
           </div>
           <div class="type-sample">
             <div style="font-family:'Lato',sans-serif;font-size:14px;line-height:20px;font-weight:400;color:#464646">Body S. The brown fox jumped over the tall fence. The cat came running after.</div>
           </div>
           <div class="type-sample">
-            <div style="font-family:'Lato',sans-serif;font-size:16px;line-height:24px;font-weight:400;color:#464646">Body M. The brown fox jumped over the tall fence. The cat came running after.</div>
+            <div style="font-family:'Lato',sans-serif;font-size:16px;line-height:26px;font-weight:400;color:#464646">Body M. The brown fox jumped over the tall fence. The cat came running after.</div>
           </div>
           <div class="type-sample">
-            <div style="font-family:'Lato',sans-serif;font-size:20px;line-height:28px;font-weight:400;color:#464646">Body L. The brown fox jumped over the tall fence. The cat came running after.</div>
+            <div style="font-family:'Lato',sans-serif;font-size:20px;line-height:32px;font-weight:400;color:#464646">Body L. The brown fox jumped over the tall fence. The cat came running after.</div>
           </div>
           <div class="type-sample">
             <div style="font-family:'Lato',sans-serif;font-size:24px;line-height:32px;font-weight:900;color:#464646">Body XL. The brown fox jumped over the tall fence. The cat came running after.</div>
@@ -774,16 +777,16 @@
         <div class="theme-panel dark-panel">
           <div class="theme-panel-label">Dark Mode</div>
           <div class="type-sample">
-            <div style="font-family:'Lato',sans-serif;font-size:12px;line-height:14px;font-weight:400;color:#d0d0d0">Body XS. The brown fox jumped over the tall fence. The cat came running after.</div>
+            <div style="font-family:'Lato',sans-serif;font-size:12px;line-height:16px;font-weight:400;color:#d0d0d0">Body XS. The brown fox jumped over the tall fence. The cat came running after.</div>
           </div>
           <div class="type-sample">
             <div style="font-family:'Lato',sans-serif;font-size:14px;line-height:20px;font-weight:400;color:#d0d0d0">Body S. The brown fox jumped over the tall fence. The cat came running after.</div>
           </div>
           <div class="type-sample">
-            <div style="font-family:'Lato',sans-serif;font-size:16px;line-height:24px;font-weight:400;color:#d0d0d0">Body M. The brown fox jumped over the tall fence. The cat came running after.</div>
+            <div style="font-family:'Lato',sans-serif;font-size:16px;line-height:26px;font-weight:400;color:#d0d0d0">Body M. The brown fox jumped over the tall fence. The cat came running after.</div>
           </div>
           <div class="type-sample">
-            <div style="font-family:'Lato',sans-serif;font-size:20px;line-height:28px;font-weight:400;color:#d0d0d0">Body L. The brown fox jumped over the tall fence. The cat came running after.</div>
+            <div style="font-family:'Lato',sans-serif;font-size:20px;line-height:32px;font-weight:400;color:#d0d0d0">Body L. The brown fox jumped over the tall fence. The cat came running after.</div>
           </div>
           <div class="type-sample">
             <div style="font-family:'Lato',sans-serif;font-size:24px;line-height:32px;font-weight:900;color:#d0d0d0">Body XL. The brown fox jumped over the tall fence. The cat came running after.</div>
@@ -800,7 +803,7 @@
           <div class="theme-panel-label">Light Mode</div>
           <div class="type-sample">
             <div style="font-family:'Lato',sans-serif;font-size:20px;line-height:24px;font-weight:700;color:#393939">H6 XS Heading</div>
-            <div style="font-family:'Lato',sans-serif;font-size:12px;line-height:14px;font-weight:400;color:#464646">The brown fox jumped over the tall fence. The cat came running after.</div>
+            <div style="font-family:'Lato',sans-serif;font-size:12px;line-height:16px;font-weight:400;color:#464646">The brown fox jumped over the tall fence. The cat came running after.</div>
           </div>
           <div class="type-sample">
             <div style="font-family:'Lato',sans-serif;font-size:24px;line-height:28px;font-weight:900;color:#393939">H5 S Heading</div>
@@ -808,11 +811,11 @@
           </div>
           <div class="type-sample">
             <div style="font-family:'Lato',sans-serif;font-size:32px;line-height:40px;font-weight:900;color:#393939">H4 M Heading</div>
-            <div style="font-family:'Lato',sans-serif;font-size:16px;line-height:24px;font-weight:400;color:#464646">The brown fox jumped over the tall fence. The cat came running after.</div>
+            <div style="font-family:'Lato',sans-serif;font-size:16px;line-height:26px;font-weight:400;color:#464646">The brown fox jumped over the tall fence. The cat came running after.</div>
           </div>
           <div class="type-sample">
             <div style="font-family:'Lato',sans-serif;font-size:40px;line-height:48px;font-weight:900;color:#393939">H3 L Heading</div>
-            <div style="font-family:'Lato',sans-serif;font-size:20px;line-height:28px;font-weight:400;color:#464646">The brown fox jumped over the tall fence. The cat came running after.</div>
+            <div style="font-family:'Lato',sans-serif;font-size:20px;line-height:32px;font-weight:400;color:#464646">The brown fox jumped over the tall fence. The cat came running after.</div>
           </div>
           <div class="type-sample">
             <div style="font-family:'Lato',sans-serif;font-size:48px;line-height:56px;font-weight:900;color:#393939">H2 XL Heading</div>
@@ -831,7 +834,7 @@
           <div class="theme-panel-label">Dark Mode</div>
           <div class="type-sample">
             <div style="font-family:'Lato',sans-serif;font-size:20px;line-height:24px;font-weight:700;color:#fafafa">H6 XS Heading</div>
-            <div style="font-family:'Lato',sans-serif;font-size:12px;line-height:14px;font-weight:400;color:#d0d0d0">The brown fox jumped over the tall fence. The cat came running after.</div>
+            <div style="font-family:'Lato',sans-serif;font-size:12px;line-height:16px;font-weight:400;color:#d0d0d0">The brown fox jumped over the tall fence. The cat came running after.</div>
           </div>
           <div class="type-sample">
             <div style="font-family:'Lato',sans-serif;font-size:24px;line-height:28px;font-weight:900;color:#fafafa">H5 S Heading</div>
@@ -839,11 +842,11 @@
           </div>
           <div class="type-sample">
             <div style="font-family:'Lato',sans-serif;font-size:32px;line-height:40px;font-weight:900;color:#fafafa">H4 M Heading</div>
-            <div style="font-family:'Lato',sans-serif;font-size:16px;line-height:24px;font-weight:400;color:#d0d0d0">The brown fox jumped over the tall fence. The cat came running after.</div>
+            <div style="font-family:'Lato',sans-serif;font-size:16px;line-height:26px;font-weight:400;color:#d0d0d0">The brown fox jumped over the tall fence. The cat came running after.</div>
           </div>
           <div class="type-sample">
             <div style="font-family:'Lato',sans-serif;font-size:40px;line-height:48px;font-weight:900;color:#fafafa">H3 L Heading</div>
-            <div style="font-family:'Lato',sans-serif;font-size:20px;line-height:28px;font-weight:400;color:#d0d0d0">The brown fox jumped over the tall fence. The cat came running after.</div>
+            <div style="font-family:'Lato',sans-serif;font-size:20px;line-height:32px;font-weight:400;color:#d0d0d0">The brown fox jumped over the tall fence. The cat came running after.</div>
           </div>
           <div class="type-sample">
             <div style="font-family:'Lato',sans-serif;font-size:48px;line-height:56px;font-weight:900;color:#fafafa">H2 XL Heading</div>
@@ -1030,12 +1033,12 @@
       <table class="doc-table">
         <thead><tr><th>Element</th><th>Font / Size</th></tr></thead>
         <tbody>
-          <tr><td>Heading</td><td>Lato Bold (700), 16px/24px, -0.08px tracking</td></tr>
+          <tr><td>Heading</td><td>Lato Bold (700), 16px/26px, -0.08px tracking</td></tr>
           <tr><td>Body</td><td>Lato Regular (400), 14px/20px</td></tr>
           <tr><td>Link text</td><td>Lato Bold (700), 14px/20px (Text Link S)</td></tr>
           <tr><td>Link chevron</td><td>FA6 Solid (900), 14px/20px (Text Link S icon)</td></tr>
-          <tr><td>Status icon</td><td>FA6 Solid (900), 16px/24px, 0.4px tracking</td></tr>
-          <tr><td>Close icon</td><td>FA6 Solid (900), 16px/24px, 0.4px tracking</td></tr>
+          <tr><td>Status icon</td><td>FA6 Solid (900), 16px/26px, 0.4px tracking</td></tr>
+          <tr><td>Close icon</td><td>FA6 Solid (900), 16px/26px, 0.4px tracking</td></tr>
         </tbody>
       </table>
 
@@ -1601,11 +1604,11 @@
           <tr><td>Border radius</td><td>48px (pill)</td><td><code>Corner Radius/M button</code></td></tr>
           <tr><td>Border width</td><td>2px</td><td><code>Border/Width/M action</code></td></tr>
           <tr><td>Font (S)</td><td>Lato Regular 14px/18px</td><td><code>Body/Body S</code></td></tr>
-          <tr><td>Font (M, L)</td><td>Lato Regular 16px/24px</td><td><code>Body/Body M</code></td></tr>
-          <tr><td>Font (XL)</td><td>Lato Bold 20px/28px</td><td><code>Body/Body L</code></td></tr>
+          <tr><td>Font (M, L)</td><td>Lato Regular 16px/26px</td><td><code>Body/Body M</code></td></tr>
+          <tr><td>Font (XL)</td><td>Lato Regular 20px/32px</td><td><code>Body/Body L</code></td></tr>
           <tr><td>Icon font (S)</td><td>FA6 Solid 14px/18px</td><td><code>Body/Icons/S icon</code></td></tr>
-          <tr><td>Icon font (M, L)</td><td>FA6 Solid 16px/24px</td><td><code>Body/Icons/M icon</code></td></tr>
-          <tr><td>Icon font (XL)</td><td>FA6 Solid 20px/28px</td><td><code>Body/Icons/L icon</code></td></tr>
+          <tr><td>Icon font (M, L)</td><td>FA6 Solid 16px/26px</td><td><code>Body/Icons/M icon</code></td></tr>
+          <tr><td>Icon font (XL)</td><td>FA6 Solid 20px/32px</td><td><code>Body/Icons/L icon</code></td></tr>
           <tr><td>Icon width</td><td>18px</td><td>Fixed</td></tr>
         </tbody>
       </table>
@@ -2212,7 +2215,7 @@
       <table class="doc-table">
         <thead><tr><th>Element</th><th>Font / Size</th></tr></thead>
         <tbody>
-          <tr><td>Chevron icon</td><td>FA6 Solid (900), 16px/24px, 0.4px tracking</td></tr>
+          <tr><td>Chevron icon</td><td>FA6 Solid (900), 16px/26px, 0.4px tracking</td></tr>
         </tbody>
       </table>
 
@@ -2394,7 +2397,7 @@
       </div>
 
       <h3>With Label</h3>
-      <p>Checkbox paired with a Body M label (Lato Regular, 16px/24px) at an 8px gap.</p>
+      <p>Checkbox paired with a Body M label (Lato Regular, 16px/26px) at an 8px gap.</p>
       <div class="state-row">
         <span class="state-label">Unchecked</span>
         <label class="form-checkbox"><input type="checkbox"> Checkbox Label</label>
@@ -2460,7 +2463,7 @@
           <tr><td>Icon font</td><td>Font Awesome 6 Free (Solid, weight 900)</td></tr>
           <tr><td>Icon glyph</td><td><code>\f00c</code> (check)</td></tr>
           <tr><td>Icon letter-spacing</td><td>0.45px</td></tr>
-          <tr><td>Label font</td><td>Lato Regular (400), 16px/24px</td></tr>
+          <tr><td>Label font</td><td>Lato Regular (400), 16px/26px</td></tr>
           <tr><td>Label color</td><td><code>--text-body</code> (#464646)</td></tr>
         </tbody>
       </table>
@@ -2706,8 +2709,8 @@
         <tbody>
           <tr><td>Border radius</td><td>48px (pill, renders as circle)</td><td><code>Corner Radius/M button</code></td></tr>
           <tr><td>Border width</td><td>2px</td><td><code>Border/Width/M action</code></td></tr>
-          <tr><td>Icon font (S, M)</td><td>FA6 Solid 16px/24px</td><td><code>Body/Icons/M icon</code></td></tr>
-          <tr><td>Icon font (L)</td><td>FA6 Solid 20px/28px</td><td><code>Body/Icons/L icon</code></td></tr>
+          <tr><td>Icon font (S, M)</td><td>FA6 Solid 16px/26px</td><td><code>Body/Icons/M icon</code></td></tr>
+          <tr><td>Icon font (L)</td><td>FA6 Solid 20px/32px</td><td><code>Body/Icons/L icon</code></td></tr>
           <tr><td>Icon width</td><td>16px</td><td>Fixed</td></tr>
         </tbody>
       </table>
@@ -2793,7 +2796,7 @@
 
       <!-- ---- OVERVIEW ---- -->
       <h2>Overview</h2>
-      <p>The Input component is a composed form control made up of three sub-elements: a <strong>Label</strong> (with optional info icon and required indicator), a <strong>Field</strong> (with optional leading and trailing icons), and optional <strong>Hint Text</strong>. It supports four interaction states (default, hover, focus, disabled) and three validation states (error, success, information). The Input is also used within the <a class="text-link text-link-m" href="#pattern-forms" data-page="pattern-forms"><span class="link-label">Forms</span></a> pattern. All field text uses Lato Regular at Body M (16px/24px). Hint text uses Body S (14px/18px). Icons use Font Awesome 6 Solid at 16px.</p>
+      <p>The Input component is a composed form control made up of three sub-elements: a <strong>Label</strong> (with optional info icon and required indicator), a <strong>Field</strong> (with optional leading and trailing icons), and optional <strong>Hint Text</strong>. It supports four interaction states (default, hover, focus, disabled) and three validation states (error, success, information). The Input is also used within the <a class="text-link text-link-m" href="#pattern-forms" data-page="pattern-forms"><span class="link-label">Forms</span></a> pattern. All field text uses Lato Regular at Body M (16px/26px). Hint text uses Body S (14px/18px). Icons use Font Awesome 6 Solid at 16px.</p>
 
       <!-- ---- VARIANTS ---- -->
       <h2>Variants</h2>
@@ -3037,11 +3040,11 @@
       <table class="doc-table">
         <thead><tr><th>Element</th><th>Font / Size</th></tr></thead>
         <tbody>
-          <tr><td>Label text</td><td>Lato Regular (400), 16px/24px, 0.16px tracking</td></tr>
-          <tr><td>Label icon</td><td>FA6 Solid (900), 16px/24px, 0.4px tracking</td></tr>
-          <tr><td>Field text (typed)</td><td>Lato Regular (400), 16px/24px, 0.16px tracking</td></tr>
-          <tr><td>Field placeholder</td><td>Lato Regular (400), 16px/24px, 0.16px tracking</td></tr>
-          <tr><td>Field icons</td><td>FA6 Solid (900), 16px/24px, 0.4px tracking</td></tr>
+          <tr><td>Label text</td><td>Lato Regular (400), 16px/26px, 0.16px tracking</td></tr>
+          <tr><td>Label icon</td><td>FA6 Solid (900), 16px/26px, 0.4px tracking</td></tr>
+          <tr><td>Field text (typed)</td><td>Lato Regular (400), 16px/26px, 0.16px tracking</td></tr>
+          <tr><td>Field placeholder</td><td>Lato Regular (400), 16px/26px, 0.16px tracking</td></tr>
+          <tr><td>Field icons</td><td>FA6 Solid (900), 16px/26px, 0.4px tracking</td></tr>
           <tr><td>Hint text</td><td>Lato Regular (400), 14px/18px</td></tr>
         </tbody>
       </table>
@@ -3226,7 +3229,7 @@
       <!-- ---- OVERVIEW ---- -->
       <h2>Overview</h2>
       <p class="lead">A collapsible dropdown list that organises selectable options under a category header. Clicking the header expands a panel of options; clicking an option selects it.</p>
-      <p>The Selector Accordion is built from two sub-components: a <strong>Category</strong> header (with label and chevron icon) and <strong>Option</strong> items. The category header toggles between collapsed and expanded states. When expanded, options appear in a connected list below the header. The last option receives bottom border-radius to close the visual container. Options can be unselected, selected, or disabled. The category header and all options share a consistent set of interaction states (default, hover, pressed, disabled). Category text uses Body M (16px/24px). Option text uses Body S (14px/18px). The chevron icon uses Font Awesome 6 Solid.</p>
+      <p>The Selector Accordion is built from two sub-components: a <strong>Category</strong> header (with label and chevron icon) and <strong>Option</strong> items. The category header toggles between collapsed and expanded states. When expanded, options appear in a connected list below the header. The last option receives bottom border-radius to close the visual container. Options can be unselected, selected, or disabled. The category header and all options share a consistent set of interaction states (default, hover, pressed, disabled). Category text uses Body M (16px/26px). Option text uses Body S (14px/18px). The chevron icon uses Font Awesome 6 Solid.</p>
 
       <!-- ---- VARIANTS ---- -->
       <h2>Variants</h2>
@@ -3524,10 +3527,10 @@
       <table class="doc-table">
         <thead><tr><th>Element</th><th>Font / Size</th></tr></thead>
         <tbody>
-          <tr><td>Label text</td><td>Lato Regular (400), 16px/24px, 0.16px tracking</td></tr>
-          <tr><td>Label icon</td><td>FA6 Solid (900), 16px/24px, 0.4px tracking</td></tr>
-          <tr><td>Category text</td><td>Lato Regular (400), 16px/24px, 0.16px tracking</td></tr>
-          <tr><td>Category chevron</td><td>FA6 Solid (900), 16px/24px, 0.4px tracking</td></tr>
+          <tr><td>Label text</td><td>Lato Regular (400), 16px/26px, 0.16px tracking</td></tr>
+          <tr><td>Label icon</td><td>FA6 Solid (900), 16px/26px, 0.4px tracking</td></tr>
+          <tr><td>Category text</td><td>Lato Regular (400), 16px/26px, 0.16px tracking</td></tr>
+          <tr><td>Category chevron</td><td>FA6 Solid (900), 16px/26px, 0.4px tracking</td></tr>
           <tr><td>Option text</td><td>Lato Regular (400), 14px/18px</td></tr>
         </tbody>
       </table>
@@ -3923,9 +3926,9 @@
       <table class="doc-table">
         <thead><tr><th>Element</th><th>Font / Size</th></tr></thead>
         <tbody>
-          <tr><td>Item label</td><td>Lato Regular (400), 16px/24px, 0.16px tracking</td></tr>
-          <tr><td>Left icon</td><td>FA6 Solid (900), 16px/24px, 0.4px tracking</td></tr>
-          <tr><td>Right icon</td><td>FA6 Solid (900), 16px/24px, 0.4px tracking</td></tr>
+          <tr><td>Item label</td><td>Lato Regular (400), 16px/26px, 0.16px tracking</td></tr>
+          <tr><td>Left icon</td><td>FA6 Solid (900), 16px/26px, 0.4px tracking</td></tr>
+          <tr><td>Right icon</td><td>FA6 Solid (900), 16px/26px, 0.4px tracking</td></tr>
         </tbody>
       </table>
 
@@ -4335,7 +4338,7 @@
       </div>
 
       <h3>With Label</h3>
-      <p>Radio button paired with a Body M label (Lato Regular, 16px/24px) at an 8px gap.</p>
+      <p>Radio button paired with a Body M label (Lato Regular, 16px/26px) at an 8px gap.</p>
       <div class="state-row">
         <span class="state-label">Unselected</span>
         <label class="form-radio"><input type="radio" name="rb-label"> Radio Button Label</label>
@@ -4401,7 +4404,7 @@
         <thead><tr><th>Property</th><th>Value</th></tr></thead>
         <tbody>
           <tr><td>Inner dot</td><td>8px circle, centered via absolute positioning</td></tr>
-          <tr><td>Label font</td><td>Lato Regular (400), 16px/24px</td></tr>
+          <tr><td>Label font</td><td>Lato Regular (400), 16px/26px</td></tr>
           <tr><td>Label color</td><td><code>--text-body</code> (#464646)</td></tr>
         </tbody>
       </table>
@@ -4735,11 +4738,11 @@
         <thead><tr><th>Element</th><th>Font / Size</th></tr></thead>
         <tbody>
           <tr><td>Heading</td><td>Lato Bold (700), 20px/24px, -0.1px tracking</td></tr>
-          <tr><td>Body</td><td>Lato Regular (400), 16px/24px, 0.16px tracking</td></tr>
-          <tr><td>Link text</td><td>Lato Bold (700), 16px/24px, 0.16px tracking</td></tr>
-          <tr><td>Link chevron</td><td>FA6 Solid (900), 16px/24px, 0.4px tracking</td></tr>
+          <tr><td>Body</td><td>Lato Regular (400), 16px/26px, 0.16px tracking</td></tr>
+          <tr><td>Link text</td><td>Lato Bold (700), 16px/26px, 0.16px tracking</td></tr>
+          <tr><td>Link chevron</td><td>FA6 Solid (900), 16px/26px, 0.4px tracking</td></tr>
           <tr><td>Status icon</td><td>FA6 Solid (900), 20px/24px, 0.5px tracking</td></tr>
-          <tr><td>Close icon</td><td>FA6 Solid (900), 20px/28px, 0.05px tracking</td></tr>
+          <tr><td>Close icon</td><td>FA6 Solid (900), 20px/32px, 0.05px tracking</td></tr>
         </tbody>
       </table>
 
@@ -4766,7 +4769,7 @@
       <table class="doc-table">
         <thead><tr><th>Attribute / Class</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
         <tbody>
-          <tr><td><code>.snackbar</code></td><td>Container</td><td>Default status</td><td>Root element. 100% wide, max-width 728px, rounded, bordered.</td></tr>
+          <tr><td><code>.snackbar</code></td><td>Container</td><td>Default status</td><td>Root element. 100% wide, max-width <code>--card-xl</code> (736px), rounded, bordered.</td></tr>
           <tr><td><code>.snackbar-success</code></td><td>Modifier</td><td>&mdash;</td><td>Applies success color to icon and heading.</td></tr>
           <tr><td><code>.snackbar-error</code></td><td>Modifier</td><td>&mdash;</td><td>Applies error color to icon and heading.</td></tr>
           <tr><td><code>.snackbar-information</code></td><td>Modifier</td><td>&mdash;</td><td>Applies information color to icon and heading.</td></tr>
@@ -5065,9 +5068,9 @@
       <table class="doc-table">
         <thead><tr><th>Element</th><th>Font / Size</th></tr></thead>
         <tbody>
-          <tr><td>Label (unselected)</td><td>Lato Regular (400), 16px/24px, 0.16px tracking</td></tr>
-          <tr><td>Label (selected)</td><td>Lato Bold (700), 16px/24px, 0.16px tracking</td></tr>
-          <tr><td>Icon</td><td>FA6 Solid (900), 16px/24px, 0.4px tracking</td></tr>
+          <tr><td>Label (unselected)</td><td>Lato Regular (400), 16px/26px, 0.16px tracking</td></tr>
+          <tr><td>Label (selected)</td><td>Lato Bold (700), 16px/26px, 0.16px tracking</td></tr>
+          <tr><td>Icon</td><td>FA6 Solid (900), 16px/26px, 0.4px tracking</td></tr>
         </tbody>
       </table>
 
@@ -5213,7 +5216,7 @@
       <h2>Variants</h2>
 
       <h3>Body Link (M)</h3>
-      <p>Lato Bold, 16px/24px, action-colored. Label underlines on hover. Used for in-content links.</p>
+      <p>Lato Bold, 16px/26px, action-colored. Label underlines on hover. Used for in-content links.</p>
       <div class="state-row">
         <span class="state-label">Default</span>
         <a class="text-link text-link-m" href="javascript:void(0)"><i class="link-icon fa-solid fa-circle-info"></i><span class="link-label">Link</span><i class="link-icon fa-solid fa-arrow-up-right-from-square"></i></a>
@@ -5350,7 +5353,7 @@
         <thead><tr><th>Attribute / Class</th><th>Type</th><th>Description</th></tr></thead>
         <tbody>
           <tr><td><code>.text-link</code></td><td>Base class</td><td>Applied to <code>&lt;a&gt;</code> or <code>&lt;button&gt;</code>. Uses <code>display: inline-flex</code> with 8px gap.</td></tr>
-          <tr><td><code>.text-link-m</code></td><td>Size class</td><td>Body Link. Action color, 16px/24px, bold. Underlines label on hover.</td></tr>
+          <tr><td><code>.text-link-m</code></td><td>Size class</td><td>Body Link. Action color, 16px/26px, bold. Underlines label on hover.</td></tr>
           <tr><td><code>.text-link-s</code></td><td>Size class</td><td>Small Link. Body color, 14px/20px, bold. The default (body-colored) variant is reserved for <a class="text-link text-link-m" href="#comp-breadcrumbs" data-page="comp-breadcrumbs"><span class="link-label">Breadcrumbs</span></a> and Navigation only.</td></tr>
           <tr><td><code>.link-label</code></td><td>Element</td><td><strong>Required.</strong> Wrap the text in <code>&lt;span class="link-label"&gt;</code> so hover underline only applies to the text, not icons.</td></tr>
           <tr><td><code>.link-icon</code></td><td>Element</td><td>Font Awesome icon inside the link. Never receives underline.</td></tr>
@@ -5470,7 +5473,7 @@
       </div>
 
       <h3>With Label</h3>
-      <p>Toggle paired with a Body M label (Lato Regular, 16px/24px) at an 8px gap.</p>
+      <p>Toggle paired with a Body M label (Lato Regular, 16px/26px) at an 8px gap.</p>
       <div class="state-row">
         <span class="state-label">Off</span>
         <label class="form-toggle"><input type="checkbox"><span class="toggle-track"><span class="toggle-knob"></span></span> Toggle switch</label>
@@ -5535,7 +5538,7 @@
         <tbody>
           <tr><td>Knob shape</td><td>Pill (border-radius: 100px), absolutely positioned</td></tr>
           <tr><td>Transition</td><td>0.2s ease on background, border-color, transform</td></tr>
-          <tr><td>Label font</td><td>Lato Regular (400), 16px/24px</td></tr>
+          <tr><td>Label font</td><td>Lato Regular (400), 16px/26px</td></tr>
           <tr><td>Label color</td><td><code>--text-body</code> (#464646)</td></tr>
         </tbody>
       </table>
@@ -6508,7 +6511,7 @@
           <tr><td>Desktop Clear all</td><td>—</td><td><code>flex: 0 0 auto</code>; button intrinsic width; column <code>padding-top: var(--jumper-sm-xs)</code> (32px)</td></tr>
           <tr><td>Responsive breakpoint</td><td colspan="2">Desktop at <code>min-width: 1104px</code> (<code>--bp-desktop-min</code>). Mobile/tablet at <code>max-width: 1103px</code> (<code>--bp-tablet-max</code>).</td></tr>
           <tr><td>Shadow (Snackbar)</td><td colspan="2"><code>var(--shadow-default)</code>: <code>0px 8px 16px 0px</code> with color <code>--shadow-default-container</code> (light: rgba(179,179,179,0.1), dark: rgba(24,24,24,0.1))</td></tr>
-          <tr><td>Need Snackbar width</td><td>100% (full width)</td><td><code>--space-9100</code> (728px)</td></tr>
+          <tr><td>Need Snackbar width</td><td>100% (full width)</td><td><code>--space-9200</code> (736px)</td></tr>
         </tbody>
       </table>
       <h3>Components used</h3>
@@ -6519,7 +6522,7 @@
           <tr><td>Open / Close</td><td><code>.btn.btn-outline.btn-icon-only.btn-s</code> with <code>fa-filter</code>; <code>.btn.btn-primary.btn-icon-only.btn-s</code> with <code>fa-xmark</code>.</td></tr>
           <tr><td>Details criterion row</td><td><a class="text-link text-link-m" href="#comp-sel-accordion" data-page="comp-sel-accordion"><span class="link-label">Selector Accordion</span></a>: <code>.sel-accordion-group</code>, <code>.sel-accordion-label</code>, <code>.sel-accordion-stack</code> (category + <code>.sel-accordion-dropdown</code>).</td></tr>
           <tr><td>Need criteria</td><td><a class="text-link text-link-m" href="#comp-button-group" data-page="comp-button-group"><span class="link-label">Button Group</span></a>: <code>.btn-group</code>, <code>.btn-group-item</code>, <code>.btn-group-icon</code>. Mobile: stacked column with <code>1px</code> bottom borders. Desktop: intrinsic-width horizontal row (not stretched). All icons use <code>--btn-icon-action</code>; selected items inherit the Button Group <code>.selected</code> state colors.</td></tr>
-          <tr><td>Need expanded (Snackbar)</td><td>When a need option is selected, a <a class="text-link text-link-m" href="#comp-snackbar" data-page="comp-snackbar"><span class="link-label">Snackbar</span></a> (<code>.snackbar</code>) appears below the Button Group with descriptive text. Grouped with <code>--jumper-xxs-xxxs</code> gap. Desktop width: <code>--space-9100</code> (728px). Mobile: full width.</td></tr>
+          <tr><td>Need expanded (Snackbar)</td><td>When a need option is selected, a <a class="text-link text-link-m" href="#comp-snackbar" data-page="comp-snackbar"><span class="link-label">Snackbar</span></a> (<code>.snackbar</code>) appears below the Button Group with descriptive text. Grouped with <code>--jumper-xxs-xxxs</code> gap. Desktop width: <code>--space-9200</code> (736px). Mobile: full width.</td></tr>
           <tr><td>Actions</td><td><code>.btn.btn-primary.btn-m</code>; <code>Clear all</code> disabled per spec when no dirty filters.</td></tr>
         </tbody>
       </table>
@@ -6530,9 +6533,9 @@
       <table class="doc-table">
         <thead><tr><th>Class / region</th><th>Role</th></tr></thead>
         <tbody>
-          <tr><td><code>.page.page--full-width</code></td><td>On the docs site (or app shell): use on the page section when mixing a 728px reading column with a full-width preview row. Pair with <code>.doc-layout-narrow</code> and <code>.doc-layout-full</code>.</td></tr>
-          <tr><td><code>.doc-layout-narrow</code></td><td>Constrains content to <code>--grid-body-max-width</code> (728px), centered.</td></tr>
-          <tr><td><code>.doc-layout-full</code></td><td>Breaks out to the main column edges using page gutter tokens; at 1512px+ horizontal inset uses <code>--grid-col-margin</code>.</td></tr>
+          <tr><td><code>.page.page--full-width</code></td><td>On the docs site (or app shell): use on the page section when mixing a 736px reading column with a full-width preview row. Pair with <code>.doc-layout-narrow</code> and <code>.doc-layout-full</code>.</td></tr>
+          <tr><td><code>.doc-layout-narrow</code></td><td>Constrains content to <code>--grid-body-max-width</code> (736px), centered.</td></tr>
+          <tr><td><code>.doc-layout-full</code></td><td>Breaks out to the main column edges using page gutter tokens; at 1504px+ horizontal inset uses <code>--grid-global-margin</code>.</td></tr>
           <tr><td><code>.pattern-filter</code></td><td>Root panel; add <code>.pattern-filter-mobile</code> or <code>.pattern-filter-desktop</code>.</td></tr>
           <tr><td><code>.pattern-filter-mobile-expanded</code></td><td>Applies vertical gap between header and body on mobile expanded state.</td></tr>
           <tr><td><code>.pattern-filter-header</code></td><td>Row: toggle + trailing icon button.</td></tr>
@@ -7133,8 +7136,8 @@
       <table class="doc-table">
         <thead><tr><th>Property</th><th>Value</th><th>Token</th></tr></thead>
         <tbody>
-          <tr><td>Label font</td><td>Lato Regular 16px/24px</td><td><code>Body/Body M</code></td></tr>
-          <tr><td>Field text</td><td>Lato Regular 16px/24px</td><td><code>Body/Body M</code></td></tr>
+          <tr><td>Label font</td><td>Lato Regular 16px/26px</td><td><code>Body/Body M</code></td></tr>
+          <tr><td>Field text</td><td>Lato Regular 16px/26px</td><td><code>Body/Body M</code></td></tr>
           <tr><td>Hint text</td><td>Lato Regular 14px/18px</td><td><code>Body/Body S</code></td></tr>
           <tr><td>Icon font</td><td>FA6 Free Solid 16px</td><td><code>Body/Icons/M icon</code></td></tr>
           <tr><td>Checkbox radius</td><td>4px</td><td><code>Corner Radius/S checkbox</code></td></tr>
@@ -7364,7 +7367,7 @@
 
       <div class="form-example-row">
         <div class="example-desktop">
-          <h4 style="margin-bottom:var(--padding-m);color:var(--text-body)">Desktop (728px)</h4>
+          <h4 style="margin-bottom:var(--padding-m);color:var(--text-body)">Desktop (736px)</h4>
           <div class="form-example-card">
             <div class="card-heading">
               <h3>We're here to pray for you</h3>
@@ -7387,7 +7390,7 @@
 
         <div class="example-mobile">
           <h4 style="margin-bottom:var(--padding-m);color:var(--text-body)">Mobile (384px)</h4>
-          <div class="form-example-card" style="--jumper-md-sm:24px;--margin-m:24px;--jumper-sm-xs:16px;--jumper-xxxs-tiny:4px;--h4-size:20px;--h4-line:28px">
+          <div class="form-example-card" style="--jumper-md-sm:32px;--grid-global-margin:16px;--jumper-sm-xs:24px;--jumper-xxxs-tiny:4px;--h4-size:20px;--h4-line:28px">
             <div class="card-heading">
               <h3>We're here to pray for you</h3>
               <p>Let's walk this journey of hope, together.</p>
@@ -7491,15 +7494,15 @@
     <section class="page" id="principle-responsive">
       <div class="page-breadcrumb">System Principles <span>/</span> Responsive Design</div>
       <h1>Responsive Design</h1>
-      <p class="lead">The system targets three breakpoints: Mobile (384px), Tablet (808px), and Desktop (1512px).</p>
-      <h2>Breakpoints</h2>
+      <p class="lead">The system targets three breakpoints: Mobile (384px), Tablet (800px), and Desktop (1504px). A minimum mobile reference of 320px is provided for designers but is not enforced as a development breakpoint.</p>
+      <h2>Device Sizes and Breakpoints</h2>
       <table class="doc-table">
-        <thead><tr><th>Device</th><th>Width</th></tr></thead>
+        <thead><tr><th>Device</th><th>Viewport / Frame size (px)</th><th>Min width breakpoint (px)</th><th>Max width breakpoint (px)</th></tr></thead>
         <tbody>
-          <tr><td>Mobile</td><td>384px</td></tr>
-          <tr><td>Tablet</td><td>808px</td></tr>
-          <tr><td>Desktop</td><td>1512px</td></tr>
-          <tr><td>Mega</td><td>1920px</td></tr>
+          <tr><td>Mobile</td><td>384</td><td>320</td><td>743</td></tr>
+          <tr><td>Tablet</td><td>800</td><td>640</td><td>1151</td></tr>
+          <tr><td>Desktop</td><td>1504</td><td>1152</td><td>1919</td></tr>
+          <tr><td>Mega</td><td>1920</td><td>...</td><td>...</td></tr>
         </tbody>
       </table>
 
@@ -7507,24 +7510,29 @@
       <ul>
         <li>Primary design focus: Mobile and Desktop.</li>
         <li>Tablet values are defined only where they deviate from Mobile.</li>
-        <li>Typography, jumper spacing, margins, and grid all adapt per breakpoint.</li>
+        <li>Typography, jumper spacing, grid, and margins all adapt per breakpoint.</li>
       </ul>
 
       <h2>Grid System</h2>
       <table class="doc-table">
-        <thead><tr><th>Property</th><th>Desktop</th><th>Mobile</th></tr></thead>
+        <thead><tr><th>Property</th><th>Desktop</th><th>Tablet</th><th>Mobile</th></tr></thead>
         <tbody>
-          <tr><td>Columns</td><td>12</td><td>4</td></tr>
-          <tr><td>Col Width</td><td>56px</td><td>72px</td></tr>
-          <tr><td>Gutter</td><td>32px</td><td>16px</td></tr>
-          <tr><td>Margin</td><td>244px</td><td>24px</td></tr>
-          <tr><td>Row Gap</td><td>64px</td><td>32px</td></tr>
-          <tr><td>Body Max Width</td><td>728px</td><td>336px</td></tr>
+          <tr><td>Columns</td><td>12</td><td>8</td><td>4</td></tr>
+          <tr><td>Col Width</td><td>64px</td><td>48px</td><td>72px</td></tr>
+          <tr><td>Col Gutter</td><td>32px</td><td>32px</td><td>16px</td></tr>
+          <tr><td>Col Margin</td><td>16px</td><td>16px</td><td>8px</td></tr>
+          <tr><td>Global Margin</td><td>176px</td><td>80px</td><td>16px</td></tr>
+          <tr><td>Row Gap</td><td>32px</td><td>16px</td><td>16px</td></tr>
+          <tr><td>Body Max Width</td><td>736px</td><td>448px</td><td>336px</td></tr>
         </tbody>
       </table>
 
+      <h2>Fixed vs Fluid Layouts</h2>
+      <p><strong>Fixed layout:</strong> Content does not expand when the viewport stretches beyond the design frame (1504px). The total side margin is Global Margin + Col Margin (e.g., 176 + 16 = 192px per side on desktop).</p>
+      <p><strong>Fluid layout:</strong> Content extends to the edges of the outer columns. The margin consists of only the Global Margin, and containers stretch left and right as the viewport grows.</p>
+
       <h2>Readability</h2>
-      <p>Body text (Body M, 16px) should be constrained to 60-75 characters per line. The grid's <code>Body text.max width</code> token (728px on Desktop, 336px on Mobile) enforces this.</p>
+      <p>Body text (Body M, 16px) should be constrained to 60-75 characters per line. The grid's <code>Body text.max width</code> token (736px on Desktop, 448px on Tablet, 336px on Mobile) enforces this.</p>
     </section>
 
 
