@@ -646,7 +646,7 @@ html, body {
   font-size: var(--body-xs-size);
   line-height: var(--body-xs-line);
   color: var(--text-captions);
-  margin-bottom: var(--padding-s);
+  margin-bottom: var(--padding-m);
 }
 
 .page-breadcrumb span {
@@ -668,7 +668,7 @@ html, body {
   line-height: var(--h3-line);
   font-weight: var(--h3-weight);
   color: var(--text-headings);
-  margin-bottom: var(--padding-s);
+  margin-bottom: var(--padding-m);
 }
 
 .page h2 {
