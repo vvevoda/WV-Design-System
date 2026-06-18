@@ -1588,7 +1588,7 @@
       <h2>Construction</h2>
 
       <h3>Scale and Spacing</h3>
-      <table class="doc-table">
+      <table class="doc-table doc-wide">
         <thead><tr><th>Property</th><th>S</th><th>M</th><th>L</th><th>XL</th><th>Token</th></tr></thead>
         <tbody>
           <tr><td>Padding top/bottom</td><td>8px</td><td>8px</td><td>12px</td><td>16px</td><td><code>Fixed/padding/s</code>, <code>s</code>, <code>s-m</code>, <code>m</code></td></tr>
@@ -2220,7 +2220,7 @@
       </table>
 
       <h3>Color Tokens</h3>
-      <table class="doc-table">
+      <table class="doc-table doc-wide">
         <thead><tr><th>Element</th><th>Default</th><th>Hover</th><th>Focus</th><th>Pressed</th><th>Disabled</th></tr></thead>
         <tbody>
           <tr><td>Button bg</td><td><code>--surface-default-container</code></td><td><code>--surface-action-hover</code></td><td><code>--surface-default-container</code></td><td><code>--surface-default-container</code></td><td><code>--surface-disabled</code></td></tr>
@@ -3064,7 +3064,7 @@
         </tbody>
       </table>
 
-      <table class="doc-table" style="margin-top:var(--padding-m)">
+      <table class="doc-table doc-wide" style="margin-top:var(--padding-m)">
         <thead><tr><th>Element</th><th>Error</th><th>Error Hover</th><th>Success</th><th>Success Hover</th><th>Information</th><th>Info Hover</th></tr></thead>
         <tbody>
           <tr><td>Field border</td><td><code>--border-error</code></td><td><code>--border-error</code></td><td><code>--border-success</code></td><td><code>--border-success</code></td><td><code>--border-information</code></td><td><code>--border-information</code></td></tr>
@@ -3333,7 +3333,7 @@
         </div>
       </div>
 
-      <h3>Option States (Unselected)</h3>
+      <h3>Option States (Drop-down options that are unselected)</h3>
       <p>Individual option rows within an expanded selector accordion. Options use Body S typography. These show the unselected variant.</p>
 
       <div class="state-row">
@@ -3372,7 +3372,7 @@
         </div>
       </div>
 
-      <h3>Option States (Selected)</h3>
+      <h3>Option States (Drop-down options that are selected)</h3>
       <p>Options in the selected state, indicating the currently chosen value.</p>
 
       <div class="state-row">
@@ -3535,8 +3535,8 @@
         </tbody>
       </table>
 
-      <h3>Color Tokens</h3>
-      <table class="doc-table">
+      <h3>Color Tokens for Category Header</h3>
+      <table class="doc-table doc-wide">
         <thead><tr><th>Element</th><th>Default</th><th>Hover</th><th>Pressed</th><th>Disabled</th></tr></thead>
         <tbody>
           <tr>
@@ -3567,7 +3567,8 @@
         </tbody>
       </table>
 
-      <table class="doc-table" style="margin-top:var(--padding-m)">
+      <h3>Color Tokens for Drop-Down Options</h3>
+      <table class="doc-table doc-wide">
         <thead><tr><th>Element</th><th>Default</th><th>Hover</th><th>Pressed</th><th>Selected</th><th>Selected + Hover</th><th>Selected + Pressed</th><th>Disabled</th></tr></thead>
         <tbody>
           <tr>
@@ -3933,7 +3934,7 @@
       </table>
 
       <h3>Color Tokens</h3>
-      <table class="doc-table">
+      <table class="doc-table doc-wide">
         <thead><tr><th>Element</th><th>Default</th><th>Hover</th><th>Pressed</th><th>Selected</th><th>Disabled</th></tr></thead>
         <tbody>
           <tr>
@@ -5313,7 +5314,7 @@
       <h2>Construction</h2>
 
       <h3>Typography</h3>
-      <table class="doc-table">
+      <table class="doc-table doc-wide">
         <thead><tr><th>Size</th><th>Font</th><th>Weight</th><th>Size / Line Height</th><th>Letter Spacing</th><th>Token</th></tr></thead>
         <tbody>
           <tr><td>M (Body Link)</td><td>Lato</td><td>Bold (700)</td><td>16px / 24px</td><td>1%</td><td><code>Body/Text Links/M link</code></td></tr>
@@ -5983,8 +5984,7 @@
     <!-- ================================================================
          PATTERN — FILTER
          ================================================================ -->
-    <section class="page page--full-width" id="pattern-filter">
-      <div class="doc-layout-narrow">
+    <section class="page" id="pattern-filter">
       <div class="page-breadcrumb">Patterns <span>/</span> Filter</div>
       <h1>Filter</h1>
       <p class="lead">A composed pattern for refining search results: a mode toggle (Details vs Need), optional filter controls, and primary actions. Mobile uses a compact bar with an expand affordance; desktop lays out criteria in a horizontal row.</p>
@@ -6000,10 +6000,8 @@
       <!-- ---- WORKING EXAMPLE ---- -->
       <h2>Working Example</h2>
       <p>Interactive demo. Toggle between Details and Need; select accordion options or need buttons. Resize the browser below 1104px to see the mobile layout.</p>
-      </div>
 
-      <div class="doc-layout-full">
-      <div class="preview-block">
+      <div class="preview-block doc-wide">
         <div class="pattern-filter pattern-filter-responsive pattern-filter-expanded" role="region" aria-label="Filter working example" data-filter-demo>
           <!-- Mobile header: toggle + filter/close icon (hidden at desktop via CSS) -->
           <div class="pattern-filter-header">
@@ -6151,9 +6149,6 @@
           </div>
         </div>
       </div>
-      </div>
-
-      <div class="doc-layout-narrow">
 
       <!-- ---- VARIANTS ---- -->
       <h2>Variants</h2>
@@ -6321,15 +6316,10 @@
         </div>
       </div>
 
-      </div>
-
-      <div class="doc-layout-narrow">
       <h3>Desktop — Details mode</h3>
       <p>Toggle centered above a criteria row sized to the Figma content width (1057px inside the 1105px frame). Criterion columns use <code>flex: 1</code> with <code>min-width: 128px</code> on the accordion trigger so 128px is a minimum, not a fixed width. Gaps use <code>--jumper-xs-xxs</code> (24px). <strong>Clear all</strong> uses intrinsic button width; extra horizontal space goes to the criteria columns. Top padding <code>--jumper-sm-xs</code> (32px) aligns the button with the triggers.</p>
-      </div>
 
-      <div class="doc-layout-full">
-      <div class="preview-block">
+      <div class="preview-block doc-wide">
         <div class="pattern-filter pattern-filter-desktop" role="region" aria-label="Filter (desktop example)">
           <div class="toggle-selector toggle-selector-desktop toggle-selector-demo" style="width:310px;" role="radiogroup" aria-label="Search mode desktop">
             <span class="toggle-selector-pill"></span>
@@ -6424,15 +6414,11 @@
           </div>
         </div>
       </div>
-      </div>
 
-      <div class="doc-layout-narrow">
       <h3>Desktop — Search by Need ("Waiting" selected)</h3>
       <p>The default state for Search by Need pre-selects "Waiting over 1 year." The Button Group shows the selected item at its intrinsic width (not stretched) and a <a class="text-link text-link-m" href="#comp-snackbar" data-page="comp-snackbar"><span class="link-label">Snackbar</span></a> appears below it with descriptive text. All four icons use the action color (<code>--btn-icon-action</code>). The Button Group and Snackbar are grouped with a <code>--jumper-xxs-xxxs</code> (16px) gap. Figma <code>state=expanded, filter=need waiting, viewport=desktop</code>.</p>
-      </div>
 
-      <div class="doc-layout-full">
-      <div class="preview-block">
+      <div class="preview-block doc-wide">
         <div class="pattern-filter pattern-filter-desktop" role="region" aria-label="Filter (desktop Search by Need, waiting selected)">
           <div class="toggle-selector toggle-selector-desktop toggle-selector-demo right-active" style="width:310px;" role="radiogroup" aria-label="Search mode desktop (Need waiting)">
             <span class="toggle-selector-pill"></span>
@@ -6470,9 +6456,7 @@
           </div>
         </div>
       </div>
-      </div>
 
-      <div class="doc-layout-narrow">
       <!-- ---- ACCESSIBILITY ---- -->
       <h2>Accessibility Considerations</h2>
       <p>WCAG 2.1 AA target. The pattern exposes multiple controls; each interactive element must have an accessible name.</p>
@@ -6492,7 +6476,7 @@
       <!-- ---- CONSTRUCTION ---- -->
       <h2>Construction</h2>
       <h3>Layout tokens</h3>
-      <table class="doc-table" style="table-layout:fixed; width:100%;">
+      <table class="doc-table">
         <colgroup>
           <col style="width:30%;">
           <col style="width:35%;">
@@ -6502,15 +6486,15 @@
         <tbody>
           <tr><td>Panel max width</td><td><code>--card-s</code> (336px)</td><td>1105px (Figma frame)</td></tr>
           <tr><td>Panel padding</td><td><code>--padding-m</code> (16px)</td><td><code>--jumper-xs-xxs</code> (24px)</td></tr>
-          <tr><td>Panel border</td><td colspan="2"><code>1px solid var(--border-default)</code></td></tr>
-          <tr><td>Panel radius</td><td colspan="2"><code>--radius-m</code></td></tr>
-          <tr><td>Header gap (toggle to icon button)</td><td colspan="2"><code>--padding-m</code></td></tr>
+          <tr><td>Panel border</td><td><code>1px solid var(--border-default)</code></td><td>"</td></tr>
+          <tr><td>Panel radius</td><td><code>--radius-m</code></td><td>"</td></tr>
+          <tr><td>Header gap (toggle to icon button)</td><td><code>--padding-m</code></td><td>"</td></tr>
           <tr><td>Body gap (stack / row)</td><td><code>--padding-m</code></td><td><code>--jumper-xs-xxs</code></td></tr>
-          <tr><td>Label to category (Selector Accordion)</td><td colspan="2"><code>--jumper-xxxs-tiny</code> (8px), per Selector Accordion spec</td></tr>
+          <tr><td>Label to category (Selector Accordion)</td><td><code>--jumper-xxxs-tiny</code> (8px), per Selector Accordion spec</td><td>"</td></tr>
           <tr><td>Desktop criteria row</td><td>—</td><td>Max width 1057px; five criterion columns <code>flex: 1 1 0</code> with <code>min-width: 128px</code>; accordion category <code>min-width: 128px</code>, <code>width: 100%</code>; gap <code>--jumper-xs-xxs</code></td></tr>
           <tr><td>Desktop Clear all</td><td>—</td><td><code>flex: 0 0 auto</code>; button intrinsic width; column <code>padding-top: var(--jumper-sm-xs)</code> (32px)</td></tr>
-          <tr><td>Responsive breakpoint</td><td colspan="2">Desktop at <code>min-width: 1104px</code> (<code>--bp-desktop-min</code>). Mobile/tablet at <code>max-width: 1103px</code> (<code>--bp-tablet-max</code>).</td></tr>
-          <tr><td>Shadow (Snackbar)</td><td colspan="2"><code>var(--shadow-default)</code>: <code>0px 8px 16px 0px</code> with color <code>--shadow-default-container</code> (light: rgba(179,179,179,0.1), dark: rgba(24,24,24,0.1))</td></tr>
+          <tr><td>Responsive breakpoint</td><td><code>max-width: 743px;</code> (<code>--bp-mobile-max</code>)</td><td><code>min-width: 1104px</code> (<code>--bp-desktop-min</code>)</td></tr>
+          <tr><td>Shadow (Snackbar)</td><td><code>var(--shadow-default)</code>: <code>0px 8px 16px 0px</code> with color <code>--shadow-default-container</code> (light: rgba(179,179,179,0.1), dark: rgba(24,24,24,0.1))</td><td>"</td></tr>
           <tr><td>Need Snackbar width</td><td>100% (full width)</td><td><code>--space-9200</code> (736px)</td></tr>
         </tbody>
       </table>
@@ -6533,9 +6517,7 @@
       <table class="doc-table">
         <thead><tr><th>Class / region</th><th>Role</th></tr></thead>
         <tbody>
-          <tr><td><code>.page.page--full-width</code></td><td>On the docs site (or app shell): use on the page section when mixing a 736px reading column with a full-width preview row. Pair with <code>.doc-layout-narrow</code> and <code>.doc-layout-full</code>.</td></tr>
-          <tr><td><code>.doc-layout-narrow</code></td><td>Constrains content to <code>--grid-body-max-width</code> (736px), centered.</td></tr>
-          <tr><td><code>.doc-layout-full</code></td><td>Breaks out to the main column edges using page gutter tokens; at 1504px+ horizontal inset uses <code>--grid-global-margin</code>.</td></tr>
+          <tr><td><code>.doc-wide</code></td><td>Allows an element to expand beyond the default 736px body column up to 80vw. Use on preview blocks, tables, or images that need more horizontal space.</td></tr>
           <tr><td><code>.pattern-filter</code></td><td>Root panel; add <code>.pattern-filter-mobile</code> or <code>.pattern-filter-desktop</code>.</td></tr>
           <tr><td><code>.pattern-filter-mobile-expanded</code></td><td>Applies vertical gap between header and body on mobile expanded state.</td></tr>
           <tr><td><code>.pattern-filter-header</code></td><td>Row: toggle + trailing icon button.</td></tr>
@@ -6851,12 +6833,11 @@
 
       <h3>Initialize demos (optional, docs site)</h3>
       <p>Add <code>toggle-selector-demo</code> on the toggle for pill animation (see <a class="text-link text-link-m" href="#comp-toggle-selector" data-page="comp-toggle-selector"><span class="link-label">Toggle Selector</span></a>). Add <code>sel-accordion-demo</code> on each <code>.sel-accordion-group</code> for expand/collapse and option selection (see <a class="text-link text-link-m" href="#comp-sel-accordion" data-page="comp-sel-accordion"><span class="link-label">Selector Accordion</span></a>). Add <code>data-filter-demo</code> on the root <code>.pattern-filter</code> to wire up mode toggling and need selection.</p>
-      </div>
     </section>
 
 
     <!-- ================================================================
-         PATTERN — FORMS
+         PATTERN — FORMS 
          ================================================================ -->
     <section class="page" id="pattern-forms">
       <div class="page-breadcrumb">Patterns <span>/</span> Forms</div>
