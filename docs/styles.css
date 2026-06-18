@@ -230,9 +230,7 @@
 
   /* --- Breakpoints --- */
   --bp-mobile-min: 320px;
-  --bp-mobile-max: 743px;
-  --bp-tablet-min: 744px;
-  --bp-tablet-max: 1103px;
+  --bp-mobile-max: 1103px;
   --bp-desktop-min: 1104px;
   --bp-desktop-max: 1919px;
   --bp-mega-min: 1920px;
@@ -594,8 +592,8 @@ html, body {
 
 .page {
   display: none;
-  margin: 0 auto;
-  padding: var(--jumper-lg-md) inherit;
+  padding: var(--jumper-lg-md) var(--grid-global-margin);
+  box-sizing: border-box;
 }
 
 
@@ -604,43 +602,6 @@ html, body {
   display: block;
 }
 
-/* Full-width page shell (e.g. Filter): main column uses full .main-content width; inner blocks choose narrow (728) or full-bleed rows. */
-.page.page--full-width {
-  max-width: none;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-
-/* Centered prose / previews at body max width (728px desktop). */
-.doc-layout-narrow {
-  max-width: var(--grid-body-max-width);
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/*
- * Break out to the edges of .main-content (cancels .page horizontal padding),
- * then inset with page gutter; at wide viewports use grid outer margin token.
- */
-.doc-layout-full {
-  margin-left: calc(-1 * var(--jumper-md-sm));
-  margin-right: calc(-1 * var(--jumper-md-sm));
-  width: calc(100% + 2 * var(--jumper-md-sm));
-  max-width: none;
-  box-sizing: border-box;
-  padding-left: var(--jumper-md-sm);
-  padding-right: var(--jumper-md-sm);
-}
-
-@media (min-width: 1504px) {
-  .doc-layout-full {
-    padding-left: var(--grid-global-margin);
-    padding-right: var(--grid-global-margin);
-  }
-}
 
 .page-breadcrumb {
   font-size: var(--body-xs-size);
@@ -658,10 +619,14 @@ html, body {
    Typography
    ========================================================================== */
 
-   .page, h1, h2, h3,  h4, h5, h6, p, .page p .page p.lead, .page .page-breadcrumb, .guidance-grid {
+  h1, h2, h3, h4, h5, h6, p, .page p, .page p.lead,
+  .page .page-breadcrumb, .guidance-grid, .doc-table, .code-block,
+  .page ul, .page ol, .carousel, .preview-block, .spacing-row, .swatch-grid, .type-sample,
+  .theme-comparison, .theme-comparison-full {
     width: 100%;
     max-width: var(--grid-body-max-width);
   }
+
 
 .page h1 {
   font-size: var(--h3-size);
@@ -898,6 +863,10 @@ html, body {
   font-size: 13px;
 }
 
+.doc-wide {
+  max-width: 80vw;
+}
+
 
 /* ==========================================================================
    Inline tokens
@@ -1086,12 +1055,9 @@ pre code {
   color: #b3b3b3;
 }
 
-.theme-comparison-full {
-  max-width: none;
-}
-
+.theme-comparison-full,
 .page .theme-comparison {
-  max-width: none;
+  box-sizing: border-box;
 }
 
 /* ==========================================================================
@@ -1792,7 +1758,6 @@ pre code {
 .pattern-filter.pattern-filter-desktop {
   width: 100%;
   max-width: 1105px;
-  margin-inline: auto;
   padding: var(--jumper-xs-xxs);
   display: flex;
   flex-direction: column;
@@ -2390,7 +2355,7 @@ pre code {
 
 .form-checkbox input[type="checkbox"]:focus-visible,
 .form-checkbox input[type="checkbox"].show-focus {
-  outline: 2px solid var(--border-action);
+  outline: 2px solid var(--border-action-focus);
   outline-offset: 3px;
   border-radius: var(--radius-s);
 }
@@ -2477,7 +2442,7 @@ pre code {
 
 .form-radio input[type="radio"]:focus-visible,
 .form-radio input[type="radio"].show-focus {
-  outline: 2px solid var(--border-action);
+  outline: 2px solid var(--border-action-focus);
   outline-offset: 2px;
 }
 
@@ -2595,7 +2560,7 @@ pre code {
   content: '';
   position: absolute;
   inset: -6px;
-  border: 2px solid var(--border-action);
+  border: 2px solid var(--border-action-focus);
   border-radius: 104px;
   pointer-events: none;
 }
@@ -2703,7 +2668,7 @@ pre code {
   content: '';
   position: absolute;
   inset: -5px;
-  border: 2px solid var(--border-action);
+  border: 2px solid var(--border-action-focus);
   border-radius: 48px;
   pointer-events: none;
 }
@@ -2827,7 +2792,7 @@ pre code {
   left: -4px;
   right: -4px;
   bottom: -6px;
-  border: 2px solid var(--border-action);
+  border: 2px solid var(--border-action-focus);
   border-radius: var(--radius-s);
   pointer-events: none;
 }
@@ -2976,7 +2941,7 @@ pre code {
   content: '';
   position: absolute;
   inset: -5px;
-  border: 2px solid var(--border-action);
+  border: 2px solid var(--border-action-focus);
   border-radius: var(--radius-focus-ring);
   pointer-events: none;
 }
@@ -3517,13 +3482,18 @@ p.snackbar-body {
 
 .form-example-row {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: var(--jumper-lg-md);
   align-items: flex-start;
 }
 
+.form-example-row .example-desktop > *,
+.form-example-row .example-mobile > * {
+  border: 1px dashed purple;
+}
+
 .form-example-row .example-desktop {
-  width: 100%;
+  width: var(--grid-body-max-width);
 }
 
 .form-example-row .example-desktop .form-example-card {
