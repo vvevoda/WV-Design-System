@@ -100,8 +100,8 @@
   --space-9200: 736px;
 
   /* --- Fixed Padding (Responsive) --- */
-  --padding-xxxs: 2px;
-  --padding-xxs: 4px;
+  --padding-xxs: 2px;
+  --padding-xs: 4px;
   --padding-s: 8px;
   --padding-s-m: 12px;
   --padding-m: 16px;
@@ -547,7 +547,7 @@ html, body {
 
 .sidebar-link {
   display: block;
-  padding: var(--padding-xxs) var(--padding-l) var(--padding-xxs) var(--padding-xl);
+  padding: var(--padding-xs) var(--padding-l) var(--padding-xs) var(--padding-xl);
   font-size: var(--body-s-size);
   line-height: var(--body-s-line);
   color: var(--text-body);
@@ -559,6 +559,7 @@ html, body {
 
 .sidebar-link:hover {
   background: var(--surface-action-hover);
+  border-left-color: var(--border-action-hover);
   color: var(--text-action-on-hover);
 }
 
@@ -800,7 +801,7 @@ html, body {
   position: absolute;
   top: var(--padding-s);
   right: var(--padding-s);
-  padding: var(--padding-xxs) var(--padding-s);
+  padding: var(--padding-xs) var(--padding-s);
   font-size: var(--body-xs-size);
   font-family: var(--font-primary);
   background: rgba(255, 255, 255, 0.1);
@@ -944,7 +945,7 @@ pre code {
   display: inline-block;
   font-size: var(--body-xs-size);
   font-weight: 700;
-  padding: var(--padding-xxs) var(--padding-s);
+  padding: var(--padding-xs) var(--padding-s);
   border-radius: var(--radius-xxl);
   line-height: 1;
 }
@@ -1813,7 +1814,7 @@ pre code {
 .pattern-filter-field {
   display: flex;
   flex-direction: column;
-  gap: var(--padding-xxxs);
+  gap: var(--padding-xxs);
   min-width: 0;
   width: 100%;
 }
@@ -1842,9 +1843,9 @@ pre code {
   min-width: 128px;
 }
 
-/* Figma size S: label row to selector uses 2px gap (--padding-xxxs); desktop keeps Selector Accordion token gap on the group. */
+/* Figma size S: label row to selector uses 2px gap (--padding-xxs); desktop keeps Selector Accordion token gap on the group. */
 .pattern-filter.pattern-filter-mobile .pattern-filter-field .sel-accordion-group {
-  gap: var(--padding-xxxs);
+  gap: var(--padding-xxs);
 }
 
 .pattern-filter.pattern-filter-desktop .sel-accordion-category > span:first-of-type {
@@ -2199,8 +2200,15 @@ pre code {
 .input-group {
   display: flex;
   flex-direction: column;
-  gap: var(--padding-s);
   align-items: flex-start;
+}
+
+.input-group > .input-label + .form-field {
+  margin-top: var(--padding-s);
+}
+
+.input-group > .form-field + .input-hint {
+  margin-top: var(--padding-xs);
 }
 
 .input-label {
@@ -2391,7 +2399,7 @@ pre code {
   display: flex;
   align-items: center;
   gap: var(--space-100);
-  padding: var(--padding-xxs) 0;
+  padding: var(--padding-xs) 0;
   cursor: pointer;
   font-family: var(--font-primary);
   font-size: var(--body-m-size);
@@ -3274,7 +3282,7 @@ p.snackbar-body {
   display: flex;
   flex-direction: column;
   flex: 1 0 0;
-  gap: var(--padding-xxxs);
+  gap: var(--padding-xxs);
   align-items: flex-start;
   min-width: 0;
 }
